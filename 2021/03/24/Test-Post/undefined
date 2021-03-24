@@ -9,12 +9,12 @@
   
   
   
-  <meta name="description" content="Blog privatum Kotobae Trilii">
+  <meta name="description" content="Bibliotheca fracturarum memoriae in Mari Datorum">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Test Post">
 <meta property="og:url" content="https://kotobasuke.github.io/2021/03/24/Test-Post/undefined">
 <meta property="og:site_name" content="Histologium Kotobae">
-<meta property="og:description" content="Blog privatum Kotobae Trilii">
+<meta property="og:description" content="Bibliotheca fracturarum memoriae in Mari Datorum">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-24T08:25:02.000Z">
 <meta property="article:modified_time" content="2021-03-24T08:25:02.306Z">
@@ -106,15 +106,15 @@
             <div class="navbar-collapse collapse">
               <ul class="hnav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/Prima">Home</a> </li>
+                  <li> <a class="main-nav-link" href="/prima">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/Archium">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="/archium">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/Categoriae">Categories</a> </li>
+                  <li> <a class="main-nav-link" href="/categoriae">Categories</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/Pittacia">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="/pittacia">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/Res%20de%20Hoc">About</a> </li>
+                  <li> <a class="main-nav-link" href="/res">About</a> </li>
                 
                   <li><div id="search-form-wrap">
 
@@ -295,7 +295,7 @@
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Histologium Kotobae All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2021 Histologium Kotobae All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -327,15 +327,15 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/Prima" class="mobile-nav-link">Home</a>
+    <a href="/prima" class="mobile-nav-link">Home</a>
   
-    <a href="/Archium" class="mobile-nav-link">Archives</a>
+    <a href="/archium" class="mobile-nav-link">Archives</a>
   
-    <a href="/Categoriae" class="mobile-nav-link">Categories</a>
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
   
-    <a href="/Pittacia" class="mobile-nav-link">Tags</a>
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
   
-    <a href="/Res%20de%20Hoc" class="mobile-nav-link">About</a>
+    <a href="/res" class="mobile-nav-link">About</a>
   
 </nav> -->
     
