@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#34495e">
-  <title>Histologium Kotobae</title>
+  <title>Test Post | Histologium Kotobae</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   
@@ -60,8 +60,11 @@
     <!-- <img src="/" alt="banner"> -->
     <div class="banner-title">
       
-        <div class="intro">
-          practice makes perfect
+        <div class="post-title">
+          Test Post
+            <div class="post-tags">
+    		    
+    	      </div>
         </div>
       
     </div>
@@ -69,50 +72,46 @@
 </div>
 
       <main class="main"id="main">
-          
-  <div class="archives-container">
-    
-    
-      
-      
+          <article class="post">
+  
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>Test Post</h1>
+        <div class="post-tags">
         
+        </div>
+    </div>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2021-03-24</span>
+      
+      <!----------------------------------->
         
-        <section class="archive-wrap">
-          <div class="archive-year">
-            <!-- <a href="/archives/2021" class="archive-year">2021</a> -->
-            2021
-          </div>
-          <div class="archives">
-      
-      <div class="archive-content">
-      <a class="archive-article" href="/2021/03/24/Test-Post/undefined">
-        <span class="archive-meta">03-24</span>
-        <span class="archive-title">Test Post</span>
-      </a>
-    </article>
-    
-      
-      
-      <div class="archive-content">
-      <a class="archive-article" href="/2021/03/23/hello-world/undefined">
-        <span class="archive-meta">03-23</span>
-        <span class="archive-title">Hello World</span>
-      </a>
-    </article>
-    
-    
-      </div></section>
+      <!----------------------------------->
+    </div>
+  </header>
+  
+
+  <div class="post-content">
     
   </div>
+  <div class="post-footer">the end</div>
+</article>
 
           
-     <nav class="pagination">
+  <nav class="pagination post-nav">
     
+    
+      <a href="/2021/03/23/hello-world/undefined">
+        <span class="next-post">Hello World<i class="iconfont icon-more"></i></span>
+      </a>
     
   </nav>
 
 
           
+  
+
 
       </main>
     </div>
