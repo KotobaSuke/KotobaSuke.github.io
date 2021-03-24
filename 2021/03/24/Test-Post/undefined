@@ -9,12 +9,12 @@
   
   
   
-  <meta name="description" content="Bibliotheca fracturarum memoriae in Mari Datorum">
+  <meta name="description" content="Fracturarium memoriae in Mari Datorum">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Test Post">
 <meta property="og:url" content="https://kotobasuke.github.io/2021/03/24/Test-Post/undefined">
 <meta property="og:site_name" content="Histologium Kotobae">
-<meta property="og:description" content="Bibliotheca fracturarum memoriae in Mari Datorum">
+<meta property="og:description" content="Fracturarium memoriae in Mari Datorum">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-24T08:25:02.000Z">
 <meta property="article:modified_time" content="2021-03-24T08:25:02.306Z">
@@ -106,15 +106,15 @@
             <div class="navbar-collapse collapse">
               <ul class="hnav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/prima">Home</a> </li>
+                  <li> <a class="main-nav-link" href="/prima">Pagina Prima</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archium">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/categoriae">Categories</a> </li>
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/pittacia">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/res">About</a> </li>
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
                 
                   <li><div id="search-form-wrap">
 
@@ -265,7 +265,7 @@
   
   
     <a href="/2021/03/23/hello-world/undefined" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Vetustius</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -278,9 +278,9 @@
 
   <aside id="toc-sidebar">
     <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
+    <strong class="toc-title">Quae insunt</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav">Nihil</ol>
     
     </div>
   </aside>
@@ -294,7 +294,7 @@
 
   <div class="container">
       	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
 	      <p id="copyRightEn">Copyright &copy; 2021 - 2021 Histologium Kotobae All Rights Reserved.</p>
 	      
 	      
