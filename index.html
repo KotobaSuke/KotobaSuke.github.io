@@ -255,8 +255,7 @@
         <p class="article-excerpt-content">
           This is a vocabulary of Yamatokotoba (ヤマトコトバ) words.
 Yamatokotoba is a conlang that replaces most foreign words (外来語) or Sino-Japanese words (漢語) with extant native words (和語) or created words by native morphology.
-
-.tg  {border:none;border-collap...
+.tg  {border:none;border-collaps...
         </p>
         <p class="article-more-link">
           <a href="/2021/04/15/Vocabularium-Yamatokotoba#more">Legere plus</a>
@@ -523,5 +522,21 @@ Quick StartCreate a new post1$ hexo new &quot;My New...
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
   
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 </html>
