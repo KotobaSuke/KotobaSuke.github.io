@@ -19,7 +19,7 @@
 <meta property="og:description" content="Prefacio 前言本系列文章源自本人学习抽象代数的手写笔记，基本上基于冯克勤《近世代数引论》^1，同时参考了其他资料，在此预先一并列出：  冯克勤, 李尚志, 章璞. 近世代数引论. 合肥: 中国科学技术大学出版社, 2018 Michael Artin. 代数（Algebra）. 北京: 机械工业出版社, 2011 Serge Lang. 代数（Algebra）. New York: Spr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-21T18:42:42.000Z">
-<meta property="article:modified_time" content="2021-04-21T18:51:01.550Z">
+<meta property="article:modified_time" content="2021-04-21T18:52:13.897Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta name="twitter:card" content="summary">
@@ -533,5 +533,21 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 </html>
