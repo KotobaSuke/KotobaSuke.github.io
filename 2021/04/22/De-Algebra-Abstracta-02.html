@@ -3,25 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>de algebra abstracta 02 // 抽象代数笔记 〇二：群 | Histologium Kotobae</title>
+  <title>de algebra abstracta 02 // 抽象代数笔记 〇二：群与同态 | Histologium Kotobae</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="Algebra" />
+  <meta name="keywords" content="AlgebraMathematicaAlgebra AbstractaTheoria Catervarum" />
   
   
   
   
-  <meta name="description" content="Fracturarium memoriae in Mari Datorum">
+  <meta name="description" content="未完成Catervae &amp; Structurae Algebraicae Similes Catervis群及与之类似的代数结构〔定义〕：  集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为半群（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$. 满足交换律的半群称为交换半群（commutative semigro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="De Algebra Abstracta 02 &#x2F;&#x2F; 抽象代数笔记 〇二：群">
+<meta property="og:title" content="De Algebra Abstracta 02 &#x2F;&#x2F; 抽象代数笔记 〇二：群与同态">
 <meta property="og:url" content="https://kotobasuke.github.io/2021/04/22/De-Algebra-Abstracta-02">
 <meta property="og:site_name" content="Histologium Kotobae">
-<meta property="og:description" content="Fracturarium memoriae in Mari Datorum">
+<meta property="og:description" content="未完成Catervae &amp; Structurae Algebraicae Similes Catervis群及与之类似的代数结构〔定义〕：  集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为半群（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$. 满足交换律的半群称为交换半群（commutative semigro">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
-<meta property="article:modified_time" content="2021-04-22T03:53:07.228Z">
+<meta property="article:modified_time" content="2021-04-22T14:09:26.077Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra Abstracta">
+<meta property="article:tag" content="Theoria Catervarum">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
@@ -180,7 +183,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      De Algebra Abstracta 02 // 抽象代数笔记 〇二：群
+      De Algebra Abstracta 02 // 抽象代数笔记 〇二：群与同态
     </h1>
   
 
@@ -193,7 +196,7 @@
 	</a>
 
       
-    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a><a class="article-category-link" href="/categoriae/Mathematica/Algebra/">Algebra</a>
 
       
 	<a class="article-views">
@@ -207,7 +210,110 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h2><h1 id="Catervae-amp-Structurae-Algebraicae-Similes-Catervis群及与之类似的代数结构"><a href="#Catervae-amp-Structurae-Algebraicae-Similes-Catervis群及与之类似的代数结构" class="headerlink" title="Catervae &amp; Structurae Algebraicae Similes Catervis群及与之类似的代数结构"></a>Catervae &amp; Structurae Algebraicae Similes Catervis<br>群及与之类似的代数结构</h1><p>〔定义〕：</p>
+<blockquote>
+<p>集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为<strong>半群</strong>（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$.</p>
+<p>满足交换律的半群称为<strong>交换半群</strong>（commutative semigroup）.</p>
+</blockquote>
+<ul>
+<li>二元运算 $\bullet$ 所成表达式 $x \bullet y$ 常略作 $xy$，大多情况下，将此运算视如“乘法”或“复合”，其结果称作“积”.</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $S$ 为半群，若存在 $e\in S$，使得 $\forall\;x\in S,\;ex=xe=x$，则称元素 $e$ 为半群的<strong>单位元</strong>或<strong>幺元</strong>（identity element）.</p>
+<p>含有单位元的半群称为<strong>幺半群</strong>（monoid）.</p>
+</blockquote>
+<ul>
+<li>每个幺半群都有唯一的单位元（证明见后文），幺半群 $S$ 中的单位元常常记作 $e$，$1_S$或 $1$（注意与实数 $1$ 相区分）.</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $M$ 为幺半群，若存在 $a\in M$，使得 $\exists\;b\in S,\;ab=ba=e$，则称 $a$ 为 $b$ 的<strong>逆元</strong>（inverse element），反之亦然. $a$ 的逆元记作 $a^{-1}$（注意逆元并不一定是 $-1$ 次幂）.</p>
+</blockquote>
+<ul>
+<li>$a=b^{-1}\;\Leftrightarrow\;b=a^{-1}$；</li>
+<li>$(a^{-1})^{-1}=a.$</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 为幺半群，若 $\forall\;a\in G,\;\exists\;b,\;b=a^{-1}$，则称 $G$ 为<strong>群</strong>（group）.</p>
+<p>满足交换律的群称为<strong>交换群</strong>（commutative group）或<strong>阿贝尔群</strong>（abelian group）.</p>
+</blockquote>
+<hr>
+<h1 id="Naturae-Catervarum-群的性质"><a href="#Naturae-Catervarum-群的性质" class="headerlink" title="Naturae Catervarum 群的性质"></a>Naturae Catervarum 群的性质</h1><p>&emsp;(α)&emsp;封闭性（closure）：&emsp;&emsp;$\forall\;a,\;b\in G,\;ab\;\in G$；</p>
+<p>&emsp;(β)&emsp;结合性（associativity）：&emsp;&emsp;$\forall\;a,\;b,\;c\in G,\;(ab)c=a(bc)$；</p>
+<p>&emsp;(γ)&emsp;存在唯一单位元：&emsp;&emsp;$\exists!\;e\in G,\;\forall\;a\in G,\;ae=ea=a$；<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup></p>
+<p>&emsp;(δ)&emsp;存在唯一逆元：&emsp;&emsp;$\forall\;a\in G,\;\exists!\;b\in G,\;ab=ba=e$.</p>
+<ul>
+<li>$(ab)^{-1}=b^{-1}a^{-1}$.<ul>
+<li>可推广为 $(a_1a_2…a_n)^{-1}=a_n^{-1}…a_2^{-1}a_1^{-1}$.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>证明单位元唯一：</p>
+<blockquote>
+<p>设 $G$ 为群，且假设存在任意两个单位元 $e,\,\epsilon\in G,\;e\neq\epsilon$，于是</p>
+<p>&emsp;&emsp;$\forall\;x\in G,\,ex=xe=x$，</p>
+<p>从而</p>
+<p>&emsp;&emsp;$e\epsilon=\epsilon e=\epsilon$，&emsp;&emsp;$(1)$</p>
+<p>又</p>
+<p>&emsp;&emsp;$\forall\;x\in G,\,\epsilon x=x\epsilon =x$，</p>
+<p>从而</p>
+<p>&emsp;&emsp;$\epsilon e=e\epsilon=e$，&emsp;&emsp;$(2)$</p>
+<p>由 $(1)\,(2)$ 两式，得 $e=\epsilon$，与前提矛盾.&emsp;&emsp;$\blacksquare$ <sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
+</blockquote>
+<hr>
+<p>证明逆元唯一：</p>
+<blockquote>
+<p>设 $G$ 为群，且假设对某一元素 $x\in G$ 有两个逆元 $p,\;q\in G,\;p\neq q$，于是</p>
+<p>&emsp;&emsp;$px=xp=qx=xq=e$，</p>
+<p>从而</p>
+<p>&emsp;&emsp;$p=ep=(qx)p=(q)xp=qe=q$，与前提矛盾.&emsp;&emsp;$\blacksquare$</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>若 $a,\;b\in\mathbb Z$ 整除以 $n\in\mathbb N_+$ 所得余数相等，则称 $a$ 与 $b$ 对于<strong>模</strong>（modulo）$n$ <strong>同余</strong>（congruent） <sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup>，记作 $a\equiv b\;(\operatorname{mod} n)$，且定义关系：</p>
+<p>&emsp;&emsp;$a\sim b\;\Leftrightarrow\;a\equiv b\;(\operatorname{mod} n)$，</p>
+<p>易证此为等价关系.</p>
+<p>记 $i\in\mathbb Z$ 所在等价类为 $\overline i=\{k\in\mathbb Z\;|\;k\equiv i\;(\operatorname{mod} n)\}$，称为 <strong>$i$ 的模 $n$ 同余类</strong>（congruence class of $i$ modulo $n$）. 于是整数集 $\mathbb Z$ 可分划为 $n$ 个等价类：$\overline 0,\;\overline 1,\;\overline 2,\;…,\;\overline{n-1}$，以 $\mathbb Z_n$ 表示该分划，则可定义其上的加法：</p>
+<p>&emsp;&emsp;$\overline a+\overline b=\overline{a+b}$，</p>
+<p>则 $(\mathbb Z_n,\;+)$ 形成阿贝尔群，其单位元为 $\overline 0$，该群称为<strong>整数模 $n$ 加法群</strong>（additive group of integers modulo $n$）.</p>
+<p>此外，若定义乘法：</p>
+<p>&emsp;&emsp;$\overline a\cdot\overline b=\overline{ab}$，</p>
+<p>则 $(\mathbb Z_n,\;\cdot)$ 形成交换幺半群，其单位元为 $\overline 1$.</p>
+</blockquote>
+<ul>
+<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\;ab\equiv 1\;(\operatorname{mod} n)\;\Leftrightarrow\;\gcd(a,\;n)=1$<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$.</li>
+</ul>
+<hr>
+<p>〔定理 2.1〕：</p>
+<blockquote>
+<p>设 $(M,\;\cdot)$ 为幺半群，记其中全体可逆元素所成集合为 $M^<em>$，则 $(M^</em>,\;\cdot)$ 是群.</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>由幺半群性质，显然可知存在单位元 $e\in M^*$；</p>
+<p>$(M,\;\cdot)$ 与 $(M^*,\;\cdot)$ 具有同一运算，因此显然有封闭性与结合性；</p>
+<p>由于 $M^<em>$ 中各元素 $a$ 均可逆，其逆元 $a^{-1}$ 必然也属于 $M^</em>$，可知逆元存在性. 由此则 $(M^*,\;\cdot)$ 是群.&emsp;&emsp;$\blacksquare$</p>
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. $\exists!$ 表示唯一存在.<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. 幺半群的单位元唯一性亦可同理得证.<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. 名词为 congruence.<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. $\gcd(a,\;n)$ 表示 $a$ 与 $n$ 的最大公因数，$\gcd(a,\;n)$ 即 $a$ 与 $n$ 互质. 此结论可由数论的 Bézout 定理（Bézout’s lemma）得出.<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
@@ -241,7 +347,7 @@
       
       
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Abstracta/" rel="tag">Algebra Abstracta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Theoria-Catervarum/" rel="tag">Theoria Catervarum</a></li></ul>
 
       
 
@@ -268,7 +374,8 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Quae insunt</strong>
     
-        <ol class="nav">Nihil</ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">未完成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-amp-Structurae-Algebraicae-Similes-Catervis%E7%BE%A4%E5%8F%8A%E4%B8%8E%E4%B9%8B%E7%B1%BB%E4%BC%BC%E7%9A%84%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84"><span class="nav-number"></span> <span class="nav-text">Catervae &amp; Structurae Algebraicae Similes Catervis
+群及与之类似的代数结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Naturae-Catervarum-%E7%BE%A4%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number"></span> <span class="nav-text">Naturae Catervarum 群的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number"></span> <span class="nav-text">Annotationes 注释</span></a>
     
     </div>
   </aside>
