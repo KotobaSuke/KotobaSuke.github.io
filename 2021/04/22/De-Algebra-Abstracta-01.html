@@ -19,7 +19,7 @@
 <meta property="og:description" content="Prefacio 前言本系列文章源自本人学习抽象代数的手写笔记，基本上基于冯克勤《近世代数引论》1，同时参考了其他资料，在此预先一并列出：  冯克勤, 李尚志, 章璞. 近世代数引论. 合肥: 中国科学技术大学出版社, 2018 Michael Artin. 代数（Algebra）. 北京: 机械工业出版社, 2011 Serge Lang. 代数（Algebra）. New York: Spri">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-22T02:09:14.000Z">
-<meta property="article:modified_time" content="2021-04-22T02:17:10.163Z">
+<meta property="article:modified_time" content="2021-04-22T03:13:38.301Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta name="twitter:card" content="summary">
@@ -218,12 +218,12 @@
 <li><a target="_blank" rel="noopener" href="https://groupprops.subwiki.org/">Groupprops</a></li>
 <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/">Wikipedia</a></li>
 </ul>
-<p>本文<strong>仅仅</strong>是学习笔记，主要为整理书中内容并按个人理解稍作修改而成，限于学识而错误在所难免，望指正。</p>
+<p>本文<strong>仅仅</strong>是学习笔记，主要为整理书中内容并按个人理解稍作修改而成，限于学识而错误在所难免，望指正.</p>
 <h1 id="Praeliminares-de-Theoria-Copiarum集合论预备知识"><a href="#Praeliminares-de-Theoria-Copiarum集合论预备知识" class="headerlink" title="Praeliminares de Theoria Copiarum集合论预备知识"></a>Praeliminares de Theoria Copiarum<br>集合论预备知识</h1><p>对于任意多个集合组成的集族 $\{A_i\;|\;i\in I\}$（其中 $I$ 为集族的下标集合），有</p>
 <p>$\displaystyle\bigcap_{i\in I}\;A_i=\{x\;|\;\forall\;i\in I,\;x\in A_i\},$</p>
 <p>$\displaystyle\bigcup_{i\in I}\;A_i=\{x\;|\;\exists\;i\in I,\;x\in A_i\}.$</p>
 <hr>
-<p>【定义】：</p>
+<p>〔定义〕：</p>
 <blockquote>
 <p>设 $A,\;B$ 为两个集合，集合 $\{(a,\;b)\;|\;a\in A,\;b\in B\}$ 称为 $A$ 和 $B$ 的<strong>直积</strong>（direct product）或<strong>笛卡尔积</strong>（Cartesian product），记作 $A\times B$.</p>
 </blockquote>
@@ -237,12 +237,12 @@
 </li>
 </ul>
 <hr>
-<p>【定义】：</p>
+<p>〔定义〕：</p>
 <blockquote>
 <p>设 $f: A\to B,\; g:A\to B$，若 $\forall\;a\in A, \;f(a)=g(a)$，则称 $f$ 和 $g$ <strong>相等</strong>.</p>
 </blockquote>
 <hr>
-<p>【定义】：</p>
+<p>〔定义〕：</p>
 <blockquote>
 <p>集合间的映射 $f:A\to B,\; g:B\to C$ 经连续作用可得</p>
 <p>​        $g\circ f:A\to C,\quad(g\circ f)(a)=g(f(a)),$</p>
@@ -257,8 +257,87 @@
 </li>
 </ul>
 <hr>
-<h4 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h4><blockquote id="fn_1">
-<sup>1</sup>. 我知道这书风评不太好。<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $A$ 为集合，映射</p>
+<p>​        $1_A:A\to A,\quad a\mapsto a$</p>
+<p>称为集合 $A$ 上的<strong>恒等映射</strong>（identity map）.</p>
+</blockquote>
+<ul>
+<li>映射 $f:A\to B$ 为双射，当且仅当存在映射 $g:B\to A$，使得 $f\circ g=1_B,\;g\circ f=1_A$.</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>集合 $A\times A$ 的每个子集 $R$ 称为集合 $A$ 上的一个<strong>关系</strong>（relation）.</p>
+<p>若 $(a,\;b)\in R$，则称 $a$ 与 $b$ 有关系 $R$，记作 $aRb$.</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>定义集合 $A$ 上的关系 $\sim$，当且仅当关系 $\sim$ 满足</p>
+<p>​    (α)    自反性（reflexivity）：    $\forall\; a\in A,\;a\sim a$；</p>
+<p>​    (β)    对称性（symmetry）：    $\forall\;a,\;b\in A,\;a\sim b\;\Rightarrow\; b\sim a$；</p>
+<p>​    (γ)    传递性（transitivity）：    $\forall\; a,\;b,\;c\in A,\;a\sim b,\;b\sim c\;\Rightarrow\; a\sim c$，</p>
+<p>则称之为集合 $A$ 上的<strong>等价关系</strong>（equivalence relation）.</p>
+<p>对任意 $a\in A$，记 $[a]=\{b\in A\;|\;a\sim b\}$，则称 $[a]$ 为 $a$ 所在的<strong>等价类</strong>（equivalence class），且有</p>
+<p>​    (α)    $\forall\;p,\;q\in[a],\;p\sim q$；</p>
+<p>​    (β)    $p\in[a]\;\Rightarrow\;[a]=[p]$；</p>
+<p>​    (γ)    $[a]\cap[p]\neq\varnothing\;\Rightarrow\;[a]=[p]$.</p>
+<p>元素 $a$ 称为等价类的<strong>代表元</strong>（representative）.</p>
+<p>对于集合 $A$ 上的等价关系 $\sim$，所有等价类组成的集族称为 $A$ <strong>除以</strong> $\sim$ <strong>的商集</strong>（quotient set of $A$ by $\sim$），或 <strong>$A$ 除以 $\sim$ 的商空间</strong>（quotient space of $A$ by $\sim$）.</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设集合 $A$ 上有等价关系 $\sim$，若 $A$ 的子集 $R=\{r_1,\;…,\;r_n\}$ 满足：</p>
+<p>​        $\forall\;r_i,\;r_j\;(i,\;j\in\{x\;|\;1\leq x\leq n\},\;i\neq j),\;[i]\neq [j]$，</p>
+<p>且</p>
+<p>​        $\forall\;a\in A,\;\exists\;r\in R,\;a\sim r$，</p>
+<p>则称 $R$ 为集合 $A$ 关于等价关系 $\sim$ 的<strong>完全代表系</strong>（complete system of representatives），从而有</p>
+<p>​        $A=\displaystyle\bigcup_{a\in R}\;[a]$.</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>记集合 $A$ 的子集中某些互不相交的非空子集组成的集族为 $\mathcal F$，若 $\mathcal F$ 中所有集合之并等于 $A$，则称 $\mathcal F$ 中的集合<strong>覆盖</strong>（covers）$A$，且 $\mathcal F$ 为集合 $A$ 的一个<strong>分划</strong>或<strong>分拆</strong>（partition）<sup><a href="#fn_2" id="reffn_2">2</a></sup>.</p>
+</blockquote>
+<ul>
+<li>若定义关系 $\sim:\;\forall\;a,\;b\in A,\;a\sim b\;\Leftrightarrow\;a,\;b\in A_i$，其中 $A_i\in \mathcal F$，则关系 $\sim$ 为等价关系.</li>
+<li>集合 $A$ 上的等价关系与其分划一一对应.</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>定义集族 $\mathcal F$ 上的等价关系：</p>
+<p>​        $\forall\;A,\;B\in\mathcal F,$</p>
+<p>​        $A\sim B\;\Leftrightarrow\;\exists\;f:A\to B$ 且 $f$ 为双射，</p>
+<p>由此，若集合 $P,\;Q$ 满足 $P\sim Q$，则称 $P$ 与 $Q$ <strong>等势</strong>（equinumerous）.</p>
+</blockquote>
+<ul>
+<li>有限集 $A,\;B$ 等势当且仅当 $|A|=|B|$<sup><a href="#fn_3" id="reffn_3">3</a></sup>.</li>
+<li>等势于正整数集 $\mathbb N_+$ <sup><a href="#fn_4" id="reffn_4">4</a></sup>的集合称为<strong>可数无限集</strong>（countably infinite set），其余无限集称为<strong>不可数无限集</strong>（uncountably infinite set）.<ul>
+<li>无限集 $A$ 的任一子集均等势于 $A$.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $A$ 为集合，映射 $f:A\times A\to A$ 称为集合 $A$ 上的一个<strong>二元运算</strong>（binary operation）.</p>
+</blockquote>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. 我知道这书风评不太好.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. 一些资料也使用类似的近义词作为译语.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. $|A|$ 表示有限集 $A$ 的基数（cardinal number），即其中元素的数量. 无限集的元素之“多少”不能直接以数量衡量，这一量度称为无限集的势（cardinality）. 一些场合下有限集的基数也统称为势，后文均依此.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. 按照中国国家标准与 ISO 相关标准，自然数集 $\mathbb N$ 指非负整数的集合，而此处用 $\mathbb N_+$ 表示正整数的集合，即 $\mathbb N\setminus {0}$，后文均依此.<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
 </blockquote>
 
       
@@ -341,7 +420,7 @@
     <strong class="toc-title">Quae insunt</strong>
     
         <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Prefacio-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">Prefacio 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Praeliminares-de-Theoria-Copiarum%E9%9B%86%E5%90%88%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">2.</span> <span class="nav-text">Praeliminares de Theoria Copiarum
-集合论预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">未完成</span></a></li></ol></li></ol></li></ol></li></ol>
+集合论预备知识</span></a></li></ol>
     
     </div>
   </aside>
