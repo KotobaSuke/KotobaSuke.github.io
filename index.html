@@ -231,7 +231,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/04/22/De-Algebra-Abstracta-02">De-Algebra-Abstracta-02</a>
+      <a class="article-title" href="/2021/04/22/De-Algebra-Abstracta-02">De Algebra Abstracta 02 // 抽象代数笔记 〇二：群</a>
     </h1>
   
 
@@ -244,13 +244,20 @@
 	</a>
 
       
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
       
       
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p class="article-excerpt-content">
+          
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/04/22/De-Algebra-Abstracta-02#more">Legere plus</a>
+        </p>
       
     </div>
     <footer class="article-footer">
@@ -297,138 +304,18 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Prefacio-前言"><a href="#Prefacio-前言" class="headerlink" title="Prefacio 前言"></a>Prefacio 前言</h1><p>本系列文章源自本人学习抽象代数的手写笔记，基本上基于冯克勤《近世代数引论》<sup><a href="#fn_1" id="reffn_1">1</a></sup>，同时参考了其他资料，在此预先一并列出：</p>
-<ul>
-<li>冯克勤, 李尚志, 章璞. 近世代数引论. 合肥: 中国科学技术大学出版社, 2018</li>
-<li>Michael Artin. 代数（<em>Algebra</em>）. 北京: 机械工业出版社, 2011</li>
-<li>Serge Lang. 代数（<em>Algebra</em>）. New York: Springer-Verlag, 2002</li>
-<li>永尾汎. 群論の基礎. 東京: 朝倉書店, 2004</li>
-<li>左孝凌, 李为鉴, 刘永才. 离散数学. 上海: 上海科学技术文献出版社, 1982</li>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dO1T5-N3k1U&amp;list=PLDJfzGjtVLHn9XEfkMHH157Q-IgLiI8p9">【大学数学】群論入門</a></li>
-<li><a target="_blank" rel="noopener" href="https://groupprops.subwiki.org/">Groupprops</a></li>
-<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/">Wikipedia</a></li>
-</ul>
-<p>本文<strong>仅仅</strong>是学习笔记，主要为整理书中内容并按个人理解稍作修改而成，限于学识而错误在所难免，望指正.</p>
-<h1 id="Praeliminares-de-Theoria-Copiarum集合论预备知识"><a href="#Praeliminares-de-Theoria-Copiarum集合论预备知识" class="headerlink" title="Praeliminares de Theoria Copiarum集合论预备知识"></a>Praeliminares de Theoria Copiarum<br>集合论预备知识</h1><p>对于任意多个集合组成的集族 $\{A_i\;|\;i\in I\}$（其中 $I$ 为集族的下标集合），有</p>
-<p>$\displaystyle\bigcap_{i\in I}\;A_i=\{x\;|\;\forall\;i\in I,\;x\in A_i\},$</p>
-<p>$\displaystyle\bigcup_{i\in I}\;A_i=\{x\;|\;\exists\;i\in I,\;x\in A_i\}.$</p>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>设 $A,\;B$ 为两个集合，集合 $\{(a,\;b)\;|\;a\in A,\;b\in B\}$ 称为 $A$ 和 $B$ 的<strong>直积</strong>（direct product）或<strong>笛卡尔积</strong>（Cartesian product），记作 $A\times B$.</p>
-</blockquote>
-<ul>
-<li><p>$\forall\;a,\;a’\in A,\;\forall\;b,\;b’\in B,$</p>
-<p>$(a,\;b)=(a’,\;b’)\;\Leftrightarrow\;a=a’,\;b=b’.$</p>
-</li>
-<li><p>$\displaystyle\prod_{i=1}^n A_i=\{(a_1,\;…,\;a_n)\;|\;a_i\in A_i,\;1\leq i\leq n\}.$</p>
-</li>
-<li><p>$\displaystyle\prod_{i\in I} A_i=\{(a_i)_{i\in I}\;|\;a_i\in A_i,\;i\in I\}.$</p>
-</li>
-</ul>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>设 $f: A\to B,\; g:A\to B$，若 $\forall\;a\in A, \;f(a)=g(a)$，则称 $f$ 和 $g$ <strong>相等</strong>.</p>
-</blockquote>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>集合间的映射 $f:A\to B,\; g:B\to C$ 经连续作用可得</p>
-<p>$\qquad g\circ f:A\to C,\quad(g\circ f)(a)=g(f(a)),$</p>
-<p>映射 $g\circ f$ 称为 $f$ 和 $g$ 的<strong>复合映射</strong>或<strong>合成映射</strong>（composition）.</p>
-</blockquote>
-<ul>
-<li><p>合成运算满足结合律：</p>
-<blockquote>
-<p>设 $f: A\to B,\;g:B\to C,\; h:C\to D$，有</p>
-<p>$\qquad h\circ(g\circ f) = (h\circ g)\circ f.$</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>设 $A$ 为集合，映射</p>
-<p>$\qquad 1_A:A\to A,\quad a\mapsto a$</p>
-<p>称为集合 $A$ 上的<strong>恒等映射</strong>（identity map）.</p>
-</blockquote>
-<ul>
-<li>映射 $f:A\to B$ 为双射，当且仅当存在映射 $g:B\to A$，使得 $f\circ g=1_B,\;g\circ f=1_A$.</li>
-</ul>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>集合 $A\times A$ 的每个子集 $R$ 称为集合 $A$ 上的一个<strong>关系</strong>（relation）.</p>
-<p>若 $(a,\;b)\in R$，则称 $a$ 与 $b$ 有关系 $R$，记作 $aRb$.</p>
-</blockquote>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>定义集合 $A$ 上的关系 $\sim$，当且仅当关系 $\sim$ 满足</p>
-<p>$\quad$(α)$\quad$自反性（reflexivity）：$\qquad \forall\; a\in A,\;a\sim a$；</p>
-<p>$\quad$(β)$\quad$对称性（symmetry）：$\qquad \forall\;a,\;b\in A,\;a\sim b\;\Rightarrow\; b\sim a$；</p>
-<p>$\quad$(γ)$\quad$传递性（transitivity）：$\qquad \forall\; a,\;b,\;c\in A,\;a\sim b,\;b\sim c\;\Rightarrow\; a\sim c$，</p>
-<p>则称之为集合 $A$ 上的<strong>等价关系</strong>（equivalence relation）.</p>
-<p>对任意 $a\in A$，记 $[a]=\{b\in A\;|\;a\sim b\}$，则称 $[a]$ 为 $a$ 所在的<strong>等价类</strong>（equivalence class），且有</p>
-<p>$\quad$(α)　$\quad\forall\;p,\;q\in[a],\;p\sim q$；</p>
-<p>$\quad$(β)　$\quad p\in[a]\;\Rightarrow\;[a]=[p]$；</p>
-<p>$\quad$(γ)　$\quad [a]\cap[p]\neq\varnothing\;\Rightarrow\;[a]=[p]$.</p>
-<p>元素 $a$ 称为等价类的<strong>代表元</strong>（representative）.</p>
-<p>对于集合 $A$ 上的等价关系 $\sim$，所有等价类组成的集族称为 $A$ <strong>除以</strong> $\sim$ <strong>的商集</strong>（quotient set of $A$ by $\sim$），或 <strong>$A$ 除以 $\sim$ 的商空间</strong>（quotient space of $A$ by $\sim$）.</p>
-</blockquote>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>设集合 $A$ 上有等价关系 $\sim$，若 $A$ 的子集 $R=\{r_1,\;…,\;r_n\}$ 满足：</p>
-<p>$\qquad\forall\;r_i,\;r_j\;(i,\;j\in\{x\;|\;1\leq x\leq n\},\;i\neq j),\;[i]\neq [j]$，</p>
-<p>且</p>
-<p>$\qquad\forall\;a\in A,\;\exists\;r\in R,\;a\sim r$，</p>
-<p>则称 $R$ 为集合 $A$ 关于等价关系 $\sim$ 的<strong>完全代表系</strong>（complete system of representatives），从而有</p>
-<p>$\qquad A=\displaystyle\bigcup_{a\in R}\;[a]$.</p>
-</blockquote>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>记集合 $A$ 的子集中某些互不相交的非空子集组成的集族为 $\mathcal F$，若 $\mathcal F$ 中所有集合之并等于 $A$，则称 $\mathcal F$ 中的集合<strong>覆盖</strong>（covers）$A$，且 $\mathcal F$ 为集合 $A$ 的一个<strong>分划</strong>或<strong>分拆</strong>（partition）<sup><a href="#fn_2" id="reffn_2">2</a></sup>.</p>
-</blockquote>
-<ul>
-<li>若定义关系 $\sim:\;\forall\;a,\;b\in A,\;a\sim b\;\Leftrightarrow\;a,\;b\in A_i$，其中 $A_i\in \mathcal F$，则关系 $\sim$ 为等价关系.</li>
-<li>集合 $A$ 上的等价关系与其分划一一对应.</li>
-</ul>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>定义集族 $\mathcal F$ 上的等价关系：</p>
-<p>$\qquad\forall\;A,\;B\in\mathcal F,$</p>
-<p>$\qquad A\sim B\;\Leftrightarrow\;\exists\;f:A\to B$ 且 $f$ 为双射，</p>
-<p>由此，若集合 $P,\;Q$ 满足 $P\sim Q$，则称 $P$ 与 $Q$ <strong>等势</strong>（equinumerous）.</p>
-</blockquote>
-<ul>
-<li>有限集 $A,\;B$ 等势当且仅当 $|A|=|B|$<sup><a href="#fn_3" id="reffn_3">3</a></sup>.</li>
-<li>等势于正整数集 $\mathbb N_+$ <sup><a href="#fn_4" id="reffn_4">4</a></sup>的集合称为<strong>可数无限集</strong>（countably infinite set），其余无限集称为<strong>不可数无限集</strong>（uncountably infinite set）.<ul>
-<li>无限集 $A$ 的任一子集均等势于 $A$.</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>〔定义〕：</p>
-<blockquote>
-<p>设 $A$ 为集合，映射 $f:A\times A\to A$ 称为集合 $A$ 上的一个<strong>二元运算</strong>（binary operation）.</p>
-</blockquote>
-<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_1">
-<sup>1</sup>. 我知道这书风评不太好.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. 一些资料也使用类似的近义词作为译语.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. $|A|$ 表示有限集 $A$ 的基数（cardinal number），即其中元素的数量. 无限集的元素之“多少”不能直接以数量衡量，这一量度称为无限集的势（cardinality）. 一些场合下有限集的基数也统称为势，后文均依此.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_4">
-<sup>4</sup>. 按照中国国家标准与 ISO 相关标准，自然数集 $\mathbb N$ 指非负整数的集合，而此处用 $\mathbb N_+$ 表示正整数的集合，即 $\mathbb N\setminus \{0\}$，后文均依此.<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
-</blockquote>
+        <p class="article-excerpt-content">
+          Prefacio 前言本系列文章源自本人学习抽象代数的手写笔记，基本上基于冯克勤《近世代数引论》1，同时参考了其他资料，在此预先一并列出：
 
+冯克勤, 李尚志, 章璞. 近世代数引论. 合肥: 中国科学技术大学出版社, 2018
+Michael Artin. 代数（Algebra）. 北京: 机械工业出版社, 2011
+Serge Lang. 代数（Algebra）. New York: Springer-Verlag, 2002
+永尾汎. 群論の基礎. 東京: 朝倉書店, 2004
+左孝...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/04/22/De-Algebra-Abstracta-01#more">Legere plus</a>
+        </p>
       
     </div>
     <footer class="article-footer">
@@ -475,162 +362,15 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>This is a vocabulary of Yamatokotoba (ヤマトコトバ) words.</p>
-<p>Yamatokotoba is a conlang that replaces most foreign words (外来語) or Sino-Japanese words (漢語) with extant native words (和語) or created words by native morphology.</p>
-<style type="text/css">
-.tg  {border:none;border-collapse:collapse;border-color:#ccc;border-spacing:0;}
-.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-shwv{font-family:"Noto Sans JP", Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
-.tg .tg-2g2i{border-color:inherit;font-family:"Noto Sans JP", Helvetica, sans-serif !important;;text-align:center;vertical-align:top
-  }
-.tg .tg-wh7r{background-color:#f9f9f9;border-color:inherit;font-family:"Noto Sans JP", Helvetica, sans-serif !important;;
-  text-align:center;vertical-align:top}
-.tg .tg-zef7{font-family:"Noto Sans JP", Helvetica, sans-serif !important;;text-align:left;vertical-align:top}
-</style>
-<table style="undefined; table-layout: fixed; width: 430px; font-family: Noto Sans JP"; lang="ja">
-<colgroup>
-<col style="width: 160px">
-<col style="width: 120px">
-<col style="width: 120px">
-<col style="width: 120px">
-<col style="width: 220px">
-</colgroup>
-<thead>
-  <tr>
-    <th class="tg-2g2i" rowspan="2">Current Japanese</th>
-    <th class="tg-2g2i" colspan="3">Yamatokotoba</th>
-    <th class="tg-shwv" rowspan="2">Notes</th>
-  </tr>
-  <tr>
-    <td class="tg-wh7r">Extant</td>
-    <td class="tg-2g2i">Obsolete</td>
-    <td class="tg-wh7r">Created</td>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-2g2i">アドミタンス</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>取</rb><rt>トリ</rt><rb>込</rb><rt>コ</rt>ミ</ruby></td>
-    <td class="tg-zef7">admittance</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i">インピーダンス</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>妨<rt>サマタ</rt>ゲ</ruby></td>
-    <td class="tg-zef7">impedance</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>宇宙<rt>うちゅう</rt><ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>星</rb><rt>ホシ</rt><rb>海</rb><rt>ミ</rt></ruby></td>
-    <td class="tg-zef7">universe</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>宇宙飛行士<rt>うちゅうひこうし</rt><ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>星</rb><rt>ホシ</rt><rb>水夫</rb><rt>ガコ</rt></ruby></td>
-    <td class="tg-zef7">astronaut の翻訳借用</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i">エネルギー 【物】</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>為</rb><rt>ナシ</rt><rb>代</rb><rt>シロ</rt></ruby></td>
-    <td class="tg-zef7">energy<br>「ことを為すための代価」より</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>行列<rt>ぎょうれつ</rt><ruby>【数】</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>母</rb><rt>ハハ</rt><rb>型</rb><rt>ガタ</rt></ruby></td>
-    <td class="tg-zef7">matrix の原意より</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>行列式<rt>ぎょうれつしき</rt><ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>決<rt>キ</rt></ruby>マリ</td>
-    <td class="tg-zef7">determinant の原意より</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i">コンダクタンス</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>伝<rt>ツタ</rt>ヘ</ruby></td>
-      <td class="tg-zef7"><b><ruby>電気伝導力<rt>でんきでんどうりょく</rt></ruby></b>とも言う<br>conductance</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i">サセプタンス</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>受</rb><rt>ウケ</rt><rb>入</rb><rt>イ</rt>レ</ruby></td>
-    <td class="tg-zef7">susceptance</td>
-  <tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>辞書<rt>じしょ</rt></ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>言</rb><rt>コト</rt><rb>鏡</rb><rt>カガミ</rt></ruby></td>
-    <td class="tg-zef7">dictionary</td>
-  <tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>数学<rt>すうがく</rt></ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby><rb>数</rb><rt>カズ</rt><rb>学</rb><rt>マナ</rt></ruby>ビ</td>
-    <td class="tg-zef7">mathematics</td>
-  <tr>
-    <td class="tg-2g2i"><ruby>通訳<rt>つうやく</rt></ruby><br>[1] すること<br>[2] する人<br>[3] する</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i">[1] <ruby>訳語<rt>ヲサ</rt></ruby><br>[2] <ruby>訳語<rt>ヲサ</rt></ruby></td>
-    <td class="tg-wh7r">[2] <ruby><rb>訳語</rb><rt>ヲサ</rt><rb>人</rb><rt>ビト</rt></ruby><br>[3] <ruby>訳語<rt>ヲサ</rt></ruby>スル</td>
-    <td class="tg-zef7">[1] interpretation<br>[2] interpreter<br>[3] to interpret</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>電気抵抗<rt>でんきていこう</rt></ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>拒<rt>コバ</rt>ミ</ruby></td>
-    <td class="tg-zef7"><b>レジスタンス</b>とも言う<br>resistance</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>天象<rt>てんしょう</rt></ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>天<rt>アマ</rt>徵<rt>ジルシ</rt></ruby></td>
-    <td class="tg-zef7"></td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i"><ruby>天文学<rt>てんもんがく</rt></ruby></td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>天<rt>アマ</rt>学<rt>マナ</rt></ruby>ビ</td>
-    <td class="tg-zef7">astronomy</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i">ベクトル</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>向<rt>ム</rt></ruby>キ<ruby>目<rt>メ</rt></ruby></td>
-    <td class="tg-zef7">vector</td>
-  </tr>
-  <tr>
-    <td class="tg-2g2i">リアクタンス</td>
-    <td class="tg-wh7r"></td>
-    <td class="tg-2g2i"></td>
-    <td class="tg-wh7r"><ruby>抗<rt>アラガ</rt>ヒ</ruby></td>
-    <td class="tg-zef7">impedance</td>
-  </tr>
-</tbody>
-</table>
+        <p class="article-excerpt-content">
+          This is a vocabulary of Yamatokotoba (ヤマトコトバ) words.
+Yamatokotoba is a conlang that replaces most foreign words (外来語) or Sino-Japanese words (漢語) with extant native words (和語) or created words by native morphology.
+
+.tg  {border:none;border-collap...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/04/15/Vocabularium-Yamatokotoba#more">Legere plus</a>
+        </p>
       
     </div>
     <footer class="article-footer">
