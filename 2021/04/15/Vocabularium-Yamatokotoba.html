@@ -679,15 +679,16 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
-<script>/*MathJax = {
+<script>
+MathJax = {
     tex: {
       macros: {
         'bm': ['\\mmlToken{mi}[mathvariant=bold-italic]{#1}', 1],
-        'upmu': ['\\mmlToken{mi}[mathvariant=normal]{\u03BC}'],
-        'uppi': ['\\mmlToken{mi}[mathvariant=normal]{\u03C0}']
+        'upmu': '\\mmlToken{mi}[mathvariant=normal]{\u03BC}',
+        'uppi': '\\mmlToken{mi}[mathvariant=normal]{\u03C0}'
       }
     }
-  }*/</script>
+  }</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -702,7 +703,7 @@
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
 </body>
