@@ -593,17 +593,17 @@
         for (var i = 0; i < all.length; ++i)
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
+    MathJax = {
+        tex: {
+          macros: {
+            'bm': ['\\mmlToken{mi}[mathvariant=bold-italic]{#1}', 1],
+            'uppi': ['\\mmlToken{mi}[mathvariant=normal]{\u03C0}'],
+            'upmu': ['\\mmlToken{mi}[mathvariant=normal]{\u03BC}'],
+          }
+        }
+      }
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-MathJax = {
-    tex: {
-      macros: {
-        'bm': ['\\mmlToken{mi}[mathvariant=bold-italic]{#1}', 1],
-        'uppi': ['\\mmlToken{mi}[mathvariant=normal]{\u03C0}'],
-        'upmu': ['\\mmlToken{mi}[mathvariant=normal]{\u03BC}'],
-      }
-    }
-  }
 </script>
 
 </body>
