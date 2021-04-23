@@ -596,6 +596,13 @@
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
             processEscapes: true
         }
+        tex: {
+            macros: {
+              'bm': ['\\mmlToken{mi}[mathvariant=bold-italic]{#1}', 1],
+              'upmu': ['\\mmlToken{mi}[mathvariant=normal]{\u03BC}'],
+              'uppi': ['\\mmlToken{mi}[mathvariant=normal]{\u03C0}'],
+            }
+          }
     });
     MathJax.Hub.Queue(function() {
         var all = MathJax.Hub.getAllJax();
