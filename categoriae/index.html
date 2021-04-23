@@ -449,6 +449,15 @@
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
   
+<script>MathJax = {
+    tex: {
+      macros: {
+        'bm': ['\\mmlToken{mi}[mathvariant=bold-italic]{#1}', 1],
+        'upmu': ['\\mmlToken{mi}[mathvariant=normal]{\u03BC}'],
+        'uppi': ['\\mmlToken{mi}[mathvariant=normal]{\u03C0}'],
+      }
+    }
+  }</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -462,15 +471,6 @@
         for (var i = 0; i < all.length; ++i)
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
-    MathJax = {
-        tex: {
-          macros: {
-            'bm': ['\\mmlToken{mi}[mathvariant=bold-italic]{#1}', 1],
-            'uppi': ['\\mmlToken{mi}[mathvariant=normal]{\u03C0}'],
-            'upmu': ['\\mmlToken{mi}[mathvariant=normal]{\u03BC}'],
-          }
-        }
-      }
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
