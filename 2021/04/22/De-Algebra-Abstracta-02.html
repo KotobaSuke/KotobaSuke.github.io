@@ -19,7 +19,7 @@
 <meta property="og:description" content="未完成Catervae &amp; Structurae Algebraicae Similes群及类似的代数结构〔定义〕：  集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为半群（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$. 满足交换律的半群称为交换半群（commutative semigroup）.   二元运算">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
-<meta property="article:modified_time" content="2021-04-24T16:23:40.265Z">
+<meta property="article:modified_time" content="2021-04-24T16:26:55.407Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta property="article:tag" content="Mathematica">
@@ -264,7 +264,7 @@
 <p>从而</p>
 <p>&emsp;&emsp;$\epsilon e=e\epsilon=e$，&emsp;&emsp;$(2)$</p>
 <p>由 $(1)\,(2)$ 两式，得 $e=\epsilon$，与前提矛盾. <sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
-<p align="right" style="font-size:200%" >■</p>
+<p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
 <hr>
@@ -274,7 +274,7 @@
 <p>&emsp;&emsp;$px=xp=qx=xq=e$，</p>
 <p>从而</p>
 <p>&emsp;&emsp;$p=ep=(qx)p=q(xp)=qe=q$，与前提矛盾.</p>
-<p align="right" style="font-size:200%" >■</p>
+<p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
 <hr>
@@ -287,7 +287,7 @@
 <p>由幺半群性质，显然可知存在单位元 $e\in M^\ast$；</p>
 <p>$(M,\;\cdot)$ 与 $(M^\ast,\;\cdot)$ 具有同一运算，因此显然有结合性，并且由于 $M^\ast$ 中任一元素均可逆则显然有封闭性 ；</p>
 <p>由于 $M^\ast$ 中各元素 $a$ 均可逆，其逆元 $a^{-1}$ 必然也属于 $M^\ast$，可知逆元存在性. 由此则 $(M^\ast,\;\cdot)$ 是群.</p>
-<p align="right" style="font-size:200%" >■</p>
+<p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
 <hr>
@@ -595,5 +595,21 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
