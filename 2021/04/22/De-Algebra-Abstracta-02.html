@@ -19,7 +19,7 @@
 <meta property="og:description" content="未完成Catervae &amp; Structurae Algebraicae Similes群及类似的代数结构〔定义〕：  集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为半群（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$. 满足交换律的半群称为交换半群（commutative semigroup）.   二元运算">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
-<meta property="article:modified_time" content="2021-04-24T16:26:55.407Z">
+<meta property="article:modified_time" content="2021-04-25T11:52:23.603Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta property="article:tag" content="Mathematica">
@@ -306,6 +306,19 @@
 <ul>
 <li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\;ab\equiv 1\;(\operatorname{mod} n)\;\Leftrightarrow\;\gcd(a,\;n)=1$<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$.</li>
 </ul>
+<p>此处还须证明上述运算定义良好：</p>
+<blockquote>
+<p>设 $a\sim a’,\;b\sim b’$，则 $\overline a=\overline{a’},\;\overline b=\overline{b’}$，</p>
+<p>由定义，可以设 $a=kn+\alpha,\;a’=k’n+\alpha,\;b=\ell n+\beta,\;b’=\ell’n+\beta\quad(k,\;k’,\;\ell,\;\ell’\in\mathbb Z)$ ，</p>
+<p>则 $a+b=(k+\ell)n+(\alpha+\beta)$，即 $a+b\equiv \alpha+\beta\;(\operatorname{mod} n)$，</p>
+<p>同理则 $a’+b’=(k’+\ell’)n+(\alpha+\beta)$，即 $a’+b’\equiv \alpha+\beta\;(\operatorname{mod} n)$，</p>
+<p>由此则 $\overline{a+b}=\overline{a’+b’}$，可知该加法运算定义良好.</p>
+<p>又 $ab=k\ell n^2+(\alpha\ell+\beta k)n+\alpha\beta=(k\ell n+\alpha\ell+\beta k)n+\alpha\beta$，即 $ab\equiv \alpha\beta\;(\operatorname{mod} n)$，</p>
+<p>同理则 $a’b’=k’\ell’n^2+(\alpha\ell’+\beta k’)n+\alpha\beta=(k’\ell’n+\alpha\ell’+\beta k’)n+\alpha\beta$，即 $a’b’\equiv\alpha\beta\;(\operatorname{mod} n)$，</p>
+<p>由此则 $\overline{ab}=\overline{a’b’}$，可知该乘法运算定义良好.</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
@@ -315,6 +328,21 @@
 <p>同理亦可定义 $\mathrm{GL}_n(\mathbb C),\;\mathrm{GL}_n(\mathbb Q)$，从略.</p>
 </blockquote>
 <hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>函数 $\varphi(n)$ 表示不大于 $n$ 且与 $n$ 互质的正整数之数目，即 $\varphi(n)=|\{a\in\mathbb N_+\;|\;a\leq n,\;\gcd(a,\;n)=1\}|$，称为<strong>欧拉总计函数</strong>（Euler’s totient function）或简称<strong>欧拉函数</strong>.</p>
+<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\;|\;\gcd(a,\;n)=1\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$. 这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个.</p>
+</blockquote>
+<h1 id="Homomorphismi-amp-Isomorphismi-同态与同构"><a href="#Homomorphismi-amp-Isomorphismi-同态与同构" class="headerlink" title="Homomorphismi &amp; Isomorphismi 同态与同构"></a>Homomorphismi &amp; Isomorphismi 同态与同构</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $(G,\;\bullet),\;(G’,\;\circ)$ 为两个群，当且仅当映射 $f:G\to G’$ 满足</p>
+<p>&emsp;&emsp;$\forall\;a,\;b\in G,\;f(a\bullet b)=f(a)\circ f(b)$</p>
+<p>或简记作</p>
+<p>&emsp;&emsp;$f(ab)=f(a)f(b)$，</p>
+<p>则称映射 $f$ 为群 $G$ 到群 $G’$ 的<strong>同态</strong>（homomorphism<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>）.</p>
+<p>特别地，若 $f$ 为单射，则称之为<strong>单同态</strong>（monomorphism<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>）；若 $f$ 为满射，则称之为<strong>满同态</strong>（epimorphism<sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup>）；若 $f$ 为满射（即既是单同态也是满同态），则称之为<strong>同构</strong>（isomorphism<sup><a href="#fn_(8)" id="reffn_(8)">(8)</a></sup>）.</p>
+<p>若群 $G$ 到群 $G’$ 存在任一同构 $f:G\to G’$，则称 $G$ 与 $G’$ <strong>同构</strong>（isomorphic）<sup><a href="#fn_(9)" id="reffn_(9)">(9)</a></sup>，记为 $G\cong G’$ 或 $f: G\overset{\Large\sim}{\to}G’$.</p>
+</blockquote>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. $\exists!$ 表示唯一存在.<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
@@ -326,6 +354,21 @@
 </blockquote>
 <blockquote id="fn_(4)">
 <sup>(4)</sup>. $\gcd(a,\;n)$ 表示 $a$ 与 $n$ 的最大公因数，$\gcd(a,\;n)=1$ 即 $a$ 与 $n$ 互质. 此结论可由数论的 Bézout 定理（Bézout’s lemma）得出.<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(5)">
+<sup>(5)</sup>. homo-：希腊语 <em>homos</em> “相同”，morph-：希腊语 <em>morphē</em> “形态”.<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. mono-：希腊语 <em>monos</em> “单独”，morph- 同上.<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(7)">
+<sup>(7)</sup>. epi-：希腊语 <em>epi</em> “向上”，morph- 同上. 这一构词来自“满射” surjection 的本义“向上射”.<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(8)">
+<sup>(8)</sup>. iso-：希腊语 <em>isos</em> “相等”，morph- 同上.<a href="#reffn_(8)" title="Jump back to footnote [(8)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(9)">
+<sup>(9)</sup>. 需要注意这里出现的两个“同构”的区别，前者是映射的一种，后者是群之间的关系.<a href="#reffn_(9)" title="Jump back to footnote [(9)] in the text."> &#8617;</a>
 </blockquote>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">
       
@@ -398,7 +441,7 @@
     <strong class="toc-title">Quae insunt</strong>
     
         <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">未完成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-amp-Structurae-Algebraicae-Similes%E7%BE%A4%E5%8F%8A%E7%B1%BB%E4%BC%BC%E7%9A%84%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84"><span class="nav-number"></span> <span class="nav-text">Catervae &amp; Structurae Algebraicae Similes
-群及类似的代数结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Naturae-Catervarum-%E7%BE%A4%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number"></span> <span class="nav-text">Naturae Catervarum 群的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number"></span> <span class="nav-text">Annotationes 注释</span></a>
+群及类似的代数结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Naturae-Catervarum-%E7%BE%A4%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number"></span> <span class="nav-text">Naturae Catervarum 群的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Homomorphismi-amp-Isomorphismi-%E5%90%8C%E6%80%81%E4%B8%8E%E5%90%8C%E6%9E%84"><span class="nav-number"></span> <span class="nav-text">Homomorphismi &amp; Isomorphismi 同态与同构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number"></span> <span class="nav-text">Annotationes 注释</span></a>
     
     </div>
   </aside>
