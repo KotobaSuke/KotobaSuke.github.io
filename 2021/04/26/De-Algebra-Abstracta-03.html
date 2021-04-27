@@ -11,15 +11,15 @@
   
   
   
-  <meta name="description" content="未完成Succatervae 子群〔定义〕：  设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺半群（submonoid）. 若 $(A,\;\ast)$">
+  <meta name="description" content="未完成Succatervae 子群〔定义〕：  设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺半群（submonoid）． 若 $(A,\;\ast)$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="De Algebra Abstracta 03 &#x2F;&#x2F; 抽象代数笔记 〇三：子群与陪集（未完成）">
 <meta property="og:url" content="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">
 <meta property="og:site_name" content="Histologium Kotobae">
-<meta property="og:description" content="未完成Succatervae 子群〔定义〕：  设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺半群（submonoid）. 若 $(A,\;\ast)$">
+<meta property="og:description" content="未完成Succatervae 子群〔定义〕：  设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺半群（submonoid）． 若 $(A,\;\ast)$">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-26T08:47:27.000Z">
-<meta property="article:modified_time" content="2021-04-27T04:20:46.821Z">
+<meta property="article:modified_time" content="2021-04-27T11:17:45.696Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta property="article:tag" content="Mathematica">
@@ -212,42 +212,149 @@
       
         <h2 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h2><h1 id="Succatervae-子群"><a href="#Succatervae-子群" class="headerlink" title="Succatervae 子群"></a>Succatervae 子群</h1><p>〔定义〕：</p>
 <blockquote>
-<p>设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的<strong>子半群</strong>（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的<strong>子幺半群</strong>（submonoid）.</p>
-<p>若 $(A,\;\ast)$ 形成群，则称 $A$ 为 $H$ 的<strong>子群</strong>（subgroup）.</p>
-<p>通常情况下只考虑群的子群，即若 $(G,\;\ast)$ 为群，$A\subseteq G$，称 $A$ 为 $G$ 的子群当且仅当 $(A,\;\ast)$ 形成群，记作 $A\leq G$. 后文除非特别说明均只考虑群的子群.</p>
+<p>设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的<strong>子半群</strong>（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的<strong>子幺半群</strong>（submonoid）．</p>
+<p>若 $(A,\;\ast)$ 形成群，则称 $A$ 为 $H$ 的<strong>子群</strong>（subgroup）．</p>
+<p>通常情况下只考虑群的子群，即若 $(G,\;\ast)$ 为群，$A\subseteq G$，称 $A$ 为 $G$ 的子群当且仅当 $(A,\;\ast)$ 形成群，记作 $A\leq G$. 后文除非特别说明均只考虑群的子群．</p>
 </blockquote>
 <ul>
-<li>对任一群 $G$，$\{e\}$ 与 $G$ 本身均为 $G$ 的子群，称为 $G$ 的<strong>平凡子群</strong>（trivial subgroup）.</li>
-<li>特别地，若 $A\subset G$，则称 $A$ 为 $G$ 的<strong>真子群</strong>（proper subgroup），记为 $A&lt;G$.</li>
+<li>对任一群 $G$，$\{e\}$ 与 $G$ 本身均为 $G$ 的子群，称为 $G$ 的<strong>平凡子群</strong>（trivial subgroup）．</li>
+<li>特别地，若 $A\subset G$，则称 $A$ 为 $G$ 的<strong>真子群</strong>（proper subgroup），记为 $A&lt;G$．</li>
 </ul>
 <hr>
 <p>〔定理 3.1〕 <strong>子群判定定理</strong>（criterion of subgroups）：</p>
 <blockquote>
 <p>设 $A$ 是 $G$ 的任一非空子集，恒有</p>
-<p>&emsp;&emsp;$A\leq G\;\Leftrightarrow\;\forall\;a,\;b\in A,\;a^{-1}b\in A$.</p>
+<p>&emsp;&emsp;$A\leq G\;\Leftrightarrow\;\forall\;a,\;b\in A,\quad a^{-1}b\in A$．</p>
 </blockquote>
 <p>〔证明〕：</p>
 <blockquote>
 <p>〔$\Rightarrow$〕：由 $G$ 的封闭性及其中元素的可逆性显然可知；</p>
 <p>〔$\Leftarrow$〕：</p>
-<p>&emsp;（单位元存在）：由于 $A\neq\varnothing$，可知 $\forall\;a\in A,\;a^{-1}a=e\in A$；（由此可知 $A$ 与 $G$ 的单位元一致）</p>
-<p>&emsp;（逆元存在）：$\forall\;a,\;e\in A,\;a^{-1}e=a^{-1}\in A$；</p>
-<p>&emsp;（封闭性）：$\forall\;a^{-1},\;b\in A,\;(a^{-1})^{-1}b=ab\in A$；</p>
-<p>&emsp;（结合性）：$A$ 与 $G$ 具有同一运算，而 $A\subseteq G$，显然可知.</p>
+<p>&emsp;（单位元存在）：由于 $A\neq\varnothing$，可知 $\forall\;a\in A,\quad a^{-1}a=e\in A$；（由此可知 $A$ 与 $G$ 的单位元一致）</p>
+<p>&emsp;（逆元存在）：$\forall\;a,\;e\in A,\quad a^{-1}e=a^{-1}\in A$；</p>
+<p>&emsp;（封闭性）：$\forall\;a^{-1},\;b\in A,\quad (a^{-1})^{-1}b=ab\in A$；</p>
+<p>&emsp;（结合性）：$A$ 与 $G$ 具有同一运算，而 $A\subseteq G$，显然可知．</p>
 <p align="right" style="font-size:180%" >■</p>
 
+</blockquote>
+<p>显然这一定理对于半群的子群也适用．</p>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>全体行列式为 $1$ 的 $n$ 阶实方阵形成的乘法群，称为 $\mathbb R$ 上的 $n$ 次<strong>特殊线性群</strong>（special linear group），记为 $\mathrm{SL}_n(\mathbb R)$ 或 $\mathrm{SL}(n,\;\mathbb R)$．其单位元为 $n$ 阶单位矩阵 $𝑰$，且对于任意 $𝑴\in \mathrm{SL}_n(\mathbb R)$，均存在逆元 $𝑴^{-1}$ 使得 $𝑴𝑴^{-1}=𝑴^{-1}𝑴=𝑰$（因为 $\det 𝑴=1\neq 0$）．由矩阵乘法的性质可知其结合性，且由于</p>
+<p>&emsp;&emsp;$\forall\;𝑨,\;𝑩\in\mathrm{SL}_n(\mathbb R),\quad \det 𝑨=\det 𝑩=1,\;\det(𝑨𝑩)=\det 𝑨\cdot\det 𝑩=1$,</p>
+<p>可知恒有 $𝑨𝑩\in\mathrm{SL}_n(\mathbb R)$，于是可知其封闭性．</p>
+<p>同理亦可定义 $\mathrm{SL}_n(\mathbb C),\;\mathrm{SL}_n(\mathbb Q)$，从略．</p>
+</blockquote>
+<ul>
+<li>由于 $\mathrm{SL}_n(\mathbb R)\subset\mathrm{GL}_n(\mathbb R)$，且 $\mathrm{SL}_n(\mathbb R)$ 与 $\mathrm{GL}_n(\mathbb R)$ 具有同一运算，可知 $\mathrm{SL}_n(\mathbb R)\leq\mathrm{GL}_n(\mathbb R)$．</li>
+</ul>
+<hr>
+<p>设 $G$ 是群，其自同构群 $\mathrm{Aut}(G)$ 是自同态幺半群 $\mathrm{End}(G)$ 的子群．</p>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$\forall\;f,\;g\in\mathrm{Aut}(G),\;\forall\;a,\;b\in G,$</p>
+<p>$f(ab)=f(a)f(b),\;g(ab)=g(a)g(b),\;f^{-1}(ab)=f^{-1}(a)f^{-1}(b),$</p>
+<p>$f^{-1}g(ab)=f^{-1}(g(a)g(b))=f^{-1}g(a)f^{-1}g(b),$</p>
+<p>从而 $f^{-1}g\in\mathrm{Aut}(G)$，得证（Th. 3.1）．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+
+
+</blockquote>
+<h1 id="Concopiae-陪集"><a href="#Concopiae-陪集" class="headerlink" title="Concopiae 陪集"></a>Concopiae 陪集</h1><p>为了方便表述，后文均沿用以下的记法：</p>
+<blockquote>
+<p>$aA=\{ax\;|\;x\in A\},$</p>
+<p>$Aa=\{xa\;|\;x\in A\},$</p>
+<p>$A^{-1}=\{a^{-1}\;|\;a\in A\},$</p>
+<p>$AB=\{ab\;|\;a\in A,\;b\in B\}.$</p>
+</blockquote>
+<hr>
+<p>设 $G$ 是群，且 $A\leq G$，定义 $G$ 上的关系：</p>
+<p>&emsp;&emsp;$\forall\;g,\;h\in G,\quad g\overset{\mathrm{R}}\sim h\;\Leftrightarrow\;gh^{-1}\in A$，</p>
+<p>可证 $\overset{\mathrm{R}}\sim$ 是 $G$ 上的等价关系，且元素 $g$ 的等价类为 $Ag$．</p>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$\forall\;g\in G,\quad gg^{-1}=e\in A$，可知自反性成立；</p>
+<p>若 $g \overset{\mathrm{R}}\sim h$，则有 $gh^{-1}\in A$，由于 $A$ 是群，所以由可逆性有 $hg^{-1}=(gh^{-1})^{-1}\in A$，从而 $h\overset{\mathrm{R}}\sim g$，可知对称性成立；</p>
+<p>若 $g \overset{\mathrm{R}}\sim h,\;h\overset{\mathrm{R}}\sim \ell$，则有 $gh^{-1},\;h\ell^{-1}\in A$，所以由封闭性有 $g\ell^{-1}=(gh^{-1})(h\ell^{-1})\in A$，从而 $g \overset{\mathrm{R}}\sim \ell$，可知传递性成立.</p>
+<p>又由于 $g \overset{\mathrm{R}}\sim h\;\Leftrightarrow \;gh^{-1}\in A$，</p>
+<p>记 $gh^{-1}=a^{-1}\in A$，则有 $a=hg^{-1}$，进而 $h=ag\in Ag$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>于是〔定义〕：</p>
+<blockquote>
+<p> $G$ 中关于等价关系 $\overset{\mathrm{R}}\sim$ 的每个等价类 $Ag$ 称为群 $G$ 对于子群 $A$ 的<strong>右陪集</strong>（right coset）. 对于该关系的完全代表系 $R=\{g_i\;|\;i\in I\}$ 称为 <strong>$G$ 对于 $A$ 的右陪集代表元系</strong> （system of representatives for the right cosets of $A$ in $G$）．分划 $\mathcal R=\{Ag\;|\;g\in R\}$ 称为 $G$ 对子群 $A$ 的<strong>右陪集分解</strong>（right coset partition），通常以等式记作：</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigcup_{g\in R}Ag$．</p>
+<p>类似地可以定义等价关系 $\overset{\mathrm{L}}\sim$：</p>
+<p>&emsp;&emsp;$\forall\;g,\;h\in G,\quad g\overset{\mathrm{L}}\sim h\;\Leftrightarrow\;g^{-1}h\in A$，</p>
+<p>$G$ 中关于等价关系 $\overset{\mathrm{L}}\sim$ 的每个等价类 $gA$称为群 $G$ 对于子群 $A$ 的<strong>左陪集</strong>（left coset）．对于该关系可类似地定义<strong>$G$ 对于 $A$ 的左陪集代表元系</strong>，以及<strong>左陪集分解</strong> $\mathcal L=\{gA\;|\;g\in R\}$，或以等式记作：</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigcup_{g\in R}gA$．</p>
 </blockquote>
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>全体行列式为 $1$ 的 $n$ 阶实方阵形成的乘法群，称为 $\mathbb R$ 上的 $n$ 次<strong>特殊线性群</strong>（special linear group），记为 $\mathrm{SL}_n(\mathbb R)$ 或 $\mathrm{SL}(n,\;\mathbb R)$. 其单位元为 $n$ 阶单位矩阵 $𝑰$，且对于任意 $𝑴\in \mathrm{SL}_n(\mathbb R)$，均存在逆元 $𝑴^{-1}$ 使得 $𝑴𝑴^{-1}=𝑴^{-1}𝑴=𝑰$（因为 $\det 𝑴=1\neq 0$）. 由矩阵乘法的性质可知其结合性，且由于</p>
-<p>&emsp;&emsp;$\forall\;𝑨,\;𝑩\in\mathrm{SL}_n(\mathbb R),\;\det 𝑨=\det 𝑩=1,\;\det(𝑨𝑩)=\det 𝑨\cdot\det 𝑩=1$,</p>
-<p>可知恒有 $𝑨𝑩\in\mathrm{SL}_n(\mathbb R)$，于是可知其封闭性.</p>
-<p>同理亦可定义 $\mathrm{SL}_n(\mathbb C),\;\mathrm{SL}_n(\mathbb Q)$，从略.</p>
+<p>群 $G$ 对于子群 $A$ 右（左）陪集数量若有限，则 $|\mathcal R|\equiv|\mathcal L|$（即左右陪集数量恒等），记该数量为 $[G:A]$；若数量无限，则 $\mathcal R$ 与 $\mathcal L$ 为等势的无限集，并且记 $[G:A]=\infty$．此处的 $[G:A]$ 称为子群 $A$ 对于群 $G$ 的<strong>指数</strong>（index）．</p>
+</blockquote>
+<hr>
+<p>〔定理 3.2〕 <strong>Lagrange 定理</strong>（Lagrange’s theorem）：</p>
+<blockquote>
+<p>若 $G$ 为有限群，且 $H\leq G$，则</p>
+<p>&emsp;&emsp;$[G:H]=\dfrac{|G|}{|H|}$，</p>
+<p>且 $G$ 的所有子群的阶都 $|G|$ 的因子．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>考虑右陪集分解 $\{Hg\;|\;g\in R\}$，其中 $R$ 为 $G$ 对 $H$ 的右陪集代表元系：</p>
+<p>&emsp;&emsp;$\forall\;a,\;b\in H,\quad a\neq b\;\Leftrightarrow\;ag\neq bg$<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>，</p>
+<p>于是</p>
+<p>&emsp;&emsp;$\forall\;g\in R,\quad|Hg|=|H|$，</p>
+<p>则可得</p>
+<p>&emsp;&emsp;$|G|=\displaystyle\sum_{g\in R}|Hg|=\sum_{g\in R}|H|=|H|\cdot|R|=|H|\cdot[G:H]$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>〔例〕：</p>
+<blockquote>
+<p>对于任一 $6$ 阶群，其子群的阶必为 $1,\;2,\;3,\;6$ 之一．其中 $1$ 阶子群即 $\{e\}$，$6$ 阶子群即群自身．</p>
 </blockquote>
 <ul>
-<li>由于 $\mathrm{SL}_n(\mathbb R)\subset\mathrm{GL}_n(\mathbb R)$，且 $\mathrm{SL}_n(\mathbb R)$ 与 $\mathrm{GL}_n(\mathbb R)$ 具有同一运算，可知 $\mathrm{SL}_n(\mathbb R)\leq\mathrm{GL}_n(\mathbb R)$.</li>
+<li><p>质数阶群的子群必为平凡子群．</p>
+</li>
+<li><p>〔推论〕：</p>
+<blockquote>
+<p>设 $g\in G$，若存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则满足此式的最小正整数 $n$ 称为元素 $g$ 的<strong>阶</strong>（order），记作 $|g|$，这样的元素 $g$ 称为<strong>有限阶元素</strong>（element of finite order）．若不存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则称 $g$ 为<strong>无限阶元素</strong>（element of infinite order），并记 $|g|=\infty$．</p>
+<p>于是有限群 $G$ 中任一元素均为有限阶元素．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$\forall\;g\in G$，考虑集合 $\{g,\;g^2,\;g^3,\;…\}$，由于 $G$ 有限，则 $\exists\;0&lt;m&lt;n,\quad g^n=g^m$，从而</p>
+<p>&emsp;&emsp;$g^{n-m}=g^ng^{-m}=g^ng^{-n}=e$，</p>
+<p>而 $n-m\in\mathbb N_+$，从而 $g$ 为有限阶元素．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+</li>
 </ul>
+<hr>
+<p>〔定理 3.3〕：</p>
+<blockquote>
+<p>有限群 $G$ 中每个元素 $g$ 的阶都是 $|G|$ 的因子：</p>
+<p>&emsp;&emsp;$\forall\;g\in G,\quad |G|\equiv0\;(\operatorname{mod}|g|)$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$g$ 为有限阶元素（Lagrange 定理推论），设 $|g|=n$，则 $g^0=e,\;g,\;g^2,\;g^3,\;…,\;g^{n-1}$ 是 $G$ 中 $n$ 个不同元素，而 $g^n=e$．则这些元素形成 $G$ 的子群 $H$<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup>，从而 $|g|=n=|H|$ 为 $|G|$ 的因子（Lagrange 定理）．</p>
+ <p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 群中元素的消去律可由逆元的唯一性得证．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. 子群判定定理：$\forall\;i,\;j\in\{x\in\mathbb N\;|\;0\leq x\leq n-1\},\quad$$g^{-i}g^{j}=g^{j-i}=g^{(j-i)\operatorname{mod}n}\in H$，其中 $(j-i)\operatorname{mod}n$ 表示 $j-i$ 除以 $n$ 的余数．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">
       
     </div>
@@ -293,9 +400,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2021/04/23/Test-for-Mathjax" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/04/22/De-Algebra-Abstracta-02" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Vetustius</strong>
-      <div class="article-nav-title">Test for Mathjax</div>
+      <div class="article-nav-title">De Algebra Abstracta 02 // 抽象代数笔记 〇二：群与同态</div>
     </a>
   
 </nav>
@@ -309,7 +416,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Quae insunt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">未完成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-%E5%AD%90%E7%BE%A4"><span class="nav-number"></span> <span class="nav-text">Succatervae 子群</span></a>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">未完成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-%E5%AD%90%E7%BE%A4"><span class="nav-number"></span> <span class="nav-text">Succatervae 子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concopiae-%E9%99%AA%E9%9B%86"><span class="nav-number"></span> <span class="nav-text">Concopiae 陪集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number"></span> <span class="nav-text">Annotationes 注释</span></a>
     
     </div>
   </aside>
