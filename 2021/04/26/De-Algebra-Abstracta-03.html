@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>de algebra abstracta 03 // 抽象代数笔记 〇三：子群与陪集 | Histologium Kotobae</title>
+  <title>de algebra abstracta 03 // 抽象代数笔记 〇三：子群与陪集（未完成） | Histologium Kotobae</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="AlgebraMathematicaAlgebra AbstractaTheoria Catervarum" />
@@ -13,13 +13,13 @@
   
   <meta name="description" content="未完成Succatervae 子群〔定义〕：  设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺半群（submonoid）. 若 $(A,\;\ast)$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="De Algebra Abstracta 03 &#x2F;&#x2F; 抽象代数笔记 〇三：子群与陪集">
+<meta property="og:title" content="De Algebra Abstracta 03 &#x2F;&#x2F; 抽象代数笔记 〇三：子群与陪集（未完成）">
 <meta property="og:url" content="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">
 <meta property="og:site_name" content="Histologium Kotobae">
 <meta property="og:description" content="未完成Succatervae 子群〔定义〕：  设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺半群（submonoid）. 若 $(A,\;\ast)$">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-26T08:47:27.000Z">
-<meta property="article:modified_time" content="2021-04-26T13:32:44.477Z">
+<meta property="article:modified_time" content="2021-04-27T04:20:46.821Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta property="article:tag" content="Mathematica">
@@ -183,7 +183,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      De Algebra Abstracta 03 // 抽象代数笔记 〇三：子群与陪集
+      De Algebra Abstracta 03 // 抽象代数笔记 〇三：子群与陪集（未完成）
     </h1>
   
 
@@ -218,7 +218,7 @@
 </blockquote>
 <ul>
 <li>对任一群 $G$，$\{e\}$ 与 $G$ 本身均为 $G$ 的子群，称为 $G$ 的<strong>平凡子群</strong>（trivial subgroup）.</li>
-<li>特别地，若 $A\subset G$，则称 $A$ 为 $G$ 的真子群，记为 $A&lt;G$.</li>
+<li>特别地，若 $A\subset G$，则称 $A$ 为 $G$ 的<strong>真子群</strong>（proper subgroup），记为 $A&lt;G$.</li>
 </ul>
 <hr>
 <p>〔定理 3.1〕 <strong>子群判定定理</strong>（criterion of subgroups）：</p>
@@ -237,6 +237,17 @@
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>全体行列式为 $1$ 的 $n$ 阶实方阵形成的乘法群，称为 $\mathbb R$ 上的 $n$ 次<strong>特殊线性群</strong>（special linear group），记为 $\mathrm{SL}_n(\mathbb R)$ 或 $\mathrm{SL}(n,\;\mathbb R)$. 其单位元为 $n$ 阶单位矩阵 $𝑰$，且对于任意 $𝑴\in \mathrm{SL}_n(\mathbb R)$，均存在逆元 $𝑴^{-1}$ 使得 $𝑴𝑴^{-1}=𝑴^{-1}𝑴=𝑰$（因为 $\det 𝑴=1\neq 0$）. 由矩阵乘法的性质可知其结合性，且由于</p>
+<p>&emsp;&emsp;$\forall\;𝑨,\;𝑩\in\mathrm{SL}_n(\mathbb R),\;\det 𝑨=\det 𝑩=1,\;\det(𝑨𝑩)=\det 𝑨\cdot\det 𝑩=1$,</p>
+<p>可知恒有 $𝑨𝑩\in\mathrm{SL}_n(\mathbb R)$，于是可知其封闭性.</p>
+<p>同理亦可定义 $\mathrm{SL}_n(\mathbb C),\;\mathrm{SL}_n(\mathbb Q)$，从略.</p>
+</blockquote>
+<ul>
+<li>由于 $\mathrm{SL}_n(\mathbb R)\subset\mathrm{GL}_n(\mathbb R)$，且 $\mathrm{SL}_n(\mathbb R)$ 与 $\mathrm{GL}_n(\mathbb R)$ 具有同一运算，可知 $\mathrm{SL}_n(\mathbb R)\leq\mathrm{GL}_n(\mathbb R)$.</li>
+</ul>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">
       
     </div>
@@ -508,16 +519,8 @@
         for (var i = 0; i < all.length; ++i)
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
-    /*tex: {
-      macros: {
-        'bm': ['\\mmlToken{mi}[mathvariant=bold-italic]{#1}', 1],
-        'upmu': '\\mmlToken{mi}[mathvariant=normal]{\u03BC}',
-        'uppi': '\\mmlToken{mi}[mathvariant=normal]{\u03C0}'
-      }
-    }*/
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js">
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
