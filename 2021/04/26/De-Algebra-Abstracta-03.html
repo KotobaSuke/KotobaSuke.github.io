@@ -19,7 +19,7 @@
 <meta property="og:description" content="未完成Succatervae 子群〔定义〕：  设 $(H,\;\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\;\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺半群（submonoid）． 若 $(A,\;\ast)$">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-26T08:47:27.000Z">
-<meta property="article:modified_time" content="2021-04-27T11:17:45.696Z">
+<meta property="article:modified_time" content="2021-04-28T17:56:41.553Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta property="article:tag" content="Mathematica">
@@ -320,14 +320,11 @@
 <p>对于任一 $6$ 阶群，其子群的阶必为 $1,\;2,\;3,\;6$ 之一．其中 $1$ 阶子群即 $\{e\}$，$6$ 阶子群即群自身．</p>
 </blockquote>
 <ul>
-<li><p>质数阶群的子群必为平凡子群．</p>
-</li>
-<li><p>〔推论〕：</p>
-<blockquote>
-<p>设 $g\in G$，若存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则满足此式的最小正整数 $n$ 称为元素 $g$ 的<strong>阶</strong>（order），记作 $|g|$，这样的元素 $g$ 称为<strong>有限阶元素</strong>（element of finite order）．若不存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则称 $g$ 为<strong>无限阶元素</strong>（element of infinite order），并记 $|g|=\infty$．</p>
-<p>于是有限群 $G$ 中任一元素均为有限阶元素．</p>
-</blockquote>
-<p>〔证明〕：</p>
+<li>质数阶群的子群必为平凡子群．</li>
+</ul>
+<h1 id="Ordines-Elementorum-元素的阶"><a href="#Ordines-Elementorum-元素的阶" class="headerlink" title="Ordines Elementorum 元素的阶"></a>Ordines Elementorum 元素的阶</h1><p>设 $g\in G$，若存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则满足此式的最小正整数 $n$ 称为元素 $g$ 的<strong>阶</strong>（order），记作 $|g|$，这样的元素 $g$ 称为<strong>有限阶元素</strong>（element of finite order）．若不存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则称 $g$ 为<strong>无限阶元素</strong>（element of infinite order），并记 $|g|=\infty$．</p>
+<p>于是可得，有限群 $G$ 中任一元素均为有限阶元素．</p>
+<p>  〔证明〕：</p>
 <blockquote>
 <p>$\forall\;g\in G$，考虑集合 $\{g,\;g^2,\;g^3,\;…\}$，由于 $G$ 有限，则 $\exists\;0&lt;m&lt;n,\quad g^n=g^m$，从而</p>
 <p>&emsp;&emsp;$g^{n-m}=g^ng^{-m}=g^ng^{-n}=e$，</p>
@@ -335,10 +332,8 @@
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
-</li>
-</ul>
 <hr>
-<p>〔定理 3.3〕：</p>
+<p>〔定理 3.4〕：</p>
 <blockquote>
 <p>有限群 $G$ 中每个元素 $g$ 的阶都是 $|G|$ 的因子：</p>
 <p>&emsp;&emsp;$\forall\;g\in G,\quad |G|\equiv0\;(\operatorname{mod}|g|)$．</p>
@@ -349,11 +344,108 @@
  <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
+<hr>
+<p>〔定理 3.5〕：</p>
+<blockquote>
+<p>若群 $G$ 中每个非单位元 $g\neq e$ 的阶均为 $2$，则 $G$ 为阿贝尔群：</p>
+<p>&emsp;&emsp;$\forall\;g\in G,\;g\neq e,\quad |g|=2$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设任意 $a,\;b\in G$，有 $a^2=b^2=e$，而 $(ab)^2=e=abab$，于是</p>
+<p>&emsp;&emsp;$ab=a(abab)b=(a^2)ba(b^2)=ba$，</p>
+<p>得证，$G$ 为阿贝尔群．</p>
+ <p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.6〕：</p>
+<blockquote>
+<p>$p\in\mathbb P$<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup> 阶群均为阿贝尔群，并同构于整数模 $p$ 加法群 $\mathbb Z_p$.</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>对于任一 $p$ 阶群 $G$ 中任一非单位元 $g$，均有 $|g|=p$，</p>
+<p>从而 $e,\;g,\;g^2,\;…,\;g^{p-1}$ 是 $G$ 中的 $p$ 个不同元素，</p>
+<p>由于 $|G|=p$，所以 $G=\{e,\;g,\;g^2,\;…,\;g^{p-1}\}$，</p>
+<p>进而</p>
+<p>&emsp;&emsp;$\forall\;i,\;j\in\{x\in\mathbb N\;|\;1\leq x\leq p-1\},$</p>
+<p>&emsp;&emsp;&emsp;$g^ig^j=g^{i+j}=g^{j+i}=g^jg^i$，</p>
+<p>得证 $G$ 为阿贝尔群．</p>
+<p>又由于 $g^p=e$，可设 $f:G\to\mathbb Z_p,\quad g^i\mapsto i$，</p>
+<p>可知</p>
+<p>&emsp;&emsp;$\forall\;i,\;j\in\{x\in\mathbb N\;|\;1\leq x\leq p-1\},$</p>
+<p>&emsp;&emsp;&emsp;$f(g^ig^j)=f(g^{i+j})=i+j=f(g^i)+f(g^j)$，（注意 $\mathbb Z_p$ 为加法群）</p>
+<p>反之亦有</p>
+<p>&emsp;&emsp;$\forall\;k,\;\ell\in\mathbb Z_p,$</p>
+<p>&emsp;&emsp;&emsp;$f^{-1}(k+\ell)=g^{k+\ell}=g^kg^\ell=f^{-1}(k)f^{-1}(\ell)$，</p>
+<p>于是得证 $f:G\overset{\Large\sim}\to\mathbb Z_p$.</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.7〕：</p>
+<blockquote>
+<p>非阿贝尔群的最小阶数为 $6$.</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$1$ 阶群（平凡群）显然为阿贝尔群；</p>
+<p>$2,\;3,\;5$ 阶群均为阿贝尔群（Th. 3.6）；</p>
+<p>考虑 $4$ 阶群 $G$，则 $G$ 中任一非单位元的阶数均为 $2$ 或 $4$（Th. 3.4），</p>
+<p>若存在 $g\in G,\;|g|=4$，则 $G=\{e,\;g,\;g^2,\;g^3\}$．</p>
+<p>此时设 $f:G\to\mathbb Z_4,\;g^i\mapsto i$，易证 $f$ 是 $G$ 到 $\mathbb Z_4$ 的同构，而 $\mathbb Z_4$ 为阿贝尔群，从而 $G$ 亦为阿贝尔群．</p>
+<p>否则，$G$ 中所有非单位元阶数均为 $2$（Th. 3.4），于是此时的 $G$ 亦为阿贝尔群（Th. 3.5）．</p>
+<p>考虑集合 $S=\{1,\;2,\;3\}$，所有从 $S$ 到自身的双射所构成的群，称为 <strong>$3$ 次对称群</strong><sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，其中所含的映射（即群的元素）共有 $6$ 个（即 $S$ 中元素的全排列种类），该群为 $6$ 阶阿贝尔群．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.8〕：</p>
+<blockquote>
+<p>设 $G$ 为群， $g,\;h\in G$，则</p>
+<p>&emsp;&emsp;(α)&emsp;若 $|g|=n$，则 $\forall\;m\in\mathbb N_+,\quad|g^m|=\dfrac n{\gcd(m,\;n)}$；</p>
+<p>&emsp;&emsp;(β)&emsp;若 $gh=hg$，且 $|g|=p,\;|h|=q,\;\gcd(p,\;q)=1$，则 $|gh|=|pq|$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>(α)：</p>
+<p>$N:=|g^m|,\;\mu:=\gcd(m,\;n)$，</p>
+<p>由于 $(g^m)^{n/\mu}=(g^n)^{m/\mu}=e^{m/\mu}=e$，</p>
+<p>所以 $N\;\left|\;\dfrac n\mu\right.$ <sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>^（※）^，</p>
+<p>又由于 $g^{mN}=e$，有 $n\;|\;mN$，</p>
+<p>于是 $\dfrac n\mu\left|\left(\dfrac m\mu N\right)\right.$，</p>
+<p>由最大公因数的性质可知，$\gcd\left(\dfrac n\mu,\;\dfrac m\mu\right)=1$，</p>
+<p>从而 $\left.\dfrac n\mu\;\right|\;N$，由（※）可得 $|g^m|=N=\dfrac n\mu=\dfrac n{\gcd(m,\;n)}$．</p>
+<p>(β)：</p>
+<p>$P:=|gh|$，</p>
+<p>因为 $gh=hg$，所以 $(gh)^{pq}=g^{pq}h^{pq}=(g^p)^q(h^q)^p=e^qe^p=e$ <sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>，</p>
+<p>于是 $P\;|\;pq$^（▲）^．</p>
+<p>由 (α) 可知 $|g^q|=\dfrac p{\gcd(p,\;q)}=\dfrac p1=p$，</p>
+<p>而 $g^q=g^qe=g^qh^q=(gh)^q$，</p>
+<p>由 (α) 可知 $|(gh)^q|=\dfrac P{\gcd(q,\;P)}=|g^q|$，</p>
+<p>从而 $p=\dfrac P{\gcd(q,\;P)}$，所以 $p\;|\;P$，同理则有 $q\;|\;P$．</p>
+<p>又由于 $\gcd(p,\;q)=1$，所以 $pq\;|\;P$，结合（▲）可知 $P=pq$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. 群中元素的消去律可由逆元的唯一性得证．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(2)">
 <sup>(2)</sup>. 子群判定定理：$\forall\;i,\;j\in\{x\in\mathbb N\;|\;0\leq x\leq n-1\},\quad$$g^{-i}g^{j}=g^{j-i}=g^{(j-i)\operatorname{mod}n}\in H$，其中 $(j-i)\operatorname{mod}n$ 表示 $j-i$ 除以 $n$ 的余数．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. $\mathbb P$ 表示质数集，今后沿用．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. 详细的定义以及该群为阿贝尔群的证明会在更遥远的后文中给出．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(5)">
+<sup>(5)</sup>. $a\;|\;b$ 表示 $a$ 整除 $b$，或犹言 $b$ 为 $a$ 之倍数. 由于 $g^m$ 的 $n/\mu$ 次幂为单位元，因此 $n/\mu$ 必然为其阶数 $N$ 的倍数．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. 注意 $(gh)^\alpha=g^\alpha h^\alpha$ 只有在 $gh=hg$ 时才会恒成立．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
 </blockquote>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">
       
@@ -416,7 +508,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Quae insunt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">未完成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-%E5%AD%90%E7%BE%A4"><span class="nav-number"></span> <span class="nav-text">Succatervae 子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concopiae-%E9%99%AA%E9%9B%86"><span class="nav-number"></span> <span class="nav-text">Concopiae 陪集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number"></span> <span class="nav-text">Annotationes 注释</span></a>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">未完成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-%E5%AD%90%E7%BE%A4"><span class="nav-number"></span> <span class="nav-text">Succatervae 子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concopiae-%E9%99%AA%E9%9B%86"><span class="nav-number"></span> <span class="nav-text">Concopiae 陪集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ordines-Elementorum-%E5%85%83%E7%B4%A0%E7%9A%84%E9%98%B6"><span class="nav-number"></span> <span class="nav-text">Ordines Elementorum 元素的阶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number"></span> <span class="nav-text">Annotationes 注释</span></a>
     
     </div>
   </aside>
