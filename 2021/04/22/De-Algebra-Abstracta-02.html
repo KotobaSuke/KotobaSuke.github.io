@@ -19,7 +19,7 @@
 <meta property="og:description" content="前：抽象代数笔记 〇一：集合论 后：抽象代数笔记 〇三：子群与陪集 Catervae &amp; Structurae Algebraicae Similes群及类似的代数结构〔定义〕：  集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为半群（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$． 满足交换律的半群称为交换半群">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
-<meta property="article:modified_time" content="2021-04-29T11:04:05.038Z">
+<meta property="article:modified_time" content="2021-05-02T06:57:32.775Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Algebra">
 <meta property="article:tag" content="Mathematica">
@@ -241,16 +241,16 @@
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>设 $G$ 为幺半群，若 $\forall\;a\in G,\;\exists\;b,\;b=a^{-1}$，则称 $G$ 为<strong>群</strong>（group）．</p>
+<p>设 $G$ 为幺半群，若 $\forall\;a\in G,\;\exists\;b,\quad b=a^{-1}$，则称 $G$ 为<strong>群</strong>（group）．</p>
 <p>满足交换律的群称为<strong>交换群</strong>（commutative group）或<strong>阿贝尔群</strong>（abelian group）．</p>
 </blockquote>
-<h1 id="Naturae-Catervarum-群的性质"><a href="#Naturae-Catervarum-群的性质" class="headerlink" title="Naturae Catervarum 群的性质"></a>Naturae Catervarum 群的性质</h1><p>&emsp;(α)&emsp;封闭性（closure）：&emsp;&emsp;$\forall\;a,\;b\in G,\quad ab\;\in G$；</p>
-<p>&emsp;(β)&emsp;结合性（associativity）：&emsp;&emsp;$\forall\;a,\;b,\;c\in G,\quad(ab)c=a(bc)$；</p>
+<h1 id="Naturae-Catervarum-群的性质"><a href="#Naturae-Catervarum-群的性质" class="headerlink" title="Naturae Catervarum 群的性质"></a>Naturae Catervarum 群的性质</h1><p>&emsp;(α)&emsp;封闭性（closure）：&emsp;&emsp;$\forall\;a,\,b\in G,\quad ab\;\in G$；</p>
+<p>&emsp;(β)&emsp;结合性（associativity）：&emsp;&emsp;$\forall\;a,\,b,\,c\in G,\quad(ab)c=a(bc)$；</p>
 <p>&emsp;(γ)&emsp;存在唯一单位元：&emsp;&emsp;$\exists!\;e\in G,\;\forall\;a\in G,\quad ae=ea=a$；<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup></p>
 <p>&emsp;(δ)&emsp;存在唯一逆元：&emsp;&emsp;$\forall\;a\in G,\;\exists!\;b\in G,\quad ab=ba=e$．</p>
 <ul>
 <li>$(ab)^{-1}=b^{-1}a^{-1}.$<ul>
-<li>可推广为 $(a_1a_2…a_n)^{-1}=a_n^{-1}…a_2^{-1}a_1^{-1}$．</li>
+<li>可推广为 $(a_1a_2\cdots a_n)^{-1}=a_n^{-1}\cdots a_2^{-1}a_1^{-1}$．</li>
 </ul>
 </li>
 </ul>
@@ -258,11 +258,11 @@
 <p>证明单位元唯一：</p>
 <blockquote>
 <p>设 $G$ 为群，且假设存在任意两个单位元 $e,\,\epsilon\in G,\;e\neq\epsilon$，于是</p>
-<p>&emsp;&emsp;$\forall\;x\in G,\,ex=xe=x$，</p>
+<p>&emsp;&emsp;$\forall\;x\in G,\quad ex=xe=x$，</p>
 <p>从而</p>
 <p>&emsp;&emsp;$e\epsilon=\epsilon e=\epsilon$，&emsp;&emsp;$(1)$</p>
 <p>又</p>
-<p>&emsp;&emsp;$\forall\;x\in G,\,\epsilon x=x\epsilon =x$，</p>
+<p>&emsp;&emsp;$\forall\;x\in G,\quad \epsilon x=x\epsilon =x$，</p>
 <p>从而</p>
 <p>&emsp;&emsp;$\epsilon e=e\epsilon=e$，&emsp;&emsp;$(2)$</p>
 <p>由 $(1)\,(2)$ 两式，得 $e=\epsilon$，与前提矛盾．<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
@@ -272,7 +272,7 @@
 <hr>
 <p>证明逆元唯一：</p>
 <blockquote>
-<p>设 $G$ 为群，且假设对某一元素 $x\in G$ 有两个逆元 $p,\;q\in G,\;p\neq q$，于是</p>
+<p>设 $G$ 为群，且假设对某一元素 $x\in G$ 有两个逆元 $p,\,q\in G,\;p\neq q$，于是</p>
 <p>&emsp;&emsp;$px=xp=qx=xq=e$，</p>
 <p>从而</p>
 <p>&emsp;&emsp;$p=ep=(qx)p=q(xp)=qe=q$，与前提矛盾．</p>
@@ -282,41 +282,41 @@
 <hr>
 <p>〔定理 2.1〕：</p>
 <blockquote>
-<p>设 $(M,\;\cdot)$ 为幺半群，记其中全体可逆元素所成集合为 $M^\ast$，则 $(M^\ast,\;\cdot)$ 是群．</p>
+<p>设 $(M,\,\cdot)$ 为幺半群，记其中全体可逆元素所成集合为 $M^\ast$，则 $(M^\ast,\,\cdot)$ 是群．</p>
 </blockquote>
 <p>〔证明〕：</p>
 <blockquote>
 <p>由幺半群性质，显然可知存在单位元 $e\in M^\ast$；</p>
-<p>$(M,\;\cdot)$ 与 $(M^\ast,\;\cdot)$ 具有同一运算，因此显然有结合性，并且由于 $M^\ast$ 中任一元素均可逆则显然有封闭性 ；</p>
-<p>由于 $M^\ast$ 中各元素 $a$ 均可逆，其逆元 $a^{-1}$ 必然也属于 $M^\ast$，可知逆元存在性. 由此则 $(M^\ast,\;\cdot)$ 是群．</p>
+<p>$(M,\,\cdot)$ 与 $(M^\ast,\,\cdot)$ 具有同一运算，因此显然有结合性，并且由于 $M^\ast$ 中任一元素均可逆则显然有封闭性 ；</p>
+<p>由于 $M^\ast$ 中各元素 $a$ 均可逆，其逆元 $a^{-1}$ 必然也属于 $M^\ast$，可知逆元存在性. 由此则 $(M^\ast,\,\cdot)$ 是群．</p>
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>若 $a,\;b\in\mathbb Z$ 整除以 $n\in\mathbb N_+$ 所得余数相等，则称 $a$ 与 $b$ 对于<strong>模</strong>（modulo）$n$ <strong>同余</strong>（congruent） <sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup>，记作 $a\equiv b\;(\operatorname{mod} n)$，且定义关系：</p>
+<p>若 $a,\,b\in\mathbb Z$ 整除以 $n\in\mathbb N_+$ 所得余数相等，则称 $a$ 与 $b$ <strong>模</strong> $n$ <strong>同余</strong> <sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup>，记作 $a\equiv b\;(\operatorname{mod} n)$，且定义关系：</p>
 <p>&emsp;&emsp;$a\sim b\;\Leftrightarrow\;a\equiv b\;(\operatorname{mod} n)$，</p>
 <p>易证此为等价关系．</p>
-<p>记 $i\in\mathbb Z$ 所在等价类为 $\overline i=\{k\in\mathbb Z\;|\;k\equiv i\;(\operatorname{mod} n)\}$，称为 <strong>$i$ 的模 $n$ 同余类</strong>（congruence class of $i$ modulo $n$）．于是整数集 $\mathbb Z$ 可分划为 $n$ 个等价类：$\overline 0,\;\overline 1,\;\overline 2,\;…,\;\overline{n-1}$，以 $\mathbb Z_n$ 表示该分划，则可定义其上的加法：</p>
+<p>记 $i\in\mathbb Z$ 所在等价类为 $\overline i=\{k\in\mathbb Z\;|\;k\equiv i\;(\operatorname{mod} n)\}$，称为 <strong>$i$ 的模 $n$ 同余类</strong>（congruence class of $i$ modulo $n$）．于是整数集 $\mathbb Z$ 可分划为 $n$ 个等价类：$\overline 0,\,\overline 1,\,\overline 2,\,\cdots,\,\overline{n-1}$，以 $\mathbb Z_n$ 表示该分划，则可定义其上的加法：</p>
 <p>&emsp;&emsp;$\overline a+\overline b=\overline{a+b}$，</p>
-<p>则 $(\mathbb Z_n,\;+)$ 形成阿贝尔群，其单位元为 $\overline 0$，该群称为<strong>整数模 $n$ 加法群</strong>（additive group of integers modulo $n$）．</p>
+<p>则 $(\mathbb Z_n,\,+)$ 形成阿贝尔群，其单位元为 $\overline 0$，该群称为<strong>整数模 $n$ 加法群</strong>（additive group of integers modulo $n$）．</p>
 <p>此外，若定义乘法：</p>
 <p>&emsp;&emsp;$\overline a\cdot\overline b=\overline{ab}$，</p>
-<p>则 $(\mathbb Z_n,\;\cdot)$ 形成交换幺半群，其单位元为 $\overline 1$．</p>
+<p>则 $(\mathbb Z_n,\,\cdot)$ 形成交换幺半群，其单位元为 $\overline 1$．</p>
 </blockquote>
 <ul>
-<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\quad ab\equiv 1\;(\operatorname{mod} n)\;\Leftrightarrow\;\gcd(a,\;n)=1$<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$．</li>
+<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\quad$$ab\equiv 1\;(\operatorname{mod} n)\;\Leftrightarrow\;\gcd(a,\,n)=1$<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$．</li>
 </ul>
 <p>此处还须证明上述运算定义良好：</p>
 <blockquote>
 <p>设 $a\sim a’,\;b\sim b’$，则 $\overline a=\overline{a’},\;\overline b=\overline{b’}$，</p>
-<p>由定义，可以设 $a=kn+\alpha,\;a’=k’n+\alpha,\;b=\ell n+\beta,\;b’=\ell’n+\beta\quad(k,\;k’,\;\ell,\;\ell’\in\mathbb Z)$ ，</p>
+<p>由定义，可以设 $a=kn+\alpha,\;<script type="math/tex">a'=k'n+\alpha,\;</script>b=\ell n+\beta,\;<script type="math/tex">b'=\ell'n+\beta\quad</script>(k,\;k’,\;\ell,\;\ell’\in\mathbb Z)$ ，</p>
 <p>则 $a+b=(k+\ell)n+(\alpha+\beta)$，即 $a+b\equiv \alpha+\beta\;(\operatorname{mod} n)$，</p>
 <p>同理则 $a’+b’=(k’+\ell’)n+(\alpha+\beta)$，即 $a’+b’\equiv \alpha+\beta\;(\operatorname{mod} n)$，</p>
 <p>由此则 $\overline{a+b}=\overline{a’+b’}$，可知该加法运算定义良好．</p>
-<p>又 $ab=k\ell n^2+(\alpha\ell+\beta k)n+\alpha\beta=(k\ell n+\alpha\ell+\beta k)n+\alpha\beta$，即 $ab\equiv \alpha\beta\;(\operatorname{mod} n)$，</p>
-<p>同理则 $a’b’=k’\ell’n^2+(\alpha\ell’+\beta k’)n+\alpha\beta=(k’\ell’n+\alpha\ell’+\beta k’)n+\alpha\beta$，即 $a’b’\equiv\alpha\beta\;(\operatorname{mod} n)$，</p>
+<p>又 $ab=k\ell n^2+(\alpha\ell+\beta k)n+\alpha\beta$$=(k\ell n+\alpha\ell+\beta k)n+\alpha\beta$，即 $ab\equiv \alpha\beta\;(\operatorname{mod} n)$，</p>
+<p>同理则 $a’b’=k’\ell’n^2+(\alpha\ell’+\beta k’)n+\alpha\beta$$=(k’\ell’n+\alpha\ell’+\beta k’)n+\alpha\beta$，即 $a’b’\equiv\alpha\beta\;(\operatorname{mod} n)$，</p>
 <p>由此则 $\overline{ab}=\overline{a’b’}$，可知该乘法运算定义良好．</p>
 <p align="right" style="font-size:180%" >■</p>
 
@@ -325,20 +325,20 @@
 <p>〔定义〕：</p>
 <blockquote>
 <p>全体 $n$ 阶可逆实方阵形成的乘法群，称为 $\mathbb R$ 上的 $n$ 次<strong>一般线性群</strong>（general linear group），记为 $\mathrm{GL}_n(\mathbb R)$ 或 $\mathrm{GL}(n,\;\mathbb R)$. 其单位元为 $n$ 阶单位矩阵 $𝑰$，且对于任意 $𝑴\in \mathrm{GL}_n(\mathbb R)$，均存在逆元 $𝑴^{-1}$ 使得 $𝑴𝑴^{-1}=𝑴^{-1}𝑴=𝑰$．由矩阵乘法的性质可知其结合性，且由于</p>
-<p>&emsp;&emsp;$\forall\;𝑨,\;𝑩\in\mathrm{GL}_n(\mathbb R),\quad\det 𝑨\neq0,\;\det 𝑩\neq0,\;\det(𝑨𝑩)=\det 𝑨\cdot\det 𝑩\neq0$,</p>
+<p>&emsp;&emsp;$\forall\;𝑨,\;𝑩\in\mathrm{GL}_n(\mathbb R),\quad\det 𝑨\neq0,\;$$\det 𝑩\neq0,\;\det(𝑨𝑩)=\det 𝑨\cdot\det 𝑩\neq0$,</p>
 <p>可知恒有 $𝑨𝑩\in\mathrm{GL}_n(\mathbb R)$，于是可知其封闭性．</p>
-<p>同理亦可定义 $\mathrm{GL}_n(\mathbb C),\;\mathrm{GL}_n(\mathbb Q)$，从略．</p>
+<p>同理亦可定义 $\mathrm{GL}_n(\mathbb C),\,\mathrm{GL}_n(\mathbb Q)$，从略．</p>
 </blockquote>
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>函数 $\varphi(n)$ 表示不大于 $n$ 且与 $n$ 互质的正整数之数目，即 $\varphi(n)=|\{a\in\mathbb N_+\;|\;a\leq n,\;\gcd(a,\;n)=1\}|$，称为<strong>欧拉总计函数</strong>（Euler’s totient function）或简称<strong>欧拉函数</strong>．</p>
-<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\;|\;\gcd(a,\;n)=1\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$．这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个．</p>
+<p>函数 $\varphi(n)$ 表示不大于 $n$ 且与 $n$ 互质的正整数之数目，即 $\varphi(n)=|\{a\in\mathbb N_+\;|\;a\leq n,\;\gcd(a,\,n)=1\}|$，称为<strong>欧拉总计函数</strong>（Euler’s totient function）或简称<strong>欧拉函数</strong>．</p>
+<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\;|\;\gcd(a,\,n)=1\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$．这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个．</p>
 </blockquote>
 <h1 id="Homomorphismi-amp-Isomorphismi-同态与同构"><a href="#Homomorphismi-amp-Isomorphismi-同态与同构" class="headerlink" title="Homomorphismi &amp; Isomorphismi 同态与同构"></a>Homomorphismi &amp; Isomorphismi 同态与同构</h1><p>〔定义〕：</p>
 <blockquote>
-<p>设 $(G,\;\bullet),\;(G’,\;\circ)$ 为两个群，当且仅当映射 $f:G\to G’$ 满足</p>
-<p>&emsp;&emsp;$\forall\;a,\;b\in G,\quad f(a\bullet b)=f(a)\circ f(b)$</p>
+<p>设 $(G,\,\bullet),\,(G’,\,\circ)$ 为两个群，当且仅当映射 $f:G\to G’$ 满足</p>
+<p>&emsp;&emsp;$\forall\;a,\,b\in G,\quad f(a\bullet b)=f(a)\circ f(b)$</p>
 <p>或简记作</p>
 <p>&emsp;&emsp;$f(ab)=f(a)f(b)$，</p>
 <p>则称映射 $f$ 为群 $G$ 到群 $G’$ 的<strong>同态</strong>（homomorphism<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>）．</p>
@@ -350,19 +350,19 @@
 </li>
 <li><p>可证同构是等价关系：</p>
 <blockquote>
-<p>设 $f: G\overset{\Large\sim}{\to}G’,\;g=f^{-1}$，则</p>
-<p>&emsp;&emsp;$\forall\;a,\;b\in G,\quad f(ab)=f(a)f(b)$，</p>
-<p>&emsp;&emsp;$\forall\;c,\;d\in G’,\quad g(cd)=g(c)g(d)$，</p>
+<p>设 $f: G\overset{\Large\sim}{\to}G’,\quad g=f^{-1}$，则</p>
+<p>&emsp;&emsp;$\forall\;a,\,b\in G,\quad f(ab)=f(a)f(b)$，</p>
+<p>&emsp;&emsp;$\forall\;c,\,d\in G’,\quad g(cd)=g(c)g(d)$，</p>
 <p>若 $G’=G$，可设恒等映射 $f:G\to G,\quad x\mapsto x$，则 $g:G\to G,\quad x\mapsto x$，于是有 $f(ab)=ab=f(a)f(b)$ 成立，且 $g(cd)=cd=g(c)g(d)$ 亦成立，即 $G\cong G$，可知其自反性；</p>
 <p>又由双射的性质，可知其对称性；</p>
 <p>又设 $f’:G’\overset{\Large\sim}{\to}H,\quad g’=f’^{-1}$，则</p>
-<p>&emsp;&emsp;$\forall\;j,\;k\in G’,\quad f’(jk)=f’(j)f’(k)$，</p>
-<p>&emsp;&emsp;$\forall\;m,\;n\in H,\quad g’(mn)=g’(m)g’(n)$</p>
-<p>于是有 $\varphi=f’\circ f: G\to H,\;\psi=\varphi^{-1}=g\circ g’:H\to G$，并且</p>
-<p>&emsp;$\forall\;a,\;b\in G,$</p>
-<p>&emsp;&emsp;$\varphi(ab)=f’(f(ab))=f’(f(a)f(b))=f’(f(a))f’(f(b))=\varphi(a)\varphi(b)$；</p>
-<p>&emsp;$\forall\;m,\;n\in H,$</p>
-<p>&emsp;&emsp;$\psi(mn)=g(g’(mn))=g(g’(m)g’(n))=g(g’(m))g(g’(n))=\psi(m)\psi(n)$，</p>
+<p>&emsp;&emsp;$\forall\;j,\,k\in G’,\quad f’(jk)=f’(j)f’(k)$，</p>
+<p>&emsp;&emsp;$\forall\;m,\,n\in H,\quad g’(mn)=g’(m)g’(n)$</p>
+<p>于是有 $\varphi=f’\circ f: G\to H,\quad$$\psi=\varphi^{-1}=g\circ g’:H\to G$，并且</p>
+<p>&emsp;$\forall\;a,\,b\in G,$</p>
+<p>&emsp;&emsp;$\varphi(ab)=f’f(ab)=f’(f(a)f(b))$$=f’f(a)f’f(b)=\varphi(a)\varphi(b)$；</p>
+<p>&emsp;$\forall\;m,\,n\in H,$</p>
+<p>&emsp;&emsp;$\psi(mn)=gg’(mn)=g(g’(m)g’(n))$$=gg’(m)gg’(n)=\psi(m)\psi(n)$，</p>
 <p>即 $G\cong H$，可知其传递性．</p>
 <p align="right" style="font-size:180%" >■</p>
 
@@ -374,7 +374,7 @@
 <p>&emsp;&emsp;(α)&emsp;$f(e_G)=e_H$；<br>&emsp;&emsp;(β)&emsp;$\forall\;a\in G,\quad f(a^{-1})=(f(a))^{-1}$.</p>
 <p>〔证明〕：</p>
 <blockquote>
-<p>记 $e=e_G,\;e’=e_H$，则</p>
+<p>$e:=e_G,\;e’:=e_H$，则</p>
 <p>&emsp;&emsp;$f(e)=f(ee)=f(e)f(e)$，</p>
 <p>由此得证 $f(e)=e’$；</p>
 <p>又有</p>
@@ -402,10 +402,10 @@
 <sup>(2)</sup>. 幺半群的单位元唯一性亦可同理得证．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(3)">
-<sup>(3)</sup>. 名词为 congruence．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+<sup>(3)</sup>. $a$ and $b$ are <strong>congruent modulo</strong> $n$，名词为 congruence．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(4)">
-<sup>(4)</sup>. $\gcd(a,\;n)$ 表示 $a$ 与 $n$ 的最大公因数，$\gcd(a,\;n)=1$ 即 $a$ 与 $n$ 互质．此结论可由数论的 Bézout 定理（Bézout’s lemma）得出．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+<sup>(4)</sup>. $\gcd(a,\,n)$ 表示 $a$ 与 $n$ 的最大公因数（<strong>g</strong>reatest <strong>c</strong>ommon <strong>d</strong>ivisor），$\gcd(a,\,n)=1$ 即 $a$ 与 $n$ 互质．此结论可由数论的 <strong>Bézout 定理</strong>（Bézout’s lemma）得出．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(5)">
 <sup>(5)</sup>. homo-：希腊语 <em>homos</em> “相同”，morph-：希腊语 <em>morphē</em> “形态”．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
