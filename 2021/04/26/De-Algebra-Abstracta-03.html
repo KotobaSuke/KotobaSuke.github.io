@@ -559,7 +559,7 @@
       <strong class="article-nav-caption">Novius</strong>
       <div class="article-nav-title">
         
-          De Algebra Abstracta 04 // 抽象代数笔记 〇四：循环群（未完成）
+          De Algebra Abstracta 04 // 抽象代数笔记 〇四：循环群
         
       </div>
     </a>
@@ -778,5 +778,21 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
