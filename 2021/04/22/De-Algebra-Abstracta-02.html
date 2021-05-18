@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
-<meta property="article:modified_time" content="2021-05-14T13:24:23.607Z">
+<meta property="article:modified_time" content="2021-05-17T16:09:04.551Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -258,11 +258,11 @@
 <p>〔定义〕：</p>
 <blockquote>
 <p>设 $G$ 为幺半群，若 $\forall\;a\in G,\;\exists\;b,\quad b=a^{-1}$，则称 $G$ 为<strong>群</strong>（group）．</p>
-<p>满足交换律的群称为<strong>交换群</strong>（commutative group）或<strong>阿贝尔群</strong>（abelian group）．</p>
 </blockquote>
+<p>满足交换律的群称为<strong>交换群</strong>（commutative group）或<strong>阿贝尔群</strong>（abelian group）<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>．</p>
 <h1 id="Naturae-Catervarum-群的性质"><a href="#Naturae-Catervarum-群的性质" class="headerlink" title="Naturae Catervarum 群的性质"></a>Naturae Catervarum 群的性质</h1><p>&emsp;(α)&emsp;封闭性（closure）：&emsp;&emsp;$\forall\;a,\,b\in G,\quad ab\;\in G$；</p>
 <p>&emsp;(β)&emsp;结合性（associativity）：&emsp;&emsp;$\forall\;a,\,b,\,c\in G,\quad(ab)c=a(bc)$；</p>
-<p>&emsp;(γ)&emsp;存在唯一单位元：&emsp;&emsp;$\exists!\;e\in G,\;\forall\;a\in G,\quad ae=ea=a$；<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup></p>
+<p>&emsp;(γ)&emsp;存在唯一单位元：&emsp;&emsp;$\exists!\;e\in G,\;\forall\;a\in G,\quad ae=ea=a$；<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
 <p>&emsp;(δ)&emsp;存在唯一逆元：&emsp;&emsp;$\forall\;a\in G,\;\exists!\;b\in G,\quad ab=ba=e$．</p>
 <ul>
 <li>$(ab)^{-1}=b^{-1}a^{-1}.$<ul>
@@ -281,7 +281,7 @@
 <p>&emsp;&emsp;$\forall\;x\in G,\quad \epsilon x=x\epsilon =x$，</p>
 <p>从而</p>
 <p>&emsp;&emsp;$\epsilon e=e\epsilon=e$，&emsp;&emsp;$(2)$</p>
-<p>由 $(1)\,(2)$ 两式，得 $e=\epsilon$，与前提矛盾．<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
+<p>由 $(1)\,(2)$ 两式，得 $e=\epsilon$，与前提矛盾．<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup></p>
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
@@ -311,7 +311,7 @@
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>若 $a,\,b\in\mathbb Z$ 整除以 $n\in\mathbb N_+$ 所得余数相等，则称 $a$ 与 $b$ <strong>模</strong> $n$ <strong>同余</strong> <sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup>，记作 $a\equiv b\;(\operatorname{mod} n)$，且定义关系：</p>
+<p>若 $a,\,b\in\mathbb Z$ 整除以 $n\in\mathbb N_+$ 所得余数相等，则称 $a$ 与 $b$ <strong>模</strong> $n$ <strong>同余</strong> <sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，记作 $a\equiv b\;(\operatorname{mod} n)$，且定义关系：</p>
 <p>&emsp;&emsp;$a\sim b\;\Leftrightarrow\;a\equiv b\pmod n$，</p>
 <p>易证此为等价关系．</p>
 <p>记 $i\in\mathbb Z$ 所在等价类为 $\overline i=\{k\in\mathbb Z\mid k\equiv i\;(\operatorname{mod} n)\}$，称为 <strong>$i$ 的模 $n$ 同余类</strong>（congruence class of $i$ modulo $n$）．于是整数集 $\mathbb Z$ 可分划为 $n$ 个等价类：$\overline 0,\,\overline 1,\,\overline 2,\,\cdots,\,\overline{n-1}$，以 $\mathbb Z_n$ 表示该分划，则可定义其上的加法：</p>
@@ -322,7 +322,7 @@
 <p>则 $(\mathbb Z_n,\,\cdot)$ 形成交换幺半群，其单位元为 $\overline 1$．</p>
 </blockquote>
 <ul>
-<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\quad$$ab\equiv 1\pmod n\;\Leftrightarrow\;\gcd(a,\,n)=1$<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$．</li>
+<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\quad$$ab\equiv 1\pmod n\;\Leftrightarrow\;\gcd(a,\,n)=1$<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$．</li>
 </ul>
 <p>此处还须证明上述运算定义良好：</p>
 <blockquote>
@@ -357,9 +357,9 @@
 <p>&emsp;&emsp;$\forall\;a,\,b\in G,\quad f(a\bullet b)=f(a)\circ f(b)$</p>
 <p>或简记作</p>
 <p>&emsp;&emsp;$f(ab)=f(a)f(b)$，</p>
-<p>则称映射 $f$ 为群 $G$ 到群 $G’$ 的<strong>同态</strong>（homomorphism<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>）．</p>
-<p>特别地，若 $f$ 为单射，则称之为<strong>单同态</strong>（monomorphism<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>）；若 $f$ 为满射，则称之为<strong>满同态</strong>（epimorphism<sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup>）；若 $f$ 为双射（即既是单同态也是满同态），则称之为<strong>同构</strong>（isomorphism<sup><a href="#fn_(8)" id="reffn_(8)">(8)</a></sup>）．</p>
-<p>若群 $G$ 到群 $G’$ 存在任一同构 $f:G\to G’$，则称 $G$ 与 $G’$ <strong>同构</strong>（isomorphic）<sup><a href="#fn_(9)" id="reffn_(9)">(9)</a></sup>，记为 $G\cong G’$ 或 $f: G\overset{\Large\sim}{\to}G’$．</p>
+<p>则称映射 $f$ 为群 $G$ 到群 $G’$ 的<strong>同态</strong>（homomorphism<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>）．</p>
+<p>特别地，若 $f$ 为单射，则称之为<strong>单同态</strong>（monomorphism<sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup>）；若 $f$ 为满射，则称之为<strong>满同态</strong>（epimorphism<sup><a href="#fn_(8)" id="reffn_(8)">(8)</a></sup>）；若 $f$ 为双射（即既是单同态也是满同态），则称之为<strong>同构</strong>（isomorphism<sup><a href="#fn_(9)" id="reffn_(9)">(9)</a></sup>）．</p>
+<p>若群 $G$ 到群 $G’$ 存在任一同构 $f:G\to G’$，则称 $G$ 与 $G’$ <strong>同构</strong>（isomorphic）<sup><a href="#fn_(10)" id="reffn_(10)">(10)</a></sup>，记为 $G\cong G’$ 或 $f: G\overset{\Large\sim}{\to}G’$．</p>
 </blockquote>
 <ul>
 <li><p>若群 $G,\;G’$ 同构，则同构映射 $f:G\overset{\Large\sim}{\to}G’$ 的逆 $f^{-1}:G’\to G$ 也是同构．</p>
@@ -403,49 +403,52 @@
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>群 $G$ 到其自身的同态称为<strong>自同态</strong>（endomorphism<sup><a href="#fn_(10)" id="reffn_(10)">(10)</a></sup>），到其自身的同构称为<strong>自同构</strong>（automorphism<sup><a href="#fn_(11)" id="reffn_(11)">(11)</a></sup>）．</p>
+<p>群 $G$ 到其自身的同态称为<strong>自同态</strong>（endomorphism<sup><a href="#fn_(11)" id="reffn_(11)">(11)</a></sup>），到其自身的同构称为<strong>自同构</strong>（automorphism<sup><a href="#fn_(12)" id="reffn_(12)">(12)</a></sup>）．</p>
 <p>自同态的复合恒为自同态（可参考前述关于同构等价的证明得证）．群 $G$ 上所有自同态所成集合关于复合运算成幺半群，称为<strong>自同态幺半群</strong>（endomorphism monoid），并记为 $\mathrm{End}(G)$，其单位元为 $G$ 上的恒等映射．</p>
 <p>群 $G$ 上所有自同构所成集合关于复合运算成群，称为<strong>自同构群</strong>（automorphism group），并记为$\mathrm{Aut}(G)$，其单位元为 $G$ 上的恒等映射，且由双射的性质可知其中所有映射均可逆. 由于同构具有传递性，因此可知其封闭性，由复合映射的性质可知其结合性．</p>
 </blockquote>
 <ul>
 <li>恒等映射称为<strong>平凡自同构</strong>（trivial automorphism）．</li>
-<li>$G$ 上的所有自同构 $f$ 均满足 $f(G)=G$<sup><a href="#fn_(12)" id="reffn_(12)">(12)</a></sup>．</li>
+<li>$G$ 上的所有自同构 $f$ 均满足 $f(G)=G$<sup><a href="#fn_(13)" id="reffn_(13)">(13)</a></sup>．</li>
 </ul>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
-<sup>(1)</sup>. $\exists!$ 表示唯一存在．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+<sup>(1)</sup>. 尼尔斯·亨利克·阿贝尔（Niels Henrik Abel，1802—1829），挪威数学家，因证明五次方程不存在根式解而闻名，在众多领域有所成就．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(2)">
-<sup>(2)</sup>. 幺半群的单位元唯一性亦可同理得证．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+<sup>(2)</sup>. $\exists!$ 表示唯一存在．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(3)">
-<sup>(3)</sup>. $a$ and $b$ are <strong>congruent modulo</strong> $n$，名词为 congruence．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+<sup>(3)</sup>. 幺半群的单位元唯一性亦可同理得证．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(4)">
-<sup>(4)</sup>. $\gcd(a,\,n)$ 表示 $a$ 与 $n$ 的最大公因数（<strong>g</strong>reatest <strong>c</strong>ommon <strong>d</strong>ivisor），$\gcd(a,\,n)=1$ 即 $a$ 与 $n$ 互质．此结论可由数论的 <strong>Bézout 定理</strong>（Bézout’s lemma）得出．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+<sup>(4)</sup>. $a$ and $b$ are <strong>congruent modulo</strong> $n$，名词为 congruence．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(5)">
-<sup>(5)</sup>. homo-：希腊语 <em>homos</em> “相同”，morph-：希腊语 <em>morphē</em> “形态”．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+<sup>(5)</sup>. $\gcd(a,\,n)$ 表示 $a$ 与 $n$ 的最大公因数（<strong>g</strong>reatest <strong>c</strong>ommon <strong>d</strong>ivisor），$\gcd(a,\,n)=1$ 即 $a$ 与 $n$ 互质．此结论可由数论的 <strong>Bézout 定理</strong>（Bézout’s lemma）得出．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(6)">
-<sup>(6)</sup>. mono-：希腊语 <em>monos</em> “单独”，morph- 同上．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+<sup>(6)</sup>. homo-：希腊语 <em>homos</em> “相同”，morph-：希腊语 <em>morphē</em> “形态”．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(7)">
-<sup>(7)</sup>. epi-：希腊语 <em>epi</em> “向上”，morph- 同上．这一构词来自“满射” surjection 的本义“向上射”．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
+<sup>(7)</sup>. mono-：希腊语 <em>monos</em> “单独”，morph- 同上．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(8)">
-<sup>(8)</sup>. iso-：希腊语 <em>isos</em> “相等”，morph- 同上．<a href="#reffn_(8)" title="Jump back to footnote [(8)] in the text."> &#8617;</a>
+<sup>(8)</sup>. epi-：希腊语 <em>epi</em> “向上”，morph- 同上．这一构词来自“满射” surjection 的本义“向上射”．<a href="#reffn_(8)" title="Jump back to footnote [(8)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(9)">
-<sup>(9)</sup>. 需要注意这里出现的两个“同构”的区别，前者是映射的一种，后者是群之间的关系．<a href="#reffn_(9)" title="Jump back to footnote [(9)] in the text."> &#8617;</a>
+<sup>(9)</sup>. iso-：希腊语 <em>isos</em> “相等”，morph- 同上．<a href="#reffn_(9)" title="Jump back to footnote [(9)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(10)">
-<sup>(10)</sup>. endo-：希腊语 <em>endon</em> “在内”，morph- 同上．<a href="#reffn_(10)" title="Jump back to footnote [(10)] in the text."> &#8617;</a>
+<sup>(10)</sup>. 需要注意这里出现的两个“同构”的区别，前者是映射的一种，后者是群之间的关系．<a href="#reffn_(10)" title="Jump back to footnote [(10)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(11)">
-<sup>(11)</sup>. auto-：希腊语 <em>autos</em> “自己”，morph- 同上．<a href="#reffn_(11)" title="Jump back to footnote [(11)] in the text."> &#8617;</a>
+<sup>(11)</sup>. endo-：希腊语 <em>endon</em> “在内”，morph- 同上．<a href="#reffn_(11)" title="Jump back to footnote [(11)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(12)">
-<sup>(12)</sup>. $f(G):=\{f(x)\mid x\in G\}$，类似情况同理．<a href="#reffn_(12)" title="Jump back to footnote [(12)] in the text."> &#8617;</a>
+<sup>(12)</sup>. auto-：希腊语 <em>autos</em> “自己”，morph- 同上．<a href="#reffn_(12)" title="Jump back to footnote [(12)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(13)">
+<sup>(13)</sup>. $f(G):=\{f(x)\mid x\in G\}$，类似情况同理．<a href="#reffn_(13)" title="Jump back to footnote [(13)] in the text."> &#8617;</a>
 </blockquote>
 <hr>
 <p>前：<a href="https://kotobasuke.github.io/2021/04/22/De-Algebra-Abstracta-01">抽象代数笔记 〇一：集合论</a></p>
@@ -723,20 +726,5 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js"></script>
 </body>
 </html>

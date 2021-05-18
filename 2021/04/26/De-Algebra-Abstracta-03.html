@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-26T08:47:27.000Z">
-<meta property="article:modified_time" content="2021-05-14T13:34:53.855Z">
+<meta property="article:modified_time" content="2021-05-18T04:27:08.489Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -487,6 +487,87 @@
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
+<h1 id="Problemata-习题"><a href="#Problemata-习题" class="headerlink" title="Problemata 习题"></a>Problemata 习题</h1><p>〔3.A〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\, B\leq G$，则</p>
+<p>&emsp;&emsp;$A\cup B\leq G\;\Leftrightarrow\;(A\subseteq B)\vee(B\subseteq A)$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕：</p>
+<p>若存在 $a\in A\setminus B,\;b\in B\setminus A$，</p>
+<p>则 $(ab\in A)\vee(ab\in B)$，</p>
+<p>若 $ab\in A$ 则 $b=a^{-1}(ab)\in A$，与前提矛盾，若 $ab\in B$ 则同理，</p>
+<p>从而 $A\setminus B=B\setminus A=\varnothing$，而 $A,\,B\leq G$，得知 $(A\subseteq B)\vee(B\subseteq A)$．</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>此时 $A\cup B=B$ 或 $A\cup B=A$，显然得证．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.B〕（利用 3.A 的结论）：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;群 $G$ 无法表示为其任意两个真子群之并．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>若 $\exists\;A,\,B&lt;G,\quad G=A\cup B$，</p>
+<p>则 $(A\subseteq B)\vee(B\subseteq A)$，</p>
+<p>所以 $(G=A)\vee(G=B)$，与前提矛盾．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.B〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $S$ 为有限半群，则有</p>
+<p>&emsp;&emsp;$S$ 满足消去律 $\Leftrightarrow$ $S$ 是群．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>设 $S=\{s_1,\,s_2,\,\cdots,\,s_n\}$，则对其所有元素左乘 $s\in S$，由消去律可知有 $sS=\{ss_1,\,ss_2,\,\cdots,\,ss_n\}$（即 $\forall\;s_k,\,s_\ell\in S,\quad s_k\neq s_\ell\;\Leftrightarrow\;ss_k\neq ss_\ell$），且由封闭性可知这是 $S$ 的子集，从而 $sS=S$，同理有 $Ss=S$．</p>
+<p>于是 $\exists\;s_i\in S,\quad s_is=s$，</p>
+<p>又因为 $\forall\;s_p\in S,\;\exists\;s_q\in S,\quad s_p=ss_q$，</p>
+<p>从而 $s_is_p=s_iss_q=ss_q=s_p$，同理可证 $s_ps_i=s_p$，进而 $s_i$ 为单位元．</p>
+<p>由于 $sS=S=Ss$，由消去律可知对与 $S$ 的所有元素都存在逆元．</p>
+<p>综上，$S$ 是群．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.D〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A$ 是 $G$ 的有限子集，则有</p>
+<p>&emsp;&emsp;$A\leq G\;\Leftrightarrow\;\forall\;a,\,b\in A,\quad ab\in A$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕：显然．</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>因为 $G$ 是群，满足结合律，且易证其满足消去律，而 $A\subseteq G$，所以 $A$ 也满足结合律与消去律．</p>
+<p>由条件可知 $A$ 具有封闭性，因此 $A$ 为满足消去律的有限半群（3.C），于是 $A$ 是群，即 $A\leq G$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.E〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\,B\leq G$，则有</p>
+<p>&emsp;&emsp;$AB\leq G\;\Leftrightarrow\;AB=BA$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕：</p>
+<p>$\forall\;a\in A,\;b\in B,\quad$ $ba=(eb)(ae)\in AB$，从而 $BA\leq AB$．</p>
+<p>又有 $ab=((ab)^{-1})^{-1}=(b^{-1}a^{-1})^{-1}\in BA$，从而 $AB\leq BA$．</p>
+<p>于是得证 $AB=BA$．</p>
+<p> 〔$\Leftarrow$〕：</p>
+<p>$\forall\;a,\,\alpha\in A,\;\; b,\,\beta\in B,\quad$</p>
+<p>&emsp;&emsp;$ab,\,\alpha\beta\in AB$，而 $(ab)^{-1}\alpha\beta=b^{-1}a^{-1}\alpha\beta\in (BA)(AB)$，</p>
+<p>&emsp;&emsp;因为 $AB=BA$，所以 $(ab)^{-1}\alpha\beta\in AB$，得证 $AB\leq G$&emsp;（子群判定定理）．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. 群中元素的消去律可由逆元的唯一性得证．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
@@ -589,7 +670,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Quae insunt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-%E5%AD%90%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Succatervae 子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concopiae-%E9%99%AA%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">Concopiae 陪集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ordines-Elementorum-%E5%85%83%E7%B4%A0%E7%9A%84%E9%98%B6"><span class="nav-number">3.</span> <span class="nav-text">Ordines Elementorum 元素的阶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-%E5%AD%90%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Succatervae 子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concopiae-%E9%99%AA%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">Concopiae 陪集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ordines-Elementorum-%E5%85%83%E7%B4%A0%E7%9A%84%E9%98%B6"><span class="nav-number">3.</span> <span class="nav-text">Ordines Elementorum 元素的阶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problemata-%E4%B9%A0%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">Problemata 习题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">5.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
     
     </div>
   </aside>
@@ -786,20 +867,5 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js"></script>
 </body>
 </html>
