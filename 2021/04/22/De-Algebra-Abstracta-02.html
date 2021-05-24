@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
-<meta property="article:modified_time" content="2021-05-17T16:09:04.551Z">
+<meta property="article:modified_time" content="2021-05-24T08:22:07.938Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -322,7 +322,7 @@
 <p>则 $(\mathbb Z_n,\,\cdot)$ 形成交换幺半群，其单位元为 $\overline 1$．</p>
 </blockquote>
 <ul>
-<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\quad$$ab\equiv 1\pmod n\;\Leftrightarrow\;\gcd(a,\,n)=1$<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$．</li>
+<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\quad$$ab\equiv 1\pmod n\;\Leftrightarrow\;\gcd(a,\,n)=1$<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$．为了简便起见，后文一律将 $\gcd(p,\,q)=1$，即 $p$ 与 $q$ 互质记作 $p\,\bot\,q$．</li>
 </ul>
 <p>此处还须证明上述运算定义良好：</p>
 <blockquote>
@@ -348,8 +348,8 @@
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>函数 $\varphi(n)$ 表示不大于 $n$ 且与 $n$ 互质的正整数之数目，即 $\varphi(n)=|\{a\in\mathbb N_+\mid a\leq n,\;\gcd(a,\,n)=1\}|$，称为<strong>欧拉总计函数</strong>（Euler’s totient function）或简称<strong>欧拉函数</strong>．</p>
-<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\mid \gcd(a,\,n)=1\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$．这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个．</p>
+<p>函数 $\varphi(n)$ 表示不大于 $n$ 且与 $n$ 互质的正整数之数目，即 $\varphi(n)=|\{a\in\mathbb N_+\mid a\leq n,\;a\,\bot\,n\}|$，称为<strong>欧拉总计函数</strong>（Euler’s totient function）或简称<strong>欧拉函数</strong>．</p>
+<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\mid a\,\bot\,n\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$．这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个．</p>
 </blockquote>
 <h1 id="Homomorphismi-amp-Isomorphismi-同态与同构"><a href="#Homomorphismi-amp-Isomorphismi-同态与同构" class="headerlink" title="Homomorphismi &amp; Isomorphismi 同态与同构"></a>Homomorphismi &amp; Isomorphismi 同态与同构</h1><p>〔定义〕：</p>
 <blockquote>

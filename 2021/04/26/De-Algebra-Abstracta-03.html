@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-26T08:47:27.000Z">
-<meta property="article:modified_time" content="2021-05-21T16:42:25.679Z">
+<meta property="article:modified_time" content="2021-05-24T16:00:21.934Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -278,11 +278,11 @@
 <p>于是〔定义〕：</p>
 <blockquote>
 <p> $G$ 中关于等价关系 $\overset{\mathrm{R}}\sim$ 的每个等价类 $Ag$ 称为群 $G$ 对于子群 $A$ 的<strong>右陪集</strong>（right coset）. 对于该关系的完全代表系 $R=\{g_i\mid i\in I\}$ 称为 <strong>$G$ 对于 $A$ 的右陪集代表元系</strong> （system of representatives for the right cosets of $A$ in $G$）．分划 $\mathscr R=\{Ag\mid g\in R\}$ 称为 $G$ 对子群 $A$ 的<strong>右陪集分解</strong>（right coset partition），通常以等式记作：</p>
-<p>&emsp;&emsp;$G=\displaystyle\bigcup_{g\in R}Ag$．</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{g\in R}Ag$．</p>
 <p>类似地可以定义等价关系 $\overset{\mathrm{L}}\sim$：</p>
 <p>&emsp;&emsp;$\forall\;g,\,h\in G,\quad g\overset{\mathrm{L}}\sim h\;\Leftrightarrow\;g^{-1}h\in A$，</p>
 <p>$G$ 中关于等价关系 $\overset{\mathrm{L}}\sim$ 的每个等价类 $gA$称为群 $G$ 对于子群 $A$ 的<strong>左陪集</strong>（left coset）．对于该关系可类似地定义<strong>$G$ 对于 $A$ 的左陪集代表元系</strong>，以及<strong>左陪集分解</strong> $\mathscr L=\{gA\mid g\in R\}$，或以等式记作：</p>
-<p>&emsp;&emsp;$G=\displaystyle\bigcup_{g\in R}gA$．</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{g\in R}gA$．</p>
 </blockquote>
 <hr>
 <p>〔定义〕：</p>
@@ -293,7 +293,7 @@
 <p>在前文中，我们定义了怎样的运算才能称作定义良好，而运算本质上是一个映射．先设 $A$ 为集合，$\sim$ 为其上的等价关系，$A\,/\sim$ 为 $A$ 除以 $\sim$ 的商集，以 $[a]$ 表示 $a$ 关于 $\sim$ 的等价类．更普遍地，我们考虑映射 $f:(A/\sim)\to B$，其中 $B$ 是任一集合，当且仅当恒有：</p>
 <blockquote>
 <p>$\forall\;a,\,\alpha\in A,$</p>
-<p>&emsp;$[a]=[\alpha]\;\Rightarrow\;\mathscr f([a])=f([\alpha])$</p>
+<p>&emsp;$[a]=[\alpha]\;\Rightarrow\;f([a])=f([\alpha])$</p>
 </blockquote>
 <p>可称该映射定义良好，亦即选取代表元的选取不会影响等价类映射的结果．</p>
 <hr>
@@ -342,18 +342,18 @@
 <p>所以 $[AB:A]=\dfrac{|AB|}{|A|}=\dfrac{|B|}{|A\cap B|}=[B:(A\cap B)]$，从而得证．</p>
 <p>(β)：</p>
 <p>考虑 $G$ 对子群 $B$ 的右陪集分解</p>
-<p>&emsp;&emsp;$G=\displaystyle\bigcup_{j=1}^n Bg_j,\quad g_j\in G,\;n:=[G:B]$，</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{j=1}^n Bg_j,\quad g_j\in G,\;n:=[G:B]$，</p>
 <p>$B$ 对子群 $A$ 的右陪集分解</p>
-<p>&emsp;&emsp;$B=\displaystyle\bigcup_{i=1}^m Ab_i,\quad b_i\in B,\;m:=[B:A]$，</p>
-<p>则&emsp;$G=\displaystyle\bigcup_{j=1}^n\displaystyle\bigcup_{i=1}^m Ab_ig_j$，</p>
-<p>若&emsp;$Ab_ig_j=Ab_{i’}g_{j’}$</p>
+<p>&emsp;&emsp;$B=\displaystyle\bigsqcup_{i=1}^m Ab_i,\quad b_i\in B,\;m:=[B:A]$，</p>
+<p>则 $G=\displaystyle\bigsqcup_{j=1}^n\displaystyle\bigsqcup_{i=1}^m Ab_ig_j$，</p>
+<p>若 $Ab_ig_j=Ab_{i’}g_{j’}$</p>
 <p>&emsp;$(i,\,i’\in\{x\in\mathbb N\mid 1\leq x\leq m\},\quad j,\,j’\in\{x\in\mathbb N\mid 1\leq x\leq n\})$，</p>
-<p>则&emsp;$b_{i’}g_{j’}g_j^{-1}b_i^{-1}\in A$，</p>
-<p>从而&emsp;$g_{j’}g_j^{-1}\in b_{i}^{-1}Ab_i\subseteq B$，</p>
-<p>因此&emsp;$Bg_{j’}=Bg_j$，由陪集的性质可知 $j=j’$；</p>
-<p>从而又有&emsp;$b_{i’}g_{j’}g_j^{-1}b_i^{-1}=b_{i’}(g_jg_j^{-1})b_i^{-1}=b_{i’}b_i^{-1}\in A$，</p>
-<p>同理有&emsp;$Ab_{i’}=Ab_i$，</p>
-<p>因此&emsp;$i=i’$．</p>
+<p>则 $b_{i’}g_{j’}g_j^{-1}b_i^{-1}\in A$，</p>
+<p>从而 $g_{j’}g_j^{-1}\in b_{i}^{-1}Ab_i\subseteq B$，</p>
+<p>因此 $Bg_{j’}=Bg_j$，由陪集的性质可知 $j=j’$；</p>
+<p>从而又有 $b_{i’}g_{j’}g_j^{-1}b_i^{-1}=b_{i’}(g_jg_j^{-1})b_i^{-1}=b_{i’}b_i^{-1}\in A$，</p>
+<p>同理有 $Ab_{i’}=Ab_i$，</p>
+<p>因此 $i=i’$．</p>
 <p>综上，当 $(i,\,j)\neq(i’,\,j’)$ 时，$Ab_ig_j$ 是 $G$ 对子群 $A$ 的不同陪集，即</p>
 <p>&emsp;&emsp;$[G:A]=mn=[G:B][B:A]$．</p>
 <p>(γ)：</p>
@@ -463,7 +463,7 @@
 <blockquote>
 <p>设 $G$ 为群， $g,\,h\in G$，则</p>
 <p>&emsp;&emsp;(α)&emsp;若 $|g|=n$，则 $\forall\;m\in\mathbb N_+,\quad|g^m|=\dfrac n{\gcd(m,\;n)}$；</p>
-<p>&emsp;&emsp;(β)&emsp;若 $gh=hg$，且 $|g|=p,\;|h|=q,\;\gcd(p,\,q)=1$，则 $|gh|=|pq|$．</p>
+<p>&emsp;&emsp;(β)&emsp;若 $gh=hg$，且 $|g|=p,\;|h|=q,\;p\,\bot\,q=1$，则 $|gh|=|pq|$．</p>
 </blockquote>
 <p>〔证明〕：</p>
 <blockquote>
@@ -473,7 +473,7 @@
 <p>所以 $N\;\left|\;\dfrac n\mu\right.$ <sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup>&emsp;&emsp;（※），</p>
 <p>又由于 $g^{mN}=e$，有 $n\mid mN$，</p>
 <p>于是 $\dfrac n\mu\left|\left(\dfrac m\mu N\right)\right.$，</p>
-<p>由最大公因数的性质可知，$\gcd\left(\dfrac n\mu,\,\dfrac m\mu\right)=1$，</p>
+<p>由最大公因数的性质可知，$\dfrac n\mu\,\large\bot\normalsize\,\dfrac m\mu$，</p>
 <p>从而 $\left.\dfrac n\mu\;\right|\;N$，由（※）可得 $|g^m|=N=\dfrac n\mu=\dfrac n{\gcd(m,\;n)}$．</p>
 <p>(β)：</p>
 <p>$P:=|gh|$，</p>
@@ -483,7 +483,7 @@
 <p>而 $g^q=g^qe=g^qh^q=(gh)^q$，</p>
 <p>由 (α) 可知 $|(gh)^q|=\dfrac P{\gcd(q,\;P)}=|g^q|$，</p>
 <p>从而 $p=\dfrac P{\gcd(q,\;P)}$，所以 $p\mid P$，同理则有 $q\mid P$．</p>
-<p>又由于 $\gcd(p,\,q)=1$，所以 $pq\mid P$，结合（▲）可知 $P=pq$．</p>
+<p>又由于 $p\,\bot\,q$，所以 $pq\mid P$，结合（▲）可知 $P=pq$．</p>
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
@@ -584,6 +584,47 @@
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
+<hr>
+<p>〔3.G〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\,B$ 是有限群 $G$ 的子群，则有</p>
+<p>&emsp;&emsp;$|A|+|B|&gt;|G|\;\Rightarrow\;G=AB$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>$\forall\;g\in G,$</p>
+<p>&emsp;&emsp;$|A^{-1}g|=|A^{-1}|=|A|$&emsp;（消去律），</p>
+<p>&emsp;&emsp;从而 $|A^{-1}g|+|B|&gt;|G|$，即 $A^{-1}g\cap B\neq\varnothing$，</p>
+<p>&emsp;&emsp;这意味着存在 $a\in A,\;b\in B$，使得 $a^{-1}g=b$，即 $g=ab$，</p>
+<p>得证 $G=AB$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.H〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\,B\leq G$，若 $\exists\;a\in A,\;b\in B,\quad Aa=Bb$，则 $A=B$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>因为 $Aa=Bb$，所以 $A=Bba^{-1}$，从而 $ba^{-1}\in A$，</p>
+<p>因为 $A\leq G$，所以 $(ba^{-1})^{-1}=ab^{-1}\in A$，</p>
+<p>于是 $A=Aab^{-1}=Bbb^{-1}=B$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.I〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A\leq G$，若 $R$ 是 $G$ 对 $A$ 的左陪集代表元系，则 $R^{-1}$ 是 $G$ 对 $A$ 的右陪集代表元系．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>根据题意，$G=\displaystyle\bigsqcup_{g\in R}gA$，而对于任一 $g\in R$，都有 $(gA)^{-1}=A^{-1}g^{-1}=Ag^{-1}$，</p>
+<p>记 $g^{-1}$ 为 $h\in R^{-1}$，可知 $G\displaystyle\bigsqcup_{h\in R^{-1}}Ah$，所以 $R^{-1}$ 为右陪集代表元系．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. 群中元素的消去律可由逆元的唯一性得证．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
@@ -603,7 +644,7 @@
 <sup>(6)</sup>. 详细的定义会在更遥远的后文中给出．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(7)">
-<sup>(7)</sup>. $a\mid b$ 表示 $a$ 整除 $b$，或犹言 $b$ 为 $a$ 之倍数. 由于 $g^m$ 的 $n/\mu$ 次幂为单位元，因此 $n/\mu$ 必然为其阶数 $N$ 的倍数．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
+<sup>(7)</sup>. $a\mid b$ 表示 $a$ 整除 $b$，或犹言 $b$ 为 $a$ 之倍数．由于 $g^m$ 的 $n/\mu$ 次幂为单位元，因此 $n/\mu$ 必然为其阶数 $N$ 的倍数．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(8)">
 <sup>(8)</sup>. 注意 $(gh)^\alpha=g^\alpha h^\alpha$ 只有在 $gh=hg$ 时才会恒成立．<a href="#reffn_(8)" title="Jump back to footnote [(8)] in the text."> &#8617;</a>
