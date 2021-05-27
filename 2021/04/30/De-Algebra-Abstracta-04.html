@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-30T03:07:25.000Z">
-<meta property="article:modified_time" content="2021-05-24T08:33:19.373Z">
+<meta property="article:modified_time" content="2021-05-27T16:56:18.897Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -226,7 +226,7 @@
 <p>于是对于 $a_1,\,a_2,\,\cdots,a_n\in S\cup S^{-1}$，有</p>
 <p>&emsp;&emsp;$\displaystyle\prod_{i=1}^n a_i\in\langle S\rangle,\quad\prod_{i=1}^n a_i^{-1}\in\langle S\rangle$，（此处无论左乘右乘均成立）</p>
 <p>从而</p>
-<p>&emsp;&emsp;$\langle S\rangle=\left\{\left.\displaystyle\prod_{i=1}^ma_i\;\right|\;m&gt;0,\;a_i\in S\cup S^{-1}\right\}\bigcup\;\{e\}$（此处无论左乘右乘均成立），即 $\langle S\rangle$ 为 $S$ 中元素及其逆元的有限次乘积的所有结果，以及 $G$ 中单位元（也 可能位于前述的结果中）所成的群．</p>
+<p>&emsp;&emsp;$\langle S\rangle=\left\{\left.\displaystyle\prod_{i=1}^ma_i\;\right|\;m&gt;0,\;a_i\in S\cup S^{-1}\right\}\bigcup\;\{e\}$（此处无论左乘右乘均成立），即 $\langle S\rangle$ 为 $S$ 中元素及其逆元的有限次乘积的所有结果，以及 $G$ 中单位元（也可能位于前述的结果中）所成的群．</p>
 </li>
 </ul>
 <blockquote>
@@ -274,8 +274,8 @@
 <p>〔定理 4.3〕：</p>
 <blockquote>
 <p>设 $G=\langle a\rangle$ 为循环群，</p>
-<p>&emsp;&emsp;(α)&emsp;若 $G$ 为无限循环群，则其生成元只有 $a$ 和 $a^{-1}$；</p>
-<p>&emsp;&emsp;(β)&emsp;若 $G$ 为 $n$ 阶有限循环群，则其生成元共有 $\varphi(n)$ 个，即所有满足 $1\leq k\leq n,\;\gcd(k,\,n)=1$ 的 $a^k$．</p>
+<p>&emsp;&emsp;(α)&emsp;若 $G$ 为无限循环群，则其单元素生成元系只有 $\langle a\rangle$ 和 $\langle a^{-1}\rangle$；</p>
+<p>&emsp;&emsp;(β)&emsp;若 $G$ 为 $n$ 阶有限循环群，则其单元素生成元系共有 $\varphi(n)$ 个，即所有满足 $1\leq k\leq n,\;k\,\bot\,n$ 的 $\langle a^k\rangle$．</p>
 </blockquote>
 <p>〔证明〕：</p>
 <blockquote>
@@ -299,6 +299,25 @@
 <p>从而 $f_m$ 是 $G$ 上的自同构．</p>
 <p>设任意 $k$ 满足 $0\leq m\neq k\leq n-1$，则 $f_m(a)=a^m\neq a^k=f_k(a)$，可知 $f_m\neq f_k$，</p>
 <p>综上则 $G$ 共有 $\varphi(n)$ 个自同构，$\mathrm{Aut}(G)=\{f_m:G\to G,\;a\mapsto a^m\mid1\leq m\leq n,\;m\,\bot\,n\}$．该自同构群同构于整数模 $p$ 加法群中全体乘法可逆元所成的乘法群 $\mathbb Z_n^\ast$，且为 $\varphi(n)$ 阶阿贝尔群．</p>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $z\in \mathbb C,\;n\in\mathbb N_+$，方程 $z^n=1$ 的根称为 <strong>$n$ 次单位根</strong>（$n$-th root of unity），记为 $\mathrm e^{2k𝛑\mathrm i/n}$ 或 $\cos\dfrac{2k𝛑}n+\sin\dfrac{2k𝛑}n$（欧拉公式），其中 $k$ 为 $0$ 到 $n-1$ 的整数．特别地，若 $k\,\bot\,n$，则称 $\mathrm e^{2k𝛑\mathrm i/n}$ 为 <strong>$n$ 次本原单位根</strong>（primitive $n$-th root of unity），其数量为 $\varphi(n)$．</p>
+<p>所有 $n$ 阶单位根所成的集合 $\{e^{2k𝛑\mathrm i/n}\mid k\in \mathbb N,\;0\leq k\leq n-1\}$ 关于乘法形成循环群，其生成元为任一 $n$ 次本原单位根．</p>
+</blockquote>
+<h1 id="Problemata-习题"><a href="#Problemata-习题" class="headerlink" title="Problemata 习题"></a>Problemata 习题</h1><p>〔4.A〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;$\forall\;H\leq G,\quad(H=\{e\})\vee(H=G)\;$ $\Leftrightarrow\;(G=\{e\})\vee(G=\langle g\rangle,\;g\in G,\;g\neq e,\;|G|\in\mathbb P)$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>必要性显然．</p>
+<p>设 $G\neq\{e\}$，则 $\forall\;g\in G,\;g\neq e,\quad\langle g\rangle=G$，</p>
+<p>因此 $G$ 为有限循环群，&emsp;（Th. 4.3）</p>
+<p>且 $\varphi(|G|)=|G|-1$，所以 $|G|\in\mathbb P$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. $A,\,B\leq G\;\Rightarrow\;A\cap B\leq G$，见 <a href="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">抽象代数笔记 〇三：子群与陪集</a> 注释(2)．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
@@ -383,7 +402,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Quae insunt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-Cyclicae-%E5%BE%AA%E7%8E%AF%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Catervae Cyclicae 循环群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">2.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-Cyclicae-%E5%BE%AA%E7%8E%AF%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Catervae Cyclicae 循环群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problemata-%E4%B9%A0%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">Problemata 习题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">3.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
     
     </div>
   </aside>
@@ -580,5 +599,20 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js"></script>
 </body>
 </html>

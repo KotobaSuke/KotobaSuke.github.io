@@ -11,16 +11,16 @@
   
   
   
-  <meta name="description" content="前：抽象代数笔记 〇二：群与同态 后：抽象代数笔记 〇四：循环群 Succatervae 子群〔定义〕：  设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子">
+  <meta name="description" content="前：抽象代数笔记 〇二：群与同态 后：抽象代数笔记 〇四：循环群 Succatervae 子群〔定义〕：  设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）．特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺">
 <meta property="og:type" content="article">
 <meta property="og:title" content="De Algebra Abstracta 03 &#x2F;&#x2F; 抽象代数笔记 〇三：子群与陪集">
 <meta property="og:url" content="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">
 <meta property="og:site_name" content="Histologium Kotobae">
-<meta property="og:description" content="前：抽象代数笔记 〇二：群与同态 后：抽象代数笔记 〇四：循环群 Succatervae 子群〔定义〕：  设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子">
+<meta property="og:description" content="前：抽象代数笔记 〇二：群与同态 后：抽象代数笔记 〇四：循环群 Succatervae 子群〔定义〕：  设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）．特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子幺">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-26T08:47:27.000Z">
-<meta property="article:modified_time" content="2021-05-25T04:18:41.817Z">
+<meta property="article:modified_time" content="2021-05-27T16:54:26.896Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -216,9 +216,9 @@
 <p>后：<a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a></p>
 <h1 id="Succatervae-子群"><a href="#Succatervae-子群" class="headerlink" title="Succatervae 子群"></a>Succatervae 子群</h1><p>〔定义〕：</p>
 <blockquote>
-<p><span style="font-family:Kaiti;font-size:95%">设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的<strong>子半群</strong>（<span style="font-family:Sans">subsemigroup</span>）. 特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的<strong>子幺半群</strong>（<span style="font-family:Sans">submonoid</span>）．&lt;/span&gt;</p>
+<p><span style="font-family:Kaiti;font-size:95%">设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的<strong>子半群</strong>（<span style="font-family:Sans">subsemigroup</span>）．特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的<strong>子幺半群</strong>（<span style="font-family:Sans">submonoid</span>）．&lt;/span&gt;</p>
 <p>若 $(A,\,\ast)$ 形成群，则称 $A$ 为 $H$ 的<strong>子群</strong>（subgroup）．</p>
-<p>通常情况下只考虑群的子群，即若 $(G,\,\ast)$ 为群，$A\subseteq G$，称 $A$ 为 $G$ 的子群当且仅当 $(A,\,\ast)$ 形成群，记作 $A\leq G$. 后文除非特别说明均只考虑群的子群．</p>
+<p>通常情况下只考虑群的子群，即若 $(G,\,\ast)$ 为群，$A\subseteq G$，称 $A$ 为 $G$ 的子群当且仅当 $(A,\,\ast)$ 形成群，记作 $A\leq G$．后文除非特别说明均只考虑群的子群．</p>
 </blockquote>
 <ul>
 <li>对任一群 $G$，$\{e\}$ 与 $G$ 本身均为 $G$ 的子群，称为 $G$ 的<strong>平凡子群</strong>（trivial subgroup）．</li>
@@ -277,7 +277,7 @@
 </blockquote>
 <p>于是〔定义〕：</p>
 <blockquote>
-<p> $G$ 中关于等价关系 $\overset{\mathrm{R}}\sim$ 的每个等价类 $Ag$ 称为群 $G$ 对于子群 $A$ 的<strong>右陪集</strong>（right coset）. 对于该关系的完全代表系 $R=\{g_i\mid i\in I\}$ 称为 <strong>$G$ 对于 $A$ 的右陪集代表元系</strong> （system of representatives for the right cosets of $A$ in $G$）．分划 $\mathscr R=\{Ag\mid g\in R\}$ 称为 $G$ 对子群 $A$ 的<strong>右陪集分解</strong>（right coset partition），通常以等式记作：</p>
+<p> $G$ 中关于等价关系 $\overset{\mathrm{R}}\sim$ 的每个等价类 $Ag$ 称为群 $G$ 对于子群 $A$ 的<strong>右陪集</strong>（right coset）．对于该关系的完全代表系 $R=\{g_i\mid i\in I\}$ 称为 <strong>$G$ 对于 $A$ 的右陪集代表元系</strong> （system of representatives for the right cosets of $A$ in $G$）．分划 $\mathscr R=\{Ag\mid g\in R\}$ 称为 $G$ 对子群 $A$ 的<strong>右陪集分解</strong>（right coset partition），通常以等式记作：</p>
 <p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{g\in R}Ag$．</p>
 <p>类似地可以定义等价关系 $\overset{\mathrm{L}}\sim$：</p>
 <p>&emsp;&emsp;$\forall\;g,\,h\in G,\quad g\overset{\mathrm{L}}\sim h\;\Leftrightarrow\;g^{-1}h\in A$，</p>
@@ -322,7 +322,7 @@
 <li>质数阶群的子群必为平凡子群．</li>
 </ul>
 <hr>
-<p>〔定理 3.3〕：</p>
+<p>〔定理 3.3〕 计数公式：</p>
 <blockquote>
 <p>设 $G$ 为有限群，$A,\;B\leq G$，则</p>
 <p>&emsp;&emsp;(α)&emsp;$|AB|=\dfrac{|A|\cdot|B|}{|A\cap B|}$；</p>
@@ -346,33 +346,8 @@
 <p>$B$ 对子群 $A$ 的右陪集分解</p>
 <p>&emsp;&emsp;$B=\displaystyle\bigsqcup_{i=1}^m Ab_i,\quad b_i\in B,\;m:=[B:A]$，</p>
 <p>则 $G=\displaystyle\bigsqcup_{j=1}^n\displaystyle\bigsqcup_{i=1}^m Ab_ig_j$，</p>
-<p>若 $Ab_ig_j=Ab_{i’}g_{j’}$</p>
 <p>&emsp;$(i,\,i’\in\{x\in\mathbb N\mid 1\leq x\leq m\},\quad j,\,j’\in\{x\in\mathbb N\mid 1\leq x\leq n\})$，</p>
-<p>则 $b_{i’}g_{j’}g_j^{-1}b_i^{-1}\in A$，</p>
-<p>从而 $g_{j’}g_j^{-1}\in b_{i}^{-1}Ab_i\subseteq B$，</p>
-<p>因此 $Bg_{j’}=Bg_j$，由陪集的性质可知 $j=j’$；</p>
-<p>从而又有 $b_{i’}g_{j’}g_j^{-1}b_i^{-1}=b_{i’}(g_jg_j^{-1})b_i^{-1}=b_{i’}b_i^{-1}\in A$，</p>
-<p>同理有 $Ab_{i’}=Ab_i$，</p>
-<p>因此 $i=i’$．</p>
-<p>综上，当 $(i,\,j)\neq(i’,\,j’)$ 时，$Ab_ig_j$ 是 $G$ 对子群 $A$ 的不同陪集，即</p>
-<p>&emsp;&emsp;$[G:A]=mn=[G:B][B:A]$．</p>
-<p>(γ)：</p>
-<p>对于任意 $b,\,b’\in B$，若 $(A\cap B)b\neq(A\cap B)b’$，则 $b’b^{-1}\not\in A\cap B$，</p>
-<p>于是有 $b’b^{-1}\not\in A$，从而 $Ab\neq Ab’$，<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup></p>
-<p>由此可知，$[B:(A\cap B)]\leq[G:A]$（考虑陪集的数量），</p>
-<p>于是得证</p>
-<p>&emsp;&emsp;$[G:(A\cap B)]=[G:B][B:(A\cap B)]\leq[G:B][G:A]$，</p>
-<p>又由此有</p>
-<p>&emsp;&emsp;$[G:B]\mid [G:(A\cap B)]$，</p>
-<p>&emsp;&emsp;$[G:A]\mid [G:(A\cap B)]$，</p>
-<p>若特别地有 $\gcd([G:A],\,[G:B])=1$，则 $([G:A][G:B])\mid [G:(A\cap B)]$，</p>
-<p>又由于 $[G:(A\cap B)]\leq[G:A][G:B]$，得证 $[G:(A\cap B)]=[G:A][G:B]$．</p>
-<p>由此则</p>
-<p>&emsp;&emsp;$\dfrac{|G|}{|A\cap B|}=\dfrac{|G|^2}{|A|\cdot|B|}$，</p>
-<p>&emsp;&emsp;$|G|=\dfrac{|A|\cdot|B|}{|A\cap B|}$，</p>
-<p>由 (α) 有 $|G|=|AB|$，从而得证 $G=AB$．</p>
-<p align="right" style="font-size:180%" >■</p>
-
+<p>&emsp;</p>
 </blockquote>
 <h1 id="Ordines-Elementorum-元素的阶"><a href="#Ordines-Elementorum-元素的阶" class="headerlink" title="Ordines Elementorum 元素的阶"></a>Ordines Elementorum 元素的阶</h1><p>设 $g\in G$，若存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则满足此式的最小正整数 $n$ 称为元素 $g$ 的<strong>阶</strong>（order），记作 $|g|$ 或 $\mathrm{ord}(g)$，这样的元素 $g$ 称为<strong>有限阶元素</strong>（element of finite order）．若不存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则称 $g$ 为<strong>无限阶元素</strong>（element of infinite order），并记 $|g|=\infty$．</p>
 <p>于是可得，有限群 $G$ 中任一元素均为有限阶元素．</p>
@@ -543,8 +518,7 @@
 </blockquote>
 <p>〔参考解答〕：</p>
 <blockquote>
-<p>〔$\Rightarrow$〕：显然．</p>
-<p>〔$\Leftarrow$〕：</p>
+<p>充分性显然．</p>
 <p>因为 $G$ 是群，满足结合律，且易证其满足消去律，而 $A\subseteq G$，所以 $A$ 也满足结合律与消去律．</p>
 <p>由条件可知 $A$ 具有封闭性，因此 $A$ 为满足消去律的有限半群（3.C），于是 $A$ 是群，即 $A\leq G$．</p>
 <p align="right" style="font-size:180%" >■</p>
@@ -625,6 +599,43 @@
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
+<hr>
+<p>〔3.J〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $G$ 为有限群，$H,\,K\leq G$，则 $\forall\;g\in G,\quad$ $|HgK|=|H|\cdot[K:K\cap g^{-1}Hg]=|K|\cdot[H:H\cap gKg^{-1}]$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>$HgK$ 称为 $G$ 对于子群 $H,\,K$ 的双陪集，该双陪集可以分解为 $G$ 对于 $H$ 的右陪集之并：</p>
+<p>&emsp;&emsp;$HgK=\displaystyle\bigsqcup_{i=1}^t Hgk_i\quad(k_i\in K)$，</p>
+<p>因此 $|HgK|=|H|\cdot t$．</p>
+<p>易证 $K\cap gHg^{-1}\leq K$，于是任取 $k,\,k’\in K$，有</p>
+<p>&emsp;&emsp;$Hgk=Hgk’\;\Leftrightarrow\;\exists\;h\in H,\quad hgk=gk’$</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\;\;\Leftrightarrow\;\exists\;h\in H,\quad g^{-1}hg=k’k^{-1}$</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\;\;\Leftrightarrow\;k’k^{-1}\in g^{-1}Hg$</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$\;\;\Leftrightarrow\;k’k^{-1}\in K\cap g^{-1}Hg$，</p>
+<p>从而 $K=\displaystyle\bigsqcup_{i=1}^t\;(K\cap g^{-1}Hg)k_i\quad(k_i\in K)$，即 $t=[K:K\cap g^{-1}Hg]$，</p>
+<p>进而 $|HgK|=|H|\cdot t=|H|\cdot[K:K\cap g^{-1}Hg]=\dfrac{|H|\cdot|K|}{|K\cap g^{-1}Hg|}$ $=\dfrac{|H|\cdot|K|}{|H\cap gKg^{-1}|}=|K|\cdot[H:H\cap gKg^{-1}]$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.K〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $G$ 为群，则 $\forall\;a,\,b\in G,\quad |a|=|a^{-1}|,\;|ab|=|ba|$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>设 $|a|=k$，则 $(a^{-1})^k=(a^k)^{-1}=e$，</p>
+<p>若 $\exists\;k’&lt;k,\quad(a^{-1})^{k’}=e$，则 $e=(a^{-1})^{k’}=(a^{k’})^{-1}=a^{k’}$，与 $|a|=k$ 矛盾，因此 $|a^{-1}|=k=|a|$．</p>
+<p>设 $|ab|=\ell$，则 $(ba)^\ell=b(ab)^{\ell-1} a=be(ab)^{-1}a=e$，</p>
+<p>若 $\exists\;\ell’&lt;\ell,\quad(ba)^{\ell’}=e$，则 $e=b^{-1}(ba)^{\ell’+1}a^{-1}=(ab)^{\ell’}$，与 $|ab|=\ell$ 矛盾，因此 $|ba|=\ell=|ab|$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>可以看出，$ba=a^{-1}(ab)a$，即 $ba$ 与 $ab$ 共轭</li>
+</ul>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. 群中元素的消去律可由逆元的唯一性得证．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
@@ -924,5 +935,20 @@
   
     <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js"></script>
 </body>
 </html>
