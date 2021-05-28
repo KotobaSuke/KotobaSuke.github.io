@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-30T03:07:25.000Z">
-<meta property="article:modified_time" content="2021-05-28T13:50:46.502Z">
+<meta property="article:modified_time" content="2021-05-28T17:50:46.622Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -344,6 +344,19 @@
 <p>特别地，若令 $p\in\mathbb P$，则得证了 <strong>Fermat（费马）小定理</strong>（Fermat’s little theorem）：</p>
 <blockquote>
 <p>$a^{\varphi(p)}=a^{p-1}\equiv 1\pmod p$．</p>
+</blockquote>
+<hr>
+<p>〔4.C〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;若群 $G$ 只有有限个子群，则 $G$ 为有限群．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>若 $G$ 中存在无限阶元素 $g$，则子群 $\langle g\rangle$ 同构于整数加法群 $\mathbb Z$，它有形如 $n\mathbb Z\;(n\in\mathbb Z)$ 的无限个子群，矛盾．</p>
+<p>于是 $G$ 中元素均为有限阶元素，并且因为 $G$ 的子群数量有限，所以其循环子群的数量亦有限，由此可知 $G=\displaystyle\bigcup_{g\in G}\;\langle g\rangle$，于是又可知存在一组生成元 $g_1,\,g_2,\,\cdots,\,g_n\in G$ 使得 $G=\displaystyle\bigsqcup_{i=1}^n\;\langle g_i\rangle$．</p>
+<p>因为所有 $G$ 中元素均为有限阶元素，所以上述生成元所生成的循环群均为有限群，从而 $G$ 为有限群．</p>
+<p align="right" style="font-size:180%" >■</p>
+
 </blockquote>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. $A,\,B\leq G\;\Rightarrow\;A\cap B\leq G$，见 <a href="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">抽象代数笔记 〇三：子群与陪集</a> 注释(2)．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
