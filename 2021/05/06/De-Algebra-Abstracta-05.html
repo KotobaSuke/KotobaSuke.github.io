@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-05-06T12:15:02.000Z">
-<meta property="article:modified_time" content="2021-05-15T13:15:01.439Z">
+<meta property="article:modified_time" content="2021-05-29T09:11:59.546Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -275,7 +275,7 @@
 <p>&emsp;&emsp;&emsp;&emsp;因此 $g^{-1}g’\in\{g\in G\mid \forall\;a\in M,\; g^{-1}ag=a\}$，</p>
 <p>&emsp;&emsp;从而 $\{g\in G\mid \forall\;a\in M,\; g^{-1}ag=a\}\leq G$．</p>
 <p>该子群称为 $M$ 的<strong>中心化子</strong>（centralizer），记为 $\mathrm C_G(M)$．</p>
-<p>特别地，$G$ 自身的中心化子 $\mathrm C_G(G)$ 可记为 $\mathrm Z(G)$ 或 $\mathrm C(G)$，称为 $G$ 的<strong>中心</strong>（center），其中的元素即与 $G$ 中任一元素均可交换的元素，这些元素称为 $G$ 的<strong>中心元素</strong>（central element）．</p>
+<p>特别地，$G$ 自身的中心化子 $\mathrm C_G(G)$ 可记为 $\mathrm Z(G)$ <sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>或 $\mathrm C(G)$，称为 $G$ 的<strong>中心</strong>（center），其中的元素即与 $G$ 中任一元素均可交换的元素，这些元素称为 $G$ 的<strong>中心元素</strong>（central element）．</p>
 </blockquote>
 <ul>
 <li>$G$ 中任一元素 $a$ 所成单元素集合 $\{a\}$，其正规化子 $\mathrm N_G(\{a\})$ 与中心化子 $\mathrm C_G(\{a\})$ 可分别简记为 $\mathrm N_G(a),\,\mathrm C_G(a)$，且恒有 $\mathrm N_G(a)=\mathrm C_G(a)$．</li>
@@ -294,7 +294,7 @@
 <p>考虑 $\mathbb R$ 上的 $2$ 次一般线性群 $\mathrm{GL}_2(\mathbb R)=:G$，设其子集 $S=\left\{\left.\begin{bmatrix}k &amp;\\ k &amp; 2k\end{bmatrix}\;\right|\;k\in\mathbb R\setminus\{0\}\right\}$，并设 $﻿𝑨=\begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}$ 为 $G$ 中某一矩阵，于是 $\forall\;﻿𝑴\in S,$</p>
 <p>&emsp;&emsp;$𝑴﻿𝑨=﻿𝑨﻿𝑴$ $\;\Leftrightarrow\;a=a+b,\;b=2b,\;a+2c=c+d,\;b+2d=2d$ $\;\Leftrightarrow\;a+c=d$，</p>
 <p>所以 $\mathrm C_G(S)=\{﻿𝑨\in G\mid\forall\;﻿𝑴\in S,\;﻿𝑴﻿𝑨=﻿𝑨﻿𝑴\}$ $=\left\{\left.\begin{bmatrix}a &amp;\\ c &amp; d\end{bmatrix}\;\right|\;a,\,c,\,d\in\mathbb R,\;a+c=d\right\}$．</p>
-<p>考虑 $\mathbb R$ 上的 $n$ 次一般线性群 $\mathrm{GL}_n(\mathbb R)$，其中心为 $n$ 阶实数量矩阵所成的子群，即 $\mathrm Z(\mathrm{GL}_n(\mathbb R))=\{k﻿𝑰_n\mid k\in\mathbb R\setminus\{0\}\}$．<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup></p>
+<p>考虑 $\mathbb R$ 上的 $n$ 次一般线性群 $\mathrm{GL}_n(\mathbb R)$，其中心为 $n$ 阶实数量矩阵所成的子群，即 $\mathrm Z(\mathrm{GL}_n(\mathbb R))=\{k﻿𝑰_n\mid k\in\mathbb R\setminus\{0\}\}$．<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup></p>
 </blockquote>
 <hr>
 <p>〔定理 5.2〕：</p>
@@ -356,7 +356,7 @@
 <p>而 $|a|=p$，因此 $A:=\{e,\,a,\,a^2,\,\cdots,\,a^{p-1}\}\leq G$，且 $A$ 中所有元素均为中心元素．</p>
 <p>因为 $|G|=p^2,\;|A|=p&lt;p^2$，</p>
 <p>所以 $\exists\;z\in(G\setminus A),\quad |z|=p$，</p>
-<p>从而可证 $A,\,Az,\,Az^2,\,\cdots,\,Az^{p-1}$ 是 $G$ 对 $A$ 的全部右陪集．<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup></p>
+<p>从而可证 $A,\,Az,\,Az^2,\,\cdots,\,Az^{p-1}$ 是 $G$ 对 $A$ 的全部右陪集．<sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup></p>
 <p>因此 $G=\{a^mz^n\mid 0\leq m,\,n\leq p-1\}\quad(a^0=z^0=e)$，</p>
 <p>又因为 $a^m\in\mathrm Z(G)$，</p>
 <p>所以由中心元素的交换性，可得 $(a^mz^n)(a^{m’}z^{n’})=a^{m+m’}z^{n+n’}=(a^{m’}z^{n’})(a^mz^n)\quad$$(0\leq m,\,m’,\,n,\,n’\leq p-1)$，得证．</p>
@@ -376,10 +376,13 @@
 <sup>(4)</sup>. 自然也可以写作 $\{g\in G\mid\forall\;a\in M,\;ga=ag\}$．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(5)">
-<sup>(5)</sup>. 数量矩阵（scalar matrix，或谓之标量矩阵）即单位矩阵与非零数量（在此是实数）的乘积．这一结论在线性代数中也可以表述为：与某一矩阵相似的矩阵只有其自身，当且仅当该矩阵为数量矩阵．在此不证．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+<sup>(5)</sup>. 字母 Z 取自德语的 <em>Zentrum</em>（中心）．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(6)">
-<sup>(6)</sup>. 注意 $\forall\;k\in\mathbb N_+,\quad (z^k=e)\Leftrightarrow(z^k\in A)$．设 $0\leq n&lt;m\leq p-1$，若存在 $Az^m=Az^n$，则由陪集的定义有 $z^{m-n}\in A$，由于 $m-n$ 与 $p$ 互质（$m-n&lt;p,\;p\in\mathbb P$），而 $|z|=p$，所以 $m-n=1,\;z^{m-n}=z\in A$，与前述矛盾．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+<sup>(6)</sup>. 数量矩阵（scalar matrix，或谓之标量矩阵）即单位矩阵与非零数量（在此是实数）的乘积．这一结论在线性代数中也可以表述为：与某一矩阵相似的矩阵只有其自身，当且仅当该矩阵为数量矩阵．在此不证．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(7)">
+<sup>(7)</sup>. 注意 $\forall\;k\in\mathbb N_+,\quad (z^k=e)\Leftrightarrow(z^k\in A)$．设 $0\leq n&lt;m\leq p-1$，若存在 $Az^m=Az^n$，则由陪集的定义有 $z^{m-n}\in A$，由于 $m-n$ 与 $p$ 互质（$m-n&lt;p,\;p\in\mathbb P$），而 $|z|=p$，所以 $m-n=1,\;z^{m-n}=z\in A$，与前述矛盾．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
 </blockquote>
 <hr>
 <p>前：<a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a></p>

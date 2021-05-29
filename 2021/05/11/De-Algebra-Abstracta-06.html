@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-05-11T12:54:44.000Z">
-<meta property="article:modified_time" content="2021-05-24T08:46:17.293Z">
+<meta property="article:modified_time" content="2021-05-29T12:03:45.781Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -287,6 +287,54 @@
 <p>考虑实数加法群 $(\mathbb R,\,+)$，它是阿贝尔群，所以其任一子群均为正规子群．取 $2\mathbb R:=\{2k\mid k\in\mathbb R\}$，有 $2\mathbb R\lhd \mathbb R$．$\mathbb R$ 对于该子群的陪集形式为 $\ell+2\mathbb R=2\mathbb R+\ell=\{2k+\ell\mid k,\,\ell\in\mathbb R\}=\mathbb R\quad(\ell\in\mathbb R)$，于是商群 $\mathbb R/2\mathbb R=\{\mathbb R\}$ 为平凡群．又，$\{0\}$ 是 $(\mathbb R,\,+)$ 的一个平凡正规子群，$\mathbb R$ 对其陪集形式为 $k+\{0\}=\{0\}+k=\{k\}\quad(k\in\mathbb R)$，于是商群 $\mathbb R/\{0\}=\{\{k\mid k\in\mathbb R\}\}$ 亦为平凡群．</p>
 <p>考虑 $\mathbb R$ 上的 $n$ 次一般线性群 $\mathrm{GL}_n(\mathbb R)$，其中心为 $n$ 阶实数量矩阵所成的子群 $\{k﻿𝑰_n\mid k\in\mathbb R\setminus\{0\}\}=:N$，且该子群为正规子群．$\mathrm{GL}_n(\mathbb R)$ 对于子群 $N$ 的陪集形式为 $﻿𝑴N=N﻿𝑴=\{k﻿𝑴\mid k\in\mathbb R\setminus\{0\},\;𝑴\in \mathrm{GL}_n\mathbb(R)\}$，即某一 $n$ 阶可逆实方阵与所有非零实数的乘积所成集合，于是商群 $\mathrm{GL}_n(\mathbb R)/N=\{\{k﻿𝑴\mid k\in\mathbb R\setminus\{0\}\}\mid ﻿𝑴\in\mathrm{GL}_n(\mathbb R)\}$．</p>
 </blockquote>
+<h1 id="Quadri-Caterva-Kleini-克莱因四元群"><a href="#Quadri-Caterva-Kleini-克莱因四元群" class="headerlink" title="Quadri-Caterva Kleini  克莱因四元群"></a>Quadri-Caterva Kleini  克莱因四元群</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设集合 $V=\{e,\,a,\,b,\,c\}$ 关于乘法形成群， $e$ 为单位元，且有</p>
+<p>&emsp;&emsp;$\forall\;x\in V,\quad x^2=e$，</p>
+<p>&emsp;&emsp;$ab=ba=c$，</p>
+<p>这样的群 $V$ 称为 <strong>Klein（克莱因）<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>四元群</strong>（Klein four-group，或以德语原名 <em>Vierergruppe</em> “四之群” 称之）．</p>
+<p>随之而有群论中重要的一个事实，任一 $4$ 阶群均同构于 Klein 四元群或 $4$ 阶循环群其一，即犹言 $4$ 阶群本质上只有 Klein 四元群与 $4$ 阶循环群两个，这同时也说明 Klein 四元群是阶数最低的非循环群（质数阶群均为循环群）．</p>
+</blockquote>
+<p>对上述事实可以证明如下：</p>
+<blockquote>
+<p>设 $G$ 为 $4$ 阶群，记 $4$ 阶循环群为 $C_4$，</p>
+<p>若存在 $g\in G,\;|g|=4$，则 $G\cong C_4$．</p>
+<p>否则其所有非单位元的阶均为 $2$，&emsp;（Th. 3.4）</p>
+<p>从而任取非单位元 $a\in G$，有 $a^2=e$，且 $a=a^{-1}$，</p>
+<p>于是 $\langle a\rangle=\{e,\,a\}$ 为 $2$ 阶循环群，且 $\langle a\rangle\lhd G$（阿贝尔群均为正规子群），</p>
+<p>从而商群 $\overline G:=G/\langle a\rangle$ 的阶为 $\dfrac{|G|}{|\langle a\rangle|}=2$，</p>
+<p>令 $\overline G=\{\langle a\rangle,\,b\langle a\rangle\}$，而 $b\langle a\rangle=\langle a\rangle b=\{b,\,ab=ba\}$，且 $b\in G\setminus\langle a\rangle$，</p>
+<p>所以 $b\neq e$，且 $b\neq a$，而因为 $ab\langle a\rangle=\langle a\rangle b\langle a\rangle=b\langle a\rangle$，所以 $ab\not\in\langle a\rangle$，即 $ab\neq e,\;ab\neq a$，</p>
+<p>又因为 $a\neq e$，所以 $ab\neq b$，所以 $ab$ 为 $G$ 中不等于 $e,\,a,\,b$ 的元素，记作 $c$，则 $G=\{e,\,a,\,b,\,c\}$，即 Klein 四元群．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>对所有非单位元 $a\in V$，商群 $V/\langle a\rangle=\{\langle a\rangle,\,b\langle a\rangle\}$．</li>
+<li>$ac=ca=a^2b=eb=b$，$bc=cb=b^2a=ea=a$．</li>
+</ul>
+<h1 id="Problemata-习题"><a href="#Problemata-习题" class="headerlink" title="Problemata 习题"></a>Problemata 习题</h1><h1 id="Problemata-习题-1"><a href="#Problemata-习题-1" class="headerlink" title="Problemata 习题"></a>Problemata 习题</h1><p>〔6.A〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;对于群 $G$ 的所有指数为 $2$ 的子群 $H$，都有 $H\lhd G$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>因为 $[G:H]=2$，所以考虑陪集分解，对于任一 $g\in G\setminus H$，均有 $G=H\sqcup gH=H\sqcup Hg$，从而 $gH=Hg$，这就证明了 $H\lhd G$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔6.B〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;若群 $G$ 对其中心 $\mathrm Z(G)$ 的商群 $G/\mathrm Z(G)$ 为循环群，则 $G$ 为阿贝尔群．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>设 $G/\mathrm Z(G)=\langle g\mathrm Z(G)\rangle\;(g\in G\setminus\mathrm Z(G))$，则 $\forall\;a,\,b\in G,\;$ $\exists\;c,\,d\in \mathrm Z(G),\;m,\,n\in\mathbb N,\quad$ $a=g^mc,\;b=g^nd$，</p>
+<p>从而 $ab=g^mcg^nd$，由中心元素的交换性可知 $ab=g^ndg^mc=ba$，得证．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. 不少资料中无论是否有 $N=G$，均只记作 $N\lhd G$．此处为了保持符号的系统性（参考 $\subseteq\;\leq$）而区分二者．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>
@@ -301,6 +349,9 @@
 </blockquote>
 <blockquote id="fn_(5)">
 <sup>(5)</sup>. 英语中读作 $G$ mod $N$．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. 菲利克斯·克莱因（Felix Klein），德国数学家，主要贡献于非欧几何与群论等领域，其提出的 Klein 瓶（Klein bottle）是无定向平面的知名例子．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
 </blockquote>
 <hr>
 <p>前：<a href="https://kotobasuke.github.io/2021/05/06/De-Algebra-Abstracta-05">抽象代数笔记 〇五：共轭、正规化子与中心化子</a></p>
@@ -370,7 +421,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Quae insunt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-Normales-%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Succatervae Normales 正规子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-Quotientis-%E5%95%86%E7%BE%A4"><span class="nav-number">2.</span> <span class="nav-text">Catervae Quotientis 商群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">3.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-Normales-%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Succatervae Normales 正规子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-Quotientis-%E5%95%86%E7%BE%A4"><span class="nav-number">2.</span> <span class="nav-text">Catervae Quotientis 商群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Quadri-Caterva-Kleini-%E5%85%8B%E8%8E%B1%E5%9B%A0%E5%9B%9B%E5%85%83%E7%BE%A4"><span class="nav-number">3.</span> <span class="nav-text">Quadri-Caterva Kleini  克莱因四元群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problemata-%E4%B9%A0%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">Problemata 习题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problemata-%E4%B9%A0%E9%A2%98-1"><span class="nav-number">5.</span> <span class="nav-text">Problemata 习题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">6.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
     
     </div>
   </aside>
