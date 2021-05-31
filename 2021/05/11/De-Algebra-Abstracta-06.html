@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-05-11T12:54:44.000Z">
-<meta property="article:modified_time" content="2021-05-29T13:00:51.725Z">
+<meta property="article:modified_time" content="2021-05-31T12:02:56.227Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -265,6 +265,26 @@
 <p>$N\lhd M,\;M\lhd G\;\Rightarrow\; N\lhd G$ 不一定成立，即正规子群的关系是非传递的．</p>
 </blockquote>
 <p>前一条的证明可由正规子群的定义显然得出，而后一条可以通过构造反例证明（将在后续的文章给出）．</p>
+<hr>
+<p>〔定理 6.2〕：</p>
+<blockquote>
+<p>$N\unlhd G\;\Leftrightarrow$ 存在群同态 $\varphi:G\to H$，使得 $N=\operatorname{Ker} \varphi$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>充分性：定义映射 $\pi:G\to G/N,\quad a\mapsto aN$，易证该映射为群同态，则显然 $\operatorname{Ker} \pi=N$．</p>
+<p>必要性：</p>
+<p>若 $N=\operatorname{Ker}\varphi$，则 $\forall\;g\in G,\;n\in N$，有</p>
+<p>&emsp;&emsp;$\varphi(g^{-1}ng)=\varphi(g)^{-1}\varphi(n)\varphi(g)$ $=\varphi(g)^{-1}e\varphi(g)=e$，</p>
+<p>从而得知 $g^{-1}Ng\subseteq\operatorname{Ker} \varphi=N$．</p>
+<p>同理可证 $gNg^{-1}\subseteq\operatorname{Ker}\varphi=N$，即 $N\subseteq=g^{-1}Ng$，</p>
+<p>所以 $N=g^{-1}Ng$，即得证 $N\unlhd G$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>不难看出，这里所定义的映射 $\pi$ 是满同态，称为<strong>典范满同态</strong>（canonical epimorphism）．</li>
+</ul>
 <h1 id="Catervae-Quotientis-商群"><a href="#Catervae-Quotientis-商群" class="headerlink" title="Catervae Quotientis 商群"></a>Catervae Quotientis 商群</h1><p>设 $N\unlhd G$，记 $\overline a=aN=Na$（群对其正规子群的左右陪集相等），集合 $\overline G=\{\overline a\mid a\in G\}$．</p>
 <p>定义其上的二元运算 $\overline a\cdot \overline b:=\overline{ab}$，则可得</p>
 <p>&emsp;&emsp;若 $\overline\alpha=\overline a,\;\overline\beta=\overline b$，即 $\alpha N=aN,\quad\beta N=bN$，</p>
@@ -410,6 +430,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2021/05/31/De-Algebra-Abstracta-07" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Abstracta 07 // 抽象代数笔记 〇七：同态与同构定理
+        
+      </div>
+    </a>
   
   
     <a href="/2021/05/06/De-Algebra-Abstracta-05" id="article-nav-older" class="article-nav-link-wrap">
