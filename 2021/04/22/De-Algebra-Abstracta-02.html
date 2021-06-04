@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
-<meta property="article:modified_time" content="2021-05-28T11:43:56.549Z">
+<meta property="article:modified_time" content="2021-06-04T00:23:25.384Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -244,7 +244,7 @@
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>设 $M$ 为幺半群，若存在 $a\in M$，使得 $\exists\;b\in S,\quad ab=ba=e$，则称 $a$ 为 $b$ 的<strong>逆元</strong>（inverse element），反之亦然. $a$ 的逆元记作 $a^{-1}$（注意逆元并不一定是 $-1$ 次幂）．</p>
+<p>设 $M$ 为幺半群，若存在 $a\in M$，使得 $\exists\;b\in S,\quad ab=ba=e$，则称 $a$ 为 $b$ 的<strong>逆元</strong>（inverse element），反之亦然．$a$ 的逆元记作 $a^{-1}$（注意逆元并不一定是 $-1$ 次幂）．</p>
 </blockquote>
 <ul>
 <li>$a=b^{-1}\;\Leftrightarrow\;b=a^{-1}.$</li>
@@ -257,7 +257,7 @@
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>设 $G$ 为幺半群，若 $\forall\;a\in G,\;\exists\;b,\quad b=a^{-1}$，则称 $G$ 为<strong>群</strong>（group）．</p>
+<p>设 $G$ 为幺半群，若 $\forall\;a\in G,\;\exists\;b\in G,\quad b=a^{-1}$，则称 $G$ 为<strong>群</strong>（group）．</p>
 </blockquote>
 <p>满足交换律的群称为<strong>交换群</strong>（commutative group）或<strong>阿贝尔群</strong>（abelian group）<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>．</p>
 <h1 id="Naturae-Catervarum-群的性质"><a href="#Naturae-Catervarum-群的性质" class="headerlink" title="Naturae Catervarum 群的性质"></a>Naturae Catervarum 群的性质</h1><p>&emsp;(α)&emsp;封闭性（closure）：&emsp;&emsp;$\forall\;a,\,b\in G,\quad ab\;\in G$；</p>
@@ -303,8 +303,8 @@
 <p>〔证明〕：</p>
 <blockquote>
 <p>由幺半群性质，显然可知存在单位元 $e\in M^\ast$；</p>
-<p>$(M,\,\cdot)$ 与 $(M^\ast,\,\cdot)$ 具有同一运算，因此显然有结合性，并且由于 $M^\ast$ 中任一元素均可逆则显然有封闭性 ；</p>
-<p>由于 $M^\ast$ 中各元素 $a$ 均可逆，其逆元 $a^{-1}$ 必然也属于 $M^\ast$，可知逆元存在性. 由此则 $(M^\ast,\,\cdot)$ 是群．</p>
+<p>$(M,\,\cdot)$ 与 $(M^\ast,\,\cdot)$ 具有同一运算，因此显然有结合性，并且由于 $M^\ast$ 中任一元素均可逆则显然有封闭性；</p>
+<p>由于 $M^\ast$ 中各元素 $a$ 均可逆，其逆元 $a^{-1}$ 必然也属于 $M^\ast$，可知逆元存在性．由此则 $(M^\ast,\,\cdot)$ 是群．</p>
 <p align="right" style="font-size:180%" >■</p>
 
 </blockquote>
@@ -349,7 +349,7 @@
 <p>〔定义〕：</p>
 <blockquote>
 <p>函数 $\varphi(n)$ 表示不大于 $n$ 且与 $n$ 互质的正整数之数目，即 $\varphi(n)=|\{a\in\mathbb N_+\mid a\leq n,\;a\,\bot\,n\}|$，称为<strong>Euler（欧拉）总计函数</strong>（Euler’s totient function）或简称 <strong>Euler 函数</strong>．</p>
-<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\mid a\,\bot\,n\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$．这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个．（详见 <a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a> 的“Euler 定理” 部分．）</p>
+<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\mid a\,\bot\,n\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$．这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个．（详见 <a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a> 的“Euler 定理”部分．）</p>
 </blockquote>
 <h1 id="Homomorphismi-amp-Isomorphismi-同态与同构"><a href="#Homomorphismi-amp-Isomorphismi-同态与同构" class="headerlink" title="Homomorphismi &amp; Isomorphismi 同态与同构"></a>Homomorphismi &amp; Isomorphismi 同态与同构</h1><p>〔定义〕：</p>
 <blockquote>
@@ -405,7 +405,7 @@
 <blockquote>
 <p>群 $G$ 到其自身的同态称为<strong>自同态</strong>（endomorphism<sup><a href="#fn_(11)" id="reffn_(11)">(11)</a></sup>），到其自身的同构称为<strong>自同构</strong>（automorphism<sup><a href="#fn_(12)" id="reffn_(12)">(12)</a></sup>）．</p>
 <p>自同态的复合恒为自同态（可参考前述关于同构等价的证明得证）．群 $G$ 上所有自同态所成集合关于复合运算成幺半群，称为<strong>自同态幺半群</strong>（endomorphism monoid），并记为 $\mathrm{End}(G)$，其单位元为 $G$ 上的恒等映射．</p>
-<p>群 $G$ 上所有自同构所成集合关于复合运算成群，称为<strong>自同构群</strong>（automorphism group），并记为$\mathrm{Aut}(G)$，其单位元为 $G$ 上的恒等映射，且由双射的性质可知其中所有映射均可逆. 由于同构具有传递性，因此可知其封闭性，由复合映射的性质可知其结合性．</p>
+<p>群 $G$ 上所有自同构所成集合关于复合运算成群，称为<strong>自同构群</strong>（automorphism group），并记为$\mathrm{Aut}(G)$，其单位元为 $G$ 上的恒等映射，且由双射的性质可知其中所有映射均可逆．由于同构具有传递性，因此可知其封闭性，由复合映射的性质可知其结合性．</p>
 </blockquote>
 <ul>
 <li>恒等映射称为<strong>平凡自同构</strong>（trivial automorphism）．</li>
@@ -421,7 +421,7 @@
 <sup>(3)</sup>. 幺半群的单位元唯一性亦可同理得证．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(4)">
-<sup>(4)</sup>. $a$ and $b$ are <strong>congruent modulo</strong> $n$，名词为 congruence．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+<sup>(4)</sup>. $a$ and $b$ are <strong>congruent modulo</strong> $n$，congruent 所对应的名词为 congruence．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_(5)">
 <sup>(5)</sup>. $\gcd(a,\,n)$ 表示 $a$ 与 $n$ 的最大公因数（<strong>g</strong>reatest <strong>c</strong>ommon <strong>d</strong>ivisor），$\gcd(a,\,n)=1$ 即 $a$ 与 $n$ 互质．此结论可由数论的 <strong>Bézout 定理</strong>（Bézout’s lemma）得出．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
