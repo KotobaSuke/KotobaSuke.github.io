@@ -71,14 +71,15 @@
 
 .bvideo-info .title {
     max-height: 40px;
-    min-height:19px;
+    min-height: 19px;
     color: #222;
     line-height: 1.4;
     font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; 
-    max-width: 25rem;
+    white-space: nowrap;
+    max-width: 25rem; 
+    margin: 0;
 }
 .bvideo-info .up-name {
     height: 19px;
