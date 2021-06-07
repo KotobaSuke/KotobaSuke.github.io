@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-06-04T18:50:22.000Z">
-<meta property="article:modified_time" content="2021-06-07T08:41:55.419Z">
+<meta property="article:modified_time" content="2021-06-07T13:24:28.147Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -394,7 +394,15 @@
 <hr>
 <p>$\mathfrak A_2=\{I\}\cong\{e\}$；</p>
 <p>$\mathfrak A_3=\{I,\,(1\;\;2)(1\;\;3),\,(1\;\;3)(1\;\;2)\}\cong\mathbb Z_3$；</p>
-<p>$V\cong\{I,\,(1\;\;2)(3\;\;4),\,(1\;\;3)(2\;\;4),\,(1\;\;4)(2\;\;3)\}\lhd\mathfrak A_4$ ，因此 $\mathfrak A_4$ 不是单群．</p>
+<p>$\{I,\,(1\;\;2)(3\;\;4),\,(1\;\;3)(2\;\;4),\,(1\;\;4)(2\;\;3)\}\lhd\mathfrak A_4$ ，因此 $\mathfrak A_4$ 不是单群．</p>
+<hr>
+<p>前文中曾指出关于正规子群的一个重要事实，即在 $N\leq M\leq G$ 且 $N\unlhd M,\;M\unlhd G$ 的前提下，不能保证 $N\unlhd G$ 总是成立，换言之，正规子群的关系是非传递的．其中一个典型的反例可以构造如下：</p>
+<blockquote>
+<p>令 $A=\{I,\,(1\;\;2)(3\;\;4)\}$，该群同构于 $2$ 阶循环群．</p>
+<p>令 $K=\{I,\,(1\;\;2)(3\;\;4),\,(1\;\;3)(2\;\;4),\,(1\;\;4)(2\;\;3)\}$，该群同构于 Klein 四元群．</p>
+<p>由于 $K$ 是阿贝尔群，且 $A&lt;K$，因此 $A\lhd K$，而前文已提及，$K\lhd \mathfrak A_4$，然而 $A\lhd \mathfrak A_4$ 并不成立，比如考虑 $(1\;\;2\;\;3)\in\mathfrak A_4$，则 $(1\;\;2\;\;3)A=\{(1\;\;2\;\;3),\,(1\;\;3\;\;4)\}$，而 $A(1\;\;2\;\;3)=\{(1\;\;2\;\;3),\,(2\;\;4\;\;3)\}$，$(1\;\;3\;\;4)\neq(2\;\;4\;\;3)$，所以 $(1\;\;2\;\;3)A\neq A(1\;\;2\;\;3)$．</p>
+</blockquote>
+<p>需要注意的一点是，同构并不保持对同一群的正规性，亦即 $A\unlhd G,\;B\leq G,\;A\cong B$ 并不能保证 $B\unlhd G$．这一事实的严谨说明暂且不甚简易，简言之即同构只保证了群的“内在”结构一致，正规性却是作为子群对于另一群而言的．作为子群时，互相同构的群并不总是具有同样的地位．如上的 $K$ 是 Klein 四元群在 $\mathfrak S_4$ 中的一种表示形式，可以证明 $K\lhd \mathfrak S_4$，然而其他表示，例如 $K’:=\{I,\,(1\;\;2),\,(3\;\;4),\,(1\;\;2)(3\;\;4)\}$ 虽然满足了 $K’\cong V,\;K’\in\mathfrak S_4$，却不满足 $K’\lhd \mathfrak S_4$．</p>
 <h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
 <sup>(1)</sup>. 轮换，以及下文的置换亦可考虑无限集上的形式，而此处只考虑有限集的情况．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
 </blockquote>

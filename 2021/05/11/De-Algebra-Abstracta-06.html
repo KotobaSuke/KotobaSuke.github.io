@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-05-11T12:54:44.000Z">
-<meta property="article:modified_time" content="2021-06-05T03:00:36.800Z">
+<meta property="article:modified_time" content="2021-06-07T09:20:40.474Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -229,10 +229,10 @@
 <p>&emsp;&emsp;(α)&emsp;$N\unlhd G$，即 $\forall\;g\in G,\quad g^{-1}Ng=N$&emsp;（共轭不变）；<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
 <p>&emsp;&emsp;(β)&emsp;$\mathrm N_G(N)=G$&emsp;（群自身是其正规子群的正规化子）；</p>
 <p>&emsp;&emsp;(γ)&emsp;$N$ 自身是其在 $G$ 中唯一共轭子群；<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup></p>
-<p>&emsp;&emsp;(δ)&emsp;$\forall\;g\in G,\;n\in N,\quad g^{-1}ng\in N$&emsp;（正规子群包含所有元素的共轭）；</p>
+<p>&emsp;&emsp;(δ)&emsp;$\forall\;g\in G,\;n\in N,\quad g^{-1}ng\in N$&emsp;（正规子群包含其中所有元素的共轭）；</p>
 <p>&emsp;&emsp;(ε)&emsp;$\forall\;g\in G,\quad gN=Ng$&emsp;（左右陪集相等）；</p>
 <p>&emsp;&emsp;(ζ)&emsp;$G$ 对于 $N$ 的任一左陪集均为右陪集，反之亦然；</p>
-<p>&emsp;&emsp;(η)&emsp;$N$ 是 $G$ 中所有共轭类之并．</p>
+<p>&emsp;&emsp;(η)&emsp;$N$ 是 $G$ 中若干共轭类之并．</p>
 </blockquote>
 <p>〔证明〕：</p>
 <blockquote>
@@ -246,9 +246,9 @@
 <p>&emsp;因为 $e\in N$，所以 $g=ge\in gN=Ng’$，</p>
 <p>&emsp;又因为 $g=eg\in Ng$，所以 $Ng=Ng’=gN$．</p>
 <p>(δ) $\Leftrightarrow$ (η)：</p>
-<p>&emsp;记 $n\in N$ 的共轭类为 $[n]$，因为 $\forall\;n\in N,\quad [n]\subseteq N$，所以 $\displaystyle\bigcup_{a\in N}\;[n]\subseteq N$，</p>
-<p>&emsp;又因为 $\forall\;n\in N,\quad n\in [n]$，所以 $N\subseteq\displaystyle\bigcup_{a\in N}\;[n]$，</p>
-<p>&emsp;进而得证 $\displaystyle\bigcup_{a\in N}\;[n]=N$；</p>
+<p>&emsp;记 $n\in N$ 的共轭类为 $[n]$，因为 $\forall\;n\in N,\quad [n]\subseteq N$，所以 $\displaystyle\bigsqcup_{n\in N}\;[n]\subseteq N$，</p>
+<p>&emsp;又因为 $\forall\;n\in N,\quad n\in [n]$，所以 $N\subseteq\displaystyle\bigsqcup_{n\in N}\;[n]$，</p>
+<p>&emsp;进而得证 $\displaystyle\bigsqcup_{n\in N}\;[n]=N$；</p>
 <p>&emsp;必要性显然．</p>
 <p align="right" style="font-size:180%" >■</p>
 
