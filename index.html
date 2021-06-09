@@ -255,7 +255,10 @@
         <p class="article-excerpt-content">
           前：抽象代数笔记 〇七：同态与同构定理
 
-置换源自生活中常见的换位、排列等过程，而各种各样的置换构成了群论中另一类重要的群——对称群．正如其名，对称群不只是置换的堆砌，而却刻画了群的对称性（symmetry）．研究群论的学者也试图像化学家一样，寻找构成群的“化学元素”，而这正是本文所要介绍的单群．从早期的炼金术到元素周期律的确定，化学元素的研究贯穿了数世纪的理论更迭．逾万页的论文所总结出的有限单群分类体系，证明了有限单群只有确定的 18 个“族”以及不属于任一族的 26 种散在单群（spo...
+置换源自生活中常见的换位、排列等过程，而各种各样的置换构成了群论中另一类重要的群——置换群．另一方面，研究群论的学者也试图像化学家一样，寻找构成群的“化学元素”，而这正是本文所要介绍的单群．逾万页的论文所总结出的有限单群分类体系，证明了有限单群只有确定的 18 个“族”以及不属于任一族的 26 种散在单群（sporadic group）．
+Cycli &amp; Permutationes 轮换与置换〔定义〕：
+
+设有限集(1) $X$ 上的映射 ...
         </p>
         <p class="article-more-link">
           <a href="/2021/06/05/De-Algebra-Abstracta-08#more">Legere plus</a>
@@ -921,5 +924,20 @@ Yamatokotoba is a conlang that replaces most foreign words (外来語) or Sino-J
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
   
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js"></script>
 </body>
 </html>
