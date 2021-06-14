@@ -11,17 +11,17 @@
   
   
   
-  <meta name="description" content="前：抽象代数笔记 〇六：正规子群与商群 后：抽象代数笔记 〇八：置换群与单群  前文中曾提及了同构在群论中的核心地位，而同构相关的定理将寻求同构关系的过程显著地简化． Imago &amp; Nucleus 像与核〔定义〕：  设 $f:G\to H$ 是群之间的映射： $f(G):&#x3D;\{f(g)\mid g\in G\}$ 称为群 $G$ 在映射 $f$ 下的像（image），即 $G$ 中所有">
+  <meta name="description" content="前：抽象代数笔记 〇六：正规子群与商群 后：抽象代数笔记 〇八：置换群与单群  前文中曾提及了同构在群论中的核心地位，而同构相关的定理将寻求同构关系的过程显著地简化．本节的内容涉及与同态、同构相关的四个重要定理，这四个定理将在后续更深入的内容中派上用场． Imago &amp; Nucleus 像与核〔定义〕：  设 $f:G\to H$ 是群之间的映射： $f(G):&#x3D;\{f(g)\mid g\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="De Algebra Abstracta 07 &#x2F;&#x2F; 抽象代数笔记 〇七：同态与同构定理">
 <meta property="og:url" content="https://kotobasuke.github.io/2021/05/31/De-Algebra-Abstracta-07">
 <meta property="og:site_name" content="Histologium Kotobae">
-<meta property="og:description" content="前：抽象代数笔记 〇六：正规子群与商群 后：抽象代数笔记 〇八：置换群与单群  前文中曾提及了同构在群论中的核心地位，而同构相关的定理将寻求同构关系的过程显著地简化． Imago &amp; Nucleus 像与核〔定义〕：  设 $f:G\to H$ 是群之间的映射： $f(G):&#x3D;\{f(g)\mid g\in G\}$ 称为群 $G$ 在映射 $f$ 下的像（image），即 $G$ 中所有">
+<meta property="og:description" content="前：抽象代数笔记 〇六：正规子群与商群 后：抽象代数笔记 〇八：置换群与单群  前文中曾提及了同构在群论中的核心地位，而同构相关的定理将寻求同构关系的过程显著地简化．本节的内容涉及与同态、同构相关的四个重要定理，这四个定理将在后续更深入的内容中派上用场． Imago &amp; Nucleus 像与核〔定义〕：  设 $f:G\to H$ 是群之间的映射： $f(G):&#x3D;\{f(g)\mid g\">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/06/09/eLolwkQhOFucMd9.png">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-05-31T15:32:43.000Z">
-<meta property="article:modified_time" content="2021-06-09T13:26:41.137Z">
+<meta property="article:modified_time" content="2021-06-14T03:42:01.985Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -216,7 +216,7 @@
         <p>前：<a href="https://kotobasuke.github.io/2021/05/11/De-Algebra-Abstracta-06">抽象代数笔记 〇六：正规子群与商群</a></p>
 <p>后：<a href="https://kotobasuke.github.io/2021/06/05/De-Algebra-Abstracta-08">抽象代数笔记 〇八：置换群与单群</a></p>
 <hr>
-<p>前文中曾提及了同构在群论中的核心地位，而同构相关的定理将寻求同构关系的过程显著地简化．</p>
+<p>前文中曾提及了同构在群论中的核心地位，而同构相关的定理将寻求同构关系的过程显著地简化．本节的内容涉及与同态、同构相关的四个重要定理，这四个定理将在后续更深入的内容中派上用场．</p>
 <h1 id="Imago-amp-Nucleus-像与核"><a href="#Imago-amp-Nucleus-像与核" class="headerlink" title="Imago &amp; Nucleus 像与核"></a>Imago &amp; Nucleus 像与核</h1><p>〔定义〕：</p>
 <blockquote>
 <p>设 $f:G\to H$ 是群之间的映射：<img src="https://i.loli.net/2021/06/09/eLolwkQhOFucMd9.png" width=250 align="right"></p>
@@ -282,7 +282,8 @@
 <p>〔证明〕 ：</p>
 <blockquote>
 <p>(α)：</p>
-<p>充分性显然，证明其必要性，</p>
+<p>〔$\Rightarrow$〕显然．</p>
+<p>〔$\Leftarrow$〕：</p>
 <p>由于 $\forall\;a,\,b\in G,\quad\varphi(a)=\varphi(b)\;\Rightarrow\;\varphi(a^{-1}b)=e’$，</p>
 <p>所以 $a^{-1}b\in\ker \varphi=\{e\}$，</p>
 <p>于是 $a^{-1}b=e$，即 $a=b$，得证 $\varphi$ 为单同态．</p>
