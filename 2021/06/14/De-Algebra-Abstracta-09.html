@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
 <meta property="article:published_time" content="2021-06-13T17:41:19.000Z">
-<meta property="article:modified_time" content="2021-06-14T04:11:25.317Z">
+<meta property="article:modified_time" content="2021-06-15T08:31:12.726Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -253,7 +253,7 @@
 <p>〔例〕：</p>
 <blockquote>
 <p>考虑加法循环群 $\mathbb Z_4$ 到加法循环群 $\mathbb Z_5$ （视作集合）的群作用，$\mathbb Z_4\times \mathbb Z_5\to \mathbb Z_4,\quad (g,\;a)\mapsto ga:=(g+a)\bmod 5$，将此群作用的所有情况列为表格如下：</p>
-<p>&emsp;&emsp;$\begin{array}{c|ccccc}<br>_{\Large g}{\Large╲}^{\Large a}&amp;0&amp;1&amp;2&amp;3&amp;4\\\hline<br>0&amp;0&amp;1&amp;2&amp;3&amp;4\\<br>1&amp;1&amp;2&amp;3&amp;4&amp;0\\<br>2&amp;2&amp;3&amp;4&amp;0&amp;1\\<br>3&amp;3&amp;4&amp;0&amp;1&amp;2<br>\end{array}$</p>
+<p>&emsp;&emsp;$\begin{array}{c|ccccc}<br>_{\Large g}\kern -5pt{\Large╲}\kern -5pt^{\Large a}&amp;0&amp;1&amp;2&amp;3&amp;4\\\hline<br>0&amp;0&amp;1&amp;2&amp;3&amp;4\\<br>1&amp;1&amp;2&amp;3&amp;4&amp;0\\<br>2&amp;2&amp;3&amp;4&amp;0&amp;1\\<br>3&amp;3&amp;4&amp;0&amp;1&amp;2<br>\end{array}$</p>
 <p>可以看出，对每个 $g\in\mathbb Z_4$，都可以视其群作用为 $\mathfrak S_5$ 上一个置换（在此记作 $f(g)$）．如本例子中，有</p>
 <p>&emsp;&emsp;$f(0)=\begin{pmatrix}<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4<br>\end{pmatrix}=I,$</p>
 <p>&emsp;&emsp;$f(1)=\begin{pmatrix}<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\<br>1 &amp; 2 &amp; 3 &amp; 4 &amp; 0<br>\end{pmatrix}=(0\;\;1\;\;2\;\;3\;\;4),$</p>
@@ -316,7 +316,7 @@
 <blockquote>
 <p>设 $G$ 是群，定义映射 $G\times G\to G,\quad (g,\,a)\mapsto gag^{-1}$，这是一个群作用，称为群 $G$ 上的<strong>共轭作用</strong>（conjugation）<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>．其对应的置换表示为 $\pi:G\to\mathfrak{S}(G),\quad \pi(g)a=gag^{-1}$，由于 $\forall\;g\in G,$</p>
 <p>&emsp;&emsp;$\begin{aligned} g\in\ker\pi\;&amp;\Leftrightarrow\;\forall\;a\in G,\quad \pi(g)a=gag^{-1}=a\\<br>\phantom{\dfrac11} &amp;\Leftrightarrow\;g\in \mathrm Z(G),\end{aligned}$</p>
-<p>因此 $\ker\pi=\mathrm Z(G)$，即群 $G$ 的中心．</p>
+<p>因此 $\ker\pi=\mathrm Z(G)$，即群 $G$ 的中心．而对于任一元素 $g\in G$，其共轭类即对于共轭作用的 $G$–轨道．</p>
 <p>类似地，设 $A\subseteq G$，$\varSigma:=\{aAa^{-1}\mid a\in G\}$，定义群作用 $G\times\varSigma\to\varSigma,\quad (g,\,aAa^{-1})\mapsto gaHa^{-1}g^{-1}$，相应的置换表示为 $\sigma:G\to\mathfrak S(\varSigma),\quad\sigma(g)(aAa^{-1})=gaAa^{-1}g^{-1}$．由于 $\forall\;g\in G,$</p>
 <p>&emsp;&emsp;$\begin{aligned} g\in \ker\sigma\;&amp;\Leftrightarrow\;\forall\;a\in G,\quad\sigma(g)(aAa^{-1})=gaAa^{-1}g^{-1}=aAa^{-1}\\<br>\phantom{\dfrac11} &amp;\Leftrightarrow\;\forall\;a\in G,\quad a^{-1}gaAa^{-1}g^{-1}a=A\\<br>&amp;\Leftrightarrow\;\forall\;a\in G,\quad a^{-1}ga\in\mathrm N_G(A)\\<br>\phantom{\dfrac11}&amp;\Leftrightarrow\;\forall\;a\in G,\quad g\in a\mathrm N_G(A)a^{-1},\end{aligned}$</p>
 <p>因此 $\ker\sigma=\displaystyle\bigcap_{a\in G} a\mathrm N_G(A)a^{-1}$，即正规化子 $\mathrm N_G(A)$ 的所有共轭子群之交．</p>
@@ -324,7 +324,7 @@
 <hr>
 <p>〔定义〕：</p>
 <blockquote>
-<p>设 $\varSigma$ 为集合，$G$ 为群，群 $G$ 作用于 $\varSigma$ 上，且群作用的乘积记为 $g\cdot a$（$g\in G,\;a\in\varSigma$）．若对 $g\in G,\;a\in\varSigma$ 有 $g\cdot a=a$，则称 $a$ 是 $g$ 是一个<strong>固定点</strong>（fixed point），或称 $g$ <strong>固定</strong>（fix）$a$．$G_a:=\{g\in G\mid ga=a\}$ 是 $G$ 的一个子群，称为群 $G$ 对 $a$ 的<strong>稳定子群</strong>或<strong>固定子群</strong>（stabilizer subgroup）<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>．</p>
+<p>设 $\varSigma$ 为集合，$G$ 为群，群 $G$ 作用于 $\varSigma$ 上，且群作用的乘积记为 $g\cdot a$（$g\in G,\;a\in\varSigma$）．若对 $g\in G,\;a\in\varSigma$ 有 $g\cdot a=a$，则称 $a$ 是 $g$ 是一个<strong>固定点</strong>（fixed point），或称 $g$ <strong>固定</strong>（fix）$a$．$G_a:=\{g\in G\mid ga=a\}$ 是 $G$ 的一个子群，称为群 $G$ 对 $a$ 的<strong>稳定子群</strong>、<strong>稳定化子</strong>或<strong>固定子群</strong>（stabilizer subgroup）<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>．</p>
 </blockquote>
 <hr>
 <p>〔定理 9.2〕：<strong>轨道–稳定子群定理</strong>（orbit–stabilizer theorem）：</p>
