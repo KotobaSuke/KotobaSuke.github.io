@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/07/26/2uOMvg4iK6bfjL1.png">
 <meta property="og:image" content="https://i.loli.net/2021/07/26/mMHSKywkdTAOuxc.png">
 <meta property="article:published_time" content="2021-07-25T19:57:08.420Z">
-<meta property="article:modified_time" content="2021-07-26T15:13:10.911Z">
+<meta property="article:modified_time" content="2021-07-26T15:22:02.842Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -219,10 +219,11 @@
 <p>得 $k=\dfrac{﻿𝒂\cdot﻿𝒃}{﻿𝒂﻿\cdot𝒂}$，从而 $﻿𝒑=k﻿𝒂=\dfrac{﻿𝒂\cdot﻿𝒃}{﻿𝒂﻿\cdot𝒂}﻿𝒂=﻿𝒂\dfrac{﻿𝒂^\mathrm T﻿𝒃}{﻿𝒂^\mathrm T﻿﻿𝒂}=\dfrac{﻿𝒂﻿𝒂^\mathrm T}{﻿𝒂^\mathrm T﻿𝒂}﻿𝒃﻿$，</p>
 <p>从 $﻿𝒃$ 得到 ﻿$﻿𝒑$ 的过程可以视为对 $﻿𝒃$ 进行线性变换，而表示这一线性变换的矩阵为 $﻿𝑷:=\dfrac{﻿𝒂﻿𝒂^\mathrm T}{﻿𝒂^\mathrm T﻿𝒂}﻿$​，称为<strong>投影矩阵</strong>（projection matrix），从而有 $﻿𝒑=﻿𝑷﻿𝒃$．</p>
 <p>这其中与 $﻿𝒂$ 正交的向量 $﻿𝒃-﻿𝒑=:﻿𝒆$ 称为投影的<strong>误差</strong>（error）．</p>
-<h1 id="Projectio-in-Spatio-Vectorum-向量空间内的投影"><a href="#Projectio-in-Spatio-Vectorum-向量空间内的投影" class="headerlink" title="Projectio in Spatio Vectorum 向量空间内的投影"></a>Projectio in Spatio Vectorum <br>向量空间内的投影</h1><p>记 $\mathbb R^m$ 的子空间 $\mathbb R^n\;(n\leq m)$ 的一组基为 $﻿𝒂_1,\,𝒂_2,\,﻿\cdots,\,﻿𝒂_n$，而矩阵 $﻿𝑨:=\begin{bmatrix}\,﻿𝒂_1&amp;﻿𝒂_2&amp;\cdots&amp;﻿𝒂_n\,\end{bmatrix}$，此时向量 $﻿𝒃\in\mathbb R^m$ 在 $\mathbb R^n$ 上的投影是该组基向量之线性组合 $﻿𝑨﻿\hat 𝒙=:﻿𝒑$，其中 $\hat ﻿﻿𝒙$ 是系数组成的向量．<img src="https://i.loli.net/2021/07/26/bqlU4wsZyD1QgXP.png" width=250 align="right"></p>
+<h1 id="Projectio-in-Spatio-Vectorum-向量空间内的投影"><a href="#Projectio-in-Spatio-Vectorum-向量空间内的投影" class="headerlink" title="Projectio in Spatio Vectorum 向量空间内的投影"></a>Projectio in Spatio Vectorum <br>向量空间内的投影</h1><p>记 $\mathbb R^m$ 的子空间 $\mathbb R^n\;(n\leq m)$ 的一组基为 </p>
+<p>$﻿𝒂_1,\,𝒂_2,\,﻿\cdots,\,﻿𝒂_n$，而矩阵 $﻿𝑨:=\begin{bmatrix}\,﻿𝒂_1&amp;﻿𝒂_2&amp;\cdots&amp;﻿𝒂_n\,\end{bmatrix}$，此时向量 $﻿𝒃\in\mathbb R^m$ 在 $\mathbb R^n$ 上的投影是该组基向量之线性组合 $﻿𝑨﻿\hat{𝒙}=:﻿𝒑$，其中 $\hat{𝒙}$ 是系数组成的向量．<img src="https://i.loli.net/2021/07/26/bqlU4wsZyD1QgXP.png" width=250 align="right"></p>
 <p>记误差为 $﻿𝒆:=﻿𝒃-﻿𝒑$，由正交关系有 $﻿𝒂_1\,\bot\,﻿𝒆,\;﻿𝒂_2\,\bot\,﻿𝒆,\;\cdots,\;﻿𝒂_n\,\bot\,﻿𝒆$，即 $﻿𝑨^\mathrm T﻿𝒆=\mathbf 0$​．</p>
-<p>展开得 $𝑨^\mathrm T(﻿﻿𝒃-﻿𝒑)=𝑨^\mathrm T(﻿𝒃-﻿𝑨\hat﻿𝒙)=0$，即 $𝑨^\mathrm T﻿𝑨\hat﻿𝒙=𝑨^\mathrm T﻿𝒃$​．</p>
-<p>由此得系数向量 $\hat﻿𝒙=(𝑨^\mathrm T﻿﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒃$，投影 $﻿𝒑=﻿𝑨﻿\hat𝒙=﻿𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T﻿𝒃$，对应的投影矩阵即为 $﻿𝑷=𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T$．</p>
+<p>展开得 $𝑨^\mathrm T(﻿﻿𝒃-﻿𝒑)=𝑨^\mathrm T(﻿𝒃-﻿𝑨\hat﻿{𝒙})=0$​​，即 $𝑨^\mathrm T﻿𝑨\hat{﻿𝒙}=𝑨^\mathrm T﻿𝒃$​​​．</p>
+<p>由此得系数向量 $\hat{𝒙}=(𝑨^\mathrm T﻿﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒃$，投影 $﻿𝒑=﻿𝑨﻿\hat{𝒙}=﻿𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T﻿𝒃$，对应的投影矩阵即为 $﻿𝑷=𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T$．</p>
 <p>值得注意的是 $﻿𝑨$ 在大多情况下是不可逆的（列空间是 $\mathbb R^n$ 而非 $\mathbb R^m$），在可逆的情况下，向量 $﻿﻿𝒃$ 本身即在 $\mathbb R^n=\mathbb R^m$ 上，其投影为其自身，此时则有 $﻿𝑷=𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T=﻿𝑨﻿𝑨^{-1}(𝑨^\mathrm T)^{-1}𝑨^\mathrm T=﻿𝑰$．</p>
 <p>而矩阵 $﻿𝑨^\mathrm T﻿𝑨$ 却能保证总是可逆，考虑如下证明：</p>
 <blockquote>
@@ -238,9 +239,9 @@
 </blockquote>
 <h1 id="Adaptatio-ad-Lineam-in-Superficie-拟合平面上的直线"><a href="#Adaptatio-ad-Lineam-in-Superficie-拟合平面上的直线" class="headerlink" title="Adaptatio ad Lineam in Superficie 拟合平面上的直线"></a>Adaptatio ad Lineam in Superficie <br>拟合平面上的直线</h1><p>设平面上一组点的坐标为 $(x_1,\,y_1),\,\cdots,\,(x_n,\,y_n)$​​​​​，并设关于这组点的最优拟合直线方程为 $y=kx+s$​，记 $﻿𝒗:=\begin{bmatrix}\,k\,\\s\end{bmatrix}$​，﻿$﻿𝑨:=\begin{bmatrix}\,x_1\,&amp;\,1\,\\\vdots&amp;\vdots\\x_n&amp;1\end{bmatrix}$​，$﻿𝒚:=\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}$​​​​．</p>
 <p>若拟合直线恰能过所有点，则方程 $﻿𝑨﻿﻿𝒗=﻿𝒚$​​（相当于联立多个方程 $kx_i+s=y_i$​​）有解，否则会得到一个无解的方程，对应的线性方程组称为<strong>超定方程组</strong>（overdetermined system）．在无解的情况下，将 $﻿𝒚$​​ 投影到 ﻿$﻿𝑨$​​ 的列空间，会得到一个有解的方程</p>
-<p>&emsp;&emsp;$﻿𝑨﻿\hat 𝒗=﻿𝑨(﻿𝑨^\mathrm T﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒚$​​&emsp;（$\hat﻿𝒗$ 是 $﻿𝒗$ 的最优拟合），</p>
+<p>&emsp;&emsp;$﻿𝑨﻿\hat{𝒗}=﻿𝑨(﻿𝑨^\mathrm T﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒚$​​&emsp;（$\hat{𝒗}$ 是 $﻿𝒗$ 的最优拟合），</p>
 <p>对两侧左乘 $𝑨^\mathrm T﻿$，可得</p>
-<p>&emsp;&emsp;$𝑨^\mathrm T﻿﻿𝑨﻿\hat 𝒗=(𝑨^\mathrm T﻿﻿𝑨)(𝑨^\mathrm T﻿﻿𝑨)^{-1}𝑨^\mathrm T﻿﻿𝒚=𝑨^\mathrm T﻿﻿𝒚$​，</p>
+<p>&emsp;&emsp;$𝑨^\mathrm T﻿﻿𝑨﻿\hat{𝒗}=(𝑨^\mathrm T﻿﻿𝑨)(𝑨^\mathrm T﻿﻿𝑨)^{-1}𝑨^\mathrm T﻿﻿𝒚=𝑨^\mathrm T﻿﻿𝒚$​，</p>
 <p>这一方程称为直线拟合的<strong>正规方程</strong>（normal equation）．</p>
 <p>进一步考虑， $𝑨^\mathrm T﻿﻿𝑨=\begin{bmatrix}<br>\,x_1\, &amp; \cdots &amp;\,x_n\,\\<br>1 &amp; \cdots &amp; 1<br>\end{bmatrix}<br>\begin{bmatrix}<br>\,x_1\, &amp; \,1\,\\<br>\vdots &amp; \vdots\\<br>x_n &amp; 1<br>\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_i^2\, &amp; \,\sum x_i\,\\<br>\sum x_i &amp; n<br>\end{bmatrix}$​，</p>
 <p>$𝑨^\mathrm T﻿﻿𝒚=\begin{bmatrix}<br>\,x_1\, &amp; \cdots &amp;\,x_n\,\\<br>1 &amp; \cdots &amp; 1<br>\end{bmatrix}\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_iy_i\,\\<br>\sum y_i<br>\end{bmatrix}$​，</p>
@@ -280,9 +281,9 @@
 <p>而用前文的投影法，可设</p>
 <p>$﻿𝒗:=\begin{bmatrix}\,\alpha\,\\\beta\\\gamma\end{bmatrix}$​，﻿$﻿𝑨:=\begin{bmatrix}\,x_1^2\, &amp; x_1 &amp; \,1\,\\\vdots&amp;\vdots&amp;\vdots\\x_n^2 &amp; x_n &amp;1\end{bmatrix}$​，$﻿𝒚:=\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}$​​，</p>
 <p>方程 $﻿𝑨﻿𝒗=﻿𝒚$​ 无解的情况下，将 $﻿𝒚$ 投影到 $﻿𝑨$ 的列空间，得可解的拟合方程</p>
-<p>&emsp;&emsp;$𝑨﻿\hat 𝒗=﻿𝑨(﻿𝑨^\mathrm T﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒚$，</p>
+<p>&emsp;&emsp;$𝑨﻿\hat{𝒗}=﻿𝑨(﻿𝑨^\mathrm T﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒚$，</p>
 <p>两侧左乘 $﻿𝑨^\mathrm T$ 便得到正规方程</p>
-<p>&emsp;&emsp;$﻿𝑨^\mathrm T﻿𝑨\hat﻿𝒗=﻿𝑨^\mathrm T﻿𝒚$，</p>
+<p>&emsp;&emsp;$﻿𝑨^\mathrm T﻿𝑨\hat{𝒗}=﻿𝑨^\mathrm T﻿𝒚$，</p>
 <p>其中</p>
 <p>$﻿𝑨^\mathrm T﻿𝑨=\begin{bmatrix}\,x_1^2\, &amp; \cdots &amp; \,x_n^2\,\\x_1&amp;\cdots&amp;x_n\\1 &amp; \cdots &amp;1\end{bmatrix}\begin{bmatrix}\,x_1^2\, &amp; x_1 &amp; \,1\,\\\vdots&amp;\vdots&amp;\vdots\\x_n^2 &amp; x_n &amp;1\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_i^4 &amp; \sum x_i^3 &amp; \sum x_i^2\,\\<br>\,\sum x_i^3 &amp; \sum x_i^2 &amp; \sum x_i\,\\<br>\,\sum x_i^2 &amp; \sum x_i &amp; n\,<br>\end{bmatrix}$，</p>
 <p>$﻿𝑨^\mathrm T﻿𝒚=\begin{bmatrix}\,x_1^2\, &amp; \cdots &amp; \,x_n^2\,\\x_1&amp;\cdots&amp;x_n\\1 &amp; \cdots &amp;1\end{bmatrix}\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_i^2y_i\,\\<br>\sum x_iy_i\\<br>\sum y_i<br>\end{bmatrix}$，</p>
