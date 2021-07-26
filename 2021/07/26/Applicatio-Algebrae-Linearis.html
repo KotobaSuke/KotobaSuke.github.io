@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>applicatio algebrae linearis // 线性代数的应用：投影与曲线拟合 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra Linearis" />
+  
+  
+  
+  
+  <meta name="description" content="Projectio in Superficie 平面内的投影考虑实向量 $﻿﻿𝒂$ 和 $﻿𝒃$，$k﻿﻿𝒂&#x3D;:﻿𝒑\quad(k\in\mathbb R)$ 称为 $﻿𝒃$ 在 $﻿﻿𝒂$ 上的投影（projection）(1)，由正交关系，可得方程 &amp;emsp;&amp;emsp;$﻿𝒂\cdot﻿﻿(𝒃-𝒑)&#x3D;﻿𝒂\cdot(﻿𝒃-k﻿𝒂)&#x3D;0$， 得 $k&#x3D;\dfrac{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Applicatio Algebrae Linearis &#x2F;&#x2F; 线性代数的应用：投影与曲线拟合">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/07/26/Applicatio-Algebrae-Linearis">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="Projectio in Superficie 平面内的投影考虑实向量 $﻿﻿𝒂$ 和 $﻿𝒃$，$k﻿﻿𝒂&#x3D;:﻿𝒑\quad(k\in\mathbb R)$ 称为 $﻿𝒃$ 在 $﻿﻿𝒂$ 上的投影（projection）(1)，由正交关系，可得方程 &amp;emsp;&amp;emsp;$﻿𝒂\cdot﻿﻿(𝒃-𝒑)&#x3D;﻿𝒂\cdot(﻿𝒃-k﻿𝒂)&#x3D;0$， 得 $k&#x3D;\dfrac{">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/07/26/O5XKx9fyvnYtRSW.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/26/bqlU4wsZyD1QgXP.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/26/2uOMvg4iK6bfjL1.png">
+<meta property="og:image" content="https://i.loli.net/2021/07/26/mMHSKywkdTAOuxc.png">
+<meta property="article:published_time" content="2021-07-25T19:57:08.420Z">
+<meta property="article:modified_time" content="2021-07-26T15:13:10.911Z">
+<meta property="article:author" content="Kotoba Trily">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra Linearis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/07/26/O5XKx9fyvnYtRSW.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Impone aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Opera',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Applicatio-Algebrae-Linearis" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Applicatio Algebrae Linearis // 线性代数的应用：投影与曲线拟合
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/07/26/Applicatio-Algebrae-Linearis" class="article-date">
+	  <time datetime="2021-07-25T19:57:08.420Z" itemprop="datePublished">2021-07-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Projectio-in-Superficie-平面内的投影"><a href="#Projectio-in-Superficie-平面内的投影" class="headerlink" title="Projectio in Superficie 平面内的投影"></a>Projectio in Superficie <br>平面内的投影</h1><p>考虑实向量 $﻿﻿𝒂$ 和 $﻿𝒃$，$k﻿﻿𝒂=:﻿𝒑\quad(k\in\mathbb R)$ 称为 $﻿𝒃$ 在 $﻿﻿𝒂$ 上的<strong>投影</strong>（projection）<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>，由正交关系，可得方程<img src="https://i.loli.net/2021/07/26/O5XKx9fyvnYtRSW.png" width=250 align="right"></p>
+<p>&emsp;&emsp;$﻿𝒂\cdot﻿﻿(𝒃-𝒑)=﻿𝒂\cdot(﻿𝒃-k﻿𝒂)=0$，</p>
+<p>得 $k=\dfrac{﻿𝒂\cdot﻿𝒃}{﻿𝒂﻿\cdot𝒂}$，从而 $﻿𝒑=k﻿𝒂=\dfrac{﻿𝒂\cdot﻿𝒃}{﻿𝒂﻿\cdot𝒂}﻿𝒂=﻿𝒂\dfrac{﻿𝒂^\mathrm T﻿𝒃}{﻿𝒂^\mathrm T﻿﻿𝒂}=\dfrac{﻿𝒂﻿𝒂^\mathrm T}{﻿𝒂^\mathrm T﻿𝒂}﻿𝒃﻿$，</p>
+<p>从 $﻿𝒃$ 得到 ﻿$﻿𝒑$ 的过程可以视为对 $﻿𝒃$ 进行线性变换，而表示这一线性变换的矩阵为 $﻿𝑷:=\dfrac{﻿𝒂﻿𝒂^\mathrm T}{﻿𝒂^\mathrm T﻿𝒂}﻿$​，称为<strong>投影矩阵</strong>（projection matrix），从而有 $﻿𝒑=﻿𝑷﻿𝒃$．</p>
+<p>这其中与 $﻿𝒂$ 正交的向量 $﻿𝒃-﻿𝒑=:﻿𝒆$ 称为投影的<strong>误差</strong>（error）．</p>
+<h1 id="Projectio-in-Spatio-Vectorum-向量空间内的投影"><a href="#Projectio-in-Spatio-Vectorum-向量空间内的投影" class="headerlink" title="Projectio in Spatio Vectorum 向量空间内的投影"></a>Projectio in Spatio Vectorum <br>向量空间内的投影</h1><p>记 $\mathbb R^m$ 的子空间 $\mathbb R^n\;(n\leq m)$ 的一组基为 $﻿𝒂_1,\,𝒂_2,\,﻿\cdots,\,﻿𝒂_n$，而矩阵 $﻿𝑨:=\begin{bmatrix}\,﻿𝒂_1&amp;﻿𝒂_2&amp;\cdots&amp;﻿𝒂_n\,\end{bmatrix}$，此时向量 $﻿𝒃\in\mathbb R^m$ 在 $\mathbb R^n$ 上的投影是该组基向量之线性组合 $﻿𝑨﻿\hat 𝒙=:﻿𝒑$，其中 $\hat ﻿﻿𝒙$ 是系数组成的向量．<img src="https://i.loli.net/2021/07/26/bqlU4wsZyD1QgXP.png" width=250 align="right"></p>
+<p>记误差为 $﻿𝒆:=﻿𝒃-﻿𝒑$，由正交关系有 $﻿𝒂_1\,\bot\,﻿𝒆,\;﻿𝒂_2\,\bot\,﻿𝒆,\;\cdots,\;﻿𝒂_n\,\bot\,﻿𝒆$，即 $﻿𝑨^\mathrm T﻿𝒆=\mathbf 0$​．</p>
+<p>展开得 $𝑨^\mathrm T(﻿﻿𝒃-﻿𝒑)=𝑨^\mathrm T(﻿𝒃-﻿𝑨\hat﻿𝒙)=0$，即 $𝑨^\mathrm T﻿𝑨\hat﻿𝒙=𝑨^\mathrm T﻿𝒃$​．</p>
+<p>由此得系数向量 $\hat﻿𝒙=(𝑨^\mathrm T﻿﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒃$，投影 $﻿𝒑=﻿𝑨﻿\hat𝒙=﻿𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T﻿𝒃$，对应的投影矩阵即为 $﻿𝑷=𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T$．</p>
+<p>值得注意的是 $﻿𝑨$ 在大多情况下是不可逆的（列空间是 $\mathbb R^n$ 而非 $\mathbb R^m$），在可逆的情况下，向量 $﻿﻿𝒃$ 本身即在 $\mathbb R^n=\mathbb R^m$ 上，其投影为其自身，此时则有 $﻿𝑷=𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T=﻿𝑨﻿𝑨^{-1}(𝑨^\mathrm T)^{-1}𝑨^\mathrm T=﻿𝑰$．</p>
+<p>而矩阵 $﻿𝑨^\mathrm T﻿𝑨$ 却能保证总是可逆，考虑如下证明：</p>
+<blockquote>
+<p>记任一矩阵 ﻿$﻿𝑨$ 的零空间为 $\mathcal N(﻿𝑨)$，</p>
+<p>若 $﻿𝒙\in \mathcal N(﻿𝑨)$，则 $﻿𝑨﻿𝒙=\mathbf 0$，显然有 $𝑨^\mathrm T﻿𝑨﻿𝒙=﻿\mathbf 0$，可得 $﻿𝒙\in\mathcal N(𝑨^\mathrm T﻿𝑨)﻿$；</p>
+<p>若 $﻿𝒙\in \mathcal N(𝑨^\mathrm T﻿𝑨)$，则 $𝑨^\mathrm T﻿𝑨﻿𝒙=\mathbf 0$，显然有 $𝒙^\mathrm T𝑨^\mathrm T﻿﻿𝑨﻿𝒙=﻿\mathbf 0=(﻿𝑨﻿𝒙)^\mathrm T(﻿𝑨﻿𝒙)$，得 $﻿𝑨﻿𝒙=\mathbf 0$，即 $﻿𝒙\in\mathcal N(﻿𝑨)$．</p>
+<p>综上可得 $﻿\mathcal N(﻿𝑨)=\mathcal N(﻿𝑨^\mathrm T﻿𝑨)$．</p>
+<p>由于 $﻿𝑨$ 的各列是一组基，因此 $﻿𝑨$ 列满秩，即 $﻿\mathcal N(﻿𝑨)=\{\mathbf 0\}$，从而 $\mathcal N(𝑨^\mathrm T﻿﻿𝑨)=\mathcal N(﻿𝑨)=\{\mathbf 0\}$，即 $𝑨^\mathrm T﻿𝑨$ 列满秩．由于 $﻿𝑨^\mathrm T﻿𝑨$​ 必然为方阵，则亦行满秩，即说明其可逆．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+
+
+</blockquote>
+<h1 id="Adaptatio-ad-Lineam-in-Superficie-拟合平面上的直线"><a href="#Adaptatio-ad-Lineam-in-Superficie-拟合平面上的直线" class="headerlink" title="Adaptatio ad Lineam in Superficie 拟合平面上的直线"></a>Adaptatio ad Lineam in Superficie <br>拟合平面上的直线</h1><p>设平面上一组点的坐标为 $(x_1,\,y_1),\,\cdots,\,(x_n,\,y_n)$​​​​​，并设关于这组点的最优拟合直线方程为 $y=kx+s$​，记 $﻿𝒗:=\begin{bmatrix}\,k\,\\s\end{bmatrix}$​，﻿$﻿𝑨:=\begin{bmatrix}\,x_1\,&amp;\,1\,\\\vdots&amp;\vdots\\x_n&amp;1\end{bmatrix}$​，$﻿𝒚:=\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}$​​​​．</p>
+<p>若拟合直线恰能过所有点，则方程 $﻿𝑨﻿﻿𝒗=﻿𝒚$​​（相当于联立多个方程 $kx_i+s=y_i$​​）有解，否则会得到一个无解的方程，对应的线性方程组称为<strong>超定方程组</strong>（overdetermined system）．在无解的情况下，将 $﻿𝒚$​​ 投影到 ﻿$﻿𝑨$​​ 的列空间，会得到一个有解的方程</p>
+<p>&emsp;&emsp;$﻿𝑨﻿\hat 𝒗=﻿𝑨(﻿𝑨^\mathrm T﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒚$​​&emsp;（$\hat﻿𝒗$ 是 $﻿𝒗$ 的最优拟合），</p>
+<p>对两侧左乘 $𝑨^\mathrm T﻿$，可得</p>
+<p>&emsp;&emsp;$𝑨^\mathrm T﻿﻿𝑨﻿\hat 𝒗=(𝑨^\mathrm T﻿﻿𝑨)(𝑨^\mathrm T﻿﻿𝑨)^{-1}𝑨^\mathrm T﻿﻿𝒚=𝑨^\mathrm T﻿﻿𝒚$​，</p>
+<p>这一方程称为直线拟合的<strong>正规方程</strong>（normal equation）．</p>
+<p>进一步考虑， $𝑨^\mathrm T﻿﻿𝑨=\begin{bmatrix}<br>\,x_1\, &amp; \cdots &amp;\,x_n\,\\<br>1 &amp; \cdots &amp; 1<br>\end{bmatrix}<br>\begin{bmatrix}<br>\,x_1\, &amp; \,1\,\\<br>\vdots &amp; \vdots\\<br>x_n &amp; 1<br>\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_i^2\, &amp; \,\sum x_i\,\\<br>\sum x_i &amp; n<br>\end{bmatrix}$​，</p>
+<p>$𝑨^\mathrm T﻿﻿𝒚=\begin{bmatrix}<br>\,x_1\, &amp; \cdots &amp;\,x_n\,\\<br>1 &amp; \cdots &amp; 1<br>\end{bmatrix}\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_iy_i\,\\<br>\sum y_i<br>\end{bmatrix}$​，</p>
+<p>进而可将方程化为</p>
+<p>&emsp;&emsp;$\begin{bmatrix}<br>\,\sum x_i^2\, &amp; \,\sum x_i\,\\<br>\sum x_i &amp; n<br>\end{bmatrix}\begin{bmatrix}\,k\,\\s\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_iy_i\,\\<br>\sum y_i<br>\end{bmatrix}$​．</p>
+<p>〔例〕：</p>
+<blockquote>
+<p>求关于点 $(0,\,1),\;(1,\,2),\;(2,\,5),\;(3,\,6)$​ 的最优拟合直线 $y=kx+s$​​．</p>
+<p>$﻿𝑨:=\begin{bmatrix}<br>\,0\,&amp;\,1\,\\<br>1&amp;1\\<br>2&amp;1\\<br>3&amp;1<br>\end{bmatrix}$，$﻿𝒚:=\begin{bmatrix}<br>\,1\,\\<br>2\\<br>5\\<br>6<br>\end{bmatrix}$，<img src="https://i.loli.net/2021/07/26/2uOMvg4iK6bfjL1.png" width=250 align="right"></p>
+<p>于是</p>
+<p>$﻿𝑨^\mathrm T﻿𝑨=\begin{bmatrix}<br>\,1+4+9\,&amp;\,1+2+3\,\\<br>1+2+3&amp;4<br>\end{bmatrix}=\begin{bmatrix}<br>\,14\,&amp;\,6\,\\<br>6&amp;4<br>\end{bmatrix}$，</p>
+<p>$﻿𝑨^\mathrm T﻿﻿𝒚=\begin{bmatrix}<br>2+10+18\\<br>\,1+2+5+6\,<br>\end{bmatrix}=\begin{bmatrix}<br>30\\<br>\,14\,<br>\end{bmatrix}$​，</p>
+<p>从而得方程 $\begin{bmatrix}<br>\,14\,&amp;\,6\,\\<br>6&amp;4<br>\end{bmatrix}\begin{bmatrix}\,k\,\\s\end{bmatrix}=\begin{bmatrix}<br>30\\<br>\,14\,<br>\end{bmatrix}$​​，解得 $k=1.8$​​，$s=0.8$​​，所以最优拟合直线为 $y=1.8x+0.8$​​．​</p>
+</blockquote>
+<h1 id="Principium-原理"><a href="#Principium-原理" class="headerlink" title="Principium 原理"></a>Principium 原理</h1><p>以上拟合方法的原理即统计学上常用的<strong>最小二乘法</strong>（least squares）．</p>
+<p>设给定 $n$​​​​ 个点的拟合直线为 $\ell:\;y=kx+s$​​​​．对任一点，其 $y$​​​​ 坐标与 $\ell$​​​​ 上 $x$​​​​ 坐标相同的点的 $y$​​​​ 坐标差值为 $y_i-(kx_i+s)=:e_i$​​​​，称为误差．最小二乘法要求各个点的误差之平方和最小，即给定点与拟合点关于 $y$​​​​ 坐标的方差最小．由于 $e_i^2=y_i^2+k^2x_i^2-2kx_iy_i+2ksx_i-2sy_i+s^2$​​​​，所以方差为</p>
+<p>&emsp;&emsp;$\sum e_i^2=\sum y_i^2+\sum k^2x_i^2-2\sum kx_iy_i+2\sum ksx_i-2\sum sy_i+ns^2$​​​，​​</p>
+<p>等式右侧可视为关于 $k$​​ 与 $s$​​ 的二元函数 $f(k,\,s)$​​​，要求该函数的极小值点，则需要使得函数关于各变量的偏导数为 $0$​​，即</p>
+<p>&emsp;&emsp;$\dfrac{\partial f}{\partial k}=2\sum(kx_i^2+sx_i-x_iy_i)=0$​，</p>
+<p>&emsp;&emsp;$\dfrac{\partial f}{\partial s}=2\sum(s+kx_i-y_i)=0$​​，</p>
+<p>整理得</p>
+<p>&emsp;&emsp;$\begin{alignedat}{3}<br>\sum x_i^2k&amp;+&amp;\sum x_is &amp;=\sum x_iy_i,\\<br>\sum x_ik&amp;+&amp;ns&amp; =\sum y_i,<br>\end{alignedat}$​</p>
+<p>改写为矩阵形式即前文的</p>
+<p>&emsp;&emsp;$\begin{bmatrix}<br>\,\sum x_i^2\, &amp; \,\sum x_i\,\\<br>\sum x_i &amp; n<br>\end{bmatrix}\begin{bmatrix}\,k\,\\s\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_iy_i\,\\<br>\sum y_i<br>\end{bmatrix}$​．​</p>
+<h1 id="Adaptatio-ad-Parabolam-in-Superficie-拟合平面上的抛物线"><a href="#Adaptatio-ad-Parabolam-in-Superficie-拟合平面上的抛物线" class="headerlink" title="Adaptatio ad Parabolam in Superficie 拟合平面上的抛物线"></a>Adaptatio ad Parabolam in Superficie <br>拟合平面上的抛物线</h1><p>上述方法也可以应用于其他形式的曲线，比如处理抛体运动的位置数据时会用以抛物线进行拟合．</p>
+<p>设给定 $n$​​ 个点的拟合抛物线方程为 $\pi:\;y=\alpha x^2+\beta x+\gamma$​​​，同理可得误差</p>
+<p>&emsp;&emsp;$e_i=y_i-(\alpha x_i^2+\beta x_i+\gamma)$​​，</p>
+<p>于是方差为</p>
+<p>&emsp;&emsp;$\sum e_i^2=\alpha^2\sum x_i^4+2\alpha\beta\sum x_i^3+2\alpha\gamma\sum x_i^2+\beta^2\sum x_i^2+2\beta\gamma\sum x_i+\gamma^2$​​​​</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$+\sum y^2-2\sum y(\alpha x^2+\beta x+\gamma)$​​​​，​​​</p>
+<p>将此视为三元函数 $f(\alpha,\,\beta,\,\gamma)$​​，在极小值点有</p>
+<p>&emsp;&emsp;$\dfrac{\partial f}{\partial \alpha}=2(\alpha\sum x_i^4+\beta\sum x_i^3+\gamma\sum x_i^2)-2x_i^2y_i=0$​​​​，</p>
+<p>&emsp;&emsp;$\dfrac{\partial f}{\partial \beta}=2(\alpha\sum x_i^3+\beta\sum x_i^2+\gamma\sum x_i)-2x_iy_i=0$​​，</p>
+<p>&emsp;&emsp;$\dfrac{\partial f}{\partial \gamma}=2(\alpha\sum x_i^2+\beta\sum x_i+\gamma)-2y_i=0$​，</p>
+<p>整理后可改写为矩阵的形式</p>
+<p>&emsp;&emsp;$\begin{bmatrix}<br>\,\sum x_i^4 &amp; \sum x_i^3 &amp; \sum x_i^2\,\\<br>\,\sum x_i^3 &amp; \sum x_i^2 &amp; \sum x_i\,\\<br>\,\sum x_i^2 &amp; \sum x_i &amp; n\,<br>\end{bmatrix}<br>\begin{bmatrix}\,\alpha\,\\\beta\\\gamma\end{bmatrix}<br>=<br>\begin{bmatrix}<br>\,\sum x_i^2y_i\,\\<br>\sum x_iy_i\\<br>\sum y_i<br>\end{bmatrix}$​．</p>
+<p>而用前文的投影法，可设</p>
+<p>$﻿𝒗:=\begin{bmatrix}\,\alpha\,\\\beta\\\gamma\end{bmatrix}$​，﻿$﻿𝑨:=\begin{bmatrix}\,x_1^2\, &amp; x_1 &amp; \,1\,\\\vdots&amp;\vdots&amp;\vdots\\x_n^2 &amp; x_n &amp;1\end{bmatrix}$​，$﻿𝒚:=\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}$​​，</p>
+<p>方程 $﻿𝑨﻿𝒗=﻿𝒚$​ 无解的情况下，将 $﻿𝒚$ 投影到 $﻿𝑨$ 的列空间，得可解的拟合方程</p>
+<p>&emsp;&emsp;$𝑨﻿\hat 𝒗=﻿𝑨(﻿𝑨^\mathrm T﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒚$，</p>
+<p>两侧左乘 $﻿𝑨^\mathrm T$ 便得到正规方程</p>
+<p>&emsp;&emsp;$﻿𝑨^\mathrm T﻿𝑨\hat﻿𝒗=﻿𝑨^\mathrm T﻿𝒚$，</p>
+<p>其中</p>
+<p>$﻿𝑨^\mathrm T﻿𝑨=\begin{bmatrix}\,x_1^2\, &amp; \cdots &amp; \,x_n^2\,\\x_1&amp;\cdots&amp;x_n\\1 &amp; \cdots &amp;1\end{bmatrix}\begin{bmatrix}\,x_1^2\, &amp; x_1 &amp; \,1\,\\\vdots&amp;\vdots&amp;\vdots\\x_n^2 &amp; x_n &amp;1\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_i^4 &amp; \sum x_i^3 &amp; \sum x_i^2\,\\<br>\,\sum x_i^3 &amp; \sum x_i^2 &amp; \sum x_i\,\\<br>\,\sum x_i^2 &amp; \sum x_i &amp; n\,<br>\end{bmatrix}$，</p>
+<p>$﻿𝑨^\mathrm T﻿𝒚=\begin{bmatrix}\,x_1^2\, &amp; \cdots &amp; \,x_n^2\,\\x_1&amp;\cdots&amp;x_n\\1 &amp; \cdots &amp;1\end{bmatrix}\begin{bmatrix}\,y_1\,\\\vdots\\y_n\,\end{bmatrix}=\begin{bmatrix}<br>\,\sum x_i^2y_i\,\\<br>\sum x_iy_i\\<br>\sum y_i<br>\end{bmatrix}$，</p>
+<p>即得同样的矩阵方程</p>
+<p>&emsp;&emsp;$\begin{bmatrix}<br>\,\sum x_i^4 &amp; \sum x_i^3 &amp; \sum x_i^2\,\\<br>\,\sum x_i^3 &amp; \sum x_i^2 &amp; \sum x_i\,\\<br>\,\sum x_i^2 &amp; \sum x_i &amp; n\,<br>\end{bmatrix}<br>\begin{bmatrix}\,\alpha\,\\\beta\\\gamma\end{bmatrix}<br>=<br>\begin{bmatrix}<br>\,\sum x_i^2y_i\,\\<br>\sum x_iy_i\\<br>\sum y_i<br>\end{bmatrix}$​​．</p>
+<p>〔例〕：</p>
+<blockquote>
+<p>求关于点 $(0,\,5),\;(1,\,1),\;(3,\,-1),\;(4,\,2)$ 的最优拟合抛物线 $y=\alpha x^2+\beta x+\gamma$．<img src="https://i.loli.net/2021/07/26/mMHSKywkdTAOuxc.png" width=220 align="right"></p>
+<p>$﻿𝑨:=\begin{bmatrix}\,0 &amp; 0 &amp; 1\,\\\,1 &amp; 1 &amp; 1\,\\\,9 &amp; 3 &amp; 1\,\\\,16 &amp; 4 &amp; 1\,\end{bmatrix}$，$﻿𝒚:=\begin{bmatrix}5\\1\-1\\2\end{bmatrix}$​​，</p>
+<p>于是</p>
+<p>$﻿𝑨^\mathrm T﻿𝑨=\begin{bmatrix}<br>\,1+81+256 &amp; 1+27+64 &amp; 1+9+16\,\\<br>\,1+27+64 &amp; 1+9+16 &amp; 1+3+4\,\\<br>\,1+9+16 &amp; 1+3+4 &amp; 4\,<br>\end{bmatrix}=\begin{bmatrix}<br>\,338 &amp; 92 &amp; 26\,\\<br>\,92 &amp; 26 &amp; 8\,\\<br>\,26 &amp; 8 &amp; 4\,<br>\end{bmatrix}$，</p>
+<p>$﻿𝑨^\mathrm T﻿𝒚=\begin{bmatrix}<br>1-9+32\\<br>1-3+8\\<br>\,5+1-1+2\,<br>\end{bmatrix}=\begin{bmatrix}<br>\,24\,\\<br>6\\<br>7<br>\end{bmatrix}$，</p>
+<p>从而得方程 $\begin{bmatrix}<br>\,338 &amp; 92 &amp; 26\,\\<br>\,92 &amp; 26 &amp; 8\,\\<br>\,26 &amp; 8 &amp; 4\,<br>\end{bmatrix}\begin{bmatrix}\,\alpha\,\\\beta\\\gamma\end{bmatrix}=\begin{bmatrix}<br>\,24\,\\<br>6\\<br>7<br>\end{bmatrix}$，解得 $\alpha=\dfrac 76$，$\beta=-\dfrac{82}{15}$，$\gamma=\dfrac{51}{10}$，所以最优拟合抛物线为 $y=\dfrac 76x^2-\dfrac{82}{15}x+\dfrac{51}{10}$．</p>
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 在一些场合下，“投影“指的是此处所言投影之模．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<h1 id="Referentia-参考"><a href="#Referentia-参考" class="headerlink" title="Referentia 参考"></a>Referentia 参考</h1><ul>
+<li>Gilbert Strang. <em>Introduction to Linear Algebra</em>. 北京: 清华大学出版社, 2019</li>
+</ul>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Linearis/" rel="tag">Algebra Linearis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/06/14/De-Algebra-Abstracta-09" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 09 // 抽象代数笔记 〇九：群作用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Projectio-in-Superficie-%E5%B9%B3%E9%9D%A2%E5%86%85%E7%9A%84%E6%8A%95%E5%BD%B1"><span class="nav-number">1.</span> <span class="nav-text">Projectio in Superficie 
+平面内的投影</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Projectio-in-Spatio-Vectorum-%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%86%85%E7%9A%84%E6%8A%95%E5%BD%B1"><span class="nav-number">2.</span> <span class="nav-text">Projectio in Spatio Vectorum 
+向量空间内的投影</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adaptatio-ad-Lineam-in-Superficie-%E6%8B%9F%E5%90%88%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84%E7%9B%B4%E7%BA%BF"><span class="nav-number">3.</span> <span class="nav-text">Adaptatio ad Lineam in Superficie 
+拟合平面上的直线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Principium-%E5%8E%9F%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">Principium 原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adaptatio-ad-Parabolam-in-Superficie-%E6%8B%9F%E5%90%88%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84%E6%8A%9B%E7%89%A9%E7%BA%BF"><span class="nav-number">5.</span> <span class="nav-text">Adaptatio ad Parabolam in Superficie 
+拟合平面上的抛物线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">6.</span> <span class="nav-text">Annotationes 注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Referentia-%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">Referentia 参考</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2021 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Kotoba Trily All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/node-main.min.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
