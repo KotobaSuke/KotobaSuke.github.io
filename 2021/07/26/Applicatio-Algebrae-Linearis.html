@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/07/26/LtOpv4xulaf81EU.png">
 <meta property="og:image" content="https://i.loli.net/2021/07/26/DZUgkMbhiXdLtjB.png">
 <meta property="article:published_time" content="2021-07-25T19:57:08.420Z">
-<meta property="article:modified_time" content="2021-07-26T15:36:56.782Z">
+<meta property="article:modified_time" content="2021-07-26T15:38:53.329Z">
 <meta property="article:author" content="Kotoba Trily">
 <meta property="article:tag" content="Mathematica">
 <meta property="article:tag" content="Algebra">
@@ -222,7 +222,7 @@
 <h1 id="Projectio-in-Spatio-Vectorum-向量空间内的投影"><a href="#Projectio-in-Spatio-Vectorum-向量空间内的投影" class="headerlink" title="Projectio in Spatio Vectorum 向量空间内的投影"></a>Projectio in Spatio Vectorum <br>向量空间内的投影</h1><p>记 $\mathbb R^m$ 的子空间 $\mathbb R^n\;(n\leq m)$ 的一组基为 </p>
 <p>$﻿𝒂_1,\,𝒂_2,\,﻿\cdots,\,﻿𝒂_n$，而矩阵 $﻿𝑨:=\begin{bmatrix}\,﻿𝒂_1&amp;﻿𝒂_2&amp;\cdots&amp;﻿𝒂_n\,\end{bmatrix}$，此时向量 $﻿𝒃\in\mathbb R^m$ 在 $\mathbb R^n$ 上的投影是该组基向量之线性组合 $﻿𝑨﻿\hat{𝒙}=:﻿𝒑$，其中 $\hat{𝒙}$ 是系数组成的向量．<img src="https://i.loli.net/2021/07/26/bqlU4wsZyD1QgXP.png" width=250 align="right"></p>
 <p>记误差为 $﻿𝒆:=﻿𝒃-﻿𝒑$，由正交关系有 $﻿𝒂_1\,\bot\,﻿𝒆,\;﻿𝒂_2\,\bot\,﻿𝒆,\;\cdots,\;﻿𝒂_n\,\bot\,﻿𝒆$，即 $﻿𝑨^\mathrm T﻿𝒆=\mathbf 0$​．</p>
-<p>展开得 $𝑨^\mathrm T(﻿﻿𝒃-﻿𝒑)=𝑨^\mathrm T(﻿𝒃-﻿𝑨\hat﻿{𝒙})=0$​​，即 $𝑨^\mathrm T﻿𝑨\hat{﻿𝒙}=𝑨^\mathrm T﻿𝒃$​​​．</p>
+<p>展开得 $𝑨^\mathrm T(﻿﻿𝒃-﻿𝒑)=𝑨^\mathrm T(﻿𝒃-﻿𝑨\hat﻿{𝒙})=0$​​​，即 $𝑨^\mathrm T﻿𝑨\hat{𝒙}=𝑨^\mathrm T﻿𝒃$​​​​．</p>
 <p>由此得系数向量 $\hat{𝒙}=(𝑨^\mathrm T﻿﻿𝑨)^{-1}﻿𝑨^\mathrm T﻿𝒃$，投影 $﻿𝒑=﻿𝑨﻿\hat{𝒙}=﻿𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T﻿𝒃$，对应的投影矩阵即为 $﻿𝑷=𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T$．</p>
 <p>值得注意的是 $﻿𝑨$ 在大多情况下是不可逆的（列空间是 $\mathbb R^n$ 而非 $\mathbb R^m$），在可逆的情况下，向量 $﻿﻿𝒃$ 本身即在 $\mathbb R^n=\mathbb R^m$ 上，其投影为其自身，此时则有 $﻿𝑷=𝑨(𝑨^\mathrm T﻿𝑨)^{-1}𝑨^\mathrm T=﻿𝑨﻿𝑨^{-1}(𝑨^\mathrm T)^{-1}𝑨^\mathrm T=﻿𝑰$．</p>
 <p>而矩阵 $﻿𝑨^\mathrm T﻿𝑨$ 却能保证总是可逆，考虑如下证明：</p>
