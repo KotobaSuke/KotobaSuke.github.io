@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra abstracta 05 // 抽象代数笔记 〇五：共轭、正规化子与中心化子 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-AbstractaTheoria-Catervarum" />
+  
+  
+  
+  
+  <meta name="description" content="前：抽象代数笔记 〇四：循环群 后：抽象代数笔记 〇六：正规子群与商群  Conjugatia 共轭〔定义〕：  设 $G$ 为群，$a,\,b\in G$，若 $\exists\;g\in G,\quad g^{-1}ag&#x3D;b$，则称 $a$ 与 $b$（对于 $g$）共轭（conjugate）(1)，元素 $b&#x3D;g^{-1}ag$ 称为 $a$ 的共轭元素（conjugate element）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Abstracta 05 &#x2F;&#x2F; 抽象代数笔记 〇五：共轭、正规化子与中心化子">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/05/06/De-Algebra-Abstracta-05">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="前：抽象代数笔记 〇四：循环群 后：抽象代数笔记 〇六：正规子群与商群  Conjugatia 共轭〔定义〕：  设 $G$ 为群，$a,\,b\in G$，若 $\exists\;g\in G,\quad g^{-1}ag&#x3D;b$，则称 $a$ 与 $b$（对于 $g$）共轭（conjugate）(1)，元素 $b&#x3D;g^{-1}ag$ 称为 $a$ 的共轭元素（conjugate element）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-06T12:15:02.000Z">
+<meta property="article:modified_time" content="2023-12-05T15:25:01.515Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Abstracta">
+<meta property="article:tag" content="Theoria-Catervarum">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Abstracta-05" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Abstracta 05 // 抽象代数笔记 〇五：共轭、正规化子与中心化子
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/05/06/De-Algebra-Abstracta-05" class="article-date">
+	  <time datetime="2021-05-06T12:15:02.000Z" itemprop="datePublished">2021-05-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前：<a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/05/11/De-Algebra-Abstracta-06">抽象代数笔记 〇六：正规子群与商群</a></p>
+<hr>
+<h1 id="Conjugatia-共轭"><a href="#Conjugatia-共轭" class="headerlink" title="Conjugatia 共轭"></a>Conjugatia 共轭</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 为群，$a,\,b\in G$，若 $\exists\;g\in G,\quad g^{-1}ag=b$，则称 $a$ 与 $b$（对于 $g$）<strong>共轭</strong>（conjugate）<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>，元素 $b=g^{-1}ag$ 称为 $a$ 的<strong>共轭元素</strong>（conjugate element）．可证这个关系为等价关系：</p>
+<p>&emsp;&emsp;(α)&emsp;自反性：$e^{-1}ae=a$；</p>
+<p>&emsp;&emsp;(β)&emsp;对称性：若 $g\in G,\;g^{-1}ag=b$，则 $gbg^{-1}=(g^{-1})^{-1}bg^{-1}=a$，而 $g^{-1}\in G$；</p>
+<p>&emsp;&emsp;(γ)&emsp;传递性：若 $g,\,h\in G,\;g^{-1}ag=b,\;h^{-1}bh=c$，则有 $h^{-1}g^{-1}agh=(gh)^{-1}a(gh)=c$，而 $gh\in G$．</p>
+<p>由此，可将群 $G$ 关于该关系分划为各个等价类，称为（元素的）<strong>共轭类</strong>（conjugacy class），群 $G$ 中元素的共轭类数量称为 $G$ 的<strong>类数</strong>（class number）．</p>
+<p>类似地，设 $A,\,B\subseteq G$，若 $\exists\;g\in G,\quad g^{-1}Ag=B$，则称子集 $A$ 与 $B$ （对于 $g$）共轭，$B=g^{-1}Ag$ 称为 $A$ 的<strong>共轭子集</strong>（conjugate subset），该关系同样为等价关系．每个等价类称为（子集的）共轭类，由于 $|g^{-1}Ag|=|A|$，所以子集的同一共轭类中各子集等势．而特别地，若 $A\leq G$，则易证亦有 $g^{-1}Ag=B\leq G$<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup>，从而子群 $A$ 与 $B$（对于 $g$）共轭，$B=g^{-1}Ag$ 称为 $A$ 的<strong>共轭子群</strong>（conjugate subgroup），可同样地定义子群的共轭类．</p>
+</blockquote>
+<p>〔例〕：</p>
+<blockquote>
+<p>考虑 $\mathbb R$ 上的 $n$ 次一般线性群 $\mathrm{GL}_n(\mathbb R)$， 对于任意 $﻿﻿﻿𝑨,\,𝑩\in\mathrm{GL}_n(\mathbb R)$，$﻿𝑨$ 与 ﻿$𝑩$ 共轭 $\Leftrightarrow$ 存在 $﻿﻿𝑴\in\mathrm{GL}_n(\mathbb R)$ 使得 $﻿𝑴^{-1}﻿𝑨﻿𝑴=﻿𝑩$．由线性代数的知识可知，这个共轭关系实际上就是矩阵的相似（similarity）关系，矩阵的共轭元素即其相似矩阵（similar matrix）．</p>
+<p>由于 $\mathrm{SL}_n(\mathbb R)\leq\mathrm{GL}_n(\mathbb R)$，所以 $\mathrm{SL}_n(\mathbb R)$ 的共轭子群即 $\mathrm{SL}_n(\mathbb R)$ 中所有矩阵的相似矩阵所成矩阵．由线性代数的知识可以知道，相似矩阵拥有相等的行列式，因此 $\mathrm{SL}_n(\mathbb R)$ 的共轭子群即其自身．</p>
+</blockquote>
+<hr>
+<p>〔定理 5.1〕：</p>
+<blockquote>
+<p>设 $G$ 为群，$A\leq G$，则与 $A$ 共轭的所有 $G$ 的子群均互相同构（但逆命题不成立）．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设 $\exists\;g\in G,\quad g^{-1}Ag=:B\leq G$，则可设映射 $f:A\to B,\quad a\mapsto g^{-1}ag$，由于 $\forall\;a,\,b\in A,\quad$$f(ab)=g^{-1}abg=g^{-1}agg^{-1}bg=f(a)f(b)$，可知 $f$ 是 $A$ 到 $B$ 的群同态，又由等价关系的对称性，可知 $f$ 为群同构．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<h1 id="Normalizatores-amp-Centralizatores-正规化子与中心化子"><a href="#Normalizatores-amp-Centralizatores-正规化子与中心化子" class="headerlink" title="Normalizatores &amp; Centralizatores 正规化子与中心化子"></a>Normalizatores &amp; Centralizatores <br>正规化子与中心化子</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 为群，$M\subseteq G$，则 $\{g\in G\mid g^{-1}Mg=M\}$ <sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup>是 $G$ 的子群：</p>
+<p>&emsp;&emsp;$\forall\;g,\,g’\in\{g\in G\mid g^{-1}Mg=M\},$</p>
+<p>&emsp;&emsp;&emsp;&emsp;$\because\;g^{-1}Mg=g’^{-1}Mg’=M$，</p>
+<p>&emsp;&emsp;&emsp;&emsp;$\therefore\;gMg^{-1}=g’Mg’^{-1}=M$，</p>
+<p>&emsp;&emsp;&emsp;&emsp;于是 $(g^{-1}g’)^{-1}M(g^{-1}g’)=g’^{-1}(gMg^{-1})g’=g’^{-1}Mg’=M$，</p>
+<p>&emsp;&emsp;&emsp;&emsp;因此 $g^{-1}g’\in \{g\in G\mid g^{-1}Mg=M\}$，</p>
+<p>&emsp;&emsp;从而 $\{g\in G\mid g^{-1}Mg=M\}\leq G$．</p>
+<p>该子群称为 $M$ 的<strong>正规化子</strong>（normalizer），记为 $\mathrm N_G(M)$．</p>
+</blockquote>
+<ul>
+<li>若 $G$ 的子群 $H$ 满足 $\mathrm N_G(H)=H$，则称之为 $G$ 的<strong>自正规化子群</strong>（self-normalizing subgroup）．</li>
+<li>若 $G$ 为阿贝尔群，则 $\forall\;M\subseteq G,\quad \mathrm N_G(M)=G$．<ul>
+<li>所以若 $G$ 为阿贝尔群，则 $G$ 自身为其自正规化子群．</li>
+</ul>
+</li>
+</ul>
+<p>〔例〕：</p>
+<blockquote>
+<p>考虑实数加法群 $(\mathbb R,\,+)=:\mathbb R^+$，它是阿贝尔群，因此对于其任一子集 $A$，都有 $\mathrm N_A(\mathbb R^+)=\mathbb R^+$．</p>
+<p>考虑 $\mathbb R$ 上的 $2$ 次一般线性群 $\mathrm{GL}_2(\mathbb R)=:G$，矩阵 $﻿﻿𝑨=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix}$ 所成的单元素集合 $\{﻿𝑨\}$ 是 $G$ 的子集．设 $G$ 中任一矩阵为 $﻿𝑴=\begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}$，则有</p>
+<p>&emsp;&emsp;$﻿𝑴﻿𝑨=\begin{bmatrix}a &amp; 4b \\ c &amp; 4d\end{bmatrix},\quad﻿𝑨﻿𝑴=\begin{bmatrix}a &amp; b \\ 4c &amp; 4d\end{bmatrix}$．</p>
+<p>$﻿𝑴﻿𝑨=﻿𝑨﻿𝑴$，当且仅当 $b=c=0$，所以 $\mathrm N_{\{﻿𝑨\}}(G)=\left\{\left.\begin{bmatrix}p &amp; \\&amp; q\end{bmatrix}\;\right|\;p,\,q\in\mathbb R,\;pq\neq 0\right\}$．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 为群，$M\subseteq G$，则 $\{g\in G\mid \forall\;a\in M,\; g^{-1}ag=a\}$ <sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup> 是 $G$ 的子群：</p>
+<p>&emsp;&emsp;$\forall\;g,\,g’\in \{g\in G\mid \forall\;a\in M,\; g^{-1}ag=a\},\quad$$\forall\;a\in M,$</p>
+<p>&emsp;&emsp;&emsp;&emsp;$\because\;g^{-1}ag=g’^{-1}ag’=a$，</p>
+<p>&emsp;&emsp;&emsp;&emsp;$\therefore\;gag^{-1}=g’ag’^{-1}=a$，</p>
+<p>&emsp;&emsp;&emsp;&emsp;于是 $(g^{-1}g’)^{-1}a(g^{-1}g)=g’^{-1}(gag^{-1})g=g’^{-1}ag=a$，</p>
+<p>&emsp;&emsp;&emsp;&emsp;因此 $g^{-1}g’\in\{g\in G\mid \forall\;a\in M,\; g^{-1}ag=a\}$，</p>
+<p>&emsp;&emsp;从而 $\{g\in G\mid \forall\;a\in M,\; g^{-1}ag=a\}\leq G$．</p>
+<p>该子群称为 $M$ 的<strong>中心化子</strong>（centralizer），记为 $\mathrm C_G(M)$．</p>
+<p>特别地，$G$ 自身的中心化子 $\mathrm C_G(G)$ 可记为 $\mathrm Z(G)$ <sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>或 $\mathrm C(G)$，称为 $G$ 的<strong>中心</strong>（center），其中的元素即与 $G$ 中任一元素均可交换的元素，这些元素称为 $G$ 的<strong>中心元素</strong>（central element）．</p>
+</blockquote>
+<ul>
+<li>$G$ 中任一元素 $a$ 所成单元素集合 $\{a\}$，其正规化子 $\mathrm N_G(\{a\})$ 与中心化子 $\mathrm C_G(\{a\})$ 可分别简记为 $\mathrm N_G(a),\,\mathrm C_G(a)$，且恒有 $\mathrm N_G(a)=\mathrm C_G(a)$．</li>
+<li>由定义可知，若 $M\subseteq G$，则 $\mathrm C_G(M)\leq\mathrm N_G(M)$．</li>
+<li>$H\leq G,\;a\in H\;\Rightarrow\; \mathrm C_H(a)=\mathrm C_G(a)\cap H$．</li>
+<li><p>若 $G$ 为阿贝尔群，则 $\forall\;M\subseteq G,\quad \mathrm C_G(M)=G$．</p>
+<ul>
+<li>所以，若 $G$ 为阿贝尔群，则 $\forall\;M\subseteq G,\quad \mathrm Z_G(M)=\mathrm C_G(M)=G$．特别地，$G$ 为阿贝尔群，当且仅当 $\mathrm Z_G(G)=\mathrm Z(G)=G$．</li>
+</ul>
+</li>
+<li><p>$z\in \mathrm Z(G)$ 当且仅当 $G$ 中与 $z$ 共轭的元素只有 $z$ 自身．</p>
+</li>
+</ul>
+<p>〔例〕：</p>
+<blockquote>
+<p>考虑 $\mathbb R$ 上的 $2$ 次一般线性群 $\mathrm{GL}_2(\mathbb R)=:G$，设其子集 $S=\left\{\left.\begin{bmatrix}k &amp;\\ k &amp; 2k\end{bmatrix}\;\right|\;k\in\mathbb R\setminus\{0\}\right\}$，并设 $﻿𝑨=\begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}$ 为 $G$ 中某一矩阵，于是 $\forall\;﻿𝑴\in S,$</p>
+<p>&emsp;&emsp;$𝑴﻿𝑨=﻿𝑨﻿𝑴$ $\;\Leftrightarrow\;a=a+b,\;b=2b,\;a+2c=c+d,\;b+2d=2d$ $\;\Leftrightarrow\;a+c=d$，</p>
+<p>所以 $\mathrm C_G(S)=\{﻿𝑨\in G\mid\forall\;﻿𝑴\in S,\;﻿𝑴﻿𝑨=﻿𝑨﻿𝑴\}$ $=\left\{\left.\begin{bmatrix}a &amp;\\ c &amp; d\end{bmatrix}\;\right|\;a,\,c,\,d\in\mathbb R,\;a+c=d\right\}$．</p>
+<p>考虑 $\mathbb R$ 上的 $n$ 次一般线性群 $\mathrm{GL}_n(\mathbb R)$，其中心为 $n$ 阶实数量矩阵所成的子群，即 $\mathrm Z(\mathrm{GL}_n(\mathbb R))=\{k﻿𝑰_n\mid k\in\mathbb R\setminus\{0\}\}$．<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup></p>
+</blockquote>
+<hr>
+<p>〔定理 5.2〕：</p>
+<blockquote>
+<p>设 $M$ 是群 $G$ 的子集，则与 $M$ 共轭的子集数量为 $[G:\mathrm N_G(M)]$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>与 $M$ 共轭的子集具有形式 $g^{-1}Mg\quad(g\in G)$，</p>
+<p>于是设 $g,\,g’\in G$，$g^{-1}Mg,\,g’^{-1}Mg’$ 是 $M$ 的共轭子集，</p>
+<p>&emsp;&emsp;$\begin{aligned} &amp;g^{-1}Mg=g’^{-1}Mg’\\\phantom{\dfrac 11}\Leftrightarrow\;&amp;g’g^{-1}Mgg’^{-1}=(gg’^{-1})^{-1}M(gg’^{-1})=M\\\Leftrightarrow\;&amp;gg’^{-1}\in\mathrm N_G(M)\\\phantom{\dfrac 11}\Leftrightarrow\;&amp;\mathrm N_G(M)\cdot g=\mathrm N_G(M)\cdot g’\end{aligned}$</p>
+<p>从而得证，$M$ 的共轭子集数量等于 $G$ 对于 $\mathrm N_G(M)$ 的陪集个数，即 $\mathrm N_G(M)$ 对于 $G$ 的指数 $[G:\mathrm N_G(M)]$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>〔推论〕：</p>
+<blockquote>
+<p>与 $a\in G$ 共轭的元素数量为 $[G:\mathrm C_G(a)]=[G:\mathrm N_G(a)]$．</p>
+</blockquote>
+<hr>
+<p>〔定理 5.3〕：</p>
+<blockquote>
+<p>设 $p\in\mathbb P$，$n\geq 1$，$G$ 为 $p^n$ 阶群，则 $|\mathrm Z(G)|&gt;1$，即犹言 $G$ 有非平凡（非单位元）的中心元素．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>因为 $e\in\mathrm Z(G)$，所以 $r:=|\mathrm Z(G)|\geq 1$，</p>
+<p>又对于任意 $z\in G$，</p>
+<p>&emsp;&emsp;$z\in\mathrm Z(G)\;\Leftrightarrow\;$与 $z$ 共轭的元素只有 $z$，</p>
+<p>考虑将 $G$ 分划为（元素的）数个共轭类，各中心元素所在的共轭类只有其自身，其余元素所在的共轭类均有其自身之外的元素．</p>
+<p>因为与 $z\in G$ 共轭的元素数量为 $[G:\mathrm C_G(z)]$，</p>
+<p>所以每个共轭类的元素个数均为 $|G|=p^n$ 的因子，</p>
+<p>从而</p>
+<p>&emsp;&emsp;$p^n=r+p^{i_1}+p^{i_2}+\cdots\quad(i_1,\,i_2,\,\cdots\in\mathbb N_+)$，</p>
+<p>由此可知 $p\mid r$，</p>
+<p>从而得证 $|\mathrm Z(G)|=r\geq p&gt;1$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 5.4〕：</p>
+<blockquote>
+<p>对于任意 $p\in \mathbb P$，$p^2$ 阶群 $G$ 均为阿贝尔群．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设 $a\in G,\;a\neq e$，则 $|a|=p$ 或 $|a|=p^2$&emsp;（Lagrange 定理）．</p>
+<p>若 $\exists\; g\in G,\quad |g|=p^2$，则 $G$ 为 $p^2$ 阶循环群，即为阿贝尔群．</p>
+<p>否则，$\forall\;a\in G,\;a\neq e,\quad |a|=p$．</p>
+<p>在此情况下，又有 $\exists\;a\in G,\;a\neq e,\quad a\in\mathrm Z(G)$&emsp;（Th. 5.3），</p>
+<p>所以 $\forall\;b\in G,\quad a^{-1}ba=b$，</p>
+<p>又因为</p>
+<p>&emsp;&emsp;$\forall\;n\in\mathbb N_+,\quad$</p>
+<p>&emsp;&emsp;&emsp;&emsp;$(a^n)^{-1}ba^n=a^{1-n}(a^{-1}ba)a^{n-1}=a^{1-n}ba^{n-1}=\cdots=b$．</p>
+<p>所以 $\forall\;n\in\mathbb N_+,\quad a^n\in\mathbb Z(G)$．</p>
+<p>而 $|a|=p$，因此 $A:=\{e,\,a,\,a^2,\,\cdots,\,a^{p-1}\}\leq G$，且 $A$ 中所有元素均为中心元素．</p>
+<p>因为 $|G|=p^2,\;|A|=p&lt;p^2$，</p>
+<p>所以 $\exists\;z\in(G\setminus A),\quad |z|=p$，</p>
+<p>从而可证 $A,\,Az,\,Az^2,\,\cdots,\,Az^{p-1}$ 是 $G$ 对 $A$ 的全部右陪集．<sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup></p>
+<p>因此 $G=\{a^mz^n\mid 0\leq m,\,n\leq p-1\}\quad(a^0=z^0=e)$，</p>
+<p>又因为 $a^m\in\mathrm Z(G)$，</p>
+<p>所以由中心元素的交换性，可得 $(a^mz^n)(a^{m’}z^{n’})=a^{m+m’}z^{n+n’}=(a^{m’}z^{n’})(a^mz^n)\quad$$(0\leq m,\,m’,\,n,\,n’\leq p-1)$，得证．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 名词为 conjugacy．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. 子群判定定理：$\forall\;a,\,a’\in A,\quad$ $(g^{-1}ag)^{-1}(g^{-1}a’g)=g^{-1}agg^{-1}a’g$ $\;=g^{-1}(aa’)g\in g^{-1}Ag=B$．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. 自然也可以写作 $\{g\in G\mid gM=Mg\}$．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. 自然也可以写作 $\{g\in G\mid\forall\;a\in M,\;ga=ag\}$．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(5)">
+<sup>(5)</sup>. 字母 Z 取自德语的 <em>Zentrum</em>（中心）．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. 数量矩阵（scalar matrix，或谓之标量矩阵）即单位矩阵与非零数量（在此是实数）的乘积．这一结论在线性代数中也可以表述为：与某一矩阵相似的矩阵只有其自身，当且仅当该矩阵为数量矩阵．在此不证．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(7)">
+<sup>(7)</sup>. 注意 $\forall\;k\in\mathbb N_+,\quad (z^k=e)\Leftrightarrow(z^k\in A)$．设 $0\leq n&lt;m\leq p-1$，若存在 $Az^m=Az^n$，则由陪集的定义有 $z^{m-n}\in A$，由于 $m-n$ 与 $p$ 互质（$m-n&lt;p,\;p\in\mathbb P$），而 $|z|=p$，所以 $m-n=1,\;z^{m-n}=z\in A$，与前述矛盾．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+<p>前：<a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/05/11/De-Algebra-Abstracta-06">抽象代数笔记 〇六：正规子群与商群</a></p>
+<p><br></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Abstracta/" rel="tag">Algebra-Abstracta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Theoria-Catervarum/" rel="tag">Theoria-Catervarum</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/05/11/De-Algebra-Abstracta-06" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Abstracta 06 // 抽象代数笔记 〇六：正规子群与商群
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/30/De-Algebra-Abstracta-04" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 04 // 抽象代数笔记 〇四：循环群</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Conjugatia-%E5%85%B1%E8%BD%AD"><span class="nav-number">1.</span> <span class="nav-text">Conjugatia 共轭</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Normalizatores-amp-Centralizatores-%E6%AD%A3%E8%A7%84%E5%8C%96%E5%AD%90%E4%B8%8E%E4%B8%AD%E5%BF%83%E5%8C%96%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">Normalizatores &amp; Centralizatores 
+正规化子与中心化子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">3.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

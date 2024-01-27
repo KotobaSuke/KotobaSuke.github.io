@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra abstracta 07 // 抽象代数笔记 〇七：同态与同构定理 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-AbstractaTheoria-Catervarum" />
+  
+  
+  
+  
+  <meta name="description" content="前：抽象代数笔记 〇六：正规子群与商群 后：抽象代数笔记 〇八：置换群与单群  Imago &amp; Nucleus 像与核〔定义〕：  设 $f:G\to H$ 是群之间的映射： $f(G):&#x3D;\{f(g)\mid g\in G\}$ 称为群 $G$ 在映射 $f$ 下的像（image），即 $G$ 中所有元素经过映射 $f$ 所得结果所成集合，它是 $H$ 的子集．特别地，若 $f$ 为群同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Abstracta 07 &#x2F;&#x2F; 抽象代数笔记 〇七：同态与同构定理">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/05/31/De-Algebra-Abstracta-07">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="前：抽象代数笔记 〇六：正规子群与商群 后：抽象代数笔记 〇八：置换群与单群  Imago &amp; Nucleus 像与核〔定义〕：  设 $f:G\to H$ 是群之间的映射： $f(G):&#x3D;\{f(g)\mid g\in G\}$ 称为群 $G$ 在映射 $f$ 下的像（image），即 $G$ 中所有元素经过映射 $f$ 所得结果所成集合，它是 $H$ 的子集．特别地，若 $f$ 为群同">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/06/09/eLolwkQhOFucMd9.png">
+<meta property="article:published_time" content="2021-05-31T15:32:43.000Z">
+<meta property="article:modified_time" content="2023-12-05T15:25:30.176Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Abstracta">
+<meta property="article:tag" content="Theoria-Catervarum">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/06/09/eLolwkQhOFucMd9.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Abstracta-07" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Abstracta 07 // 抽象代数笔记 〇七：同态与同构定理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/05/31/De-Algebra-Abstracta-07" class="article-date">
+	  <time datetime="2021-05-31T15:32:43.000Z" itemprop="datePublished">2021-05-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前：<a href="https://kotobasuke.github.io/2021/05/11/De-Algebra-Abstracta-06">抽象代数笔记 〇六：正规子群与商群</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/06/05/De-Algebra-Abstracta-08">抽象代数笔记 〇八：置换群与单群</a></p>
+<hr>
+<h1 id="Imago-amp-Nucleus-像与核"><a href="#Imago-amp-Nucleus-像与核" class="headerlink" title="Imago &amp; Nucleus 像与核"></a>Imago &amp; Nucleus 像与核</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $f:G\to H$ 是群之间的映射：<img src="https://i.loli.net/2021/06/09/eLolwkQhOFucMd9.png" width=250 align="right"></p>
+<p>$f(G):=\{f(g)\mid g\in G\}$ 称为群 $G$ 在映射 $f$ 下的<strong>像</strong>（image），即 $G$ 中所有元素经过映射 $f$ 所得结果所成集合，它是 $H$ 的子集．特别地，若 $f$ 为群同态，则称之为同态 $f$ 的像，记为 $\operatorname{Im} f$．</p>
+<p>设 $A\subseteq H$，则 $\{g\in G\mid f(g)\in A\}$ 称为子集 $A$ 在映射 $f$ 下的<strong>原像</strong>、<strong>前像</strong>（preimage）或<strong>逆像</strong>（inverse image）．</p>
+<p>若 $f$ 为群同态，$\{g\in G\mid f(g)=e_H\}$ 称为同态 $f$ 的<strong>核</strong>（kernel），记为 $\ker f$．对于一个 $G$ 到 $H$ 的同态，其核即 $H$ 中单位元所成单元素集合 $\{e_H\}$ 在映射 $f$ 下的原像．</p>
+</blockquote>
+<h1 id="Theoremata-Homomorphismi同构定理"><a href="#Theoremata-Homomorphismi同构定理" class="headerlink" title="Theoremata Homomorphismi同构定理"></a>Theoremata Homomorphismi<br>同构定理</h1><p>〔定理 7.1〕 <strong>同态基本定理</strong>（fundamental theorem on isomorphism）或<strong>第一同构定理</strong>（first isomorphism theorem）<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>：（本段下文均记 $e$ 为 $G$ 的单位元，$e’$ 为 $H$ 的单位元．）</p>
+<blockquote>
+<p>设 $G,\,H$ 为群，$\varphi:G\to H$ 为群同态，则有</p>
+<p>&emsp;&emsp;(α)&emsp;$\ker \varphi\unlhd G$；</p>
+<p>&emsp;&emsp;(β)&emsp;$\operatorname{Im}\varphi\leq H$；</p>
+<p>&emsp;&emsp;(γ)&emsp;$\operatorname{Im}\varphi\cong G/\ker \varphi$．</p>
+</blockquote>
+<p>〔证明〕 ：</p>
+<blockquote>
+<p>(α)：</p>
+<p>$\forall\;a,\,b\in\ker \varphi,\quad \varphi(a)=\varphi(b)=e’$，</p>
+<p>因为 $\varphi(a^{-1})=\varphi(a)^{-1}=e’$&emsp;（群同态的性质），</p>
+<p>所以 $a^{-1}\in\ker \varphi$，</p>
+<p>又有 $\varphi(a^{-1}b)=\varphi(a^{-1})\varphi(b)=e’e’=e’$，</p>
+<p>从而 $a^{-1}b\in\ker \varphi$，</p>
+<p>得知 $\ker \varphi\leq G$．</p>
+<p>又 $\forall\;g\in G,\, a\in\ker \varphi,$</p>
+<p>&emsp;$\varphi(g^{-1}ag)=\varphi(g^{-1})\cdot e’\cdot\varphi(g)=e’$ $=\varphi(g)\cdot e’\cdot\varphi(g^{-1})=\varphi(gag^{-1})$，</p>
+<p>&emsp;所以 $g^{-1}ag,\,gag^{-1}\in\ker \varphi$，</p>
+<p>从而 $g^{-1}(\ker \varphi)g\subseteq\ker \varphi$，且 $g(\ker \varphi)g^{-1}\subseteq \ker \varphi$，</p>
+<p>于是又有 $\ker \varphi\subseteq g^{-1}(\ker \varphi)g$，</p>
+<p>由此得 $\forall\;g\in G,\quad\ker \varphi=g^{-1}(\ker \varphi)g$，即得证 $\ker \varphi\unlhd G$．</p>
+<p>(β)：</p>
+<p>$\forall\;a,\,b\in\operatorname{Im}\varphi,$</p>
+<p>&emsp;$\exists\;\alpha,\,\beta\in G,\quad\varphi(\alpha)=a,\;\varphi(\beta)=b$，</p>
+<p>&emsp;则 $\exists\;\alpha^{-1}\in G,\quad\varphi(\alpha^{-1})=\varphi(\alpha)^{-1}=a^{-1}\in\operatorname{Im}\varphi$，</p>
+<p>&emsp;又 $\exists\;\alpha^{-1}\beta\in G,\quad\varphi(\alpha^{-1}\beta)=a^{-1}b\in\operatorname{Im}\varphi$，</p>
+<p>得证 $\operatorname{Im}\varphi\leq H$．</p>
+<p>(γ)：</p>
+<p>定义映射 $\overline\varphi:G/\ker \varphi\to\operatorname{Im}\varphi,\quad\overline g\mapsto\varphi(g)$，其中 $\overline g:=g(\ker \varphi)=(\ker \varphi)g\in G/\ker \varphi$．</p>
+<p>设 $g’\in g(\ker \varphi)$，则 $\exists\;k\in\ker \varphi,\quad g’=gk$，</p>
+<p>于是 $\overline\varphi(\overline{g’})=\varphi(g’)=\varphi(gk)=\varphi(g)\varphi(k)=\varphi(g)=\overline\varphi(\overline g)$，</p>
+<p>由此可知该映射定义良好．</p>
+<p>又可证 $\overline\varphi$ 为群同态：</p>
+<p>&emsp;$\overline\varphi(\overline g\cdot\overline{g’})=\overline\varphi(\overline{gg’})=\varphi(gg’)=\varphi(g)\varphi(g’)=\overline\varphi(g)\overline\varphi(g’)$．</p>
+<p>又有 $\forall\;a’\in\operatorname{Im}\varphi,\;\exists\;a\in G,\quad \varphi(a)=a’$，</p>
+<p>于是 $\overline\varphi(\overline a)=\varphi(a)=a’$，</p>
+<p>得证 $\overline\varphi$ 为满同态．</p>
+<p>又设 $a,\,b\in G$，若 $\overline a,\,\overline b\in G/\ker \varphi$，且 $\overline\varphi(\overline a)=\overline\varphi(\overline b)$，则 $\varphi(a)=\varphi(b)$，</p>
+<p>从而 $\varphi(a^{-1}b)=\varphi(a^{-1})\varphi(b)=e’$，</p>
+<p>进而 $a^{-1}b\in\ker \varphi$，且 $a(\ker \varphi)=b(\ker \varphi)$，</p>
+<p>即 $\overline a=\overline b$，得证 $\overline\varphi$ 为单同态．</p>
+<p>综上，$\overline\varphi$ 为群同构，即得证 $\operatorname{Im}\varphi\cong G/\ker \varphi$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>这里所定义的映射 $\overline\varphi$ 称为<strong>典范同构</strong>（canonical isomorphism）．另外，若设映射 $\psi:G/\ker \varphi\to H$，则可证 $\psi$ 为单同态，称为<strong>典范单同态</strong>（canonical monomorphism）．</li>
+</ul>
+<p>〔同态基本定理的推论〕 ：</p>
+<blockquote>
+<p>设 $\varphi:G\to H$ 是群同态，则</p>
+<p>&emsp;&emsp;(α)&emsp;$\varphi$ 为单同态 $\Leftrightarrow$ $\ker \varphi=\{e\}$；</p>
+<p>&emsp;&emsp;(β)&emsp;$\varphi$ 为满同态 $\Leftrightarrow$ 存在典范同构 $\overline\varphi:G/\ker  \varphi\overset{\Large\sim}\to H$．</p>
+</blockquote>
+<p>〔证明〕 ：</p>
+<blockquote>
+<p>(α)：</p>
+<p>〔$\Rightarrow$〕显然．</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>由于 $\forall\;a,\,b\in G,\quad\varphi(a)=\varphi(b)\;\Rightarrow\;\varphi(a^{-1}b)=e’$，</p>
+<p>所以 $a^{-1}b\in\ker \varphi=\{e\}$，</p>
+<p>于是 $a^{-1}b=e$，即 $a=b$，得证 $\varphi$ 为单同态．</p>
+<p>(β)：</p>
+<p>此时 $\operatorname{Im}\varphi=H$，显然得证（同态基本定理 (γ)）．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>同态基本定理在线性空间上的表现形式即为<strong>秩–零化度定理</strong>（rank–nullity theorem）．</li>
+</ul>
+<hr>
+<p>〔例〕 ：</p>
+<blockquote>
+<p>记 $a\in\mathbb Z$ 的模 $n$ 同余类为 $[a]$，映射 $f:\mathbb Z\to\mathbb Z_n,\quad a\mapsto[a]$ 为加法群满同态，且 $\ker  f=n\mathbb Z:=\{nk\mid k\in\mathbb Z\}$（即 $n$ 的全体倍数所成集合）．于是有典范同构 $\mathbb Z/n\mathbb Z\cong \mathbb Z_n$，因此在很多场合下会把整数模 $n$ 加法群 $\mathbb Z_n$ 记作 $\mathbb Z/n\mathbb Z$．</p>
+<p>设映射 $\delta:\mathrm{GL}_n(\mathbb R)\to\mathbb R\setminus\{0\},\quad﻿﻿﻿﻿ 𝑴\mapsto\det(﻿𝑴)$ 为乘法群满同态，且 $\ker \delta=\mathrm{SL}_n(\mathbb R)\lhd\mathrm{GL}_n(\mathbb R)$，且 $\mathrm{GL}_n(\mathbb R)/\mathrm{SL}_n(\mathbb R)\cong\mathbb R\setminus\{0\}$．</p>
+</blockquote>
+<hr>
+<p>〔定理 7.2〕<strong>对应定理</strong>（correspondence theorem），<strong>格定理</strong>（lattice theorem）或<strong>第四同构定理</strong>（fourth isomorphism theorem）<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup>：</p>
+<blockquote>
+<p>设 $N\unlhd G$，$\overline G:=G/N$，$\mathscr M=\{M\mid N\leq M\leq G\}$&emsp;<span style="font-family:Kaiti">（“介于”$G$ 与 $N$ 的所有子群之集族）</span>，$\overline{\mathscr M}=\{H\mid H\leq \overline G\}$．则映射 $f:\mathscr M\to\overline{\mathscr M},\quad M\mapsto\overline M:=M/N$ 为双射，且对于任意 $M\in \mathscr M$，有以下命题成立：</p>
+<p>&emsp;&emsp;(α)&emsp;$M\unlhd G\;\Leftrightarrow\; \overline M\unlhd \overline G$&emsp;（正规保留性）；</p>
+<p>&emsp;&emsp;(β)&emsp;$\forall\;M’\in\mathscr M,\quad M\leq M’\;\Leftrightarrow\; \overline M\leq \overline {M’}$&emsp;（偏序保留性）；</p>
+<p>&emsp;&emsp;(γ)&emsp;$\forall\;M’\in\mathscr M,\;M\leq M’,\quad[M’:M]=[\overline{M’}:\overline M]$&emsp;（指数保留性）．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>不难证明，$\overline M\leq\overline G$ 成立．</p>
+<p>若要定义映射 $h:\overline{\mathscr M}\to \mathscr M,\quad \overline{M}\mapsto\{g\in G\mid gN\in \overline M\}$，需要验证 $h(\overline M)\leq G$：</p>
+<p>&emsp;&emsp;若 $\overline M\in\overline{\mathscr M}$，设任意 $a,\,b\in h(\overline M)$，则有 $aN,\,bN\in \overline M$．</p>
+<p>&emsp;&emsp;因为 $\overline M\leq \overline G$，所以对于所有 $aN,\,bN\in\overline M$，都有 $(a^{-1}b)N\in\overline M$，</p>
+<p>&emsp;&emsp;所以 $a^{-1}b\in h(\overline M)$，这就验证了 $h(\overline M)\leq G$．</p>
+<p>$\forall\;g\in N,\quad gN=N\in \overline M$， </p>
+<p>所以 $g=h(\overline M)$，从而 $N\subseteq h(\overline M)$，</p>
+<p>进而可得</p>
+<p>&emsp;&emsp;$fh(\overline M)=f(\{g\in G\mid gN\in \overline M\})=\overline M$，</p>
+<p>&emsp;&emsp;$hf(M)=h(\overline M)=M$，</p>
+<p>于是可知 $f$ 与 $h$ 是互逆的映射，所以 $f$ 为双射．</p>
+<p>在此基础上可以证明</p>
+<p>(α)：（需要注意 $N\unlhd G,\;N\leq M\leq G\;\Rightarrow\;N\unlhd M$）</p>
+<p>&emsp;&emsp;$\begin{aligned} M\unlhd G\;&amp;\Leftrightarrow\;\forall\;g\in G,\quad gM=Mg \\<br>\phantom{\dfrac11}&amp;\Leftrightarrow\;\forall\;gN\in \overline G,\quad gN\overline M=\overline MNg\\<br>&amp;\Leftrightarrow\;\overline M\unlhd \overline G.\end{aligned}$</p>
+<p>(β) 显然成立．</p>
+<p>(γ)：</p>
+<p>设 $M’=\displaystyle\bigsqcup_{i=1}^k\;p_iM\;(p\in M’)$，</p>
+<p>而 $\overline{M’}=\{\mu N\mid \mu\in M’\}$，$\overline M=\{mN\mid m\in M\}$，</p>
+<p>对于任一 $\mu\in M’$，均存在 $m\in M,\;p\in M’$ 使得 $\mu=pm$，</p>
+<p>于是 $\overline{M’}=\{p_imN=p_i\overline M\mid m\in M,\,p_i\in M’,\;1\leq i\leq k\}$ $=\displaystyle\bigsqcup_{i=1}^k\;p_imN=\bigsqcup_{i=1}^k\;p_i\overline M$，</p>
+<p>所以 $[M’:M]=[\overline{M’}:\overline M]=k$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 7.3〕 <strong>第二同构定理</strong>（second isomorphism theorem）：</p>
+<blockquote>
+<p>设 $N\unlhd G,\;H\unlhd G$，则</p>
+<p>&emsp;&emsp;$(H\cap N)\unlhd H$，$N\unlhd NH\leq G$，$NH/N\cong H/(H\cap N)$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$N\unlhd G\;\Rightarrow\; \forall\;h\in H,\quad hN=Nh$，</p>
+<p>所以 $\forall\;n,\,n’\in N,\;h,\,h’\in H,$</p>
+<p>&emsp;&emsp;&emsp;&emsp;$(nh)^{-1}(n’h’)=h^{-1}n^{-1}n’h’=(n^{-1}n’)(h^{-1}h’)\in NH$，</p>
+<p>所以 $NH\leq G$，</p>
+<p>因为 $N\unlhd G$，所以 $N\subset NH\subset G$，进而 $N\unlhd NH$．</p>
+<p>考虑映射 $f:H\to NH/N,\quad h\mapsto Nh$<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup>，</p>
+<p>易证该映射为满同态，且 $\ker  f=\{h\in H\mid f(h)=N\}=\{h\in H\mid h\in N\}=H\cap N$，</p>
+<p>由同态基本定理，则有 $H\cap N=\ker  f\unlhd H$，$NH/N\cong H/(H\cap N)$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 7.4〕 <strong>第三同构定理</strong>（third isomorphism theorem）：</p>
+<blockquote>
+<p>设 $M,\,N\unlhd G,\;N\leq M$，</p>
+<p>则 $G/M\cong (G/N)/(M/N)$&emsp;（或写作 $\dfrac{G/N}{M/N}$）．</p>
+<p>（注意 $N\unlhd G,\;N\leq M\;\Rightarrow\;N\unlhd M$，且由对应定理，$M/N\unlhd G/N$．）</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设映射 $f: G/N\to G/M,\quad gN\mapsto gM$，验证该映射定义良好：</p>
+<p>&emsp;&emsp;$\forall\;g,\,g’\in G,$</p>
+<p>&emsp;&emsp;&emsp;&emsp;$gN=g’N\;\Rightarrow\;g^{-1}g\in N\subseteq M$ $\Rightarrow\;g^{-1}g\in M\;\Rightarrow\;gM=g’M$．</p>
+<p>进而可知 $f$ 为满同态，于是对任意 $g\in G$，</p>
+<p>&emsp;&emsp;$gN\in\ker  f\;\Leftrightarrow\;gM=M$ $\Leftrightarrow\; g\in M\;\Leftrightarrow\; gN\in M/N$，</p>
+<p>从而 $\ker  f=M/N$，</p>
+<p>由同态基本定理有 $(G/N)/\ker  f\cong \operatorname{Im} f$，</p>
+<p>即 $(G/N)/(M/N)\cong G/M$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 与同构相关的定理，其命名在各种文献中有所差异，尤其是使用序号者．这里采用比较常用的命名．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. 对应定理有更普遍的表述，这里考虑了其一种情况．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. $NH/N=\{Nnh\mid nh\in NH\}=\{Nh\mid h\in H\}$．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+<p>前：<a href="https://kotobasuke.github.io/2021/05/11/De-Algebra-Abstracta-06">抽象代数笔记 〇六：正规子群与商群</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/06/05/De-Algebra-Abstracta-08">抽象代数笔记 〇八：置换群与单群</a></p>
+<p><br></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Abstracta/" rel="tag">Algebra-Abstracta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Theoria-Catervarum/" rel="tag">Theoria-Catervarum</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/06/05/De-Algebra-Abstracta-08" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Abstracta 08 // 抽象代数笔记 〇八：置换群与单群
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/11/De-Algebra-Abstracta-06" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 06 // 抽象代数笔记 〇六：正规子群与商群</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Imago-amp-Nucleus-%E5%83%8F%E4%B8%8E%E6%A0%B8"><span class="nav-number">1.</span> <span class="nav-text">Imago &amp; Nucleus 像与核</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theoremata-Homomorphismi%E5%90%8C%E6%9E%84%E5%AE%9A%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">Theoremata Homomorphismi
+同构定理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">3.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

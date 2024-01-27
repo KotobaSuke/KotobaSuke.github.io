@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra abstracta 06 // 抽象代数笔记 〇六：正规子群与商群 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-AbstractaTheoria-Catervarum" />
+  
+  
+  
+  
+  <meta name="description" content="前：抽象代数笔记 〇五：共轭、正规化子与中心化子 后：抽象代数笔记 〇七：同态与同构定理  Succatervae Normales 正规子群〔定义〕：  设 $G$ 为群，$N\leq G$， 若 $\forall\;g\in G,\quad g^{-1}Ng&#x3D;N$，则称 $N$ 为 $G$ 的正规子群（normal subgroup），记为 $N\unlhd G$． $G$ 的平凡子群 $\{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Abstracta 06 &#x2F;&#x2F; 抽象代数笔记 〇六：正规子群与商群">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/05/11/De-Algebra-Abstracta-06">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="前：抽象代数笔记 〇五：共轭、正规化子与中心化子 后：抽象代数笔记 〇七：同态与同构定理  Succatervae Normales 正规子群〔定义〕：  设 $G$ 为群，$N\leq G$， 若 $\forall\;g\in G,\quad g^{-1}Ng&#x3D;N$，则称 $N$ 为 $G$ 的正规子群（normal subgroup），记为 $N\unlhd G$． $G$ 的平凡子群 $\{">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-11T12:54:44.000Z">
+<meta property="article:modified_time" content="2023-12-05T15:25:15.771Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Abstracta">
+<meta property="article:tag" content="Theoria-Catervarum">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Abstracta-06" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Abstracta 06 // 抽象代数笔记 〇六：正规子群与商群
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/05/11/De-Algebra-Abstracta-06" class="article-date">
+	  <time datetime="2021-05-11T12:54:44.000Z" itemprop="datePublished">2021-05-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前：<a href="https://kotobasuke.github.io/2021/05/06/De-Algebra-Abstracta-05">抽象代数笔记 〇五：共轭、正规化子与中心化子</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/05/31/De-Algebra-Abstracta-07">抽象代数笔记 〇七：同态与同构定理</a></p>
+<hr>
+<h1 id="Succatervae-Normales-正规子群"><a href="#Succatervae-Normales-正规子群" class="headerlink" title="Succatervae Normales 正规子群"></a>Succatervae Normales 正规子群</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 为群，$N\leq G$，</p>
+<p>若 $\forall\;g\in G,\quad g^{-1}Ng=N$，则称 $N$ 为 $G$ 的<strong>正规子群</strong>（normal subgroup），记为 $N\unlhd G$．</p>
+<p>$G$ 的平凡子群 $\{e\}$ 与 $G$ 本身总是 $G$ 的正规子群，称为其<strong>平凡正规子群</strong>（trivial normal subgroup）．</p>
+<p>特别地，若 $N\unlhd G$ 且 $N\neq G$，则称 $N$ 为 $G$ 的<strong>真正规子群</strong>（proper normal subgroup），记为 $N\lhd G$．<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup></p>
+</blockquote>
+<hr>
+<p>〔定理 6.1〕：</p>
+<blockquote>
+<p>设 $N$ 是 $G$ 的子群，以下命题彼此等价：</p>
+<p>&emsp;&emsp;(α)&emsp;$N\unlhd G$，即 $\forall\;g\in G,\quad g^{-1}Ng=N$&emsp;（共轭不变）；<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
+<p>&emsp;&emsp;(β)&emsp;$\mathrm N_G(N)=G$&emsp;（群自身是其正规子群的正规化子）；</p>
+<p>&emsp;&emsp;(γ)&emsp;$N$ 自身是其在 $G$ 中唯一共轭子群；<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup></p>
+<p>&emsp;&emsp;(δ)&emsp;$\forall\;g\in G,\;n\in N,\quad g^{-1}ng\in N$&emsp;（正规子群包含其中所有元素的共轭）；</p>
+<p>&emsp;&emsp;(ε)&emsp;$\forall\;g\in G,\quad gN=Ng$&emsp;（左右陪集相等）；</p>
+<p>&emsp;&emsp;(ζ)&emsp;$G$ 对于 $N$ 的任一左陪集均为右陪集，反之亦然；</p>
+<p>&emsp;&emsp;(η)&emsp;$N$ 是 $G$ 中若干共轭类之并．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>(α) $\Leftrightarrow$ (β)：&emsp;$\forall\;g\in G,\quad g^{-1}Ng=N\;\Leftrightarrow\;\mathrm N_G(N)=G$．</p>
+<p>(β) $\Leftrightarrow$ (γ)：&emsp;因为 $N\leq G$，所以 $N$ 的共轭子群数量为 $[G:\mathrm N_G(N)]=[G:G]=1$（Th. 5.2）；〔$\Leftarrow$〕显然．</p>
+<p>(α) $\Leftrightarrow$ (δ) 显然．</p>
+<p>(α) $\Leftrightarrow$ (ε)：&emsp;$g^{-1}Ng=N\;\Leftrightarrow\;Ng=gN$．</p>
+<p>(ε) $\Leftrightarrow$ (ζ)：</p>
+<p>&emsp;〔$\Rightarrow$〕显然；</p>
+<p>&emsp;由 (δ) 有，$\forall\;g\in G,\;\exists\;g’\in G,\quad gN=Ng’$，</p>
+<p>&emsp;因为 $e\in N$，所以 $g=ge\in gN=Ng’$，</p>
+<p>&emsp;又因为 $g=eg\in Ng$，所以 $Ng=Ng’=gN$．</p>
+<p>(δ) $\Leftrightarrow$ (η)：</p>
+<p>&emsp;记 $n\in N$ 的共轭类为 $[n]$，因为 $\forall\;n\in N,\quad [n]\subseteq N$，所以 $\displaystyle\bigsqcup_{n\in N}\;[n]\subseteq N$，</p>
+<p>&emsp;又因为 $\forall\;n\in N,\quad n\in [n]$，所以 $N\subseteq\displaystyle\bigsqcup_{n\in N}\;[n]$，</p>
+<p>&emsp;进而得证 $\displaystyle\bigsqcup_{n\in N}\;[n]=N$；</p>
+<p>&emsp;〔$\Leftarrow$〕显然．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔例〕：</p>
+<blockquote>
+<p>任一阿贝尔群 $G$ 的所有子群都是其正规子群，因为 $\forall\;H\leq G,\,g\in G,\quad gH=Hg$．</p>
+<p>任一群 $G$ 的中心 $\mathrm Z(G)$ 都是其正规子群，可由中心的定义得知．</p>
+</blockquote>
+<hr>
+<p>设 $G$ 为群，$N&lt;M&lt;G$，则</p>
+<blockquote>
+<p>$N\lhd G\;\Rightarrow\;N\lhd M$ 必然成立，而</p>
+<p>$N\lhd M,\;M\lhd G\;\Rightarrow\; N\lhd G$ 不一定成立，即正规子群的关系是非传递的．</p>
+</blockquote>
+<p>前一条的证明可由正规子群的定义显然得出，而后一条可以通过构造反例证明（将在后续的文章给出）．</p>
+<hr>
+<p>〔定理 6.2〕：</p>
+<blockquote>
+<p>$N\unlhd G\;\Leftrightarrow$ 存在群同态 $\varphi:G\to H$，使得 $N=\operatorname{Ker} \varphi$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕：定义映射 $\pi:G\to G/N,\quad a\mapsto aN$，易证该映射为群同态，则显然 $\operatorname{Ker} \pi=N$．</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>若 $N=\operatorname{Ker}\varphi$，则 $\forall\;g\in G,\;n\in N$，有</p>
+<p>&emsp;&emsp;$\varphi(g^{-1}ng)=\varphi(g)^{-1}\varphi(n)\varphi(g)$ $=\varphi(g)^{-1}e\varphi(g)=e$，</p>
+<p>从而得知 $g^{-1}Ng\subseteq\operatorname{Ker} \varphi=N$．</p>
+<p>同理可证 $gNg^{-1}\subseteq\operatorname{Ker}\varphi=N$，即 $N\subseteq=g^{-1}Ng$，</p>
+<p>所以 $N=g^{-1}Ng$，即得证 $N\unlhd G$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>不难看出，这里所定义的映射 $\pi$ 是满同态，称为<strong>典范满同态</strong>（canonical epimorphism）．</li>
+</ul>
+<h1 id="Catervae-Quotientis-商群"><a href="#Catervae-Quotientis-商群" class="headerlink" title="Catervae Quotientis 商群"></a>Catervae Quotientis 商群</h1><p>设 $N\unlhd G$，记 $\overline a=aN=Na$（群对其正规子群的左右陪集相等），集合 $\overline G=\{\overline a\mid a\in G\}$．</p>
+<p>定义其上的二元运算 $\overline a\cdot \overline b:=\overline{ab}$，则可得</p>
+<p>&emsp;&emsp;若 $\overline\alpha=\overline a,\;\overline\beta=\overline b$，即 $\alpha N=aN,\quad\beta N=bN$，</p>
+<p>&emsp;&emsp;则 $\overline{\alpha\beta}=\alpha\beta N=\alpha\beta NN$<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>$=\alpha N\beta N=aNbN=\overline{ab}$，</p>
+<p>由此可知该运算定义良好．</p>
+<p>可以判断，集合 $\overline G$ 对于该运算形成群：</p>
+<blockquote>
+<p>（封闭性）：&emsp;因为 $\forall\;a,\,b\in G,\quad ab\in G$，所以 $\forall\;\overline a,\,\overline b,\quad \overline{ab}\in\overline G$；</p>
+<p>（结合性）：&emsp;$\forall\;\overline a,\,\overline b,\,\overline c\in\overline G,\quad$$(\overline a\cdot\overline b)\cdot\overline c=\overline{(ab)c}=((ab)c)N=(a(bc))N=\overline{a(bc)}=\overline a\cdot(\overline b\cdot\overline c)$；</p>
+<p>（单位元）：</p>
+<p>&emsp;&emsp;因为 $e\in G$，所以 $\overline e=eN=N\in\overline G$，</p>
+<p>&emsp;&emsp;$\forall\;a\in G,\quad$$\overline a\cdot\overline e=\overline{ae}=\overline a=\overline{ea}=\overline e\cdot\overline a$；</p>
+<p>（逆元）：</p>
+<p>&emsp;&emsp;$\forall\;a\in G,\quad$$\overline{a^{-1}}\cdot\overline a=\overline{a^{-1}a}=\overline e=\overline{aa^{-1}}=\overline a\cdot\overline{a^{-1}}$，</p>
+<p>&emsp;&emsp;由此得，$\forall\;a\in G,\;\exists\;\overline{a^{-1}}=\overline a^{-1}\in G$．</p>
+</blockquote>
+<p>由此，〔定义〕：</p>
+<blockquote>
+<p>$\overline G=\{aN=Na\mid a\in G\}$ 称为群 $G$ 对正规子群 $N$ 的<strong>商群</strong>（quotient group）或<strong>因子群</strong>（factor group），记作 $G/N$ <sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>．$G/N$ 是关于正规子群 $N$ 的所有左陪集或右陪集所成的集族．</p>
+</blockquote>
+<ul>
+<li>若 $G$ 为有限群，则 $|G/N|=[G:N]=|G|/|N|$．</li>
+</ul>
+<hr>
+<p>〔例〕：</p>
+<blockquote>
+<p>考虑实数加法群 $(\mathbb R,\,+)$，它是阿贝尔群，所以其任一子群均为正规子群．取 $2\mathbb R:=\{2k\mid k\in\mathbb R\}$，有 $2\mathbb R\lhd \mathbb R$．$\mathbb R$ 对于该子群的陪集形式为 $\ell+2\mathbb R=2\mathbb R+\ell=\{2k+\ell\mid k,\,\ell\in\mathbb R\}=\mathbb R\quad(\ell\in\mathbb R)$，于是商群 $\mathbb R/2\mathbb R=\{\mathbb R\}$ 为平凡群．又，$\{0\}$ 是 $(\mathbb R,\,+)$ 的一个平凡正规子群，$\mathbb R$ 对其陪集形式为 $k+\{0\}=\{0\}+k=\{k\}\quad(k\in\mathbb R)$，于是商群 $\mathbb R/\{0\}=\{\{k\mid k\in\mathbb R\}\}$ 亦为平凡群．</p>
+<p>考虑 $\mathbb R$ 上的 $n$ 次一般线性群 $\mathrm{GL}_n(\mathbb R)$，其中心为 $n$ 阶实数量矩阵所成的子群 $\{k﻿𝑰_n\mid k\in\mathbb R\setminus\{0\}\}=:N$，且该子群为正规子群．$\mathrm{GL}_n(\mathbb R)$ 对于子群 $N$ 的陪集形式为 $﻿𝑴N=N﻿𝑴=\{k﻿𝑴\mid k\in\mathbb R\setminus\{0\},\;𝑴\in \mathrm{GL}_n\mathbb(R)\}$，即某一 $n$ 阶可逆实方阵与所有非零实数的乘积所成集合，于是商群 $\mathrm{GL}_n(\mathbb R)/N=\{\{k﻿𝑴\mid k\in\mathbb R\setminus\{0\}\}\mid ﻿𝑴\in\mathrm{GL}_n(\mathbb R)\}$．</p>
+</blockquote>
+<h1 id="Quadri-Caterva-Kleini-emsp-Klein-四元群"><a href="#Quadri-Caterva-Kleini-emsp-Klein-四元群" class="headerlink" title="Quadri-Caterva Kleini&emsp;Klein 四元群"></a>Quadri-Caterva Kleini&emsp;<em>Klein</em> 四元群</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设集合 $V=\{e,\,a,\,b,\,c\}$ 关于乘法形成群， $e$ 为单位元，且有</p>
+<p>&emsp;&emsp;$\forall\;x\in V,\quad x^2=e$，</p>
+<p>&emsp;&emsp;$ab=ba=c$，</p>
+<p>这样的群 $V$ 称为 <strong>Klein（克莱因）<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>四元群</strong>（Klein four-group，或以德语原名 <em>Vierergruppe</em> “四之群” 称之），一些资料中也会记作 $K_4$．</p>
+<p>随之而有群论中的一个重要事实，任一 $4$ 阶群均同构于 Klein 四元群或 $4$ 阶循环群其一，即犹言 $4$ 阶群本质上只有 Klein 四元群与 $4$ 阶循环群两个，这同时也说明 Klein 四元群是阶数最低的非循环群（质数阶群均为循环群）．</p>
+</blockquote>
+<p>对上述事实可以证明如下：</p>
+<blockquote>
+<p>设 $G$ 为 $4$ 阶群，记 $4$ 阶循环群为 $C_4$，</p>
+<p>若存在 $g\in G,\;|g|=4$，则 $G\cong C_4$．</p>
+<p>否则其所有非单位元的阶均为 $2$，&emsp;（Th. 3.4）</p>
+<p>从而任取非单位元 $a\in G$，有 $a^2=e$，且 $a=a^{-1}$，</p>
+<p>于是 $\langle a\rangle=\{e,\,a\}$ 为 $2$ 阶循环群，且 $\langle a\rangle\lhd G$（阿贝尔群均为正规子群），</p>
+<p>从而商群 $\overline G:=G/\langle a\rangle$ 的阶为 $\dfrac{|G|}{|\langle a\rangle|}=2$，</p>
+<p>令 $\overline G=\{\langle a\rangle,\,b\langle a\rangle\}$，而 $b\langle a\rangle=\langle a\rangle b=\{b,\,ab=ba\}$，且 $b\in G\setminus\langle a\rangle$，</p>
+<p>所以 $b\neq e$，且 $b\neq a$，而因为 $ab\langle a\rangle=\langle a\rangle b\langle a\rangle=b\langle a\rangle$，所以 $ab\not\in\langle a\rangle$，即 $ab\neq e,\;ab\neq a$，</p>
+<p>又因为 $a\neq e$，所以 $ab\neq b$，所以 $ab$ 为 $G$ 中不等于 $e,\,a,\,b$ 的元素，记作 $c$，则 $G=\{e,\,a,\,b,\,c\}$，即 Klein 四元群．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>对所有非单位元 $a\in V$，商群 $V/\langle a\rangle=\{\langle a\rangle,\,b\langle a\rangle\}$．</li>
+<li>$ac=ca=a^2b=eb=b$，$bc=cb=b^2a=ea=a$．</li>
+</ul>
+<h1 id="Problemata-习题"><a href="#Problemata-习题" class="headerlink" title="Problemata 习题"></a>Problemata 习题</h1><p>〔6.A〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;对于群 $G$ 的所有指数为 $2$ 的子群 $H$，都有 $H\lhd G$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>因为 $[G:H]=2$，所以考虑陪集分解，对于任一 $g\in G\setminus H$，均有 $G=H\sqcup gH=H\sqcup Hg$，从而 $gH=Hg$，这就证明了 $H\lhd G$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔6.B〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;若群 $G$ 对其中心 $\mathrm Z(G)$ 的商群 $G/\mathrm Z(G)$ 为循环群，则 $G$ 为阿贝尔群．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>设 $G/\mathrm Z(G)=\langle g\mathrm Z(G)\rangle\;(g\in G\setminus\mathrm Z(G))$，则 $\forall\;a,\,b\in G,\;$ $\exists\;c,\,d\in \mathrm Z(G),\;m,\,n\in\mathbb N,\quad$ $a=g^mc,\;b=g^nd$，</p>
+<p>从而 $ab=g^mcg^nd$，由中心元素的交换性可知 $ab=g^ndg^mc=ba$，得证．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 不少资料中无论是否有 $N=G$，均只记作 $N\lhd G$．此处为了保持符号的系统性（参考 $\subseteq\;\leq$）而区分二者．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. 因此早期的资料也称正规子群为不变子群（invariant subgroup）．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. 由此早期的资料也称正规子群为自共轭子群（self-conjugated subgroup）．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. 因为 $N\leq G$，所以 $NN=\{ab\mid a,\,b\in N\}$，并且群中任一元素均可用两个元素的乘积表示（考虑 $\forall\; a\in G,\quad a=ae$），从而 $NN=N$．这一性质对任何子群均适用，并且由此可以类推得到：$H\leq G\;\Rightarrow\;H=HH=H\cdots H$（任意有限个 $H$）．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(5)">
+<sup>(5)</sup>. 英语中读作 $G$ mod $N$．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. 菲利克斯·克莱因（Felix Klein），德国数学家，主要贡献于非欧几何与群论等领域，其提出的 Klein 瓶（Klein bottle）是无定向平面的知名例子．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+<p>前：<a href="https://kotobasuke.github.io/2021/05/06/De-Algebra-Abstracta-05">抽象代数笔记 〇五：共轭、正规化子与中心化子</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/05/31/De-Algebra-Abstracta-07">抽象代数笔记 〇七：同态与同构定理</a></p>
+<p><br></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Abstracta/" rel="tag">Algebra-Abstracta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Theoria-Catervarum/" rel="tag">Theoria-Catervarum</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/05/31/De-Algebra-Abstracta-07" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Abstracta 07 // 抽象代数笔记 〇七：同态与同构定理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/06/De-Algebra-Abstracta-05" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 05 // 抽象代数笔记 〇五：共轭、正规化子与中心化子</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-Normales-%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Succatervae Normales 正规子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-Quotientis-%E5%95%86%E7%BE%A4"><span class="nav-number">2.</span> <span class="nav-text">Catervae Quotientis 商群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Quadri-Caterva-Kleini-emsp-Klein-%E5%9B%9B%E5%85%83%E7%BE%A4"><span class="nav-number">3.</span> <span class="nav-text">Quadri-Caterva Kleini&amp;emsp;Klein 四元群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problemata-%E4%B9%A0%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">Problemata 习题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">5.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

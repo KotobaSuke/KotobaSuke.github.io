@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra lineari 05 // 线性代数笔记 〇五：特征值与特征向量 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-Linearis" />
+  
+  
+  
+  
+  <meta name="description" content="Valores Proprii &amp; Vectores Proprii 特征值与特征向量〔定义〕：  设 $T\in\mathcal L(V)$，若 $V$ 的子空间 $U$ 满足 $﻿𝒖\in U\Rightarrow T(﻿𝒖)\in U$，则称 $U$ 为 $V$ 对于 $T$ 的不变子空间（invariant subspace）．   对任一向量空间 $V$，子空间 $\{\ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Lineari 05 &#x2F;&#x2F; 线性代数笔记 〇五：特征值与特征向量">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/09/13/De-Algebra-Lineari-05">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="Valores Proprii &amp; Vectores Proprii 特征值与特征向量〔定义〕：  设 $T\in\mathcal L(V)$，若 $V$ 的子空间 $U$ 满足 $﻿𝒖\in U\Rightarrow T(﻿𝒖)\in U$，则称 $U$ 为 $V$ 对于 $T$ 的不变子空间（invariant subspace）．   对任一向量空间 $V$，子空间 $\{\ma">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-12T16:55:12.000Z">
+<meta property="article:modified_time" content="2022-02-25T16:53:17.525Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Linearis">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Lineari-05" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Lineari 05 // 线性代数笔记 〇五：特征值与特征向量
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/13/De-Algebra-Lineari-05" class="article-date">
+	  <time datetime="2021-09-12T16:55:12.000Z" itemprop="datePublished">2021-09-13</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Valores-Proprii-amp-Vectores-Proprii-特征值与特征向量"><a href="#Valores-Proprii-amp-Vectores-Proprii-特征值与特征向量" class="headerlink" title="Valores Proprii &amp; Vectores Proprii 特征值与特征向量"></a>Valores Proprii &amp; Vectores Proprii <br>特征值与特征向量</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $T\in\mathcal L(V)$，若 $V$ 的子空间 $U$ 满足 $﻿𝒖\in U\Rightarrow T(﻿𝒖)\in U$，则称 $U$ 为 $V$ 对于 $T$ 的<strong>不变子空间</strong>（invariant subspace）．</p>
+</blockquote>
+<ul>
+<li>对任一向量空间 $V$，子空间 $\{\mathbf 0\},\;V,\;\ker T,\;\operatorname{Im} T$ 均为 $V$ 对于 $T$ 的不变子空间．</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $T\in\mathcal L(V)$，对于 $\lambda\in\mathbb F$，若存在 $\mathbf 0\neq ﻿𝒗\in V$ 使得 $T(﻿𝒗)=\lambda﻿𝒗$，则称 $\lambda$ 是 $T$ 的<strong>特征值</strong>（eigenvalue）．</p>
+<p>此时满足 $T(﻿𝒗)=\lambda﻿ 𝒗$ 的非零向量 $﻿𝒗\in V$ 称为 $T$ 关于特征值 $\lambda$ 的<strong>特征向量</strong>（eigenvector）．</p>
+</blockquote>
+<ul>
+<li>易证，以下命题等价：<ul>
+<li>$\lambda\in\mathbb F$ 是 $T$ 的特征值；</li>
+<li>$T-\lambda I$ 不是单射；</li>
+<li>$T-\lambda I$ 不是满射；</li>
+<li>$T-\lambda I$ 不可逆．</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>〔定理 5.1〕：</p>
+<blockquote>
+<p>设 $T\in\mathcal L(V)$，设 $\lambda_1,\,\lambda_2,\,\cdots,\,\lambda_n\in\mathbb F$ 是 $T$ 的相异特征值，$﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n\in V$ 是分别对应的特征向量，则 $﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n$ 线性无关．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设 $﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n$ 线性相关，由线性相关性引理，可以令 $k$ 是满足以下条件的最小正整数：</p>
+<p>&emsp;&emsp;$﻿𝒗_k\in\mathrm{span}(﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_{k-1})$，</p>
+<p>且 $﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_{k-1}$ 线性无关，</p>
+<p>则可以设 $a_1,\,a_2,\,\cdots,\,a_{k-1}\in\mathbb F$，使得</p>
+<p>&emsp;&emsp;$﻿𝒗_k=a_1﻿𝒗_1+a_2﻿𝒗_2+\cdots+a_{k-1}﻿﻿𝒗_{k-1}$&emsp;（▲），</p>
+<p>对两侧应用变换 $T$，则有</p>
+<p>&emsp;&emsp;$\lambda_k﻿𝒗_k=a_1\lambda_1﻿𝒗_1+a_2﻿\lambda_2𝒗_2+\cdots+a_{k-1}\lambda_{k-1}﻿﻿𝒗_{k-1}$，</p>
+<p>由（▲）又有</p>
+<p>&emsp;&emsp;$\lambda_k﻿𝒗_k=a_1﻿\lambda_k𝒗_1+a_2﻿\lambda_k𝒗_2+\cdots+a_{k-1}\lambda_k𝒗_{k-1}$，</p>
+<p>上述二式作差，得</p>
+<p>&emsp;&emsp;$\mathbf 0=a_1(\lambda_k-\lambda_1)﻿𝒗_1+a_2(\lambda_k-\lambda_2)﻿𝒗_2+\cdots+a_{k-1}\lambda_{k-1}﻿𝒗_{k-1}$，</p>
+<p>$﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_{k-1}$ 线性无关，而 $\lambda_1\neq \lambda_2\neq\cdots\neq \lambda_k$，因此 $a_1=a_2=\cdots=a_{k-1}=0$．</p>
+<p>这意味着 $﻿𝒗_k=\mathbf 0$，与特征向量的前提矛盾，得证 $﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n$ 线性无关．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 5.2〕：</p>
+<blockquote>
+<p>设 $V$ 是有限维向量空间，则 $V$ 中的任一算子 $T\in\mathcal L(V)$ 有至多 $\dim V$ 个相异的特征值．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设 $\lambda_1,\,\lambda_2,\,\cdots,\,\lambda_n\in\mathbb F$ 是 $T$ 的相异特征值，$﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n$ 是对应的特征向量．</p>
+<p>由 Th. 5.1，$﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n$ 是线性无关组，因此 $n\leq \dim V$，得证．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $T\in\mathcal L(V)$，$U$ 是 $V$ 对于 $T$ 的不变子空间．</p>
+<p><strong>限制算子</strong>（restriction operator）是将任意 $﻿𝒖\in U$ 映射为 $T(﻿𝒖)$ 的算子，记为 $T|_U$：</p>
+<p>&emsp;&emsp;$\forall\;﻿𝒖\in U,\quad T|_U(﻿𝒖)=T(﻿𝒖)$．$T|_U$ 是 $U$ 中的算子．</p>
+<p><strong>商算子</strong>（quotient operator）是将 $V$ 的任一仿射子集 $﻿﻿𝒗+U\;(﻿𝒗\in V)$ 映射为 $T(﻿𝒗)+U$ 的算子，记为 $T/U$：</p>
+<p>&emsp;&emsp;$\forall\;𝒗\in V,\quad (T/U)(﻿𝒗+U)=T(﻿𝒗)+U$．$T/U$ 是 $V/U$ 中的算子．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $T\in\mathcal L(V)$，$m\in\mathbb Z^+$．</p>
+<ul>
+<li>$T^m:=T\cdots T$（$m$ 个 $T$ 的积）；</li>
+<li>$T^0:=I$（恒等映射）；</li>
+<li>若 $T$ 可逆，$T^{-m}:=(T^{-1})^m$．</li>
+</ul>
+</blockquote>
+<ul>
+<li>$\forall\;m,\,n\in\mathbb Z^+,\quad T^{m+n}=T^mT^n,\;T^{mn}=(T^m)^n$．</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $T\in\mathcal L(V)$，$p\in\mathcal P(\mathbb F)$ 是如下的多项式：</p>
+<p>&emsp;&emsp;$p(x)=a_0+a_1x+\cdots+a_nx^n=\displaystyle\sum_{i=0}^na_ix^i$，</p>
+<p>其中 $a_0,\,a_1,\,\cdots,\,a_n\in\mathbb F$，$n\in\mathbb N$．</p>
+<p>则定义算子 $p(T):=a_0I+a_1T+\cdots+a_nT^n=\displaystyle\sum_{i=0}^n a_iT^i$．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $p,\,q\in\mathcal P(\mathbb F)$，则多项式的积 $pq$ 是满足以下定义的多项式：</p>
+<p>&emsp;&emsp;$\forall\;x\in\mathbb F,\,\quad (pq)(x)=p(x)q(x)$．</p>
+</blockquote>
+<hr>
+<p>〔定理 5.3〕：</p>
+<blockquote>
+<p>设 $p,\,q\in\mathcal P(\mathbb F)$，$T\in\mathcal L(V)$，则</p>
+<ol>
+<li>$(pq)(T)=p(T)q(T)$；</li>
+<li>$p(T)q(T)=q(T)p(T)$．</li>
+</ol>
+</blockquote>
+<p>证明略．</p>
+<hr>
+<p>〔定理 5.4〕：</p>
+<blockquote>
+<p>有限维非零复空间 $V$ 上的任一算子 $T\in\mathcal L(V)$ 均有至少一个特征值．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$n:=\dim V$．</p>
+<p>设 $﻿\mathbf 0\neq𝒗\in V$，则向量组 $﻿𝒗,\,T(﻿𝒗),\,T^2(﻿𝒗),\cdots,\,T^n(﻿𝒗)$ 线性相关．于是存在不全为 $0$ 的 $a_0,\,a_1,\,a_2,\,\cdots,\,a_n\in\mathbb C$，使得</p>
+<p>&emsp;&emsp;$a_0﻿𝒗+a_1T(﻿𝒗)+a_2T^2(﻿𝒗)+\cdots+a_nT^n(﻿𝒗)=\mathbf 0$．</p>
+<p>其中 $a_1,\,a_2,\,\cdots,\,a_n$ 不全为 $0$，否则会得到 $a_0﻿𝒗=\mathbf 0$，即有 $a_0=0$，与前提矛盾．</p>
+<p>考虑关于 $x$ 的如下多项式，并可知其因式分解：</p>
+<p>&emsp;&emsp;$a_0+a_1x+\cdots+a_nx^n=c(x-\lambda_1)\cdots(x-\lambda_m)$，</p>
+<p>其中 $\lambda_1,\,\cdots,\,\lambda_m\in\mathbb C$，$0\neq c\in\mathbb C$（$m$ 不一定等于 $n$，因为 $a_n$ 可能等于 $0$）．</p>
+<p>于是有</p>
+<p>&emsp;&emsp;$\mathbf 0=\displaystyle\sum_{i=0}^m a_i﻿T^i𝒗=\left(\sum_{i=0}^m a_iT^i\right)﻿𝒗=c(T-\lambda_1I)\cdots(T-\lambda_mI)﻿(𝒗)$，</p>
+<p>因此存在 $\lambda_i\in\{\lambda_1,\,\cdots,\,\lambda_m\}$，使得 $T-\lambda_iI$ 不是单射，此时 $T$ 存在特征值 $\lambda_i$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Linearis/" rel="tag">Algebra-Linearis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/23/De-Logica-Mathematica-01" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Logica Mathematica 01 // 数理逻辑笔记 〇一：一阶语言的句法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/09/De-Algebra-Lineari-04" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Lineari 04 // 线性代数笔记 〇四：多项式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Valores-Proprii-amp-Vectores-Proprii-%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">Valores Proprii &amp; Vectores Proprii 
+特征值与特征向量</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

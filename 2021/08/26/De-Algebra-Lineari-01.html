@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra lineari 01 // 线性代数笔记 〇一：向量空间 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-Linearis" />
+  
+  
+  
+  
+  <meta name="description" content="Praefatio 前言本系列笔记的内容包括线性代数的进阶部分，以线性变换相关概念为主，而基础的线性代数内容在此不详言或直接略去．笔记内容基于 Axler Sheldon Jay 的《Linear Algebra Done Right》（引进版汉译：《线性代数应该这么学》），并参考其他资料． 本文仅仅是学习笔记，主要为整理书中内容并按个人理解稍作修改而成，限于学识而错误在所难免，望指正． Tabu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Lineari 01 &#x2F;&#x2F; 线性代数笔记 〇一：向量空间">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/08/26/De-Algebra-Lineari-01">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="Praefatio 前言本系列笔记的内容包括线性代数的进阶部分，以线性变换相关概念为主，而基础的线性代数内容在此不详言或直接略去．笔记内容基于 Axler Sheldon Jay 的《Linear Algebra Done Right》（引进版汉译：《线性代数应该这么学》），并参考其他资料． 本文仅仅是学习笔记，主要为整理书中内容并按个人理解稍作修改而成，限于学识而错误在所难免，望指正． Tabu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
+<meta property="article:published_time" content="2021-08-25T18:37:51.000Z">
+<meta property="article:modified_time" content="2022-02-25T16:52:58.582Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Linearis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Lineari-01" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Lineari 01 // 线性代数笔记 〇一：向量空间
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/08/26/De-Algebra-Lineari-01" class="article-date">
+	  <time datetime="2021-08-25T18:37:51.000Z" itemprop="datePublished">2021-08-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Praefatio-前言"><a href="#Praefatio-前言" class="headerlink" title="Praefatio 前言"></a>Praefatio 前言</h1><p>本系列笔记的内容包括线性代数的进阶部分，以线性变换相关概念为主，而基础的线性代数内容在此不详言或直接略去．笔记内容基于 Axler Sheldon Jay 的《Linear Algebra Done Right》（引进版汉译：《线性代数应该这么学》），并参考其他资料．</p>
+<p>本文<strong>仅仅</strong>是学习笔记，主要为整理书中内容并按个人理解稍作修改而成，限于学识而错误在所难免，望指正．</p>
+<h1 id="Tabula-Symbolorum-符号表"><a href="#Tabula-Symbolorum-符号表" class="headerlink" title="Tabula Symbolorum 符号表"></a>Tabula Symbolorum 符号表</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathbb R,\,\mathbb C,\,\mathbb F$</td>
+<td>实数域、复数域、数域</td>
+</tr>
+<tr>
+<td>$\mathbb N,\,\mathbb Z^+,\,\mathbb Z^-$</td>
+<td>自然数集（含 $0$），正整数集，负整数集</td>
+</tr>
+<tr>
+<td>$\mathbb F^{\mathsf M}$</td>
+<td>域 $\mathbb F$ 上的矩阵集合</td>
+</tr>
+<tr>
+<td>$\mathbb F^{m,n}$</td>
+<td>域 $\mathbb F$ 上的 $m\times n$ 矩阵集合</td>
+</tr>
+<tr>
+<td>$\det ﻿𝑨,\,\operatorname{rank} ﻿𝑨$</td>
+<td>矩阵 $﻿𝑨$ 的行列式，矩阵 $﻿𝑨$ 的秩</td>
+</tr>
+<tr>
+<td>$﻿𝑨^{-1},\,﻿𝑨^\mathsf{T},\,﻿𝑨^\mathsf{H}$</td>
+<td>矩阵 $﻿𝑨$ 的逆，矩阵 $﻿𝑨$ 的转置，矩阵 $﻿𝑨$ 的共轭转置</td>
+</tr>
+<tr>
+<td>$\mathrm{diag}(a_1,\,a_2,\,\cdots,\,a_n)$</td>
+<td>对角元为 $a_1,\,a_2,\,\cdots,\,a_n$ 的对角矩阵</td>
+</tr>
+<tr>
+<td>$﻿𝑰,\,﻿𝑰_n$</td>
+<td>（$n$ 阶）单位矩阵</td>
+</tr>
+<tr>
+<td>$﻿𝑶,\,﻿𝑶_n$</td>
+<td>（$n$ 阶）零矩阵</td>
+</tr>
+<tr>
+<td>$\mathbf 0,\,\mathbf 0_n$</td>
+<td>（$n$ 维）零向量</td>
+</tr>
+<tr>
+<td>$\langle﻿𝒖,\,﻿𝒗\rangle$</td>
+<td>向量 $﻿𝒖$ 与 $﻿𝒗$ 的内积</td>
+</tr>
+<tr>
+<td>$V_n$</td>
+<td>$n$ 维线性空间</td>
+</tr>
+<tr>
+<td>$\dim V$</td>
+<td>线性空间 $V$ 的维度</td>
+</tr>
+<tr>
+<td>$(a_1,\,a_2,\,\cdots,\,a_n)$</td>
+<td>元素为 $a_1,\,a_2,\,\cdots,\,a_n$ 的列表</td>
+</tr>
+<tr>
+<td>$\mathfrak R(z),\,\mathfrak I(z)$</td>
+<td>复数 $z$ 的实部，虚部</td>
+</tr>
+<tr>
+<td>$\overline z$</td>
+<td>复数 $z$ 的共轭</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="Spatia-Vectoriale-向量空间"><a href="#Spatia-Vectoriale-向量空间" class="headerlink" title="Spatia Vectoriale 向量空间"></a>Spatia Vectoriale 向量空间</h1><p>〔定义〕：</p>
+<blockquote>
+<p>集合 $V$ 上的<strong>加法</strong>（addition）是一个由 $V\times V$ 到 $V$ 的映射，记作 $a+b\quad(a,\,b\in V)$．</p>
+<p>集合 $V$ 上的<strong>数乘</strong>（scalar multiplication）是一个由 $\mathbb F\times V$ 到 $V$ 的映射，记作 $ka$ 或 $k\cdot a\quad(k\in\mathbb F,\;a\in V)$．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>带有加法以及数乘的集合 $V$，若满足以下条件，则称为<strong>向量空间</strong>（vector space）或<strong>线性空间</strong>（linear space）：</p>
+<ul>
+<li><strong>加法交换律</strong>：$\forall\;﻿𝒖,\,﻿𝒗\in V,\quad ﻿𝒖﻿+𝒗=𝒗+𝒖$；<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup></li>
+<li><strong>加法结合律</strong>：$\forall\;﻿𝒖,\,﻿𝒗,\,﻿𝒘\in V,\quad ﻿(𝒖﻿+𝒗)+﻿𝒘=𝒖﻿+(𝒗+﻿𝒘)$；</li>
+<li><strong>加法单位元</strong>：$\exists\;﻿\mathbf 0\in V,\quad\forall\;﻿𝒗\in V,\quad ﻿𝒗+﻿\mathbf 0=﻿𝒗$；</li>
+<li><strong>加法逆元</strong>：$\forall\;﻿𝒗\in V,\quad\exists\;(-﻿𝒗)\in V,\quad ﻿𝒗+(-﻿𝒗)=\mathbf 0$；<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></li>
+<li><strong>乘法单位元</strong>：$\forall\;﻿𝒗\in V,\quad 1𝒗=﻿𝒗$；<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup></li>
+<li><strong>分配律Ⅰ </strong>：$\forall\;a,\,b\in \mathbb F,\;﻿𝒗\in V,\quad(a+b)﻿𝒗=a﻿𝒗+b﻿𝒗$；</li>
+<li><strong>分配律Ⅱ</strong>：$\forall\;k\in\mathbb F,\;﻿𝒖,\,﻿𝒗\in V,\quad k(﻿𝒖+﻿𝒗)=k﻿𝒖+k﻿𝒗$．<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup></li>
+</ul>
+</blockquote>
+<ul>
+<li>若向量空间 $V$ 的数乘运算是一个由 $\mathbb F\times V$ 到 $V$ 的映射，则称 $V$ 是域 $\mathbb F$ 上的向量空间．$\mathbb R$ 上的向量空间称为<strong>实向量空间</strong>（real vector space），$\mathbb C$ 上的向量空间称为<strong>复向量空间</strong>（complex vector space）．</li>
+</ul>
+<hr>
+<p>由此，将常规意义的“向量”一概念的定义扩展如下：</p>
+<p>〔定义〕：</p>
+<blockquote>
+<p>向量空间的元素称为<strong>向量</strong>（vector）或<strong>点</strong>（point）．</p>
+</blockquote>
+<p>后文所言“向量”均依照此意义．</p>
+<hr>
+<p>〔记号〕：</p>
+<blockquote>
+<p>$\mathbb F$ 上所有长度为 $n$ 的列表的集合记为 $\mathbb F^n$：</p>
+<p>&emsp;&emsp;$\mathbb F^n:=\{(a_1,\,a_2,\,\cdots,\,a_n)\mid a_i\in\mathbb F,\;\forall\;1\leq i\leq n\}$．</p>
+<p>列表中的第 $i$ 个元素 $a_i$ 称为该列表的<strong>第 $i$ 坐标</strong>（$i$-th coordinate）或<strong>第 $i$ 分量</strong>（$i$-th component）．</p>
+</blockquote>
+<ul>
+<li>对任一正整数 $n$，$\mathbb F^n$ 均为向量空间． </li>
+<li>$\mathbb F$ 上所有无限长的序列的集合记为 $\mathbb F^\infty$，亦为向量空间．</li>
+</ul>
+<hr>
+<p>〔记号〕：</p>
+<blockquote>
+<p>设 $S$ 是一个集合，所有由 $S$ 到 $\mathbb F$ 的一元映射之集合记为 $\mathbb F^S$．</p>
+<p>定义 $\mathbb F^S$ 上的加法：</p>
+<p>&emsp;&emsp;$\forall\;f,\,g\in\mathbb F^S,\;x\in S,\quad (f+g)(x):=f(x)+g(x)$；</p>
+<p>定义 $\mathbb F^S$ 上的数乘：</p>
+<p>&emsp;&emsp;$\forall\;f\in\mathbb F^S,\;k\in\mathbb F,\;x\in S,\quad (kf)(x):=k(f(x))$．</p>
+</blockquote>
+<ul>
+<li>对任一非空集合 $S$，$\mathbb F^S$ 均为向量空间．</li>
+</ul>
+<hr>
+<p>〔定理 1.1〕：</p>
+<blockquote>
+<p>向量空间的加法单位元唯一；</p>
+<p>向量空间中任一元素的加法逆元唯一．</p>
+</blockquote>
+<p>证明可由群的相关性质得出，略．</p>
+<hr>
+<p>〔定理 1.2〕：</p>
+<blockquote>
+<p>对向量空间 $V$ 中的任一向量 $﻿𝒗$，均有 $0﻿𝒗=﻿0$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>由加法单位元的性质以及分配律，</p>
+<p>&emsp;&emsp;$0﻿𝒗=(0+0)﻿𝒗=0﻿𝒗+0﻿𝒗$，</p>
+<p>从而得 $0﻿𝒗=0$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 1.3〕：</p>
+<blockquote>
+<p>对任一 $a\in\mathbb F$，均有 $a\mathbf 0=\mathbf 0$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>由加法单位元的性质以及分配律，</p>
+<p>&emsp;&emsp;$a\mathbf 0=a(\mathbf 0+\mathbf 0)=a\mathbf 0+a\mathbf 0$，</p>
+<p>从而得 $a\mathbf 0=\mathbf 0$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+
+
+</blockquote>
+<h1 id="Subspatia-子空间"><a href="#Subspatia-子空间" class="headerlink" title="Subspatia 子空间"></a>Subspatia 子空间</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $V$ 是向量空间，$U\subseteq V$，若 $U$ 在与 $V$ 相同的加法与数乘下亦为向量空间，则称 $U$ 是 $V$ 的<strong>子空间</strong>（subspace）或<strong>线性子空间</strong>（linear subspace）．</p>
+</blockquote>
+<p>〔例〕：</p>
+<blockquote>
+<p>$\mathbb R^3$ 的子空间包括了 $\mathbb R^3$ 自身、$\mathbb R^3$ 中的所有过原点的平面、所有过原点的直线以及 $\{\mathbf 0\}$（原点）．</p>
+</blockquote>
+<hr>
+<p>〔定理 1.4〕<strong>子空间判定条件</strong>：</p>
+<blockquote>
+<p>向量空间 $V$ 的子集 $U$ 是 $V$ 的子空间，当且仅当以下条件成立：</p>
+<ul>
+<li><strong>存在加法单位元</strong>：$\mathbf 0\in U$；</li>
+<li><strong>对加法封闭</strong>：$\forall\;﻿𝒖,\,﻿𝒗\in U,\quad ﻿𝒖+﻿𝒗\in U$；</li>
+<li><strong>对数乘封闭</strong>：$\forall\;﻿𝒗\in U,\;k\in\mathbb F,\quad k﻿𝒗\in U$．</li>
+</ul>
+</blockquote>
+<p>证明略．</p>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $U_1,\,U_2,\,\cdots,\,U_n$ 是向量空间 $V$ 的子集，这些子集的<strong>和</strong>（sum）是各子集选取一个元素所求得的和的集合，记作 $U_1+U_2+\cdots+U_n$．准确地说，</p>
+<p>&emsp;&emsp;$U_1+U_2+\cdots+U_n:=\{u_1+u_2+\cdots+u_n\mid u_i\in U_i,\;\forall\;1\leq i\leq n\}$．</p>
+</blockquote>
+<p>〔例〕：</p>
+<blockquote>
+<p>设 $U=\{(x,\,0,\,0)\in\mathbb F^3\mid x\in\mathbb F\}$，$W=\{(0,\,y,\,0)\in\mathbb F^3\mid y\in\mathbb F\}$，则 $U,\;W$ 均为 $\mathbb F^3$ 的子集（三维空间沿 $x$ 轴、$y$ 轴的直线）．则 $U+W=\{(x,\,y,\,0)\in\mathbb F^3\mid x,\,y\in\mathbb F\}$（三维空间中过 $x$ 轴、$y$ 轴的平面）．</p>
+</blockquote>
+<hr>
+<p>〔定理 1.5〕：</p>
+<blockquote>
+<p>设 $U_1,\,U_2,\,\cdots,\,U_n$ 是向量空间 $V$ 的子空间，则 $U_1+U_2+\cdots+U_n$ 是 $V$ 的子空间中包含 $U_1,\,U_2,\,\cdots,\,U_n$ 的最小者．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>由 Th. 1.4，不难证明 $U_1+U_2+\cdots+U_n$ 是 $V$ 的子空间．</p>
+<p>显然 $U_1,\,U_2,\,\cdots,\,U_n\subseteq (U_1+U_2+\cdots+U_n)$．反之，$V$ 的包含 $U_1,\,U_2,\,\cdots,\,U_n$ 的子空间必然包含 $U_1+U_2+\cdots+U_n$．从而 $U_1+U_2+\cdots+U_n$ 是 $V$ 的子空间中包含 $U_1,\,U_2,\,\cdots,\,U_n$ 的最小者．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $U_1,\,U_2,\,\cdots,\,U_n$ 是向量空间 $V$ 的子空间，若 $U_1+U_2+\cdots+U_n$ 的任一元素仅能唯一地记为 $u_1+u_2+\cdots+u_n$（其中 $u_i\in U_i,\;\forall\;1\leq i\leq n$），则称 $U_1+U_2+\cdots+U_n$ 为<strong>直和</strong>（direct sum），并记作 $U_1\oplus U_2\oplus\cdots\oplus U_n$．</p>
+</blockquote>
+<hr>
+<p>〔定理 1.6〕<strong>直和判定条件</strong>：</p>
+<blockquote>
+<p>设 $U_1,\,U_2,\,\cdots,\,U_n$ 是向量空间 $V$ 的子空间，$U_1+U_2+\cdots+U_n$ 是直和，当且仅当 $\mathbf 0$ 仅能唯一地记为 $u_1+u_2+\cdots+u_n$（其中 $u_i\in U_i,\;u_i=\mathbf 0,\;\forall\;1\leq i\leq n$）．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设 $U_1+U_2+\cdots+U_n$ 是直和，则由直和的定义，显然可知 $\mathbf 0$ 仅能唯一地记为 $u_1+u_2+\cdots+u_n$（其中 $u_i\in U_i,\;u_i=\mathbf 0,\;\forall\;1\leq i\leq n$）．</p>
+<p>反之，设 $\mathbf 0$ 仅能唯一地记为 $u_1+u_2+\cdots+u_n$（其中 $u_i\in U_i,\;u_i=\mathbf 0,\;\forall\;1\leq i\leq n$），令 $﻿𝒗\in (U_1+U_2+\cdots+U_n)$，选取 $u_i\in U_i,\;\forall\;1\leq i\leq n$，使得</p>
+<p>&emsp;&emsp;$﻿𝒗=u_1+u_2+\cdots+u_n$，</p>
+<p>再选取 $v_i\in U_i,\;\forall\;1\leq i\leq n$，使得</p>
+<p>&emsp;&emsp;$﻿𝒗=v_1+v_2+\cdots+v_n$，</p>
+<p>联立得 $﻿\mathbf 0=(u_1-v_1)+(u_2-v_2)+\cdots+(u_n-v_n)$，便得 $u_i=v_i,\;\forall\;1\leq i\leq n$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 1.7〕：</p>
+<blockquote>
+<p>设 $U,\;W$ 是向量空间 $V$ 的子空间，则 $U+W$ 是直和，当且仅当 $U\cap W=\{\mathbf 0\}$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设 $U+W$ 是直和，又设任一 $﻿𝒗\in U\cap W$，则 $\mathbf 0=﻿𝒗+(-﻿𝒗)$，于是有 $﻿𝒗\in U$，$-﻿𝒗\in W$．由直和的唯一性可知 $﻿𝒗=\mathbf 0$，于是 $U\cap W=\{\mathbf 0\}$ 得证．</p>
+<p>反之，设 $U\cap W=\{\mathbf 0\}$，$﻿𝒖\in U$，$﻿𝒘\in W$，并且 $\mathbf 0=﻿𝒖+﻿𝒘$，由此又有 $﻿𝒖=-﻿𝒘$，从而 $﻿𝒖\in U\cap W$，进而 $﻿𝒖=\mathbf 0$．同理，得 $﻿𝒘=\mathbf 0$．得证 $U+W$ 是直和（Th. 1.6）．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+
+
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 虽然此处使用向量的记法，但集合 $V$ 的元素并不一定是常规意义的“向量”．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. 以上四条可概括为 $V$ 关于加法形成 Abel 群．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. $1$ 指 $\mathbb F$ 中的乘法单位元．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. 一些资料还会将“数乘与域乘法的相容性（compatibility）”一条置于此列，即 $\forall\;a,\,b\in \mathbb F,\;﻿𝒗\in V,\quad(ab)﻿𝒗=a﻿(b﻿𝒗)$，而另一些资料默认此性质成立．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+<p><strong>ADJUVARE ME // 支持我:</strong></p>
+<p><img src="https://i.loli.net/2021/05/03/KzDJyANqHgUQGPm.png" width=100 align="left"><br><br><br><br></p>
+<p><a target="_blank" rel="noopener" href="https://afdian.net/@kotobaSP">Nexus Aifadian // 爱发电赞助链接</a></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Linearis/" rel="tag">Algebra-Linearis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/08/26/De-Algebra-Lineari-02" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Lineari 02 // 线性代数笔记 〇二：有限维向量空间
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/14/De-Algebra-Abstracta-09" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 09 // 抽象代数笔记 〇九：群作用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Praefatio-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">Praefatio 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tabula-Symbolorum-%E7%AC%A6%E5%8F%B7%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">Tabula Symbolorum 符号表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spatia-Vectoriale-%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">Spatia Vectoriale 向量空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Subspatia-%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">Subspatia 子空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">5.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

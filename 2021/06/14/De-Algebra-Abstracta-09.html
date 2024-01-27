@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra abstracta 09 // 抽象代数笔记 〇九：群作用 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-AbstractaTheoria-Catervarum" />
+  
+  
+  
+  
+  <meta name="description" content="前：抽象代数笔记 〇八：置换群与单群  Actiones Catervarum 群作用〔定义〕：  设 $A$ 为集合，$G$ 为群．定义映射 $f:G\times A\to A$ 称为 $G$ 与 $A$ 的（二元）运算，并记 $f(g,\;a):&#x3D;ga\quad(g\in G,\;a\in A)$．若如此定义的运算满足以下两点： &amp;emsp;&amp;emsp;(α)&amp;emsp;$\forall\;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Abstracta 09 &#x2F;&#x2F; 抽象代数笔记 〇九：群作用">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/06/14/De-Algebra-Abstracta-09">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="前：抽象代数笔记 〇八：置换群与单群  Actiones Catervarum 群作用〔定义〕：  设 $A$ 为集合，$G$ 为群．定义映射 $f:G\times A\to A$ 称为 $G$ 与 $A$ 的（二元）运算，并记 $f(g,\;a):&#x3D;ga\quad(g\in G,\;a\in A)$．若如此定义的运算满足以下两点： &amp;emsp;&amp;emsp;(α)&amp;emsp;$\forall\;a">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-13T17:41:19.000Z">
+<meta property="article:modified_time" content="2023-12-05T15:26:08.556Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Abstracta">
+<meta property="article:tag" content="Theoria-Catervarum">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Abstracta-09" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Abstracta 09 // 抽象代数笔记 〇九：群作用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/06/14/De-Algebra-Abstracta-09" class="article-date">
+	  <time datetime="2021-06-13T17:41:19.000Z" itemprop="datePublished">2021-06-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前：<a href="https://kotobasuke.github.io/2021/06/05/De-Algebra-Abstracta-08">抽象代数笔记 〇八：置换群与单群</a></p>
+<hr>
+<h1 id="Actiones-Catervarum-群作用"><a href="#Actiones-Catervarum-群作用" class="headerlink" title="Actiones Catervarum 群作用"></a>Actiones Catervarum 群作用</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $A$ 为集合，$G$ 为群．定义映射 $f:G\times A\to A$ 称为 $G$ 与 $A$ 的（二元）运算，并记 $f(g,\;a):=ga\quad(g\in G,\;a\in A)$．若如此定义的运算满足以下两点：</p>
+<p>&emsp;&emsp;(α)&emsp;$\forall\;a\in A,\quad ea=a$，</p>
+<p>&emsp;&emsp;(β)&emsp;$\forall\;a\in A,\;g,\,h\in G,\quad g(ha)=(gh)a$，</p>
+<p>则任一这样的运算 $G\times A\to A,\quad (g,\;a)\mapsto ga$ 均可称为群 $G$ 在集合 $A$ 上的<strong>左群作用</strong>（<strong>左作用</strong>，left group action），此时称集合 $A$ 为<strong>左 $G$–集合</strong>（left $G$–set）．</p>
+<p>类似地，定义映射 $\varphi:A\times G\to A$ 称为 $A$ 与 $G$ 的（二元）运算，并记 $\varphi(a,\;g):=ag\quad(g\in G,\;a\in A)$．若如此定义的运算满足以下两点：</p>
+<p>&emsp;&emsp;(α)&emsp;$\forall\;a\in A,\quad ae=a$，</p>
+<p>&emsp;&emsp;(β)&emsp;$\forall\;a\in A,\;g,\,h\in G,\quad (ag)h=a(gh)$，</p>
+<p>则任一这样的运算 $A\times G\to A,\quad (a,\;g)\mapsto ag$ 均可称为群 $G$ 在集合 $A$ 上的<strong>右群作用</strong>（<strong>右作用</strong>，right group action），此时称集合 $A$ 为<strong>右 $G$–集合</strong>（right $G$–set）．</p>
+<p>然而事实上，左、右群作用可以相互转化，因此通常只考虑左群作用，并简称为<strong>群作用</strong>（<strong>作用</strong>，group action），而简称集合 $A$ 为 <strong>$G$–集合</strong>（$G$–set）．右群作用可以如下构造左群作用：</p>
+<p>定义右作用 $A\times G\to A,\quad (a,\;g)\mapsto a\ast g$（$\ast$ 为某一运算），以此为基础，定义运算 $G\times A\to A,\quad (g,\;a)\mapsto g\circ a:=a\ast g^{-1}$，该运算满足左作用的性质：</p>
+<p>&emsp;&emsp;$\forall\;a\in A,\quad e\circ a=a\ast e=a$，</p>
+<p>&emsp;&emsp;$\forall\;a\in A,\;g,\,h\in G,\quad$ $g\circ(h\circ a)=g\circ(a\ast h^{-1})=(a\ast h^{-1})\ast g^{-1}$ $=a\ast(gh)^{-1}=(gh)\circ a$，</p>
+<p>因此该运算为左作用，此即以右作用构造了左作用，反之则同理．</p>
+</blockquote>
+<p>〔例〕：</p>
+<blockquote>
+<p>考虑加法循环群 $\mathbb Z_3=\{0,\,1,\,2\}$ 以及 $\mathbb Z_2=\{0,\,1\}=:A$，视 $A$ 为集合，定义运算 $\mathbb Z_3\times A\to A,\quad (g,\;a)\mapsto ga:=(g+a)\bmod  2$（其中 $x\bmod 2$ 表示取 $x$ 除以 $2$ 的余数），可以证明该运算满足以下性质：</p>
+<p>&emsp;&emsp;$\forall\;a\in A,\quad ea=(0+a)\bmod 2=a\bmod 2=a$，</p>
+<p>&emsp;&emsp;$\forall\;a\in A,\;g,\,h\in\mathbb Z_3,\quad$ $g(ha)=g((h+a)\bmod 2)=(g+h+a)\bmod 2$，</p>
+<p>&emsp;&emsp;&emsp;而 $(g+h)a=(g+h+a)\bmod 2$，因此 $g(ha)=(g+h)a$，</p>
+<p>从而该运算为 $G$ 在 $A$ 上的群作用之一．</p>
+</blockquote>
+<ul>
+<li>若定义运算 $G\times A\to A,\quad (g,\;a)\mapsto ga:=a$，则易证该运算为群作用．这一群作用保持了 $A$ 中任一元素不变，这样的群作用称为<strong>平凡群作用</strong>（trivial group action）．</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $\varSigma$ 是一个（有限或无限的）集合<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>，$\mathfrak S(\varSigma)$ 是其上的对称群，群 $G$ 到 $\mathfrak S(\varSigma)$ 的任一同态 $f:G\to\mathfrak S(\varSigma)$ 都称为群 $G$ 在集合 $\varSigma$ 上的一个<strong>置换表示</strong>（permutation representation）．每个置换表示实际上等价于 $G$ 在 $\varSigma$ 上的一个群作用．这一事实可以简单说明如下：考虑 $G$ 中元素 $g$，其对应置换表示为 $f(g)$，且 $f(e):=I$，乘积 $f(g)a\quad(a\in\varSigma)$ 即 $a$ 在此置换后所成元素．定义群作用 $ga:=f(g)a$，可证明该定义满足群作用的性质：</p>
+<p>&emsp;&emsp;$\forall\;a\in A,\quad ea=f(e)a=Ia=a$，</p>
+<p>&emsp;&emsp;$\forall\;a\in A,\;g,\,h\in G,\quad$ $g(ha)=g(f(h)a)=f(g)f(h)a=(f(gh))a=(gh)a$．</p>
+<p>置换表示是群作用的等价定义．</p>
+</blockquote>
+<p>〔例〕：</p>
+<blockquote>
+<p>考虑加法循环群 $\mathbb Z_4$​ 到加法循环群 $\mathbb Z_5$​ （视作集合）的群作用，$\mathbb Z_4\times \mathbb Z_5\to \mathbb Z_5,\quad (g,\;a)\mapsto ga:=(g+a)\bmod 5$​，将此群作用的所有情况列为表格如下：</p>
+<p>&emsp;&emsp;$\begin{array}{c|ccccc}<br>{_{\Large g}\kern -5pt{\Large╲}\kern -5pt^{\Large a}}\kern -4pt&amp;0&amp;1&amp;2&amp;3&amp;4\\\hline<br>0&amp;0&amp;1&amp;2&amp;3&amp;4\\<br>1&amp;1&amp;2&amp;3&amp;4&amp;0\\<br>2&amp;2&amp;3&amp;4&amp;0&amp;1\\<br>3&amp;3&amp;4&amp;0&amp;1&amp;2<br>\end{array}$</p>
+<p>可以看出，对每个 $g\in\mathbb Z_4$，都可以视其群作用为 $\mathfrak S_5$ 上一个置换（在此记作 $f(g)$）．如本例子中，有</p>
+<p>&emsp;&emsp;$f(0)=\begin{pmatrix}<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4<br>\end{pmatrix}=I,$</p>
+<p>&emsp;&emsp;$f(1)=\begin{pmatrix}<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\<br>1 &amp; 2 &amp; 3 &amp; 4 &amp; 0<br>\end{pmatrix}=(0\;\;1\;\;2\;\;3\;\;4),$</p>
+<p>&emsp;&emsp;$f(2)=\begin{pmatrix}<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\<br>2 &amp; 3 &amp; 4 &amp; 0 &amp; 1<br>\end{pmatrix}=(0\;\;2\;\;4\;\;1\;\;3),$</p>
+<p>&emsp;&emsp;$f(3)=\begin{pmatrix}<br>0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\<br>3 &amp; 4 &amp; 0 &amp; 1 &amp; 2<br>\end{pmatrix}=(0\;\;3\;\;1\;\;4\;\;2)$．</p>
+<p>而平凡群作用即群中任一元素 $g$，都对应对称群中的恒等变换 $I$．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设群作用 $G\times A\to A,\quad(g,\,a)\mapsto ga$，若 $\forall\;a\in A,\;\forall\;g,\,h\in G,\;g\neq h,\quad ga\neq ha$，则称该群作用是<strong>忠实</strong>（faithful）的．以置换表示言之，即若置换表示 $f$ 为单同态，称 $f$ 为<strong>忠实表示</strong>（faithful representation）．</p>
+</blockquote>
+<p>前文中的 $\mathbb Z_4\times \mathbb Z_5\to \mathbb Z_5,\quad$​ $(g,\;a)\mapsto ga:=(g+a)\bmod 5$​ 一例为忠实群作用的例子，而 $\mathbb Z_3\times\mathbb Z_2\to\mathbb Z_2,\quad$​ $(g,\;a)\mapsto ga:=(g+a)\bmod  2$​ 一例则不然（$(0,\,a)\equiv(2,\,a)$​）．平凡群作用显然不是忠实的．</p>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $A$ 为集合，$G$ 为群，定义群作用 $G\times A\to A,\quad (g,\,a)\mapsto ga$，在 $A$ 中定义如下关系，</p>
+<p>&emsp;&emsp;$\forall\;a,\,b\in A,\quad$ $a\sim b\;\Leftrightarrow\;ga=b$，</p>
+<p>易证此为等价关系．</p>
+<p>于是，记 $a\in A$ 对此等价关系的等价类为 $[a]=Ga=\{ga\mid g\in G\}$，每个等价类称为一个 <strong>$G$–轨道</strong>（$G$–orbit）或简称<strong>轨道</strong>（orbit）．若对某一群作用而言，被作用的集合 $A$ 上只能分划为唯一的轨道，此时则称 $G$ 在 $A$ 上是<strong>传递</strong>（transitive）的．</p>
+</blockquote>
+<ul>
+<li>考虑群 $(G,\,\times)$，群作用 $G\times G\to G,\quad (g,\,h)\mapsto g\times h$ 显然是传递的．</li>
+</ul>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 是群，设映射 $\lambda:G\to\mathfrak S(G),\quad \lambda(g)a=ga\quad(a,\,g\in G)$ <sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup>，由于 $\forall\;g,\,h,\,a\in G,$</p>
+<p>&emsp;&emsp;$\lambda(gh)a=gha=\lambda(g)\lambda(h)a$，</p>
+<p>所以 $\lambda(gh)=\lambda(g)\lambda(h)$<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup>，从而 $\lambda$ 为群同态，因此这是群 $G$ 在集合 $G$ 上的一个置换表示，称作<strong>左正则表示</strong>（left regular representation）．由于 $\forall\;g,\,a\in G,$</p>
+<p>&emsp;&emsp;$g\in\ker \lambda\;\Leftrightarrow\;\lambda(g)a=ga=a\;\Leftrightarrow\;g=e_G$，</p>
+<p>所以 $\ker\lambda=\{e_G\}$，从而 $\lambda$ 为单同态（同态基本定理的推论），因此左正则表示为忠实表示．</p>
+<p>类似地，定义映射 $\rho:G\to\mathfrak S(G),\quad \rho(g)a=ag^{-1}\quad(a,\,g\in G)$，不难证明此亦为置换表示，称作<strong>右正则表示</strong>（right regular representation）．类似地，由于 $\forall\;g,\,a\in G,$</p>
+<p>&emsp;&emsp;$g\in\ker\rho\;\Leftrightarrow\;\rho(g)a=ag^{-1}=a\;\Leftrightarrow\;g=e_G$，</p>
+<p>也可以说明右正则表示为忠实表示．</p>
+</blockquote>
+<hr>
+<p>〔定理 9.1〕 <strong>Cayley（凯莱）<sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>定理</strong>（Cayley’s theorem）：</p>
+<blockquote>
+<p>每个（有限或无限的）群均同构于某一置换群．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>考虑群 $G$ 上的左正则表示 $\lambda$（右正则表示同理）．由于 $\lambda$ 是单同态，因此 $\ker \lambda=\{e_G\}$，从而由同态基本定理，</p>
+<p>&emsp;&emsp;$G\cong G/\ker\lambda\cong\lambda(G)$​．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>Cayley 定理表明了置换群可以作为一切群的“模板”．然而，随着群的阶数增大，其上的对称群阶数会急剧增大（$n$ 阶群上的对称群阶数为 $n!$）而难以研究．所以对于较大的群，Cayley 定理只在理论上起到作用．</p>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $H\leq G$，$\varSigma:=\{aH\mid a\in G\}$，定义 $\lambda_H:G\to\mathfrak S(\varSigma),\quad \lambda_H(g)(aH)=gaH$（群 $G$ 的运算），不难证明此映射为置换表示．这样的映射 $\lambda_H$ 称为群 $G$ 对于子群 $H$ 的<strong>左诱导表示</strong>（left induced representation）．由于 $\forall\;g\in G,$</p>
+<p>&emsp;&emsp;$\begin{aligned} g\in\ker \lambda_H\;&amp;\Leftrightarrow\;\forall\;a\in G,\quad \lambda_H(g)aH=gaH=aH\\<br>\phantom{\dfrac 11}&amp;\Leftrightarrow\;\forall\;a\in G,\quad a^{-1}ga\in H\\<br>&amp;\Leftrightarrow\;\forall\;a\in G,\quad g\in aHa^{-1}\\<br>\phantom{\dfrac 11}&amp;\Leftrightarrow\;g\in \displaystyle\bigcap_{a\in G}aHa^{-1},\end{aligned}$</p>
+<p>因此 $\ker\lambda_H=\displaystyle\bigcap_{a\in G}aHa^{-1}$，即 $H$ 的所有共轭子群之交．</p>
+<p>同理，$\varGamma:=\{Ha\mid a\in G\}$，定义 $\rho_H:G\to\mathfrak S(\varGamma),\quad \rho_H(g)(Ha)=Hag^{-1}$，称为群 $G$ 对子群 $H$ 的<strong>右诱导表示</strong>（right induced representation）．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 是群，定义映射 $G\times G\to G,\quad (g,\,a)\mapsto gag^{-1}$，这是一个群作用，称为群 $G$ 上的<strong>共轭作用</strong>（conjugation）<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>．其对应的置换表示为 $\pi:G\to\mathfrak{S}(G),\quad \pi(g)a=gag^{-1}$，由于 $\forall\;g\in G,$</p>
+<p>&emsp;&emsp;$\begin{aligned} g\in\ker\pi\;&amp;\Leftrightarrow\;\forall\;a\in G,\quad \pi(g)a=gag^{-1}=a\\<br>\phantom{\dfrac11} &amp;\Leftrightarrow\;g\in \mathrm Z(G),\end{aligned}$</p>
+<p>因此 $\ker\pi=\mathrm Z(G)$，即群 $G$ 的中心．而对于任一元素 $g\in G$，其共轭类即对于共轭作用的 $G$–轨道．</p>
+<p>类似地，设 $A\subseteq G$，$\varSigma:=\{aAa^{-1}\mid a\in G\}$，定义群作用 $G\times\varSigma\to\varSigma,\quad (g,\,aAa^{-1})\mapsto gaHa^{-1}g^{-1}$，相应的置换表示为 $\sigma:G\to\mathfrak S(\varSigma),\quad\sigma(g)(aAa^{-1})=gaAa^{-1}g^{-1}$．由于 $\forall\;g\in G,$</p>
+<p>&emsp;&emsp;$\begin{aligned} g\in \ker\sigma\;&amp;\Leftrightarrow\;\forall\;a\in G,\quad\sigma(g)(aAa^{-1})=gaAa^{-1}g^{-1}=aAa^{-1}\\<br>\phantom{\dfrac11} &amp;\Leftrightarrow\;\forall\;a\in G,\quad a^{-1}gaAa^{-1}g^{-1}a=A\\<br>&amp;\Leftrightarrow\;\forall\;a\in G,\quad a^{-1}ga\in\mathrm N_G(A)\\<br>\phantom{\dfrac11}&amp;\Leftrightarrow\;\forall\;a\in G,\quad g\in a\mathrm N_G(A)a^{-1},\end{aligned}$</p>
+<p>因此 $\ker\sigma=\displaystyle\bigcap_{a\in G} a\mathrm N_G(A)a^{-1}$，即正规化子 $\mathrm N_G(A)$ 的所有共轭子群之交．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $\varSigma$ 为集合，$G$ 为群，群 $G$ 作用于 $\varSigma$ 上，且群作用的乘积记为 $g\cdot a$（$g\in G,\;a\in\varSigma$）．若对 $g\in G,\;a\in\varSigma$ 有 $g\cdot a=a$，则称 $a$ 是 $g$ 是一个<strong>固定点</strong>（fixed point），或称 $g$ <strong>固定</strong>（fix）$a$．$G_a:=\{g\in G\mid ga=a\}$ 是 $G$ 的一个子群，称为群 $G$ 对 $a$ 的<strong>稳定子群</strong>、<strong>稳定化子</strong>或<strong>固定子群</strong>（stabilizer subgroup）<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>．</p>
+</blockquote>
+<hr>
+<p>〔定理 9.2〕：<strong>轨道–稳定子群定理</strong>（orbit–stabilizer theorem）：</p>
+<blockquote>
+<p>设有限群 $G$ 作用在集合 $\varSigma$，$a\in\varSigma$，$[a]:=Ga=\{ga\mid g\in G\}$，则</p>
+<p>&emsp;&emsp;$|G|=|G_a|\cdot|[a]|$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$n:=[G:G_a]$，</p>
+<p>考虑 $G$ 对子群 $G_a$ 的陪集分解：</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{i=1}^n\;g_iG_a\quad (g_i\in G)$，</p>
+<p>于是 $\forall\;g\in G,\;\exists!\;1\leq i\leq n,\quad g\in g_iG_a$，</p>
+<p>$g:=g_ih,\;h\in G_a$，又 $a_i:=g_ia\quad(1\leq i\leq n)$，于是 $ga=g_iha=g_ia=a_i$，而</p>
+<p>&emsp;&emsp;$\begin{aligned} a_i=a_j\;&amp;\Leftrightarrow\;g_ia=g_ja\\<br>&amp;\Leftrightarrow\;g_j^{-1}g_ia=a\\<br>&amp;\Leftrightarrow\;g_j^{-1}g_i\in G_a\\<br>&amp;\Leftrightarrow\; g_iG_a=g_jG_a\\<br>&amp;\Leftrightarrow\; i=j,\end{aligned}$</p>
+<p>因此 $a_1,\,a_2,\,\cdots,\,a_n$ 各异，于是 $[a]=\{a_i\mid 1\leq i\leq n\}$，从而</p>
+<p>&emsp;&emsp;$|[a]|=n=[G:G_a]=|G|/|G_a|$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>〔推论〕：</p>
+<blockquote>
+<p>(α)&emsp;若有限群 $G$ 在有限集 $\varSigma$ 上的作用的传递的，则 $\forall\;a\in\varSigma,\quad|G|=|G_a||\varSigma|$；</p>
+<p>(β)&emsp;若 $G$ 为无限群，在 $[G:G_a]$ 有限的前提下，$|[a]|=[G:G_a]$ 亦可成立；</p>
+<p>(γ)&emsp;考虑 $G$ 对于子集 $A$ 的共轭作用，$\varSigma:=\{aAa^{-1}\mid a\in G\}$，$[A]=\{gAg^{-1}\mid g\in G\}$ 即 $A$ 的共轭子群数，而 $G_A=\{g\in G\mid gHg^{-1}=H\}=\mathrm N_A(G)$．由此可知 $A$ 的共轭子群数量为 $[A]=[G:\mathrm N_A(G)]$．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>记正 $n$ 边形（$n\geq 3$）的顶点沿逆时针顺序依次为 $1,\,2,\,\cdots,\,n$，该正 $n$ 边形在其所在平面上关于其几何中心旋转为其自身的变换与其沿对称轴的反射变换（镜像变换）之任一者称为其一个对称．所有对称关于复合运算构成一个群，称为正 $n$ 边形的<strong>二面体群</strong>（dihedral group），记作 $D_n$<sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup>．</p>
+<p>记逆时针旋转 $\dfrac{2𝛑}n\;\mathrm{rad}$ 的变换为 $\sigma$，该变换可以视为顶点的轮换 $(1\;\;2\;\;3\;\;\cdots\;\;n)$，而 $D_n$ 中包含的旋转变换即所有的 $\sigma^{i}\quad(0\leq i\leq n-1)$，而 $|\sigma|=n$．</p>
+<p>记固定顶点 $1$，沿着过定点 $1$ 的对称轴的反射变换为 $\tau$，显然地，$|\tau|=2$，并且</p>
+<p>&emsp;&emsp;$\tau=\begin{equation} \left\{\begin{aligned}&amp;(2\;\;n)(3\;\;n-1)\cdots(\dfrac n2\;\;\dfrac n2+2),&amp;\quad 2&amp;\mid n,\\<br>&amp;(2\;\;n)(3\;\;n-1)\cdots(\dfrac{n+1}2\;\;\dfrac{n+3}2),&amp;\quad 2&amp;\not\mid n,\end{aligned} \right.\end{equation}$</p>
+<p>将 $\sigma$ 与 $\tau$ 生成的变换视为 $D_n$ 在顶点集合 $S=\{1,\,2,\,\cdots,\,n\}$ 上的置换表示，因为 $\sigma^i(1)=i+1\quad(0\leq i\leq n-1)$，所以 $D_n$ 在 $S$ 上的作用是传递的，而另一方面，顶点 $1$ 的稳定子群 $D_{n1}$ 阶数为 $|\tau|=2$，由轨道–稳定子群定理的推论可知，$|D_n|=|D_{n1}|\cdot|S|=2n$．</p>
+</blockquote>
+<hr>
+<p>〔定理 9.3〕：</p>
+<blockquote>
+<p>设 $n$ 为奇数，任一 $2n$ 阶群 $G$ 必有指数为 $2$ 的正规子群．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>考虑 $G$ 上的左正则表示 $\lambda:G\to\mathfrak S(G)=\mathfrak S_{2n}$．</p>
+<p>$\lambda$ 是忠实表示，因此 $G\cong \mathfrak \lambda(G)$<sup><a href="#fn_(8)" id="reffn_(8)">(8)</a></sup>．</p>
+<p>又 $\exists\;g\in G,\;g\neq e,\quad |g|=2$<sup><a href="#fn_(9)" id="reffn_(9)">(9)</a></sup>，</p>
+<p>由此可知，$\forall\;a\in G,$</p>
+<p>&emsp;&emsp;$\lambda(g)a\neq a,\quad\lambda(g)^2a=\lambda(g^2)a=a$，</p>
+<p>即意味着 $\lambda(g)$ 是若干个形如 $(a\;\;\lambda(g)a)$ 的不交对换之积．</p>
+<p>因为 $|G|=2n$，所以 $\lambda(g)$ 是 $n$ 个不交的对换之积，又因为 $n$ 为奇数，所以 $\lambda(g)$ 为奇置换．</p>
+<p>$\lambda(G)$ 中含有奇置换，因此其中所有偶置换构成了指数为 $2$ 的子群，而指数为 $2$ 的子群必然为正规子群<sup><a href="#fn_(10)" id="reffn_(10)">(10)</a></sup>．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>〔推论〕：</p>
+<blockquote>
+<p>设 $G$ 为有限群，若 $|G|\geq 6,\;|G|\equiv 2\pmod 4$，则 $G$ 不是单群．</p>
+</blockquote>
+<hr>
+<p>〔定理 9.4〕：</p>
+<blockquote>
+<p>设 $G$ 为有限群，$p$ 为 $|G|$ 的最小质因子．</p>
+<p>若 $N\leq G,\;[G:N]=p$，则 $N\lhd G$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>考虑 $G$ 对 $N$ 的左诱导表示 $\lambda_N:G\to \mathfrak S_p$，于是 $\ker\lambda_N=\displaystyle\bigcap_{a\in G} a^{-1}Na\leq N$，</p>
+<p>从而 $p=|G|/|N|$ 整除 $|G|/|\ker \lambda_N|$，</p>
+<p>因为 $p^2\not\mid p!=|\mathfrak S_p|$，而 $G/\ker\lambda_N$ 同构于 $\mathfrak S_p$ 的一个子群（同态基本定理），</p>
+<p>因此 $p^2\not\mid |G/\ker \lambda_N|$．</p>
+<p>另一方面，$|G/\ker \lambda_N|$ 的质因子不大于 $p$<sup><a href="#fn_(11)" id="reffn_(11)">(11)</a></sup>，</p>
+<p>而因为 $p$ 是 $|G|$ 的最小质因子，所以又有 $|G/\ker \lambda_N|$ 的质因子不小于 $p$，</p>
+<p>从而 $|G/\ker \lambda_N|=p$．</p>
+<p>因为 $[G:N]=p$，并且 $\ker \lambda_N\leq N$（同态基本定理），所以 $N=\ker \lambda_N$，</p>
+<p>从而 $N\lhd G$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 前文中定义了有限集上的置换，而对于无限集也可以作类似定义．无限集 $A$ 到自身的任一双射都称为 $A$ 上的置换，这些置换构成了无限阶的对称群 $\mathfrak S_\infty$．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. $ga$ 为群 $G$ 中运算所得乘积，下文 $ag^{-1}$ 同理．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. 群的消去律保证了这一等式成立．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. 阿瑟·凯莱（Arthur Cayley），英国数学家，主要贡献于几何学与群论．理论物理学中所用到的八元数（octonion）这一概念系其最早发表，因此也称作 Cayley 数．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(5)">
+<sup>(5)</sup>. 前文定义的共轭使用的是 $g^{-1}ag$ 的形式，由群中元素的可逆性可知两种形式是等价的．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. 一些其他领域使用该概念时也会称之为<strong>迷向群</strong>（isotropy group）．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(7)">
+<sup>(7)</sup>. 一些资料记作 $D_{2n}$．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(8)">
+<sup>(8)</sup>. 忠实表示是单同态，而显然 $|G|=|\lambda(G)|$，从而该表示为同构．<a href="#reffn_(8)" title="Jump back to footnote [(8)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(9)">
+<sup>(9)</sup>. $G$ 的阶数为偶数，除去单位元 $e$ 剩余的元素数量为奇数．而考虑任一非单位元 $a$ 与其逆的积为单位元，必然有奇数个元素 $b$ 的逆元为其自身，满足 $b^2=e$．<a href="#reffn_(9)" title="Jump back to footnote [(9)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(10)">
+<sup>(10)</sup>. 考虑群 $G$ 中指数为 $2$ 的子群 $N$，可知 $\exists\;a\in G\setminus N,\quad$ $G=N\sqcup aN=N\sqcup Na$，于是 $aN=Na$，即意味着 $N\lhd G$．<a href="#reffn_(10)" title="Jump back to footnote [(10)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(11)">
+<sup>(11)</sup>. $G/\ker\lambda_N$ 同构于 $\mathfrak S_p$ 的一个子群，而 $|\mathfrak S_p|=p!=p(p-1)(p-2)\cdots2$，显然 $p$ 是其中最大的质数．<a href="#reffn_(11)" title="Jump back to footnote [(11)] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+<p>前：<a href="https://kotobasuke.github.io/2021/06/05/De-Algebra-Abstracta-08">抽象代数笔记 〇八：置换群与单群</a></p>
+<p><br></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Abstracta/" rel="tag">Algebra-Abstracta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Theoria-Catervarum/" rel="tag">Theoria-Catervarum</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/08/26/De-Algebra-Lineari-01" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Lineari 01 // 线性代数笔记 〇一：向量空间
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/05/De-Algebra-Abstracta-08" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 08 // 抽象代数笔记 〇八：置换群与单群</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Actiones-Catervarum-%E7%BE%A4%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Actiones Catervarum 群作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">2.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra abstracta 02 // 抽象代数笔记 〇二：群与同态 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-AbstractaTheoria-Catervarum" />
+  
+  
+  
+  
+  <meta name="description" content="前：抽象代数笔记 〇一：集合论 后：抽象代数笔记 〇三：子群与陪集  Catervae &amp; Structurae Algebraicae Similes群及类似的代数结构〔定义〕：  集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为半群（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$． 满足交换律的半群称为交换半">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Abstracta 02 &#x2F;&#x2F; 抽象代数笔记 〇二：群与同态">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/04/22/De-Algebra-Abstracta-02">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="前：抽象代数笔记 〇一：集合论 后：抽象代数笔记 〇三：子群与陪集  Catervae &amp; Structurae Algebraicae Similes群及类似的代数结构〔定义〕：  集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为半群（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$． 满足交换律的半群称为交换半">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-22T03:23:56.000Z">
+<meta property="article:modified_time" content="2023-12-05T15:24:27.452Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Abstracta">
+<meta property="article:tag" content="Theoria-Catervarum">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Abstracta-02" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Abstracta 02 // 抽象代数笔记 〇二：群与同态
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/04/22/De-Algebra-Abstracta-02" class="article-date">
+	  <time datetime="2021-04-22T03:23:56.000Z" itemprop="datePublished">2021-04-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前：<a href="https://kotobasuke.github.io/2021/04/22/De-Algebra-Abstracta-01">抽象代数笔记 〇一：集合论</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">抽象代数笔记 〇三：子群与陪集</a></p>
+<hr>
+<h1 id="Catervae-amp-Structurae-Algebraicae-Similes群及类似的代数结构"><a href="#Catervae-amp-Structurae-Algebraicae-Similes群及类似的代数结构" class="headerlink" title="Catervae &amp; Structurae Algebraicae Similes群及类似的代数结构"></a>Catervae &amp; Structurae Algebraicae Similes<br>群及类似的代数结构</h1><p>〔定义〕：</p>
+<blockquote>
+<p>集合 $S$ 与封闭于其上满足结合律的二元运算 $\bullet$ 形成的代数结构称为<strong>半群</strong>（semigroup），记作 $(S,\,\bullet)$，在明确的情况下略作 $S$．</p>
+<p>满足交换律的半群称为<strong>交换半群</strong>（commutative semigroup）．</p>
+</blockquote>
+<ul>
+<li>二元运算 $\bullet$ 所成表达式 $x \bullet y$ 常略作 $xy$，大多情况下，将此运算视如“乘法”或“复合”，其结果称作“积”．</li>
+</ul>
+<p>〔例〕：</p>
+<blockquote>
+<p>设 $\varSigma$ 是所有非空的有穷（实）数列所成的集合，运算 $s+t$ 表示将数列 $t$ 拼接到数列 $s$ 的末尾，即使得 $t_1$ 成为 $s$ 末项的次一项．可以看出，这一运算封闭于集合 $\varSigma$，不满足交换律而满足结合律，于是 $(\varSigma,\,+)$ 是一个半群，但不是交换半群．</p>
+<p>正整数集合 $\mathbb N_+$ 上的加法运算封闭于该集合中，且满足交换律与结合律，$(\mathbb N_+,\,+)$ 是一个交换半群．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $S$ 为半群，若存在 $e\in S$，使得 $\forall\;x\in S,\quad ex=xe=x$，则称元素 $e$ 为半群的<strong>单位元</strong>或<strong>幺元</strong>（identity element）．</p>
+<p>含有单位元的半群称为<strong>幺半群</strong>（monoid），满足交换律者称为<strong>交换幺半群</strong>（commutative monoid）．</p>
+</blockquote>
+<ul>
+<li>每个幺半群都有唯一的单位元（证明见后文），幺半群 $S$ 中的单位元常常记作 $e$，$e_S$，$1_S$或 $1$（注意与实数 $1$ 相区分）．</li>
+</ul>
+<p>〔例〕：</p>
+<blockquote>
+<p>在前文的例子中所设的 $\varSigma$ 如果包含空数列，则 $(\varSigma,\,+)$ 是一个非交换的幺半群，空数列是其单位元．</p>
+<p>自然数集合 $\mathbb N$ 上的加法运算封闭于该集合中，满足交换律与结合律，并且存在单位元 $0$，使得 $\forall\;a\in\mathbb N,\quad a+0=0+a=a$，$(\mathbb N,\,+)$ 是一个交换幺半群．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $M$ 为幺半群，若存在 $a\in M$，使得 $\exists\;b\in S,\quad ab=ba=e$，则称 $a$ 为 $b$ 的<strong>逆元</strong>（inverse element），反之亦然．$a$ 的逆元记作 $a^{-1}$（注意逆元并不一定是 $-1$ 次幂）．</p>
+</blockquote>
+<ul>
+<li>$a=b^{-1}\;\Leftrightarrow\;b=a^{-1}.$</li>
+<li>$(a^{-1})^{-1}=a.$</li>
+</ul>
+<p>〔例〕：</p>
+<blockquote>
+<p>实数与乘法所成的交换幺半群中，$1$ 为单位元，$\dfrac 1n$ 为任一非零实数 $n$ 的逆元，显然有 $\forall\;n\in\mathbb R\setminus\{0\},\quad n\cdot\dfrac 1n=\dfrac 1n\cdot n=1$．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>设 $G$ 为幺半群，若 $\forall\;a\in G,\;\exists\;b\in G,\quad b=a^{-1}$，则称 $G$ 为<strong>群</strong>（group）．</p>
+</blockquote>
+<p>满足交换律的群称为<strong>交换群</strong>（commutative group）或<strong>阿贝尔群</strong>（abelian group）<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>．</p>
+<h1 id="Naturae-Catervarum-群的性质"><a href="#Naturae-Catervarum-群的性质" class="headerlink" title="Naturae Catervarum 群的性质"></a>Naturae Catervarum 群的性质</h1><p>&emsp;(α)&emsp;封闭性（closure）：&emsp;&emsp;$\forall\;a,\,b\in G,\quad ab\;\in G$；</p>
+<p>&emsp;(β)&emsp;结合性（associativity）：&emsp;&emsp;$\forall\;a,\,b,\,c\in G,\quad(ab)c=a(bc)$；</p>
+<p>&emsp;(γ)&emsp;存在唯一单位元：&emsp;&emsp;$\exists!\;e\in G,\;\forall\;a\in G,\quad ae=ea=a$；<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
+<p>&emsp;(δ)&emsp;存在唯一逆元：&emsp;&emsp;$\forall\;a\in G,\;\exists!\;b\in G,\quad ab=ba=e$．</p>
+<ul>
+<li>$(ab)^{-1}=b^{-1}a^{-1}.$<ul>
+<li>可推广为 $(a_1a_2\cdots a_n)^{-1}=a_n^{-1}\cdots a_2^{-1}a_1^{-1}$．</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>〔证明单位元唯一〕：</p>
+<blockquote>
+<p>设 $G$ 为群，且假设存在任意两个单位元 $e,\,\epsilon\in G,\;e\neq\epsilon$，于是</p>
+<p>&emsp;&emsp;$\forall\;x\in G,\quad ex=xe=x$，</p>
+<p>从而</p>
+<p>&emsp;&emsp;$e\epsilon=\epsilon e=\epsilon$，&emsp;&emsp;$(1)$</p>
+<p>又</p>
+<p>&emsp;&emsp;$\forall\;x\in G,\quad \epsilon x=x\epsilon =x$，</p>
+<p>从而</p>
+<p>&emsp;&emsp;$\epsilon e=e\epsilon=e$，&emsp;&emsp;$(2)$</p>
+<p>由 $(1)\,(2)$ 两式，得 $e=\epsilon$，与前提矛盾．<sup><a href="#fn_(3)" id="reffn_(3)">(3)</a></sup></p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔证明逆元唯一〕：</p>
+<blockquote>
+<p>设 $G$ 为群，且假设对某一元素 $x\in G$ 有两个逆元 $p,\,q\in G,\;p\neq q$，于是</p>
+<p>&emsp;&emsp;$px=xp=qx=xq=e$，</p>
+<p>从而</p>
+<p>&emsp;&emsp;$p=ep=(qx)p=q(xp)=qe=q$，与前提矛盾．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 2.1〕：</p>
+<blockquote>
+<p>设 $(M,\,\cdot)$ 为幺半群，记其中全体可逆元素所成集合为 $M^\ast$，则 $(M^\ast,\,\cdot)$ 是群．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>由幺半群性质，显然可知存在单位元 $e\in M^\ast$；</p>
+<p>$(M,\,\cdot)$ 与 $(M^\ast,\,\cdot)$ 具有同一运算，因此显然有结合性，并且由于 $M^\ast$ 中任一元素均可逆则显然有封闭性；</p>
+<p>由于 $M^\ast$ 中各元素 $a$ 均可逆，其逆元 $a^{-1}$ 必然也属于 $M^\ast$，可知逆元存在性．由此则 $(M^\ast,\,\cdot)$ 是群．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>若 $a,\,b\in\mathbb Z$ 整除以 $n\in\mathbb N_+$ 所得余数相等，则称 $a$ 与 $b$ <strong>模</strong> $n$ <strong>同余</strong> <sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，记作 $a\equiv b\;(\operatorname{mod} n)$，且定义关系：</p>
+<p>&emsp;&emsp;$a\sim b\;\Leftrightarrow\;a\equiv b\pmod n$，</p>
+<p>易证此为等价关系．</p>
+<p>记 $i\in\mathbb Z$ 所在等价类为 $\overline i=\{k\in\mathbb Z\mid k\equiv i\;(\operatorname{mod} n)\}$，称为 <strong>$i$ 的模 $n$ 同余类</strong>（congruence class of $i$ modulo $n$）．于是整数集 $\mathbb Z$ 可分划为 $n$ 个等价类：$\overline 0,\,\overline 1,\,\overline 2,\,\cdots,\,\overline{n-1}$，以 $\mathbb Z_n$ 表示该分划，则可定义其上的加法：</p>
+<p>&emsp;&emsp;$\overline a+\overline b=\overline{a+b}$，</p>
+<p>则 $(\mathbb Z_n,\,+)$ 形成阿贝尔群，其单位元为 $\overline 0$，该群称为<strong>整数模 $n$ 加法群</strong>（additive group of integers modulo $n$）．</p>
+<p>此外，若定义乘法：</p>
+<p>&emsp;&emsp;$\overline a\cdot\overline b=\overline{ab}$，</p>
+<p>则 $(\mathbb Z_n,\,\cdot)$ 形成交换幺半群，其单位元为 $\overline 1$．</p>
+</blockquote>
+<ul>
+<li>对于 $a\in \mathbb Z,\;\exists\;b\in\mathbb Z,\quad$$ab\equiv 1\pmod n\;\Leftrightarrow\;\gcd(a,\,n)=1$<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup>，由此，$\overline a$ 对于上述乘法可逆当且仅当 $\gcd(a,\;n)=1$．为了简便起见，后文一律将 $\gcd(p,\,q)=1$，即 $p$ 与 $q$ 互质记作 $p\,\bot\,q$．</li>
+</ul>
+<p>此处还须证明上述运算定义良好：</p>
+<blockquote>
+<p>设 $a\sim a’,\;b\sim b’$，则 $\overline a=\overline{a’},\;\overline b=\overline{b’}$，</p>
+<p>由定义，可以设 $a=kn+\alpha,\;$ $a’=k’n+\alpha,\;$ $b=\ell n+\beta,\;$ $b’=\ell’n+\beta\quad$$(k,\;k’,\;\ell,\;\ell’\in\mathbb Z)$ ，</p>
+<p>则 $a+b=(k+\ell)n+(\alpha+\beta)$，即 $a+b\equiv \alpha+\beta\pmod n$，</p>
+<p>同理则 $a’+b’=(k’+\ell’)n+(\alpha+\beta)$，即 $a’+b’\equiv \alpha+\beta\;\pmod n$，</p>
+<p>由此则 $\overline{a+b}=\overline{a’+b’}$，可知该加法运算定义良好．</p>
+<p>又 $ab=k\ell n^2+(\alpha\ell+\beta k)n+\alpha\beta$$=(k\ell n+\alpha\ell+\beta k)n+\alpha\beta$，即 $ab\equiv \alpha\beta\pmod n$，</p>
+<p>同理则 $a’b’=k’\ell’n^2+(\alpha\ell’+\beta k’)n+\alpha\beta$$=(k’\ell’n+\alpha\ell’+\beta k’)n+\alpha\beta$，即 $a’b’\equiv\alpha\beta\pmod n$，</p>
+<p>由此则 $\overline{ab}=\overline{a’b’}$，可知该乘法运算定义良好．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>全体 $n$ 阶可逆实方阵形成的乘法群，称为 $\mathbb R$ 上的 $n$ 次<strong>一般线性群</strong>（general linear group），记为 $\mathrm{GL}_n(\mathbb R)$ 或 $\mathrm{GL}(n,\;\mathbb R)$. 其单位元为 $n$ 阶单位矩阵 $𝑰$，且对于任意 $𝑴\in \mathrm{GL}_n(\mathbb R)$，均存在逆元 $𝑴^{-1}$ 使得 $𝑴𝑴^{-1}=𝑴^{-1}𝑴=𝑰$．由矩阵乘法的性质可知其结合性，且由于</p>
+<p>&emsp;&emsp;$\forall\;𝑨,\;𝑩\in\mathrm{GL}_n(\mathbb R),\quad\det 𝑨\neq0,\;$$\det 𝑩\neq0,\;\det(𝑨𝑩)=\det 𝑨\cdot\det 𝑩\neq0$,</p>
+<p>可知恒有 $𝑨𝑩\in\mathrm{GL}_n(\mathbb R)$，于是可知其封闭性．</p>
+<p>同理亦可定义 $\mathrm{GL}_n(\mathbb C),\,\mathrm{GL}_n(\mathbb Q)$，从略．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>函数 $\varphi(n)$ 表示不大于 $n$ 且与 $n$ 互质的正整数之数目，即 $\varphi(n)=|\{a\in\mathbb N_+\mid a\leq n,\;a\,\bot\,n\}|$，称为<strong>Euler（欧拉）总计函数</strong>（Euler’s totient function）或简称 <strong>Euler 函数</strong>．</p>
+<p>设 $n\in\mathbb N_+$，$\overline a$ 为 $a\in\mathbb Z$ 的模 $n$ 同余类，则集合 $\mathbb Z_n^\ast:=\{\overline a\mid a\,\bot\,n\}$ 对于乘法形成阿贝尔群，且 $|\mathbb Z_n^\ast|=\varphi(n)$．这表明与 $n\in\mathbb N_+$ 互质的 $a\in\mathbb Z$ 之同余类共有 $\varphi(n)$ 个．（详见 <a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a> 的“Euler 定理”部分．）</p>
+</blockquote>
+<h1 id="Homomorphismi-amp-Isomorphismi-同态与同构"><a href="#Homomorphismi-amp-Isomorphismi-同态与同构" class="headerlink" title="Homomorphismi &amp; Isomorphismi 同态与同构"></a>Homomorphismi &amp; Isomorphismi 同态与同构</h1><p>〔定义〕：</p>
+<blockquote>
+<p>设 $(G,\,\bullet),\,(G’,\,\circ)$ 为两个群，当且仅当映射 $f:G\to G’$ 满足</p>
+<p>&emsp;&emsp;$\forall\;a,\,b\in G,\quad f(a\bullet b)=f(a)\circ f(b)$</p>
+<p>或简记作</p>
+<p>&emsp;&emsp;$f(ab)=f(a)f(b)$，</p>
+<p>则称映射 $f$ 为群 $G$ 到群 $G’$ 的<strong>同态</strong>（homomorphism<sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>）．</p>
+<p>特别地，若 $f$ 为单射，则称之为<strong>单同态</strong>（monomorphism<sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup>）；若 $f$ 为满射，则称之为<strong>满同态</strong>（epimorphism<sup><a href="#fn_(8)" id="reffn_(8)">(8)</a></sup>）；若 $f$ 为双射（即既是单同态也是满同态），则称之为<strong>同构</strong>（isomorphism<sup><a href="#fn_(9)" id="reffn_(9)">(9)</a></sup>）．</p>
+<p>若群 $G$ 到群 $G’$ 存在任一同构 $f:G\to G’$，则称 $G$ 与 $G’$ <strong>同构</strong>（isomorphic）<sup><a href="#fn_(10)" id="reffn_(10)">(10)</a></sup>，记为 $G\cong G’$ 或 $f: G\overset{\Large\sim}{\to}G’$．</p>
+</blockquote>
+<ul>
+<li><p>若群 $G,\;G’$ 同构，则同构映射 $f:G\overset{\Large\sim}{\to}G’$ 的逆 $f^{-1}:G’\to G$ 也是同构．</p>
+</li>
+<li><p>可证同构是等价关系：</p>
+<blockquote>
+<p>设 $f: G\overset{\Large\sim}{\to}G’,\quad g=f^{-1}$，则</p>
+<p>&emsp;&emsp;$\forall\;a,\,b\in G,\quad f(ab)=f(a)f(b)$，</p>
+<p>&emsp;&emsp;$\forall\;c,\,d\in G’,\quad g(cd)=g(c)g(d)$，</p>
+<p>若 $G’=G$，可设恒等映射 $f:G\to G,\quad x\mapsto x$，则 $g:G\to G,\quad x\mapsto x$，于是有 $f(ab)=ab=f(a)f(b)$ 成立，且 $g(cd)=cd=g(c)g(d)$ 亦成立，即 $G\cong G$，可知其自反性；</p>
+<p>又由双射的性质，可知其对称性；</p>
+<p>又设 $f’:G’\overset{\Large\sim}{\to}H,\quad g’=f’^{-1}$，则</p>
+<p>&emsp;&emsp;$\forall\;j,\,k\in G’,\quad f’(jk)=f’(j)f’(k)$，</p>
+<p>&emsp;&emsp;$\forall\;m,\,n\in H,\quad g’(mn)=g’(m)g’(n)$</p>
+<p>于是有 $\varphi=f’\circ f: G\to H,\quad$$\psi=\varphi^{-1}=g\circ g’:H\to G$，并且</p>
+<p>&emsp;$\forall\;a,\,b\in G,$</p>
+<p>&emsp;&emsp;$\varphi(ab)=f’f(ab)=f’(f(a)f(b))$$=f’f(a)f’f(b)=\varphi(a)\varphi(b)$；</p>
+<p>&emsp;$\forall\;m,\,n\in H,$</p>
+<p>&emsp;&emsp;$\psi(mn)=gg’(mn)=g(g’(m)g’(n))$$=gg’(m)gg’(n)=\psi(m)\psi(n)$，</p>
+<p>即 $G\cong H$，可知其传递性．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+</li>
+</ul>
+<p>群的同构关系揭示了群之间内在结构的一致性，同构的群拥有着相同的构造，这意味着研究一个群，往往就能得到与之同构的群的性质．但是，当同构的群同时作为另一群的子群时，它们的地位常常是不一致的．换言之，同构保持了群自身的结构（“内在的”），但不保证对于其他的群拥有同样的关系（“外在的”）．</p>
+<hr>
+<p>设映射 $f:G\to H$ 为群同态，则有以下两条重要性质</p>
+<p>&emsp;&emsp;(α)&emsp;$f(e_G)=e_H$；<br>&emsp;&emsp;(β)&emsp;$\forall\;a\in G,\quad f(a^{-1})=f(a)^{-1}$.</p>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$e:=e_G,\;e’:=e_H$，则</p>
+<p>&emsp;&emsp;$f(e)=f(ee)=f(e)f(e)$，</p>
+<p>由此得证 $f(e)=e’$；</p>
+<p>又有</p>
+<p>&emsp;&emsp;$f(e)=f(aa^{-1})=f(a)f(a^{-1})=e’$，</p>
+<p>&emsp;&emsp;$f(e)=f(a^{-1}a)=f(a^{-1})f(a)=e’$，</p>
+<p>于是可知 $f(a)f(a^{-1})=f(a^{-1})f(a)=e’$，即 $f(a)f(a^{-1})$ 为 $f(a^{-1})f(a)$ 的逆元，得证 $f(a^{-1})=f(a)^{-1}$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>群 $G$ 到其自身的同态称为<strong>自同态</strong>（endomorphism<sup><a href="#fn_(11)" id="reffn_(11)">(11)</a></sup>），到其自身的同构称为<strong>自同构</strong>（automorphism<sup><a href="#fn_(12)" id="reffn_(12)">(12)</a></sup>）．</p>
+<p>自同态的复合恒为自同态（可参考前述关于同构等价的证明得证）．群 $G$ 上所有自同态所成集合关于复合运算成幺半群，称为<strong>自同态幺半群</strong>（endomorphism monoid），并记为 $\mathrm{End}(G)$，其单位元为 $G$ 上的恒等映射．</p>
+<p>群 $G$ 上所有自同构所成集合关于复合运算成群，称为<strong>自同构群</strong>（automorphism group），并记为$\mathrm{Aut}(G)$，其单位元为 $G$ 上的恒等映射，且由双射的性质可知其中所有映射均可逆．由于同构具有传递性，因此可知其封闭性，由复合映射的性质可知其结合性．</p>
+</blockquote>
+<ul>
+<li>恒等映射称为<strong>平凡自同构</strong>（trivial automorphism）．</li>
+<li>$G$ 上的所有自同构 $f$ 均满足 $f(G)=G$<sup><a href="#fn_(13)" id="reffn_(13)">(13)</a></sup>．</li>
+</ul>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 尼尔斯·亨利克·阿贝尔（Niels Henrik Abel，1802—1829），挪威数学家，因证明五次方程不存在根式解而闻名，在众多领域有所成就．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. $\exists!$ 表示唯一存在．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. 幺半群的单位元唯一性亦可同理得证．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. $a$ and $b$ are <strong>congruent modulo</strong> $n$，congruent 所对应的名词为 congruence．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(5)">
+<sup>(5)</sup>. $\gcd(a,\,n)$ 表示 $a$ 与 $n$ 的最大公因数（<strong>g</strong>reatest <strong>c</strong>ommon <strong>d</strong>ivisor），$\gcd(a,\,n)=1$ 即 $a$ 与 $n$ 互质．此结论可由数论的 <strong>Bézout 定理</strong>（Bézout’s lemma）得出．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. homo-：希腊语 <em>homos</em> “相同”，morph-：希腊语 <em>morphē</em> “形态”．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(7)">
+<sup>(7)</sup>. mono-：希腊语 <em>monos</em> “单独”，morph- 同上．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(8)">
+<sup>(8)</sup>. epi-：希腊语 <em>epi</em> “向上”，morph- 同上．这一构词来自“满射” surjection 的本义“向上射”．<a href="#reffn_(8)" title="Jump back to footnote [(8)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(9)">
+<sup>(9)</sup>. iso-：希腊语 <em>isos</em> “相等”，morph- 同上．<a href="#reffn_(9)" title="Jump back to footnote [(9)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(10)">
+<sup>(10)</sup>. 需要注意这里出现的两个“同构”的区别，前者是映射的一种，后者是群之间的关系．<a href="#reffn_(10)" title="Jump back to footnote [(10)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(11)">
+<sup>(11)</sup>. endo-：希腊语 <em>endon</em> “在内”，morph- 同上．<a href="#reffn_(11)" title="Jump back to footnote [(11)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(12)">
+<sup>(12)</sup>. auto-：希腊语 <em>autos</em> “自己”，morph- 同上．<a href="#reffn_(12)" title="Jump back to footnote [(12)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(13)">
+<sup>(13)</sup>. $f(G):=\{f(x)\mid x\in G\}$，类似情况同理．<a href="#reffn_(13)" title="Jump back to footnote [(13)] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+<p>前：<a href="https://kotobasuke.github.io/2021/04/22/De-Algebra-Abstracta-01">抽象代数笔记 〇一：集合论</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">抽象代数笔记 〇三：子群与陪集</a></p>
+<p><br></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Abstracta/" rel="tag">Algebra-Abstracta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Theoria-Catervarum/" rel="tag">Theoria-Catervarum</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/26/De-Algebra-Abstracta-03" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Abstracta 03 // 抽象代数笔记 〇三：子群与陪集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/22/De-Algebra-Abstracta-01" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 01 // 抽象代数笔记 〇一：集合论</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Catervae-amp-Structurae-Algebraicae-Similes%E7%BE%A4%E5%8F%8A%E7%B1%BB%E4%BC%BC%E7%9A%84%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">Catervae &amp; Structurae Algebraicae Similes
+群及类似的代数结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Naturae-Catervarum-%E7%BE%A4%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">Naturae Catervarum 群的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Homomorphismi-amp-Isomorphismi-%E5%90%8C%E6%80%81%E4%B8%8E%E5%90%8C%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">Homomorphismi &amp; Isomorphismi 同态与同构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

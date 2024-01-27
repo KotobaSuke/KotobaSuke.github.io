@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>de algebra abstracta 03 // 抽象代数笔记 〇三：子群与陪集 | Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="MathematicaAlgebraAlgebra-AbstractaTheoria-Catervarum" />
+  
+  
+  
+  
+  <meta name="description" content="前：抽象代数笔记 〇二：群与同态 后：抽象代数笔记 〇四：循环群  Succatervae 子群〔定义〕：  设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）．特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="De Algebra Abstracta 03 &#x2F;&#x2F; 抽象代数笔记 〇三：子群与陪集">
+<meta property="og:url" content="https://kotobasuke.github.io/2021/04/26/De-Algebra-Abstracta-03">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="前：抽象代数笔记 〇二：群与同态 后：抽象代数笔记 〇四：循环群  Succatervae 子群〔定义〕：  设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的子半群（subsemigroup）．特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的子">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-26T08:47:27.000Z">
+<meta property="article:modified_time" content="2023-12-05T15:24:40.468Z">
+<meta property="article:author" content="Kotoba Trilius">
+<meta property="article:tag" content="Mathematica">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Algebra-Abstracta">
+<meta property="article:tag" content="Theoria-Catervarum">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/wug_icon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Pagina Prima</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archium">Archium</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categoriae">Categoriae</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/pittacia">Pittacia</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/res">Res de Hoc</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Inscribe aliquid" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Scripturae',
+            PAGES: 'Paginae',
+            CATEGORIES: 'Categoriae',
+            TAGS: 'Pittacia',
+            UNTITLED: '(Sine titulo)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-De-Algebra-Abstracta-03" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      De Algebra Abstracta 03 // 抽象代数笔记 〇三：子群与陪集
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/04/26/De-Algebra-Abstracta-03" class="article-date">
+	  <time datetime="2021-04-26T08:47:27.000Z" itemprop="datePublished">2021-04-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前：<a href="https://kotobasuke.github.io/2021/04/22/De-Algebra-Abstracta-02">抽象代数笔记 〇二：群与同态</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a></p>
+<hr>
+<h1 id="Succatervae-子群"><a href="#Succatervae-子群" class="headerlink" title="Succatervae 子群"></a>Succatervae 子群</h1><p>〔定义〕：</p>
+<blockquote>
+<p><span style="font-family:Kaiti;font-size:95%">设 $(H,\,\ast)$ 为半群，$A\subseteq H,\;A\neq\varnothing$，若 $(A,\,\ast)$ 形成半群，则称 $A$ 为 $H$ 的<strong>子半群</strong>（</span><span style="font-family:Sans">subsemigroup</span><span style="font-family:Kaiti;font-size:95%">）．特别地，若 $(A,\;\ast)$ 形成幺半群，则称 $A$ 为 $H$ 的<strong>子幺半群</strong>（</span><span style="font-family:Sans">submonoid</span><span style="font-family:Kaiti;font-size:95%">）．</span></p>
+<p>若 $(A,\,\ast)$ 形成群，则称 $A$ 为 $H$ 的<strong>子群</strong>（subgroup）．</p>
+<p>通常情况下只考虑群的子群，即若 $(G,\,\ast)$ 为群，$A\subseteq G$，称 $A$ 为 $G$ 的子群当且仅当 $(A,\,\ast)$ 形成群，记作 $A\leq G$．后文除非特别说明均只考虑群的子群．</p>
+</blockquote>
+<ul>
+<li>对任一群 $G$，$\{e\}$ 与 $G$ 本身均为 $G$ 的子群，称为 $G$ 的<strong>平凡子群</strong>（trivial subgroup）．</li>
+<li>特别地，若 $A\subset G$，则称 $A$ 为 $G$ 的<strong>真子群</strong>（proper subgroup），记为 $A&lt;G$．</li>
+</ul>
+<hr>
+<p>〔定理 3.1〕 <strong>子群判定定理</strong>（criterion of subgroups）：</p>
+<blockquote>
+<p>设 $A$ 是 $G$ 的任一非空子集，恒有</p>
+<p>&emsp;&emsp;$A\leq G\;\Leftrightarrow\;\forall\;a,\,b\in A,\quad$$a^{-1}b\in A$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕：由 $G$ 的封闭性及其中元素的可逆性显然可知；</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>&emsp;（单位元存在）：由于 $A\neq\varnothing$，可知 $\forall\;a\in A,\quad a^{-1}a=e\in A$；（可知 $A$ 与 $G$ 的单位元一致）</p>
+<p>&emsp;（逆元存在）：$\forall\;a,\,e\in A,\quad a^{-1}e=a^{-1}\in A$；</p>
+<p>&emsp;（封闭性）：$\forall\;a^{-1},\,b\in A,\quad (a^{-1})^{-1}b=ab\in A$；</p>
+<p>&emsp;（结合性）：$A$ 与 $G$ 具有同一运算，而 $A\subseteq G$，显然可知．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>全体行列式为 $1$ 的 $n$ 阶实方阵形成的乘法群，称为 $\mathbb R$ 上的 $n$ 次<strong>特殊线性群</strong>（special linear group），记为 $\mathrm{SL}_n(\mathbb R)$ 或 $\mathrm{SL}(n,\;\mathbb R)$．其单位元为 $n$ 阶单位矩阵 $𝑰$，且对于任意 $𝑴\in \mathrm{SL}_n(\mathbb R)$，均存在逆元 $𝑴^{-1}$ 使得 $𝑴𝑴^{-1}=𝑴^{-1}𝑴=𝑰$（因为 $\det 𝑴=1\neq 0$）．由矩阵乘法的性质可知其结合性，且由于</p>
+<p>&emsp;&emsp;$\forall\;𝑨,\;𝑩\in\mathrm{SL}_n(\mathbb R),\quad \det 𝑨=\det 𝑩=1,\;\det(𝑨𝑩)=\det 𝑨\cdot\det 𝑩=1$,</p>
+<p>可知恒有 $𝑨𝑩\in\mathrm{SL}_n(\mathbb R)$，于是可知其封闭性．</p>
+<p>同理亦可定义 $\mathrm{SL}_n(\mathbb C),\;\mathrm{SL}_n(\mathbb Q)$，从略．</p>
+</blockquote>
+<ul>
+<li>由于 $\mathrm{SL}_n(\mathbb R)\subset\mathrm{GL}_n(\mathbb R)$，且 $\mathrm{SL}_n(\mathbb R)$ 与 $\mathrm{GL}_n(\mathbb R)$ 具有同一运算，可知 $\mathrm{SL}_n(\mathbb R)\leq\mathrm{GL}_n(\mathbb R)$．</li>
+</ul>
+<hr>
+<p>设 $G$ 是群，其自同构群 $\mathrm{Aut}(G)$ 是自同态幺半群 $\mathrm{End}(G)$ 的子群，证明略．</p>
+<h1 id="Concopiae-陪集"><a href="#Concopiae-陪集" class="headerlink" title="Concopiae 陪集"></a>Concopiae 陪集</h1><p>为了方便表述，后文均沿用以下的记法：</p>
+<blockquote>
+<p>$aA=\{ax\mid x\in A\},$</p>
+<p>$Aa=\{xa\mid x\in A\},$</p>
+<p>$A^{-1}=\{a^{-1}\mid a\in A\},$</p>
+<p>$AB=\{ab\mid a\in A,\;b\in B\}.$</p>
+</blockquote>
+<hr>
+<p>设 $G$ 是群，且 $A\leq G$，定义 $G$ 上的关系：</p>
+<p>&emsp;&emsp;$\forall\;g,\,h\in G,\quad g\overset{\mathrm{R}}\sim h\;\Leftrightarrow\;gh^{-1}\in A$，</p>
+<p>可证 $\overset{\mathrm{R}}\sim$ 是 $G$ 上的等价关系，且元素 $g$ 的等价类为 $Ag$．</p>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$\forall\;g\in G,\quad gg^{-1}=e\in A$，可知自反性成立；</p>
+<p>若 $g \overset{\mathrm{R}}\sim h$，则有 $gh^{-1}\in A$，由于 $A$ 是群，所以由可逆性有 $hg^{-1}=(gh^{-1})^{-1}\in A$，从而 $h\overset{\mathrm{R}}\sim g$，可知对称性成立；</p>
+<p>若 $g \overset{\mathrm{R}}\sim h,\;h\overset{\mathrm{R}}\sim \ell$，则有 $gh^{-1},\;h\ell^{-1}\in A$，所以由封闭性有 $g\ell^{-1}=(gh^{-1})(h\ell^{-1})\in A$，从而 $g \overset{\mathrm{R}}\sim \ell$，可知传递性成立.</p>
+<p>又由于 $g \overset{\mathrm{R}}\sim h\;\Leftrightarrow \;gh^{-1}\in A$，</p>
+<p>记 $gh^{-1}=a^{-1}\in A$，则有 $a=hg^{-1}$，进而 $h=ag\in Ag$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>于是〔定义〕：</p>
+<blockquote>
+<p> $G$ 中关于等价关系 $\overset{\mathrm{R}}\sim$ 的每个等价类 $Ag$ 称为群 $G$ 对于子群 $A$ 的<strong>右陪集</strong>（right coset）．对于该关系的完全代表系 $R=\{g_i\mid i\in I\}$ 称为 <strong>$G$ 对于 $A$ 的右陪集代表元系</strong> （system of representatives for the right cosets of $A$ in $G$）．分划 $\mathscr R=\{Ag\mid g\in R\}$ 称为 $G$ 对子群 $A$ 的<strong>右陪集分解</strong>（right coset partition），通常以等式记作：</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{g\in R}Ag$．</p>
+<p>类似地可以定义等价关系 $\overset{\mathrm{L}}\sim$：</p>
+<p>&emsp;&emsp;$\forall\;g,\,h\in G,\quad g\overset{\mathrm{L}}\sim h\;\Leftrightarrow\;g^{-1}h\in A$，</p>
+<p>$G$ 中关于等价关系 $\overset{\mathrm{L}}\sim$ 的每个等价类 $gA$称为群 $G$ 对于子群 $A$ 的<strong>左陪集</strong>（left coset）．对于该关系可类似地定义<strong>$G$ 对于 $A$ 的左陪集代表元系</strong>，以及<strong>左陪集分解</strong> $\mathscr L=\{gA\mid g\in R\}$，或以等式记作：</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{g\in R}gA$．</p>
+</blockquote>
+<hr>
+<p>〔定义〕：</p>
+<blockquote>
+<p>群 $G$ 对于子群 $A$ 右（左）陪集数量若有限，则 $|\mathscr R|\equiv|\mathscr L|$（即左右陪集数量恒等），记该数量为 $[G:A]$；若数量无限，则 $\mathscr R$ 与 $\mathscr L$ 为等势的无限集，并且记 $[G:A]=\infty$．此处的 $[G:A]$ 称为子群 $A$ 对于群 $G$ 的<strong>指数</strong>（index）．</p>
+</blockquote>
+<hr>
+<p>在前文中已经定义了怎样的运算才能称作定义良好，而运算本质上是一个映射．先设 $A$ 为集合，$\sim$ 为其上的等价关系，$A\,/\sim$ 为 $A$ 除以 $\sim$ 的商集，以 $[a]$ 表示 $a$ 关于 $\sim$ 的等价类．更普遍地，考虑映射 $f:(A/\sim)\to B$，其中 $B$ 是任一集合，当且仅当恒有：</p>
+<blockquote>
+<p>$\forall\;a,\,\alpha\in A,$</p>
+<p>&emsp;$[a]=[\alpha]\;\Rightarrow\;f([a])=f([\alpha])$</p>
+</blockquote>
+<p>可称该映射定义良好，亦即选取代表元的选取不会影响等价类映射的结果．</p>
+<hr>
+<p>〔定理 3.2〕 <strong>Lagrange 定理</strong>（Lagrange’s theorem）：</p>
+<blockquote>
+<p>若 $G$ 为有限群，且 $H\leq G$，则</p>
+<p>&emsp;&emsp;$[G:H]=\dfrac{|G|}{|H|}$，</p>
+<p>且 $G$ 的所有子群的阶均为 $|G|$ 的因子．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>考虑右陪集分解 $\{Hg\mid g\in R\}$，其中 $R$ 为 $G$ 对 $H$ 的右陪集代表元系：</p>
+<p>&emsp;&emsp;$\forall\;a,\,b\in H,\quad a\neq b\;\Leftrightarrow\;ag\neq bg$<sup><a href="#fn_(1)" id="reffn_(1)">(1)</a></sup>，</p>
+<p>于是</p>
+<p>&emsp;&emsp;$\forall\;g\in R,\quad|Hg|=|H|$，</p>
+<p>则可得</p>
+<p>&emsp;&emsp;$|G|=\displaystyle\sum_{g\in R}|Hg|=\sum_{g\in R}|H|=|H|\cdot|R|=|H|\cdot[G:H]$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<p>〔例〕：</p>
+<blockquote>
+<p>对于任一 $6$ 阶群，其子群的阶必为 $1,\,2,\,3,\,6$ 之一．其中 $1$ 阶子群即 $\{e\}$，$6$ 阶子群即群自身．</p>
+</blockquote>
+<ul>
+<li>质数阶群的子群必为平凡子群．</li>
+</ul>
+<hr>
+<p>〔定理 3.3〕 计数公式：</p>
+<blockquote>
+<p>设 $G$ 为有限群，$A,\;B\leq G$，则</p>
+<p>&emsp;&emsp;(α)&emsp;$|AB|=\dfrac{|A|\cdot|B|}{|A\cap B|}$；</p>
+<p>&emsp;&emsp;(β)&emsp;$A\leq B\leq G\quad\Rightarrow\quad [G:A]=[G:B][B:A]$；</p>
+<p>&emsp;&emsp;(γ)&emsp;$[G:(A\cap B)]\leq[G:A][G:B]$．<sup><a href="#fn_(2)" id="reffn_(2)">(2)</a></sup></p>
+<p>&emsp;&emsp;&emsp;&emsp;特别地，若 $\gcd([G:A],\,[G:B])=1$，则 $[G:(A\cap B)]=[G:A][G:B]$ 且 $AB=G$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>(α)：</p>
+<p>$AB$ 是若干陪集 $Ab\;(b\in B)$ 之并，而 $B$ 是若干陪集 $(A\cap B)b\;\;(b\in B)$ 之并．</p>
+<p>对于任意 $b,\;b’\in B$，有</p>
+<p>&emsp;&emsp;&emsp;$Ab=Ab’$</p>
+<p>&emsp;$\Leftrightarrow\quad b’b^{-1}\in A$（右陪集所对应的等价关系）</p>
+<p>&emsp;$\Leftrightarrow\quad b’b^{-1}\in A\cap B$（子群判定定理）</p>
+<p>&emsp;$\Leftrightarrow\quad (A\cap B)b=(A\cap B)b’$，</p>
+<p>所以 $[AB:A]=\dfrac{|AB|}{|A|}=\dfrac{|B|}{|A\cap B|}=[B:(A\cap B)]$，从而得证．</p>
+<p>(β)：</p>
+<p>考虑 $G$ 对子群 $B$ 的右陪集分解</p>
+<p>&emsp;&emsp;$G=\displaystyle\bigsqcup_{j=1}^n Bg_j,\quad g_j\in G,\;n:=[G:B]$，</p>
+<p>$B$ 对子群 $A$ 的右陪集分解</p>
+<p>&emsp;&emsp;$B=\displaystyle\bigsqcup_{i=1}^m Ab_i,\quad b_i\in B,\;m:=[B:A]$，</p>
+<p>则 $G=\displaystyle\bigsqcup_{j=1}^n\displaystyle\bigsqcup_{i=1}^m Ab_ig_j$．</p>
+<p>若 $Ab_ig_i=Ab_{i’}g_{i’}$</p>
+<p>&emsp;$(i,\,i’\in\{x\in\mathbb N\mid 1\leq x\leq m\},\quad j,\,j’\in\{x\in\mathbb N\mid 1\leq x\leq n\})$，</p>
+<p>则 $b_{i’}g_{j’}g_j^{-1}b_i^{-1}\in A$，于是 $g_{j’}g_j^{-1}\in b_{i’}^{-1}Ab_i\subseteq B$，因此有 $Bg_{j’}=Bg_j$．</p>
+<p>由陪集的性质，有 $j=j’$，于是 $b_{i’}g_{j’}g_j^{-1}b_i^{-1}=b_{i’}b_i^{-1}\in A$．</p>
+<p>同理有 $Ab_{i’}=Ab_i$，从而有 $i=i’$．由此，当 $(i,\,j)\neq(i’,\,j’)$ 时， $Ab_ig_j$ 和 $Ab_{i’}g_{j’}$ 是 $G$ 对 $A$ 的不同陪集，便得</p>
+<p>&emsp;&emsp;$[G:A]=mn=[G:B][B:A]$．</p>
+<p>(γ)：</p>
+<p>对于 $b,\,b’\in B$，有 $(A\cap B)b\neq(A\cap B)b’\;\Rightarrow\;b’b^{-1}\not\in A\cap B$ $\Rightarrow\;b’b^{-1}\not\in A\;\Rightarrow\; Ab\neq Ab’$．</p>
+<p>由此可知，$[B:A\cap B]\leq[G:A]$，</p>
+<p>于是有 $[G:A\cap B]=[G:B][B:A\cap B]\leq [G:B][G:A]$．</p>
+<p>又由此可知 $[G:B]\mid[G:A\cap B]$，$[G:A]\mid[G:A\cap B]$．</p>
+<p>若 $[G:A]\perp[G:B]$，则 $[G:A][G:B]\mid[G:A\cap B]$，从而有 $[G:A][G:B]=[G:A\cap B]$．</p>
+<p>于是有 $\dfrac{|G|}{|A\cap B|}=\dfrac{|G|^2}{|A|\cdot|B|}$，得 $|G|=\dfrac{|A|\cdot|B|}{|A\cap B|}$．</p>
+<p>由 (α)，得 $|G|=|AB|$，便得 $G=AB$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+
+
+</blockquote>
+<h1 id="Ordines-Elementorum-元素的阶"><a href="#Ordines-Elementorum-元素的阶" class="headerlink" title="Ordines Elementorum 元素的阶"></a>Ordines Elementorum 元素的阶</h1><p>  〔定义〕：</p>
+<blockquote>
+<p>设 $g\in G$，若存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则满足此式的最小正整数 $n$ 称为元素 $g$ 的<strong>阶</strong>（order），记作 $|g|$ 或 $\mathrm{ord}(g)$，这样的元素 $g$ 称为<strong>有限阶元素</strong>（element of finite order）．若不存在 $n\in\mathbb N_+$ 使得 $g^n=e$，则称 $g$ 为<strong>无限阶元素</strong>（element of infinite order），并记 $|g|=\infty$．</p>
+</blockquote>
+<p>于是可得，有限群 $G$ 中任一元素均为有限阶元素．</p>
+<p>  〔证明〕：</p>
+<blockquote>
+<p>$\forall\;g\in G$，考虑集合 $\{g,\,g^2,\,g^3,\,\cdots\}$，由于 $G$ 有限，则 $\exists\;0&lt;m&lt;n,\quad g^n=g^m$，从而</p>
+<p>&emsp;&emsp;$g^{n-m}=g^ng^{-m}=g^ng^{-n}=e$，</p>
+<p>而 $n-m\in\mathbb N_+$，从而 $g$ 为有限阶元素．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.4〕：</p>
+<blockquote>
+<p>有限群 $G$ 中每个元素 $g$ 的阶都是 $|G|$ 的因子：</p>
+<p>&emsp;&emsp;$\forall\;g\in G,\quad |G|\equiv 0\pmod{|g|}$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$g$ 为有限阶元素（Lagrange 定理推论），设 $|g|=n$，则 $g^0=e,\,g,\,g^2,\,g^3,\,\cdots,\,g^{n-1}$ 是 $G$ 中 $n$ 个不同元素，而 $g^n=e$．则这些元素形成 $G$ 的子群 $H$ <sup><a href="#fn_(4)" id="reffn_(4)">(4)</a></sup>，从而 $|g|=n=|H|$ 为 $|G|$ 的因子（Lagrange 定理）．</p>
+ <p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.5〕：</p>
+<blockquote>
+<p>若群 $G$ 中每个非单位元 $g\neq e$ 的阶均为 $2$，则 $G$ 为阿贝尔群：</p>
+<p>&emsp;&emsp;$\forall\;g\in G,\;g\neq e,\quad |g|=2$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>设任意 $a,\,b\in G$，有 $a^2=b^2=e$，而 $(ab)^2=e=abab$，于是</p>
+<p>&emsp;&emsp;$ab=a(abab)b=(a^2)ba(b^2)=ba$，</p>
+<p>得证，$G$ 为阿贝尔群．</p>
+ <p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.6〕：</p>
+<blockquote>
+<p>$p\in\mathbb P$<sup><a href="#fn_(5)" id="reffn_(5)">(5)</a></sup> 阶群均为阿贝尔群，并同构于整数模 $p$ 加法群 $\mathbb Z_p$.</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>对于任一 $p$ 阶群 $G$ 中任一非单位元 $g$，均有 $|g|=p$，</p>
+<p>从而 $e,\,g,\,g^2,\,\cdots,\,g^{p-1}$ 是 $G$ 中的 $p$ 个不同元素，</p>
+<p>由于 $|G|=p$，所以 $G=\{e,\,g,\,g^2,\,\cdots,\,g^{p-1}\}$，</p>
+<p>进而</p>
+<p>&emsp;&emsp;$\forall\;i,\,j\in\{x\in\mathbb N\mid 1\leq x\leq p-1\},$</p>
+<p>&emsp;&emsp;&emsp;$g^ig^j=g^{i+j}=g^{j+i}=g^jg^i$，</p>
+<p>得证 $G$ 为阿贝尔群．</p>
+<p>又由于 $g^p=e$，可设 $f:G\to\mathbb Z_p,\quad g^i\mapsto i$，</p>
+<p>可知</p>
+<p>&emsp;&emsp;$\forall\;i,\,j\in\{x\in\mathbb N\mid 1\leq x\leq p-1\},$</p>
+<p>&emsp;&emsp;&emsp;$f(g^ig^j)=f(g^{i+j})=i+j=f(g^i)+f(g^j)$，（注意 $\mathbb Z_p$ 为加法群）</p>
+<p>反之亦有</p>
+<p>&emsp;&emsp;$\forall\;k,\,\ell\in\mathbb Z_p,$</p>
+<p>&emsp;&emsp;&emsp;$f^{-1}(k+\ell)=g^{k+\ell}=g^kg^\ell=f^{-1}(k)f^{-1}(\ell)$，</p>
+<p>于是得证 $f:G\overset{\Large\sim}\to\mathbb Z_p$.</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.7〕：</p>
+<blockquote>
+<p>非阿贝尔群的最小阶数为 $6$.</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>$1$ 阶群（平凡群）显然为阿贝尔群；</p>
+<p>$2,\,3,\,5$ 阶群均为阿贝尔群（Th. 3.6）；</p>
+<p>考虑 $4$ 阶群 $G$，则 $G$ 中任一非单位元的阶数均为 $2$ 或 $4$（Th. 3.4），</p>
+<p>若存在 $g\in G,\;|g|=4$，则 $G=\{e,\,g,\,g^2,\,g^3\}$．</p>
+<p>此时设 $f:G\to\mathbb Z_4,\quad g^i\mapsto i$，易证 $f$ 是 $G$ 到 $\mathbb Z_4$ 的同构，而 $\mathbb Z_4$ 为阿贝尔群，从而 $G$ 亦为阿贝尔群．</p>
+<p>否则，$G$ 中所有非单位元阶数均为 $2$（Th. 3.4），于是此时的 $G$ 亦为阿贝尔群（Th. 3.5）．</p>
+<p>考虑满足 $|S|=3$ 的任一集合 $S=\{\alpha,\,\beta,\,\gamma\}$，所有从 $S$ 到自身的双射所构成的群，称为 <strong>$3$ 次对称群</strong><sup><a href="#fn_(6)" id="reffn_(6)">(6)</a></sup>，记为 $\mathfrak S_3$．其中所含的映射（即群的元素）共有 $6$ 个（即 $S$ 中元素的全排列种类），该群为 $6$ 阶非阿贝尔群．将互换第 $a$ 与第 $b$ 个元素位置的映射记为 $(a\;\;b)$，则可知</p>
+<p>&emsp;&emsp;$\mathfrak S_3=\{I,\,(1\;\;2),\,(1\;\;3),\,(2\;\;3),\,(1\;\;2)(1\;\;3),\,(2\;\;3)(1\;\;3)\}$（$I$ 表示恒等映射），</p>
+<p>可以验证，其中存在不满足交换律的复合映射，如 $(1\;\;2)\circ(1\;\;3)$ 即</p>
+<p>&emsp;&emsp;$S\to S,\quad$$\alpha\mapsto\beta,\;\beta\mapsto\gamma,\;\gamma\mapsto\alpha$，</p>
+<p>而 $(1\;\;3)\circ(1\;\;2)$ 即</p>
+<p>&emsp;&emsp;$S\to S,\quad$$\alpha\mapsto\gamma,\;\beta\mapsto\alpha,\;\gamma\mapsto\beta$，</p>
+<p>于是 $(1\;\;2)\circ(1\;\;3)\neq(1\;\;3)\circ(1\;\;2)$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔定理 3.8〕：</p>
+<blockquote>
+<p>设 $G$ 为群， $g,\,h\in G$，则</p>
+<p>&emsp;&emsp;(α)&emsp;若 $|g|=n$，则 $\forall\;m\in\mathbb N_+,\quad|g^m|=\dfrac n{\gcd(m,\;n)}$；</p>
+<p>&emsp;&emsp;(β)&emsp;若 $gh=hg$，且 $|g|=p,\;|h|=q,\;p\perp q$，则 $|gh|=|pq|$．</p>
+</blockquote>
+<p>〔证明〕：</p>
+<blockquote>
+<p>(α)：</p>
+<p>$N:=|g^m|,\;\mu:=\gcd(m,\,n)$，</p>
+<p>由于 $(g^m)^{n/\mu}=(g^n)^{m/\mu}=e^{m/\mu}=e$，</p>
+<p>所以 $N\;\left|\;\dfrac n\mu\right.$ <sup><a href="#fn_(7)" id="reffn_(7)">(7)</a></sup>&emsp;&emsp;（※），</p>
+<p>又由于 $g^{mN}=e$，有 $n\mid mN$，</p>
+<p>于是 $\dfrac n\mu\left|\left(\dfrac m\mu N\right)\right.$，</p>
+<p>由最大公因数的性质可知，$\dfrac n\mu\,\large\bot\normalsize\,\dfrac m\mu$，</p>
+<p>从而 $\left.\dfrac n\mu\;\right|\;N$，由（※）可得 $|g^m|=N=\dfrac n\mu=\dfrac n{\gcd(m,\;n)}$．</p>
+<p>(β)：</p>
+<p>$P:=|gh|$，</p>
+<p>因为 $gh=hg$，所以 $(gh)^{pq}=g^{pq}h^{pq}=(g^p)^q(h^q)^p=e^qe^p=e$ <sup><a href="#fn_(8)" id="reffn_(8)">(8)</a></sup>，</p>
+<p>于是 $P\mid pq$&emsp;&emsp;（▲）．</p>
+<p>由 (α) 可知 $|g^q|=\dfrac p{\gcd(p,\,q)}=\dfrac p1=p$，</p>
+<p>而 $g^q=g^qe=g^qh^q=(gh)^q$，</p>
+<p>由 (α) 可知 $|(gh)^q|=\dfrac P{\gcd(q,\;P)}=|g^q|$，</p>
+<p>从而 $p=\dfrac P{\gcd(q,\;P)}$，所以 $p\mid P$，同理则有 $q\mid P$．</p>
+<p>又由于 $p\perp q$，所以 $pq\mid P$，结合（▲）可知 $P=pq$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<h1 id="Problemata-习题"><a href="#Problemata-习题" class="headerlink" title="Problemata 习题"></a>Problemata 习题</h1><p>〔3.A〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\, B\leq G$，则</p>
+<p>&emsp;&emsp;$A\cup B\leq G\;\Leftrightarrow\;(A\subseteq B)\vee(B\subseteq A)$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕：</p>
+<p>若存在 $a\in A\setminus B,\;b\in B\setminus A$，</p>
+<p>则 $(ab\in A)\vee(ab\in B)$，</p>
+<p>若 $ab\in A$ 则 $b=a^{-1}(ab)\in A$，与前提矛盾，若 $ab\in B$ 则同理，</p>
+<p>从而 $A\setminus B=B\setminus A=\varnothing$，而 $A,\,B\leq G$，得知 $(A\subseteq B)\vee(B\subseteq A)$．</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>此时 $A\cup B=B$ 或 $A\cup B=A$，显然得证．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.B〕（利用 3.A 的结论）：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;任一群 $G$ 无法表示为其任意两个真子群之并．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>若 $\exists\;A,\,B&lt;G,\quad G=A\cup B$，</p>
+<p>则 $(A\subseteq B)\vee(B\subseteq A)$，</p>
+<p>所以 $(G=A)\vee(G=B)$，与前提矛盾．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.C〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $S$ 为有限半群，则有</p>
+<p>&emsp;&emsp;$S$ 满足消去律 $\Leftrightarrow$ $S$ 是群．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>〔$\Leftarrow$〕显然．</p>
+<p>〔$\Rightarrow$〕：</p>
+<p>设 $S=\{s_1,\,s_2,\,\cdots,\,s_n\}$，则对其所有元素左乘 $s\in S$，由消去律可知有 $sS=\{ss_1,\,ss_2,\,\cdots,\,ss_n\}$（即 $\forall\;s_k,\,s_\ell\in S,\quad s_k\neq s_\ell\;\Leftrightarrow\;ss_k\neq ss_\ell$），且由封闭性可知这是 $S$ 的子集，从而 $sS=S$，同理有 $Ss=S$．</p>
+<p>于是 $\exists\;s_i\in S,\quad s_is=s$，</p>
+<p>又因为 $\forall\;s_p\in S,\;\exists\;s_q\in S,\quad s_p=ss_q$，</p>
+<p>从而 $s_is_p=s_iss_q=ss_q=s_p$，同理可证 $s_ps_i=s_p$，进而 $s_i$ 为单位元．</p>
+<p>由于 $sS=S=Ss$，由消去律可知对与 $S$ 的所有元素都存在逆元．</p>
+<p>综上，$S$ 是群．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.D〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A$ 是群 $G$ 的有限子集，则有</p>
+<p>&emsp;&emsp;$A\leq G\;\Leftrightarrow\;\forall\;a,\,b\in A,\quad ab\in A$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕显然．</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>因为 $G$ 是群，满足结合律，且易证其满足消去律，而 $A\subseteq G$，所以 $A$ 也满足结合律与消去律．</p>
+<p>由条件可知 $A$ 具有封闭性，因此 $A$ 为满足消去律的有限半群（3.C），于是 $A$ 是群，即 $A\leq G$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.E〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\,B\leq G$，则有</p>
+<p>&emsp;&emsp;$AB\leq G\;\Leftrightarrow\;AB=BA$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>〔$\Rightarrow$〕：</p>
+<p>$\forall\;a\in A,\;b\in B,\quad$ $ba=(eb)(ae)\in AB$，从而 $BA\leq AB$．</p>
+<p>又有 $ab=((ab)^{-1})^{-1}=(b^{-1}a^{-1})^{-1}\in BA$，从而 $AB\leq BA$．</p>
+<p>于是得证 $AB=BA$．</p>
+<p>〔$\Leftarrow$〕：</p>
+<p>$\forall\;a,\,\alpha\in A,\;\; b,\,\beta\in B,\quad$</p>
+<p>&emsp;&emsp;$ab,\,\alpha\beta\in AB$，而 $(ab)^{-1}\alpha\beta=b^{-1}a^{-1}\alpha\beta\in (BA)(AB)$，</p>
+<p>&emsp;&emsp;因为 $AB=BA$，所以 $(ab)^{-1}\alpha\beta\in AB$，得证 $AB\leq G$&emsp;（子群判定定理）．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.F〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\,B\leq G$ 且 $G=AB$，则有</p>
+<p>&emsp;&emsp;$C\leq G,\;A\subseteq C\;\Rightarrow\; C=A(B\cap C)$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>$\forall\;c\in C,\;\exists\; a\in A,\;b\in B,$</p>
+<p>&emsp;&emsp;$c=ab\in AB=G$，</p>
+<p>又 $b=a^{-1}c$，因为 $A\subseteq C$，所以 $a^{-1}\in C$，从而 $b\in C$，且 $b\in B$，进而 $b\in B\cap C$，</p>
+<p>于是 $c=ab\in A(B\cap C)$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.G〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\,B$ 是有限群 $G$ 的子群，则有</p>
+<p>&emsp;&emsp;$|A|+|B|&gt;|G|\;\Rightarrow\;G=AB$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>$\forall\;g\in G,$</p>
+<p>&emsp;&emsp;$|A^{-1}g|=|A^{-1}|=|A|$&emsp;（消去律），</p>
+<p>&emsp;&emsp;从而 $|A^{-1}g|+|B|&gt;|G|$，即 $A^{-1}g\cap B\neq\varnothing$，</p>
+<p>&emsp;&emsp;这意味着存在 $a\in A,\;b\in B$，使得 $a^{-1}g=b$，即 $g=ab$，</p>
+<p>得证 $G=AB$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.H〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A,\,B\leq G$，若 $\exists\;a\in A,\;b\in B,\quad Aa=Bb$，则 $A=B$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>因为 $Aa=Bb$，所以 $A=Bba^{-1}$，从而 $ba^{-1}\in A$，</p>
+<p>因为 $A\leq G$，所以 $(ba^{-1})^{-1}=ab^{-1}\in A$，</p>
+<p>于是 $A=Aab^{-1}=Bbb^{-1}=B$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.I〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $A\leq G$，若 $R$ 是 $G$ 对 $A$ 的左陪集代表元系，则 $R^{-1}$ 是 $G$ 对 $A$ 的右陪集代表元系．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>根据题意，$G=\displaystyle\bigsqcup_{g\in R}gA$，而对于任一 $g\in R$，都有 $(gA)^{-1}=A^{-1}g^{-1}=Ag^{-1}$，</p>
+<p>记 $g^{-1}$ 为 $h\in R^{-1}$，可知 $G=\displaystyle\bigsqcup_{h\in R^{-1}}Ah$，所以 $R^{-1}$ 为右陪集代表元系．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.J〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $G$ 为有限群，$H,\,K\leq G$，则 $\forall\;g\in G,\quad$ $|HgK|=|H|\cdot[K:K\cap g^{-1}Hg]=|K|\cdot[H:H\cap gKg^{-1}]$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>$HgK$ 称为 $G$ 对于子群 $H,\,K$ 的双陪集，该双陪集可以分解为 $G$ 对于 $H$ 的右陪集之并：</p>
+<p>&emsp;&emsp;$HgK=\displaystyle\bigsqcup_{i=1}^t Hgk_i\quad(k_i\in K)$，</p>
+<p>因此 $|HgK|=|H|\cdot t$．</p>
+<p>易证 $K\cap gHg^{-1}\leq K$，于是任取 $k,\,k’\in K$，有</p>
+<p>&emsp;&emsp;$\begin{aligned}<br>Hgk = Hgk’\;&amp;\Leftrightarrow\;\exists\;h\in H,\quad hgk = gk’\\<br>\phantom{\dfrac11} &amp;\Leftrightarrow\;\exists\;h\in H,\quad g^{-1}hg=k’k^{-1}\\<br>&amp;\Leftrightarrow\;k’k^{-1}\in g^{-1}Hg\\<br>\phantom{\dfrac11}&amp;\Leftrightarrow\;k’k^{-1}\in K\cap g^{-1}Hg,<br>\end{aligned}$</p>
+<p>从而 $K=\displaystyle\bigsqcup_{i=1}^t\;(K\cap g^{-1}Hg)k_i\quad(k_i\in K)$，即 $t=[K:K\cap g^{-1}Hg]$，</p>
+<p>进而 $|HgK|=|H|\cdot t=|H|\cdot[K:K\cap g^{-1}Hg]=\dfrac{|H|\cdot|K|}{|K\cap g^{-1}Hg|}$ $=\dfrac{|H|\cdot|K|}{|H\cap gKg^{-1}|}=|K|\cdot[H:H\cap gKg^{-1}]$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<hr>
+<p>〔3.K〕：</p>
+<blockquote>
+<p><strong>证明</strong>&emsp;设 $G$ 为群，则 $\forall\;a,\,b\in G,\quad |a|=|a^{-1}|,\;|ab|=|ba|$．</p>
+</blockquote>
+<p>〔参考解答〕：</p>
+<blockquote>
+<p>设 $|a|=k$，则 $(a^{-1})^k=(a^k)^{-1}=e$，</p>
+<p>若 $\exists\;k’&lt;k,\quad(a^{-1})^{k’}=e$，则 $e=(a^{-1})^{k’}=(a^{k’})^{-1}=a^{k’}$，与 $|a|=k$ 矛盾，因此 $|a^{-1}|=k=|a|$．</p>
+<p>设 $|ab|=\ell$，则 $(ba)^\ell=b(ab)^{\ell-1} a=be(ab)^{-1}a=e$，</p>
+<p>若 $\exists\;\ell’&lt;\ell,\quad(ba)^{\ell’}=e$，则 $e=b^{-1}(ba)^{\ell’+1}a^{-1}=(ab)^{\ell’}$，与 $|ab|=\ell$ 矛盾，因此 $|ba|=\ell=|ab|$．</p>
+<p align="right" style="font-size:180%" >■</p>
+
+</blockquote>
+<ul>
+<li>可以看出，$ba=a^{-1}(ab)a$，即 $ba$ 与 $ab$ 共轭</li>
+</ul>
+<h1 id="Annotationes-注释"><a href="#Annotationes-注释" class="headerlink" title="Annotationes 注释"></a>Annotationes 注释</h1><blockquote id="fn_(1)">
+<sup>(1)</sup>. 群中元素的消去律可由逆元的唯一性得证．<a href="#reffn_(1)" title="Jump back to footnote [(1)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(2)">
+<sup>(2)</sup>. $A$ 与 $B$ 都是 $G$ 的子群，可由子群判定定理推知 $A\cap B\leq G$：$\forall\;p,\,q\in A\cap B,\quad p^{-1}q\in A,\;p^{-1}q\in B$，从而 $p^{-1}q\in A\cap B$．<a href="#reffn_(2)" title="Jump back to footnote [(2)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(3)">
+<sup>(3)</sup>. 即 $\forall\;b,\,b’\in B,\quad (A\cap B)b\neq (A\cap B)b’\;\Rightarrow\;Ab\neq Ab’$．<a href="#reffn_(3)" title="Jump back to footnote [(3)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(4)">
+<sup>(4)</sup>. 子群判定定理：$\forall\;i,\,j\in\{x\in\mathbb N\mid 0\leq x\leq n-1\},\quad$$g^{-i}g^{j}=g^{j-i}=g^{(j-i)\operatorname{mod}n}\in H$，其中 $(j-i)\operatorname{mod}n$ 表示 $j-i$ 除以 $n$ 的余数．<a href="#reffn_(4)" title="Jump back to footnote [(4)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(5)">
+<sup>(5)</sup>. $\mathbb P$ 表示质数集，今后沿用．<a href="#reffn_(5)" title="Jump back to footnote [(5)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(6)">
+<sup>(6)</sup>. 详细的定义会在更遥远的后文中给出．<a href="#reffn_(6)" title="Jump back to footnote [(6)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(7)">
+<sup>(7)</sup>. $a\mid b$ 表示 $a$ 整除 $b$，或犹言 $b$ 为 $a$ 之倍数．由于 $g^m$ 的 $n/\mu$ 次幂为单位元，因此 $n/\mu$ 必然为其阶数 $N$ 的倍数．<a href="#reffn_(7)" title="Jump back to footnote [(7)] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_(8)">
+<sup>(8)</sup>. 注意 $(gh)^\alpha=g^\alpha h^\alpha$ 只有在 $gh=hg$ 时才会恒成立．<a href="#reffn_(8)" title="Jump back to footnote [(8)] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+<p>前：<a href="https://kotobasuke.github.io/2021/04/22/De-Algebra-Abstracta-02">抽象代数笔记 〇二：群与同态</a></p>
+<p>后：<a href="https://kotobasuke.github.io/2021/04/30/De-Algebra-Abstracta-04">抽象代数笔记 〇四：循环群</a></p>
+<p><br></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra/" rel="tag">Algebra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Algebra-Abstracta/" rel="tag">Algebra-Abstracta</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Mathematica/" rel="tag">Mathematica</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/pittacia/Theoria-Catervarum/" rel="tag">Theoria-Catervarum</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/30/De-Algebra-Abstracta-04" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Novius</strong>
+      <div class="article-nav-title">
+        
+          De Algebra Abstracta 04 // 抽象代数笔记 〇四：循环群
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/22/De-Algebra-Abstracta-02" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vetustius</strong>
+      <div class="article-nav-title">De Algebra Abstracta 02 // 抽象代数笔记 〇二：群与同态</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Quae insunt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Succatervae-%E5%AD%90%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">Succatervae 子群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concopiae-%E9%99%AA%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">Concopiae 陪集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ordines-Elementorum-%E5%85%83%E7%B4%A0%E7%9A%84%E9%98%B6"><span class="nav-number">3.</span> <span class="nav-text">Ordines Elementorum 元素的阶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problemata-%E4%B9%A0%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">Problemata 习题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Annotationes-%E6%B3%A8%E9%87%8A"><span class="nav-number">5.</span> <span class="nav-text">Annotationes 注释</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

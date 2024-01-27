@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Histologium Kotobae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Fracturarium memoriae in Mari Datorum">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Histologium Kotobae">
+<meta property="og:url" content="https://kotobasuke.github.io/index.html">
+<meta property="og:site_name" content="Histologium Kotobae">
+<meta property="og:description" content="Fracturarium memoriae in Mari Datorum">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Kotoba Trilius">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Histologium Kotobae" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/wug_icon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/wug_icon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/home.css" >
+  
+
+  
+
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body>
+
+
+  
+    <header id="header">
+
+	<!-- 背景图模式 -->
+	
+
+    
+      <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(); background-size: auto 100%;">
+
+      <!-- Support rolling -->  
+        
+        <section class="awSlider">
+          <div class="carousel slide carousel-fade " data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+               
+                  
+                    <div class="item active">
+                  
+                    <img id="carousel-img0" src="/css/images/Caval2.jpg">
+                  </div>
+
+                  <!-- 自适应大图 -->
+                  <script>
+                      var img0 = new Image();
+                      var imageTag0 = document.getElementById("carousel-img0");
+                      img0.src = imageTag0.src;
+                      img0.onload=function(){
+                        if (img0.width / img0.height <= document.body.clientWidth / document.body.clientHeight) {
+                          imageTag0.style.width = document.body.clientWidth + "px";
+                        } else {
+                          imageTag0.style.height = document.body.clientHeight + "px";
+                          imageTag0.style.marginLeft = -(document.body.clientHeight * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
+                        }
+                      };
+                  </script>
+                
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Geri</span>
+            </a>
+            <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">İleri</span>
+            </a>
+          </div>
+        </section>
+        <script>
+          $('section.awSlider .carousel').carousel({
+              pause: '',
+              interval: 5000
+          });
+          var startImage = $('section.awSlider .item.active > img').attr('src');
+          $('section.awSlider .carousel').on('slid.bs.carousel', function () {
+              var bscn = $(this).find('.item.active > img').attr('src');
+              $('section.awSlider > img').attr('src', bscn);
+          });
+        </script>
+      
+
+    
+ 
+
+
+    <canvas width="100%" height="100%"></canvas>
+    <script>
+      var c = document.getElementsByTagName('canvas')[0],
+          x = c.getContext('2d'),
+          w = window.innerWidth,
+          h = window.innerHeight,
+          pr = window.devicePixelRatio || 1,
+          f = 90,
+          q,
+          m = Math,
+          r = 0,
+          u = m.PI*2,
+          v = m.cos,
+          z = m.random
+      c.width = w*pr
+      c.height = h*pr
+      x.scale(pr, pr)
+      x.globalAlpha = 0.6
+
+      <!-- 折线Polyline背景 -->
+      
+    </script>
+    
+
+    
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
+    
+
+        
+          <div class="homelogoback"  style="border: 1px solid #404040;" >
+            <h1><a href="#content" id="logo">Histologium Kotobae</a></h1>
+            <h3>Fracturarium memoriae in Mari Datorum</h3>
+            <h5>Kotoba Trilius</h5>
+            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
+          </div>
+        
+    
+    </div>
+  </div>
+
+  <!-- 自适应主页背景大图 -->
+  
+
+ <!-- home_logo_image居中 -->
+ 
+    <script>
+        var homelogodiv = document.getElementById("homelogo");
+        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
+          homelogodiv.style.width = document.body.clientWidth + "px";
+          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+        } else {
+          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
+          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+        }
+    </script>
+  
+
+  <div class="intro-navigate">
+      <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">Pagina Prima</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archium">Archium</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categoriae">Categoriae</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/pittacia">Pittacia</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/res">Res de Hoc</a>
+        
+      </p>
+  </div>
+
+</header>
+  
+  <div id="container">
+    <div id="wrap">
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;">
+  
+    <article id="post-De-Pronuntiatione-Latina"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2022/04/16/De-Pronuntiatione-Latina">De Pronuntiatione Orthographiaque Latinis // 拉丁语发音与拼写参考</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/04/16/De-Pronuntiatione-Latina" class="article-date">
+	  <time datetime="2022-04-16T08:58:04.000Z" itemprop="datePublished">2022-04-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Linguistica/">Linguistica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          本文介绍拉丁语发音与拼写，设计古典拉丁语及以后的拉丁语形式。文中均使用国际音标（IPA）表示发音，其中斜线所含者（/…/）表示音位描写，方括号所含者（[…]）表示音值描写。
+Alphabetum  字母表古典拉丁语使用基本拉丁字母（如英语）中除去 J, U, W 外的 23 个，原本只有大写形式，后来在手写中产生小写形式。
+J 原为 I 的装饰性写法，文艺复兴时期引入，并主要用于表示 I 的辅音性用法。
+U 原为 V 在手写时产生的圆滑写法，在中世纪晚期起代替 V 的元音性用法。
+W 为日...
+        </p>
+        <p class="article-more-link">
+          <a href="/2022/04/16/De-Pronuntiatione-Latina#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Logica-Mathematica-02"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2022/03/05/De-Logica-Mathematica-02">De Logica Mathematica 02 // 数理逻辑笔记 〇二：一阶语言的语义</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/03/05/De-Logica-Mathematica-02" class="article-date">
+	  <time datetime="2022-03-05T12:38:36.000Z" itemprop="datePublished">2022-03-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Structurae &amp; Interpretationes 结构与解释〔定义 2.1〕：
+
+设 $S$ 为符号集，$S$–结构（$S$-structure）是具有下述性质的二元组 $\mathfrak A=(A,\,\mathfrak a)$：
+&emsp;(α)&emsp;$A$ 是非空集合，称为 $\mathfrak A$ 的论域（domain）或全集（universe）；
+&emsp;(β)&emsp;$\mathfrak a$ 是定义于 $S$ 的映射，满足以下条件：
+&e...
+        </p>
+        <p class="article-more-link">
+          <a href="/2022/03/05/De-Logica-Mathematica-02#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Logica-Mathematica-01"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2022/02/23/De-Logica-Mathematica-01">De Logica Mathematica 01 // 数理逻辑笔记 〇一：一阶语言的句法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022/02/23/De-Logica-Mathematica-01" class="article-date">
+	  <time datetime="2022-02-23T12:50:44.000Z" itemprop="datePublished">2022-02-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Linguae Ordinis-Primi  一阶语言由符号（symbol）组成的非空集合称为字母表（alphabet）．字母表 $\mathcal A$ 中的符号所组成有限长序列称为 $\mathcal A$ 上的字符串（string）或词语（word）．$\mathcal A$ 上的所有字符串所组成的集合记作 $\mathcal A^\ast$．任一字符串 $\zeta\in\mathcal A^\ast$ 中所含的符号数量（计算重复的符号）称为 $\zeta$ 的长度（length）...
+        </p>
+        <p class="article-more-link">
+          <a href="/2022/02/23/De-Logica-Mathematica-01#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Algebra-Lineari-05"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/13/De-Algebra-Lineari-05">De Algebra Lineari 05 // 线性代数笔记 〇五：特征值与特征向量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/13/De-Algebra-Lineari-05" class="article-date">
+	  <time datetime="2021-09-12T16:55:12.000Z" itemprop="datePublished">2021-09-13</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Valores Proprii &amp; Vectores Proprii 特征值与特征向量〔定义〕：
+
+设 $T\in\mathcal L(V)$，若 $V$ 的子空间 $U$ 满足 $﻿𝒖\in U\Rightarrow T(﻿𝒖)\in U$，则称 $U$ 为 $V$ 对于 $T$ 的不变子空间（invariant subspace）．
+
+
+对任一向量空间 $V$，子空间 $\{\mathbf 0\},\;V,\;\ker T,\;\operatorname{Im} T$ 均为...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/13/De-Algebra-Lineari-05#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Algebra-Lineari-04"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/09/De-Algebra-Lineari-04">De Algebra Lineari 04 // 线性代数笔记 〇四：多项式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/09/De-Algebra-Lineari-04" class="article-date">
+	  <time datetime="2021-09-09T11:22:00.000Z" itemprop="datePublished">2021-09-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Polynomia 多项式〔定理 4.1〕：
+
+设 $a_0,\,a_1,\,\cdots,\,a_n\in\mathbb F$，若对任意 $x\in\mathbb F$ 均有
+&emsp;&emsp;$a_0+a_1x+\cdots+a_nx^n=0$，
+则 $a_0=a_1=\cdots=a_n=0$．
+
+〔证明〕：
+
+以反证法假设这些系数不全为 $0$，在此前提下设 $a_n\neq0$(1)．令
+&emsp;&emsp;$x=\dfrac{\sum_{i=1}^{n-1}|a_i|...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/09/De-Algebra-Lineari-04#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Algebra-Lineari-03"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/08/28/De-Algebra-Lineari-03">De Algebra Lineari 03 // 线性代数笔记 〇三：线性变换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/08/28/De-Algebra-Lineari-03" class="article-date">
+	  <time datetime="2021-08-27T16:28:47.000Z" itemprop="datePublished">2021-08-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Transformationes Lineares 线性变换〔定义〕：
+
+设 $V,\;W$ 是向量空间，具有以下性质的映射 $T:V\to W$ 称为从 $V$ 到 $W$ 的一个线性变换（linear transformation）或线性映射（linear map）：
+
+可加性（additivity）：$\forall\;﻿𝒖,\,﻿𝒗\in V,\quad T(﻿﻿𝒖+﻿𝒗)=T(﻿﻿𝒖)+T(﻿﻿𝒗)$；
+齐次性（homogeneity）：$\forall\;k\in\...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/08/28/De-Algebra-Lineari-03#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Algebra-Lineari-02"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/08/26/De-Algebra-Lineari-02">De Algebra Lineari 02 // 线性代数笔记 〇二：有限维向量空间</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/08/26/De-Algebra-Lineari-02" class="article-date">
+	  <time datetime="2021-08-26T03:57:30.000Z" itemprop="datePublished">2021-08-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Coopertura 线性生成空间〔定义〕：
+
+向量列表 $﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n$(1) 的线性组合（linear combination）是任一如下形式的向量：
+&emsp;&emsp;$a_1﻿𝒗_1+a_2﻿𝒗_2+\cdots+a_n﻿𝒗_n$，
+其中 $a_i\in\mathbb F,\;\forall\;1\leq i\leq n$．
+
+
+〔定义〕：
+
+一组向量 $﻿𝒗_1,\,﻿𝒗_2,\,\cdots,\,﻿𝒗_n$ 的所...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/08/26/De-Algebra-Lineari-02#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Algebra-Lineari-01"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/08/26/De-Algebra-Lineari-01">De Algebra Lineari 01 // 线性代数笔记 〇一：向量空间</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/08/26/De-Algebra-Lineari-01" class="article-date">
+	  <time datetime="2021-08-25T18:37:51.000Z" itemprop="datePublished">2021-08-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Praefatio 前言本系列笔记的内容包括线性代数的进阶部分，以线性变换相关概念为主，而基础的线性代数内容在此不详言或直接略去．笔记内容基于 Axler Sheldon Jay 的《Linear Algebra Done Right》（引进版汉译：《线性代数应该这么学》），并参考其他资料．
+本文仅仅是学习笔记，主要为整理书中内容并按个人理解稍作修改而成，限于学识而错误在所难免，望指正．
+Tabula Symbolorum 符号表
+
+
+
+符号
+意义
+
+
+
+
+$\mathbb R,\,\ma...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/08/26/De-Algebra-Lineari-01#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Algebra-Abstracta-09"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/06/14/De-Algebra-Abstracta-09">De Algebra Abstracta 09 // 抽象代数笔记 〇九：群作用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/06/14/De-Algebra-Abstracta-09" class="article-date">
+	  <time datetime="2021-06-13T17:41:19.000Z" itemprop="datePublished">2021-06-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          前：抽象代数笔记 〇八：置换群与单群
+
+Actiones Catervarum 群作用〔定义〕：
+
+设 $A$ 为集合，$G$ 为群．定义映射 $f:G\times A\to A$ 称为 $G$ 与 $A$ 的（二元）运算，并记 $f(g,\;a):=ga\quad(g\in G,\;a\in A)$．若如此定义的运算满足以下两点：
+&emsp;&emsp;(α)&emsp;$\forall\;a\in A,\quad ea=a$，
+&emsp;&emsp;(β)&emsp;$\foral...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/06/14/De-Algebra-Abstracta-09#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-De-Algebra-Abstracta-08"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/06/05/De-Algebra-Abstracta-08">De Algebra Abstracta 08 // 抽象代数笔记 〇八：置换群与单群</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/06/05/De-Algebra-Abstracta-08" class="article-date">
+	  <time datetime="2021-06-04T18:50:22.000Z" itemprop="datePublished">2021-06-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categoriae/Mathematica/">Mathematica</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          前：抽象代数笔记 〇七：同态与同构定理
+后：抽象代数笔记 〇九：群作用
+
+Cycli &amp; Permutationes 轮换与置换〔定义〕：
+
+设有限集(1) $X$ 上的映射 $f$，若存在 $X$ 的子集 $A=\{a_1,\,a_2,\,\cdots,\,a_\ell\}$ 使得对任意 $a_i\in A$，有
+&emsp;&emsp;$f(a_\ell)=\begin{equation} \left\{\begin{aligned}&amp;a_{i+1},&amp; i&a...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/06/05/De-Algebra-Abstracta-08#more">Plus legere</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Seq. ⇒</a>
+  </nav>
+
+</section>
+        
+      </div>
+      
+        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Urgetur ab <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2021 - 2024 Histologium Kotobae All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archium" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categoriae" class="mobile-nav-link">Categories</a>
+  
+    <a href="/pittacia" class="mobile-nav-link">Tags</a>
+  
+    <a href="/res" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+  
+<script src="/js/home.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Histologium Kotobae
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 Kotoba Trilius All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
